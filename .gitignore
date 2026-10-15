@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Production build output (Vercel builds on deployment)
+dist/
+
+# Logs & temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Python cache & temp
+__pycache__/
+*.py[cod]
+*$py.class

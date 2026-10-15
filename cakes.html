@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourmet Cakes &amp; Patisserie Studio | Keerthi Bakery — Pee Kay Group</title>
+  <meta name="description" content="Artisanal gourmet celebration cakes, handcrafted pastries, and European bakes from Keerthi Bakery (Pee Kay Group). 30 Years of Real Taste and Real Quality since 1996.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/src/cakes.css">
+  <link rel="stylesheet" href="/src/cart-drawer.css">
+</head>
+<body class="cakes-page">
+
+  <!-- ==========================================================================
+       1. HEADER / NAVBAR (EXACT BAKEVERSE DESIGN)
+       ========================================================================== -->
+  <header class="bakeverse-header" id="header">
+    <div class="container header-inner">
+      <!-- Logo: Stylized Wheat Icon + Brand Title -->
+      <a href="index.html" class="brand-logo-link" title="Keerthi Bakery &amp; Cake Studio">
+        <svg class="brand-wheat-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C12 2 13.5 5 13.5 8C13.5 11 12 14 12 14C12 14 10.5 11 10.5 8C10.5 5 12 2 12 2Z" fill="currentColor"/>
+          <path d="M16 6C16 6 18.5 8 18.5 11C18.5 14 16 16.5 16 16.5C16 16.5 14.5 14 14.5 11C14.5 8 16 6 16 6Z" fill="currentColor" opacity="0.85"/>
+          <path d="M8 6C8 6 5.5 8 5.5 11C5.5 14 8 16.5 8 16.5C8 16.5 9.5 14 9.5 11C9.5 8 8 6 8 6Z" fill="currentColor" opacity="0.85"/>
+          <path d="M18.5 12C18.5 12 21 14 21 16.5C21 19 18.5 21 18.5 21C18.5 21 17 19 17 16.5C17 14 18.5 12 18.5 12Z" fill="currentColor" opacity="0.7"/>
+          <path d="M5.5 12C5.5 12 3 14 3 16.5C3 19 5.5 21 5.5 21C5.5 21 7 19 7 16.5C7 14 5.5 12 5.5 12Z" fill="currentColor" opacity="0.7"/>
+          <path d="M12 14V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-name-group">
+          <span class="brand-main-title">Keerthi Bakes</span>
+          <span class="brand-sub-caption">CAKES &amp; PATISSERIE • SINCE 1996</span>
+        </div>
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="#catalog" class="nav-link active">Our Products</a>
+        <a href="#custom-orders" class="nav-link">Custom Orders</a>
+        <a href="index.html#products" class="nav-link">Savouries &amp; Chips</a>
+        <a href="index.html#footer" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions (Search, User, Cart) -->
+      <div class="header-right-actions">
+        <button type="button" class="nav-icon-btn" id="cakeSearchBtn" aria-label="Search Cakes">
+          <i class="ri-search-line"></i>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="User Account">
+          <i class="ri-user-3-line"></i>
+        </button>
+        <button type="button" class="nav-icon-btn cart-btn-badge" id="cakeCartBtn" aria-label="Open Cart">
+          <i class="ri-shopping-cart-2-line"></i>
+          <span class="badge-count" id="cakeCartCount">0</span>
+        </button>
+        <button type="button" class="nav-icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+          <i class="ri-menu-3-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="cake-mobile-drawer" id="cakeMobileDrawer">
+    <div class="cake-mobile-drawer-backdrop" id="cakeDrawerBackdrop"></div>
+    <div class="cake-mobile-drawer-inner">
+      <div class="cake-drawer-top">
+        <div class="brand-name-group">
+          <span class="brand-main-title">Keerthi Bakes</span>
+          <span class="brand-sub-caption">CAKES &amp; PATISSERIE • SINCE 1996</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="cakeDrawerClose" aria-label="Close Menu">✕</button>
+      </div>
+      <nav class="cake-drawer-nav">
+        <a href="index.html" class="drawer-nav-link">Home</a>
+        <a href="index.html#about" class="drawer-nav-link">About</a>
+        <a href="#catalog" class="drawer-nav-link active">Our Products</a>
+        <a href="#custom-orders" class="drawer-nav-link">Custom Orders</a>
+        <a href="index.html#products" class="drawer-nav-link">Savouries &amp; Chips</a>
+        <a href="index.html#footer" class="drawer-nav-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. HERO SECTION — EXACT BAKEVERSE LAYOUT (Goodness in Every Bite)
+       ========================================================================== -->
+  <section class="bakeverse-hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Content -->
+        <div class="hero-left-col">
+          <p class="hero-eyebrow">FRESHLY BAKED • MADE WITH LOVE</p>
+          <h1 class="hero-title">Goodness<br>in Every Bite</h1>
+          <p class="hero-subtitle">
+            Artisanal breads, delightful pastries, and handcrafted treats made from the finest ingredients.
+          </p>
+          <div class="hero-btn-row">
+            <a href="#catalog" class="btn-shop-now">
+              <span>Shop Now</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="#categories" class="btn-explore-menu">
+              <span>Explore Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual Display (User Uploaded Reference Photo) -->
+        <div class="hero-right-col">
+          <img src="/images/cakes/hero_bakeverse_right.png" 
+               alt="Artisanal Breads, Chocolate Cake, and Fresh Pastries" 
+               class="hero-display-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Organic Bottom Wave Curve -->
+    <div class="hero-bottom-curve-wrap">
+      <svg class="hero-curve-svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,0 C380,50 820,60 1440,10 L1440,60 L0,60 Z" fill="#fcf9f4"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. FOUR PILLARS / FEATURES BAR
+       ========================================================================== -->
+  <section class="bakeverse-features-section">
+    <div class="container">
+      <div class="features-grid">
+        <!-- 1. Premium Ingredients -->
+        <div class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <i class="ri-plant-line"></i>
+          </div>
+          <div class="feature-text-block">
+            <h4>Premium Ingredients</h4>
+            <p>Only the best, always.</p>
+          </div>
+        </div>
+
+        <!-- 2. Freshly Baked Daily -->
+        <div class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <i class="ri-restaurant-line"></i>
+          </div>
+          <div class="feature-text-block">
+            <h4>Freshly Baked Daily</h4>
+            <p>Made with care.</p>
+          </div>
+        </div>
+
+        <!-- 3. Wide Variety -->
+        <div class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <i class="ri-heart-line"></i>
+          </div>
+          <div class="feature-text-block">
+            <h4>Wide Variety</h4>
+            <p>For every taste.</p>
+          </div>
+        </div>
+
+        <!-- 4. Fast & Reliable Delivery -->
+        <div class="feature-pill-card">
+          <div class="feature-icon-circle">
+            <i class="ri-truck-line"></i>
+          </div>
+          <div class="feature-text-block">
+            <h4>Fast &amp; Reliable Delivery</h4>
+            <p>Freshness at your doorstep.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. CATEGORIES SECTION — "OUR CATEGORIES / Discover Our Delicious Range"
+       ========================================================================== -->
+  <section class="bakeverse-categories-section" id="categories">
+    <div class="container">
+      <div class="section-centered-header">
+        <span class="section-eyebrow-accent">OUR CATEGORIES</span>
+        <h2 class="section-serif-title">Discover Our Delicious Range</h2>
+      </div>
+
+      <div class="categories-5-grid">
+        <!-- 1. Breads -->
+        <a href="#catalog" class="category-slice-card" data-category="signature">
+          <img src="/images/cakes/cat_breads.jpg" alt="Artisan Breads" class="category-slice-img" />
+          <div class="category-slice-overlay">
+            <div class="category-card-text">
+              <h3>Breads</h3>
+              <span>Wholesome &amp; Fresh</span>
+            </div>
+            <div class="category-card-btn">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- 2. Pastries -->
+        <a href="#catalog" class="category-slice-card" data-category="caramel">
+          <img src="/images/cakes/cat_pastries.jpg" alt="Flaky Pastries" class="category-slice-img" />
+          <div class="category-slice-overlay">
+            <div class="category-card-text">
+              <h3>Pastries</h3>
+              <span>Flaky &amp; Delightful</span>
+            </div>
+            <div class="category-card-btn">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- 3. Cakes -->
+        <a href="#catalog" class="category-slice-card" data-category="all">
+          <img src="/images/cakes/cat_cakes.jpg" alt="Celebration Cakes" class="category-slice-img" />
+          <div class="category-slice-overlay">
+            <div class="category-card-text">
+              <h3>Cakes</h3>
+              <span>For Every Celebration</span>
+            </div>
+            <div class="category-card-btn">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- 4. Cookies -->
+        <a href="#catalog" class="category-slice-card" data-category="chocolate">
+          <img src="/images/cakes/cat_cookies.jpg" alt="Crisp Cookies" class="category-slice-img" />
+          <div class="category-slice-overlay">
+            <div class="category-card-text">
+              <h3>Cookies</h3>
+              <span>Small Bites, Big Happiness</span>
+            </div>
+            <div class="category-card-btn">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- 5. Desserts -->
+        <a href="#catalog" class="category-slice-card" data-category="fruit">
+          <img src="/images/cakes/cat_desserts.jpg" alt="Sweet Desserts" class="category-slice-img" />
+          <div class="category-slice-overlay">
+            <div class="category-card-text">
+              <h3>Desserts</h3>
+              <span>Sweeten Your Day</span>
+            </div>
+            <div class="category-card-btn">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. OUR STORY SECTION — "Baking Happiness Since Day One"
+       ========================================================================== -->
+  <section class="bakeverse-story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <!-- Left Column -->
+        <div class="story-left-content">
+          <span class="story-eyebrow">OUR STORY</span>
+          <h2 class="story-title">Baking Happiness<br>Since Day One</h2>
+          <p class="story-desc">
+            From our humble beginnings to your favourite bakery, we continue to create baked goods that bring people together. Every recipe is crafted with passion, quality ingredients, and a commitment to making every moment sweeter.
+          </p>
+          <a href="index.html#about" class="btn-story-learn">
+            <span>Learn More</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <!-- Right Column (Two Side-by-Side Images) -->
+        <div class="story-images-right">
+          <div class="story-img-card">
+            <img src="/images/cakes/story_baker.jpg" alt="Master Baker Crafting Dough" />
+          </div>
+          <div class="story-img-card">
+            <img src="/images/cakes/story_croissants.jpg" alt="Golden Fresh Croissants on Rack" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. INTERACTIVE CAKE CATALOG SECTION (#catalog)
+       ========================================================================== -->
+  <section class="cakes-catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-centered-header">
+        <span class="section-eyebrow-accent">HANDCRAFTED PATISSERIE</span>
+        <h2 class="section-serif-title">Our Signature Cakes <em>&amp; Gourmet Flavours</em></h2>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-top:8px;">
+          Baked fresh to order with pure dairy cream, imported Belgian chocolates, and fresh farm fruits.
+        </p>
+      </div>
+
+      <!-- Controls: Category Pills + Search + Sort -->
+      <div class="catalog-controls">
+        <div class="filter-pills-row">
+          <button type="button" class="filter-pill-btn active" data-category="all">All Cakes (24)</button>
+          <button type="button" class="filter-pill-btn" data-category="chocolate">Chocolate &amp; Truffle</button>
+          <button type="button" class="filter-pill-btn" data-category="fruit">Fresh Fruit &amp; Exotic</button>
+          <button type="button" class="filter-pill-btn" data-category="caramel">Caramel &amp; Crunch</button>
+          <button type="button" class="filter-pill-btn" data-category="signature">Signature &amp; Heritage</button>
+          <button type="button" class="filter-pill-btn" data-category="eggless">100% Eggless</button>
+        </div>
+
+        <div class="search-and-sort-bar">
+          <div class="search-input-wrap">
+            <i class="ri-search-line"></i>
+            <input type="text" id="cakeSearchInput" class="cake-search-field" placeholder="Search by cake name, chocolate, berry, crunch..." autocomplete="off">
+          </div>
+
+          <select id="cakeSortSelect" class="sort-select" aria-label="Sort Cakes">
+            <option value="recommended">Sort by: Recommended</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated ★</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dynamic Cakes Grid -->
+      <div class="cakes-cards-grid" id="cakesCatalogGrid">
+        <!-- Rendered dynamically by src/cakes.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. CUSTOM CELEBRATION STUDIO BANNER (#custom-orders)
+       ========================================================================== -->
+  <section class="custom-order-banner-section" id="custom-orders">
+    <div class="container">
+      <div class="custom-banner-card">
+        <div class="custom-banner-info">
+          <span class="story-eyebrow">CUSTOM ORDERS &amp; CATERING</span>
+          <h2>Crafting Your Dream Celebration Cake</h2>
+          <p>
+            Whether it's a multi-tiered wedding masterpiece, a joyful milestone birthday, or a corporate banquet, our executive patisserie chefs sculpt bespoke cakes to your exact flavour, theme, and dietary wishes.
+          </p>
+          <div class="custom-perks-row">
+            <div class="custom-perk-badge"><i class="ri-checkbox-circle-fill"></i> Tiered Wedding Cakes</div>
+            <div class="custom-perk-badge"><i class="ri-checkbox-circle-fill"></i> Photo &amp; Theme Cakes</div>
+            <div class="custom-perk-badge"><i class="ri-checkbox-circle-fill"></i> 100% Eggless Options</div>
+            <div class="custom-perk-badge"><i class="ri-checkbox-circle-fill"></i> 2-Hour Express Delivery</div>
+          </div>
+          <div class="custom-banner-actions">
+            <a href="https://wa.me/919447123450?text=Hello%20Keerthi%20Bakery,%20I%20would%20like%20to%20order%20a%20Custom%20Designer%20Celebration%20Cake!" 
+               target="_blank" class="btn-custom-wa-order">
+              <i class="ri-whatsapp-fill"></i> WhatsApp Cake Specialist
+            </a>
+            <a href="tel:+919447123450" class="btn-explore-menu">
+              <i class="ri-phone-line"></i> Call +91 94471 23450
+            </a>
+          </div>
+        </div>
+
+        <div class="custom-banner-preview">
+          <img src="/images/custom_anniversary_cake.jpg" alt="Custom Celebration Designer Cake" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. QUICK VIEW MODAL
+       ========================================================================== -->
+  <div class="cake-modal-backdrop" id="cakeModalBackdrop"></div>
+  <div class="cake-modal-dialog" id="cakeModalDialog" role="dialog" aria-modal="true">
+    <button type="button" class="cake-modal-close-btn" id="cakeModalClose" aria-label="Close modal">✕</button>
+    <div id="cakeModalContent">
+      <!-- Rendered dynamically -->
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       9. FOOTER
+       ========================================================================== -->
+  <footer class="bakeverse-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <svg class="brand-wheat-icon" viewBox="0 0 24 24" fill="none" style="width:28px; height:28px;">
+              <path d="M12 2C12 2 13.5 5 13.5 8C13.5 11 12 14 12 14C12 14 10.5 11 10.5 8C10.5 5 12 2 12 2Z" fill="var(--gold-accent)"/>
+              <path d="M16 6C16 6 18.5 8 18.5 11C18.5 14 16 16.5 16 16.5C16 16.5 14.5 14 14.5 11C14.5 8 16 6 16 6Z" fill="var(--gold-accent)" opacity="0.85"/>
+              <path d="M8 6C8 6 5.5 8 5.5 11C5.5 14 8 16.5 8 16.5C8 16.5 9.5 14 9.5 11C9.5 8 8 6 8 6Z" fill="var(--gold-accent)" opacity="0.85"/>
+              <path d="M12 14V22" stroke="var(--gold-accent)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span style="font-family:var(--font-serif); font-size:1.4rem; font-weight:700;">Keerthi Bakes</span>
+          </div>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6; margin-bottom:16px;">
+            Part of Pee Kay Group. Handcrafted celebration cakes, Belgian chocolate truffles, and gourmet bakes baked fresh daily across 18 retail branches in Kerala.
+          </p>
+          <div style="font-size:0.82rem; color:var(--gold-accent); font-weight:700;">
+            🌿 ISO 22000 Certified Cleanroom Facilities
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cake Collections</h4>
+          <ul class="footer-links-list">
+            <li><a href="#catalog">Tender Coconut Cream Cake</a></li>
+            <li><a href="#catalog">Royal Belgian Dark Truffle</a></li>
+            <li><a href="#catalog">Berry Chocolate Symphony</a></li>
+            <li><a href="#catalog">Ferrero Rocher Royal</a></li>
+            <li><a href="#catalog">Exotic Fresh Fruit Gateau</a></li>
+            <li><a href="#catalog">30-Year Heritage Plum Cake</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Main Bakery &amp; Chips Home</a></li>
+            <li><a href="index.html#products">Malabar Savouries &amp; Upperi</a></li>
+            <li><a href="index.html#about">Our 30-Year Heritage</a></li>
+            <li><a href="index.html#leadership">Pee Kay Group Leadership</a></li>
+            <li><a href="#custom-orders">Custom Wedding Cakes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Celebration Helpline</h4>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; margin-bottom:10px;">
+            Order by phone or WhatsApp:
+          </p>
+          <div style="font-size:1.2rem; font-weight:800; color:var(--gold-accent); margin-bottom:12px;">
+            +91 94471 23450
+          </div>
+          <a href="https://wa.me/919447123450?text=Hello%20Keerthi%20Bakery,%20I%20would%20like%20to%20order%20a%20cake" 
+             target="_blank" class="btn-custom-wa-order" style="padding:10px 18px; font-size:0.85rem;">
+            <i class="ri-whatsapp-fill"></i> WhatsApp Cake Order
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        © 2026 Keerthi Bakery — Pee Kay Group. Since 1996 - 30 Years of Real Taste, Real Quality. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/cakes.js"></script>
+</body>
+</html>

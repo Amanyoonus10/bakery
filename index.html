@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEERTHI BAKERY — Real Taste. Real Quality. Since 1996 | Peekay Group</title>
+  <meta name="description" content="Keerthi Bakery, a proud brand from the Peekay Group, Kadavathur. Kerala's favourite snacks: crispy pure coconut oil banana chips, flavourful mixed snacks, and classic spiral biscuits.">
+  <meta name="keywords" content="Keerthi Bakery, Peekay Group, Kadavathur, Kerala Banana Chips, Coconut Oil, Mixed Snacks, Spiral Biscuits, Kannur, Kozhikode">
+  <meta name="author" content="Pee Kay Group - Keerthi Bakery, Kadavathur">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KEERTHI BAKERY - Real Taste. Real Quality. Since 1996">
+  <meta property="og:description" content="Crispy banana chips, flavourful mixed snacks and delicious biscuits – crafted with care, bringing authentic Kerala taste to every bite.">
+  <meta property="og:image" content="/images/hero_products_clean.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Google Fonts: Playfair Display (Serif), Plus Jakarta Sans (Sans-serif), Caveat (Script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- GSAP for Smooth Transitions & Interactive Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/keerthi-redesign.css">
+  <link rel="stylesheet" href="/src/cart-drawer.css">
+</head>
+<body class="keerthi-redesign-body">
+
+  <!-- ==========================================================================
+       0. LUXURY PRELOADER (OPTIMIZED PROGRESSIVE STREAMING)
+       ========================================================================== -->
+  <div id="keerthiPreloader" role="dialog" aria-label="Loading Keerthi Experience">
+    <div class="preloader-emblem">
+      <div class="preloader-logo-ring-outer"></div>
+      <div class="preloader-logo-ring-inner"></div>
+      <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery - Peekay Group" class="preloader-logo-img">
+    </div>
+    <span class="preloader-eyebrow">Pee Kay Group • Kadavathur • Since 1996</span>
+    <div class="preloader-percent" id="preloaderPercent">0%</div>
+    <div class="preloader-bar-wrap">
+      <div class="preloader-bar-fill" id="preloaderBarFill"></div>
+    </div>
+    <span class="preloader-status" id="preloaderStatus">Preparing the Malabar Heritage Experience...</span>
+    <button type="button" class="preloader-skip-btn" id="preloaderSkipBtn" aria-label="Skip intro and go to store">
+      <span>Skip directly to store</span>
+      <i class="ri-arrow-right-line"></i>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       0.1. SCROLL-DRIVEN VIDEO STORY HERO (BEFORE SITE BEGINS)
+       ========================================================================== -->
+  <section id="scrollVideoHero" aria-label="Keerthi Heritage Video Story">
+    <div class="scroll-video-sticky">
+      <!-- Full-screen Canvas -->
+      <canvas id="scrollVideoCanvas"></canvas>
+
+      <!-- Skip to Store Boxy Button -->
+      <button type="button" class="btn-skip-scroll-intro" id="btnSkipScrollIntro" aria-label="Skip video intro and go to store">
+        <span>Skip to Store</span>
+        <i class="ri-arrow-down-line"></i>
+      </button>
+
+      <!-- Clean End-of-Video CTA (appears only at the end of the scroll) -->
+      <div class="scroll-end-action" id="scrollEndAction">
+        <button type="button" class="btn-enter-store-cta" id="btnEnterStoreCta">
+          <span>Enter Store &amp; Explore 55 Snacks</span>
+          <i class="ri-arrow-down-line"></i>
+        </button>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-video-indicator" aria-hidden="true">
+        <div class="scroll-mouse-icon">
+          <div class="scroll-mouse-wheel"></div>
+        </div>
+        <span>Scroll to explore story</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Content Anchor -->
+  <div id="site-main-start"></div>
+
+  <!-- ==========================================================================
+       1. TOP ANNOUNCEMENT BAR (EXACT MOCKUP: FOREST GREEN)
+       ========================================================================== -->
+  <aside class="top-announcement-bar" aria-label="Store announcement">
+    <div class="site-container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="top-bar-item"><i class="ri-truck-line"></i> Free Delivery on Orders Above ₹499</span>
+        <span class="top-bar-item"><i class="ri-leaf-line"></i> Freshly Made &amp; Packed</span>
+        <span class="top-bar-item"><i class="ri-sparkling-fill"></i> 100% Quality Ingredients</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-item"><i class="ri-shield-check-line"></i> Authentic Kerala Taste</span>
+        <div class="currency-select-wrap" title="Currency">
+          <span>🇮🇳 INR (₹)</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <a href="#footer" class="top-bar-item">Track Order</a>
+        <span class="top-bar-divider">|</span>
+        <button type="button" class="top-bar-item" onclick="window.replayScrollVideoHero &amp;&amp; window.replayScrollVideoHero()" style="background:none;border:none;color:inherit;cursor:pointer;padding:0;font:inherit;display:inline-flex;align-items:center;gap:4px;" title="Replay 4K Heritage Story"><i class="ri-play-circle-line"></i> Heritage Film</button>
+        <span class="top-bar-divider">|</span>
+        <a href="#footer" class="top-bar-item">Help</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       2. MAIN STORE HEADER (APSARA BAKES PILL STYLE IN KEERTHI PALETTE)
+       ========================================================================== -->
+  <header class="store-header" id="header">
+    <div class="site-container store-header-inner">
+      <!-- Brand Logo: Exact Keerthi Bakery Emblem -->
+      <a href="index.html" class="store-brand-link logo" title="Keerthi Bakery - Peekay Group">
+        <div class="store-brand-badge">
+          <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery - Peekay Group" class="brand-badge-img logo-img">
+        </div>
+      </a>
+
+      <!-- Flex spacer: fills gap between logo and pills -->
+      <span class="header-spacer" aria-hidden="true"></span>
+
+      <!-- Attract nav pills (Apsara Bakes Pill Navigation in Keerthi Palette) -->
+      <nav class="attract-pills" id="attractPills" aria-label="Main navigation">
+        <a href="#home" class="attract-pill active">Home</a>
+        <a href="#shop-all" class="attract-pill">Shop All</a>
+        <a href="#our-story" class="attract-pill">Our Story</a>
+        <a href="#footer" class="attract-pill">Contact</a>
+      </nav>
+
+      <!-- Vertical divider line -->
+      <span class="header-divider" aria-hidden="true"></span>
+
+      <!-- Right Header Actions Cluster: Search, Account, Wishlist, Cart, Hamburger Toggle -->
+      <div class="nav-icons store-header-actions">
+        <!-- Search Input Pill -->
+        <div class="header-search-bar">
+          <i class="ri-search-line"></i>
+          <input type="text" id="storeSearchInput" class="header-search-input" placeholder="Search snacks..." autocomplete="off">
+        </div>
+
+        <!-- User Account -->
+        <button type="button" class="header-action-item" id="userAccountBtn" aria-label="Account" title="My Account">
+          <div class="action-icon-wrap">
+            <i class="ri-user-3-line"></i>
+          </div>
+          <span>Account</span>
+        </button>
+
+        <!-- Wishlist with Live Counter Badge -->
+        <button type="button" class="header-action-item" id="wishlistHeaderBtn" aria-label="Wishlist" title="Wishlist">
+          <div class="action-icon-wrap">
+            <i class="ri-heart-line"></i>
+            <span class="action-count-badge" id="wishlistCount" style="display: none;">0</span>
+          </div>
+          <span>Wishlist</span>
+        </button>
+
+        <!-- Cart with Live Counter Badge (Triggers Slide-Over Cart Drawer) -->
+        <button type="button" class="header-action-item cart-trigger-btn cart-btn" id="headerCartBtn" aria-label="Shopping Cart" title="Cart">
+          <div class="action-icon-wrap">
+            <i class="ri-shopping-cart-2-line"></i>
+            <span class="action-count-badge cart-count-badge" id="headerCartCount" style="display: none;">0</span>
+          </div>
+          <span>Cart</span>
+        </button>
+
+        <!-- Menu Toggle Hamburger Button (Apsara Bakes Animated SVG) -->
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+            <line class="bar bar-top" x1="3" y1="6" x2="17" y2="6" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
+            <line class="bar bar-mid" x1="3" y1="10" x2="17" y2="10" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
+            <line class="bar bar-bot" x1="3" y1="14" x2="17" y2="14" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       GSAP 3-PANEL INTERRUPTIBLE NAV OVERLAY (APSARA BAKES IN KEERTHI PALETTE)
+       ========================================================================== -->
+  <div class="nav" id="nav">
+    <div class="nav-bg"></div>
+
+    <!-- Top panel — Crisp Cream / White -->
+    <div class="nav-top nav-border nav-panel" id="navTop">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop-all">Shop All</a></li>
+        <li class="nav-item"><a class="nav-link" href="#category-chips">Banana Chips</a></li>
+        <li class="nav-item"><a class="nav-link" href="#category-snacks">Mixed Snacks</a></li>
+        <li class="nav-item"><a class="nav-link" href="#category-biscuits">Spiral Biscuits</a></li>
+        <li class="nav-item"><a class="nav-link" href="#our-story">Our Story</a></li>
+        <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
+      </ul>
+      <div class="nav-login">
+        <a href="#shop-all" class="btn-panel-order" style="text-decoration: none;">Order Online <i class="ri-arrow-right-line"></i></a>
+        <a href="#about-heritage" class="btn-panel-ghost" style="text-decoration: none;"><i class="ri-history-line"></i> Since 1996</a>
+      </div>
+    </div>
+
+    <!-- Middle panel — Keerthi Forest Green & Gold Accent -->
+    <div class="nav-middle nav-border nav-panel" id="navMiddle">
+      <div class="nav-middle-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <span>What's Fresh</span>
+        <span class="whats-new-timer" style="font-size: 0.72rem; opacity: 0.9; font-weight: 700; background: rgba(255,255,255,0.18); padding: 3px 10px; border-radius: 20px; color: #ffffff;"><i class="ri-time-line"></i> Real Taste</span>
+      </div>
+      <div class="nav-middle-card">
+        <div class="nav-middle-badge">
+          <i class="ri-flashlight-fill" style="font-size: 1.25rem; color: #e2b87f;"></i>
+        </div>
+        <div class="nav-middle-info">
+          <div class="nav-middle-title">Keerthi Banana Chips</div>
+          <div class="nav-middle-desc">Crispy pure coconut oil chips. Authentic taste of Kerala.</div>
+        </div>
+      </div>
+      <div class="nav-middle-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+        <a href="#shop-all" class="whats-new-btn">Shop Banana Chips • ₹89</a>
+        <div class="whats-new-dots" style="display: flex; gap: 5px; align-items: center;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #e2b87f; display: inline-block;"></span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); display: inline-block;"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom panel — Dark Warm Forest -->
+    <div class="nav-bottom nav-border nav-panel" id="navBottom">
+      <div class="nav-social-wrap" style="display: flex; flex-direction: column; gap: 6px; width: 100%;">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #e2b87f; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+          <i class="ri-share-line"></i> Connect With Us
+        </div>
+        <ul class="nav-socials">
+          <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="ri-instagram-line"></i> Instagram</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="ri-facebook-box-line"></i> Facebook</a></li>
+          <li><a href="https://wa.me/919847572417" target="_blank" rel="noopener"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="nav-asset">
+        <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery Logo" style="height: 44px; object-fit: contain;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       3. FULL-WIDTH PANORAMIC HERO SECTION (EXACT MOCKUP)
+       ========================================================================== -->
+  <section class="mockup-hero-section" id="home">
+    <div class="site-container hero-mockup-inner">
+      <!-- Left Content Column -->
+      <div class="hero-left-content">
+        <span class="hero-kerala-eyebrow">Kerala's Favourite Snacks</span>
+        <h1 class="hero-master-title">
+          Real Taste.<br>
+          Real Quality.
+        </h1>
+        <p class="hero-master-sub">
+          Crispy banana chips, flavourful mixed snacks and delicious biscuits – crafted with care, bringing authentic Kerala taste to every bite.
+        </p>
+
+        <!-- Warm Tan Pill CTA Button -->
+        <a href="#shop-all" class="btn-hero-tan-pill">
+          <span>Shop All Snacks</span>
+          <i class="ri-arrow-right-line"></i>
+        </a>
+
+        <!-- Bottom Feature Capsule Bar -->
+        <div class="hero-features-capsule-bar">
+          <div class="capsule-badge-item">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>Authentic Kerala Taste</span>
+          </div>
+          <div class="capsule-badge-item">
+            <i class="ri-vip-crown-fill"></i>
+            <span>Premium Ingredients</span>
+          </div>
+          <div class="capsule-badge-item">
+            <i class="ri-leaf-fill"></i>
+            <span>Fresh &amp; Crunchy</span>
+          </div>
+          <div class="capsule-badge-item">
+            <i class="ri-truck-fill"></i>
+            <span>Safe &amp; Secure Delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Float Elements -->
+      <div class="hero-right-visuals">
+        <!-- Circular Palm Tree Stamp Badge -->
+        <div class="circular-kerala-stamp" title="Authentic Kerala Taste">
+          <i class="ri-plant-line"></i>
+          <span>Authentic<br>Kerala Taste</span>
+        </div>
+
+        <!-- Handwritten Script Typography -->
+        <div class="hero-cursive-caption">
+          Snacks That Bring People Together
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. CATEGORY SHOWCASE ROW (3 CARDS GRID: BANANA CHIPS, MIXED SNACKS, SPIRAL BISCUITS)
+       ========================================================================== -->
+  <section class="categories-showcase-section" id="categories">
+    <div class="site-container">
+      <div class="category-tri-grid">
+        <!-- Card 1: Banana Chips -->
+        <div class="category-promo-card" id="category-chips">
+          <div class="category-thumb-box">
+            <img src="/images/cat_banana_chips_clean.jpg" alt="Keerthi Authentic Banana Chips" class="category-thumb-img">
+          </div>
+          <div class="category-promo-info">
+            <h3 class="category-promo-title">Banana Chips</h3>
+            <p class="category-promo-desc">Crispy. Natural. Irresistible.</p>
+            <a href="#shop-all" class="btn-category-tan" data-filter="banana-chips">
+              <span>Shop Banana Chips</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Mixed Snacks -->
+        <div class="category-promo-card" id="category-snacks">
+          <div class="category-thumb-box">
+            <img src="/images/cat_mixed_snacks_clean.jpg" alt="Peekay Mixed Snacks" class="category-thumb-img">
+          </div>
+          <div class="category-promo-info">
+            <h3 class="category-promo-title">Mixed Snacks</h3>
+            <p class="category-promo-desc">A Perfect Mix of Flavours.</p>
+            <a href="#shop-all" class="btn-category-tan" data-filter="mixed-snacks">
+              <span>Shop Mixed Snacks</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Spiral Biscuits -->
+        <div class="category-promo-card" id="category-biscuits">
+          <div class="category-thumb-box">
+            <img src="/images/cat_spiral_biscuits_clean.jpg" alt="Keerthi Spiral Biscuits" class="category-thumb-img">
+          </div>
+          <div class="category-promo-info">
+            <h3 class="category-promo-title">Spiral Biscuits</h3>
+            <p class="category-promo-desc">Classic Taste, Always Special.</p>
+            <a href="#shop-all" class="btn-category-tan" data-filter="spiral-biscuits">
+              <span>Shop Spiral Biscuits</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4B. 3D COVERFLOW HORIZONTAL SIDE-SCROLL PRODUCT SHOWCASE
+       Trackpad Left/Right Swipe & Tactile Tick Sound Enabled
+       ========================================================================== -->
+  <section class="coverflow-showcase-section products-section" id="products">
+    <div id="shop-all" style="position: relative; top: -80px; visibility: hidden;" aria-hidden="true"></div>
+    <div class="site-container">
+      <!-- Header Row with Left/Center Titles & Right Corner "View All" Option -->
+      <div class="showcase-header-row">
+        <div class="coverflow-header-wrap">
+          <div class="coverflow-eyebrow">
+            <i class="ri-sparkling-fill"></i> Kerala's Authentic Savouries
+          </div>
+          <h2 class="coverflow-title">
+            Crispy. Natural. <em>Irresistible.</em>
+          </h2>
+          <p class="coverflow-subtitle" id="showcaseSubtitle">
+            Swipe sideways on your trackpad or drag with your mouse to explore 55 freshly prepared Malabar snack specialties.
+          </p>
+          <div class="coverflow-hint-pill" id="showcaseHintPill">
+            <i class="ri-drag-move-fill"></i>
+            <span>Trackpad horizontal swipe enabled • Tactile tick sound feedback • Tap card to explore</span>
+          </div>
+        </div>
+
+        <!-- Right Corner Option: View All / Toggle View -->
+        <div class="showcase-corner-action">
+          <button type="button" class="btn-showcase-view-all" id="btnToggleAllProducts" aria-expanded="false" title="View all 55 Kerala snacks in grid view">
+            <div class="view-all-text-wrap">
+              <span class="view-all-label">View All</span>
+              <span class="view-all-sub">55 Snacks</span>
+            </div>
+            <div class="view-all-icon-circle">
+              <i class="ri-grid-fill"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D Coverflow Gallery Container -->
+      <div class="gallery-container">
+        <div class="gallery">
+          <ul class="cards" id="coverflowCards">
+            <!-- KEERTHI SPICY KADALA PAKODA -->
+            <li class="product-carousel-item" data-id="keerthi-spicy-kadala-pakoda" data-name="KEERTHI SPICY KADALA PAKODA" data-ingredients="Whole Bengal gram (kadala), gram flour, red chilli powder, curry leaves, asafoetida, garlic, salt, vegetable oil." data-eyebrow="AUTHENTIC KERALA BAKERY" data-tagline="Spiced Bengal Gram • Garlic • Curry Leaves" data-price="₹85" data-badge="Spicy 🌶" data-badge-class="spicy" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-02-09.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICY KADALA PAKODA details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-02-09.jpg" alt="KEERTHI SPICY KADALA PAKODA" loading="lazy" />
+                  <span class="badge spicy">Spicy 🌶</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICY KADALA PAKODA</h3>
+                  <p><strong>Ingredients:</strong> Whole Bengal gram (kadala), gram flour, red chilli powder, curry leaves, asafoetida, garlic, salt, vegetable oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI GOLDEN JACKFRUIT CHIPS -->
+            <li class="product-carousel-item" data-id="keerthi-golden-jackfruit-chips" data-name="KEERTHI GOLDEN JACKFRUIT CHIPS" data-ingredients="Raw Varikka Jackfruit, Pure Coconut Oil, Turmeric Powder, Sea Salt." data-eyebrow="SEASONAL SPECIALTY" data-tagline="Raw Jackfruit • Turmeric • Sea Salt • Coconut Oil" data-price="₹145" data-badge="Best Seller" data-badge-class="bestseller" data-category="chips" data-img="/images/blum/PHOTO-2026-10-14-19-06-59.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI GOLDEN JACKFRUIT CHIPS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-06-59.jpg" alt="KEERTHI GOLDEN JACKFRUIT CHIPS" loading="lazy" />
+                  <span class="badge bestseller">Best Seller</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI GOLDEN JACKFRUIT CHIPS</h3>
+                  <p><strong>Ingredients:</strong> Raw Varikka Jackfruit, Pure Coconut Oil, Turmeric Powder, Sea Salt.</p>
+                  <div class="product-footer">
+                    <span class="price">₹145</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI KERALA BANANA CHIPS -->
+            <li class="product-carousel-item" data-id="keerthi-kerala-banana-chips" data-name="KEERTHI KERALA BANANA CHIPS" data-ingredients="Raw Nendran Banana, Pure Vegetable Oil, Sea Salt, Natural Turmeric." data-eyebrow="HOMESTYLE HERITAGE" data-tagline="Crisp Nendran Banana • Golden Turmeric • Rock Salt" data-price="₹120" data-badge="Signature" data-badge-class="bestseller" data-category="chips" data-img="/images/blum/PHOTO-2026-10-14-19-07-24.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI KERALA BANANA CHIPS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-07-24.jpg" alt="KEERTHI KERALA BANANA CHIPS" loading="lazy" />
+                  <span class="badge bestseller">Signature</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI KERALA BANANA CHIPS</h3>
+                  <p><strong>Ingredients:</strong> Raw Nendran Banana, Pure Vegetable Oil, Sea Salt, Natural Turmeric.</p>
+                  <div class="product-footer">
+                    <span class="price">₹120</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPICY TAPIOCA CHIPS -->
+            <li class="product-carousel-item" data-id="keerthi-spicy-tapioca-chips" data-name="KEERTHI SPICY TAPIOCA CHIPS" data-ingredients="Fresh Kerala Tapioca (Kappa), Kashmiri Red Chilli, Rock Salt, Garlic, Vegetable Oil." data-eyebrow="KERALA SPICE" data-tagline="Sliced Kerala Tapioca • Kashmiri Chilli • Garlic" data-price="₹80" data-badge="Hot 🌶" data-badge-class="spicy" data-category="chips" data-img="/images/blum/PHOTO-2026-10-14-19-08-37.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICY TAPIOCA CHIPS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-08-37.jpg" alt="KEERTHI SPICY TAPIOCA CHIPS" loading="lazy" />
+                  <span class="badge spicy">Hot 🌶</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICY TAPIOCA CHIPS</h3>
+                  <p><strong>Ingredients:</strong> Fresh Kerala Tapioca (Kappa), Kashmiri Red Chilli, Rock Salt, Garlic, Vegetable Oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI KERALA ROUND KAI MURUKKU -->
+            <li class="product-carousel-item" data-id="keerthi-round-kai-murukku" data-name="KEERTHI KERALA ROUND KAI MURUKKU" data-ingredients="Roasted Rice Flour, Urad Dal Flour, Butter, White Sesame Seeds, Cumin, Asafoetida, Salt, Oil." data-eyebrow="HANDCRAFTED HERITAGE" data-tagline="Roasted Rice Flour • Urad Dal • White Sesame • Butter" data-price="₹85" data-badge="Traditional" data-badge-class="traditional" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-14-19-09-07.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI KERALA ROUND KAI MURUKKU details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-09-07.jpg" alt="KEERTHI KERALA ROUND KAI MURUKKU" loading="lazy" />
+                  <span class="badge traditional">Traditional</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI KERALA ROUND KAI MURUKKU</h3>
+                  <p><strong>Ingredients:</strong> Roasted Rice Flour, Urad Dal Flour, Butter, White Sesame Seeds, Cumin, Asafoetida, Salt, Oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPECIAL MALABAR MIXTURE -->
+            <li class="product-carousel-item" data-id="keerthi-special-malabar-mixture" data-name="KEERTHI SPECIAL MALABAR MIXTURE" data-ingredients="Gram flour sev, boondi, roasted peanuts, cashews, banana chips bits, curry leaves, garlic, asafoetida, spices, oil." data-eyebrow="BAKERY SPECIALTY" data-tagline="Sev Strands • Crispy Boondi • Fried Peanuts • Curry Leaves" data-price="₹95" data-badge="Popular" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-09-30.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPECIAL MALABAR MIXTURE details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-09-30.jpg" alt="KEERTHI SPECIAL MALABAR MIXTURE" loading="lazy" />
+                  <span class="badge ">Popular</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPECIAL MALABAR MIXTURE</h3>
+                  <p><strong>Ingredients:</strong> Gram flour sev, boondi, roasted peanuts, cashews, banana chips bits, curry leaves, garlic, asafoetida, spices, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI HOT SPICE MIXTURE -->
+            <li class="product-carousel-item" data-id="keerthi-hot-spice-mixture" data-name="KEERTHI HOT SPICE MIXTURE" data-ingredients="Gram flour, rice flour, crushed red chilli flakes, black pepper, roasted groundnuts, curry leaves, salt, oil." data-eyebrow="FIERY SNACK" data-tagline="Fiery Chilli Flakes • Crushed Pepper • Roasted Groundnuts" data-price="₹90" data-badge="Extra Hot 🔥" data-badge-class="spicy" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-10-38.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI HOT SPICE MIXTURE details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-10-38.jpg" alt="KEERTHI HOT SPICE MIXTURE" loading="lazy" />
+                  <span class="badge spicy">Extra Hot 🔥</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI HOT SPICE MIXTURE</h3>
+                  <p><strong>Ingredients:</strong> Gram flour, rice flour, crushed red chilli flakes, black pepper, roasted groundnuts, curry leaves, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹90</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MALABAR KARA SEV -->
+            <li class="product-carousel-item" data-id="keerthi-malabar-kara-sev" data-name="KEERTHI MALABAR KARA SEV" data-ingredients="Besan (gram flour), rice flour, crushed black peppercorns, cumin, garlic, salt, vegetable oil." data-eyebrow="BLACK PEPPER SPICE" data-tagline="Thick Besan Strands • Crushed Black Pepper • Roasted Garlic" data-price="₹85" data-badge="Crunchy" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-10-58.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MALABAR KARA SEV details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-10-58.jpg" alt="KEERTHI MALABAR KARA SEV" loading="lazy" />
+                  <span class="badge ">Crunchy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MALABAR KARA SEV</h3>
+                  <p><strong>Ingredients:</strong> Besan (gram flour), rice flour, crushed black peppercorns, cumin, garlic, salt, vegetable oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI GREEN PEAS MASALA MIX -->
+            <li class="product-carousel-item" data-id="keerthi-green-peas-masala-mix" data-name="KEERTHI GREEN PEAS MASALA MIX" data-ingredients="Dried green peas, gram flour sev, chaat spices, dry mango powder, red chilli, rock salt, vegetable oil." data-eyebrow="CRISP SAVOURY" data-tagline="Crispy Green Peas • Tangy Chaat Spices • Fine Sev" data-price="₹85" data-badge="Tangy & Crunchy" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-20-48.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI GREEN PEAS MASALA MIX details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-20-48.jpg" alt="KEERTHI GREEN PEAS MASALA MIX" loading="lazy" />
+                  <span class="badge ">Tangy & Crunchy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI GREEN PEAS MASALA MIX</h3>
+                  <p><strong>Ingredients:</strong> Dried green peas, gram flour sev, chaat spices, dry mango powder, red chilli, rock salt, vegetable oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI GOLDEN BUTTER BISCUITS -->
+            <li class="product-carousel-item" data-id="keerthi-golden-butter-biscuits" data-name="KEERTHI GOLDEN BUTTER BISCUITS" data-ingredients="Refined wheat flour, dairy butter, cane sugar, cardamom, milk solids, baking powder." data-eyebrow="BAKERY FRESH" data-tagline="Melt-in-Mouth Butter • Pure Dairy • Cardamom" data-price="₹90" data-badge="Tea Time" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-14-19-21-16.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI GOLDEN BUTTER BISCUITS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-21-16.jpg" alt="KEERTHI GOLDEN BUTTER BISCUITS" loading="lazy" />
+                  <span class="badge ">Tea Time</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI GOLDEN BUTTER BISCUITS</h3>
+                  <p><strong>Ingredients:</strong> Refined wheat flour, dairy butter, cane sugar, cardamom, milk solids, baking powder.</p>
+                  <div class="product-footer">
+                    <span class="price">₹90</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI COCONUT MACAROONS -->
+            <li class="product-carousel-item" data-id="keerthi-coconut-macaroons" data-name="KEERTHI COCONUT MACAROONS" data-ingredients="Fresh desiccated coconut, egg whites, cane sugar, cashew nuts, vanilla bean extract." data-eyebrow="HERITAGE CONFECTION" data-tagline="Desiccated Coconut • Cashew Chunks • Golden Crisp" data-price="₹110" data-badge="Sweet 🍯" data-badge-class="sweet" data-category="sweets" data-img="/images/blum/PHOTO-2026-10-14-19-21-42.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI COCONUT MACAROONS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-21-42.jpg" alt="KEERTHI COCONUT MACAROONS" loading="lazy" />
+                  <span class="badge sweet">Sweet 🍯</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI COCONUT MACAROONS</h3>
+                  <p><strong>Ingredients:</strong> Fresh desiccated coconut, egg whites, cane sugar, cashew nuts, vanilla bean extract.</p>
+                  <div class="product-footer">
+                    <span class="price">₹110</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MALABAR RIBBON PAKODA -->
+            <li class="product-carousel-item" data-id="keerthi-malabar-ribbon-pakoda" data-name="KEERTHI MALABAR RIBBON PAKODA" data-ingredients="Rice flour, gram flour, butter, sesame seeds, Kashmiri chilli, asafoetida, salt, vegetable oil." data-eyebrow="TRADITIONAL CRUNCH" data-tagline="Flaky Ribbon Strips • Sesame Seeds • Mild Chilli" data-price="₹85" data-badge="Crispy" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-14-19-22-18.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MALABAR RIBBON PAKODA details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-22-18.jpg" alt="KEERTHI MALABAR RIBBON PAKODA" loading="lazy" />
+                  <span class="badge ">Crispy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MALABAR RIBBON PAKODA</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, gram flour, butter, sesame seeds, Kashmiri chilli, asafoetida, salt, vegetable oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPICY OMAPODI SEV -->
+            <li class="product-carousel-item" data-id="keerthi-spicy-omapodi-sev" data-name="KEERTHI SPICY OMAPODI SEV" data-ingredients="Besan (gram flour), ajwain (carom seed) extract, rice flour, butter, salt, mild chilli, vegetable oil." data-eyebrow="DIGESTIVE DELIGHT" data-tagline="Digestive Ajwain • Golden Sev • Melt-in-Mouth" data-price="₹80" data-badge="Ajwain Infused" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-22-39.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICY OMAPODI SEV details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-22-39.jpg" alt="KEERTHI SPICY OMAPODI SEV" loading="lazy" />
+                  <span class="badge ">Ajwain Infused</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICY OMAPODI SEV</h3>
+                  <p><strong>Ingredients:</strong> Besan (gram flour), ajwain (carom seed) extract, rice flour, butter, salt, mild chilli, vegetable oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SWEET DIAMOND SHANKARPALI -->
+            <li class="product-carousel-item" data-id="keerthi-sweet-diamond-shankarpali" data-name="KEERTHI SWEET DIAMOND SHANKARPALI" data-ingredients="Whole wheat flour, sugar syrup, pure ghee, cardamom powder, toasted sesame." data-eyebrow="SWEET DIAMOND" data-tagline="Crispy Diamond Cuts • Pure Ghee • Cardamom Sugar Glaze" data-price="₹90" data-badge="Sweet 🍯" data-badge-class="sweet" data-category="sweets" data-img="/images/blum/PHOTO-2026-10-14-19-23-21.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SWEET DIAMOND SHANKARPALI details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-23-21.jpg" alt="KEERTHI SWEET DIAMOND SHANKARPALI" loading="lazy" />
+                  <span class="badge sweet">Sweet 🍯</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SWEET DIAMOND SHANKARPALI</h3>
+                  <p><strong>Ingredients:</strong> Whole wheat flour, sugar syrup, pure ghee, cardamom powder, toasted sesame.</p>
+                  <div class="product-footer">
+                    <span class="price">₹90</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI BUTTER MURUKKU STICKS -->
+            <li class="product-carousel-item" data-id="keerthi-butter-murukku-sticks" data-name="KEERTHI BUTTER MURUKKU STICKS" data-ingredients="Roasted rice flour, fresh butter, cumin seeds, mild salt, refined oil." data-eyebrow="MILD & BUTTERY" data-tagline="Crunchy Butter Baton Sticks • Toasted Cumin • Light Salt" data-price="₹85" data-badge="Kids Favorite" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-14-19-23-38.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI BUTTER MURUKKU STICKS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-23-38.jpg" alt="KEERTHI BUTTER MURUKKU STICKS" loading="lazy" />
+                  <span class="badge ">Kids Favorite</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI BUTTER MURUKKU STICKS</h3>
+                  <p><strong>Ingredients:</strong> Roasted rice flour, fresh butter, cumin seeds, mild salt, refined oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MASALA ROASTED PEANUTS -->
+            <li class="product-carousel-item" data-id="keerthi-masala-roasted-peanuts" data-name="KEERTHI MASALA ROASTED PEANUTS" data-ingredients="Premium roasted peanuts, red chilli, curry leaf powder, asafoetida, salt, cold pressed oil." data-eyebrow="MALABAR ROAST" data-tagline="Crunchy Peanuts • Kerala Spices • Roasted Curry Leaves" data-price="₹75" data-badge="Crunchy 🥜" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-24-04.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MASALA ROASTED PEANUTS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-24-04.jpg" alt="KEERTHI MASALA ROASTED PEANUTS" loading="lazy" />
+                  <span class="badge ">Crunchy 🥜</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MASALA ROASTED PEANUTS</h3>
+                  <p><strong>Ingredients:</strong> Premium roasted peanuts, red chilli, curry leaf powder, asafoetida, salt, cold pressed oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹75</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CASHEW BUTTER COOKIES -->
+            <li class="product-carousel-item" data-id="keerthi-cashew-butter-cookies" data-name="KEERTHI CASHEW BUTTER COOKIES" data-ingredients="Wheat flour, roasted Malabar cashews, pure dairy butter, cane sugar, vanilla, milk." data-eyebrow="NUTTY DELIGHT" data-tagline="Ground Malabar Cashews • Pure Butter • Baked Golden" data-price="₹110" data-badge="Rich & Crisp" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-14-19-24-54.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CASHEW BUTTER COOKIES details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-24-54.jpg" alt="KEERTHI CASHEW BUTTER COOKIES" loading="lazy" />
+                  <span class="badge ">Rich & Crisp</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CASHEW BUTTER COOKIES</h3>
+                  <p><strong>Ingredients:</strong> Wheat flour, roasted Malabar cashews, pure dairy butter, cane sugar, vanilla, milk.</p>
+                  <div class="product-footer">
+                    <span class="price">₹110</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CRISPY TAPIOCA WAFERS -->
+            <li class="product-carousel-item" data-id="keerthi-crispy-tapioca-wafers" data-name="KEERTHI CRISPY TAPIOCA WAFERS" data-ingredients="Thinly sliced cassava tapioca, sea salt, refined vegetable oil." data-eyebrow="KERALA ROOTS" data-tagline="Wafer-Thin Tapioca • Light Sea Salt • Pure Crunch" data-price="₹80" data-badge="Crunchy" data-badge-class="" data-category="chips" data-img="/images/blum/PHOTO-2026-10-14-19-25-17.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CRISPY TAPIOCA WAFERS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-25-17.jpg" alt="KEERTHI CRISPY TAPIOCA WAFERS" loading="lazy" />
+                  <span class="badge ">Crunchy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CRISPY TAPIOCA WAFERS</h3>
+                  <p><strong>Ingredients:</strong> Thinly sliced cassava tapioca, sea salt, refined vegetable oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SWIRL PINWHEEL COOKIES (JAR) -->
+            <li class="product-carousel-item" data-id="keerthi-swirl-pinwheel-cookies-jar" data-name="KEERTHI SWIRL PINWHEEL COOKIES (JAR)" data-ingredients="Wheat flour, pure butter, cane sugar, cocoa swirls, milk solids, natural flavors." data-eyebrow="HERMETIC JAR" data-tagline="Decorative Spiral Wheels • Cocoa Infused • Airtight Jar" data-price="₹130" data-badge="Jar Special" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-14-19-25-56.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SWIRL PINWHEEL COOKIES (JAR) details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-25-56.jpg" alt="KEERTHI SWIRL PINWHEEL COOKIES (JAR)" loading="lazy" />
+                  <span class="badge ">Jar Special</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SWIRL PINWHEEL COOKIES (JAR)</h3>
+                  <p><strong>Ingredients:</strong> Wheat flour, pure butter, cane sugar, cocoa swirls, milk solids, natural flavors.</p>
+                  <div class="product-footer">
+                    <span class="price">₹130</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CRUNCHY TOAST CROUTONS (JAR) -->
+            <li class="product-carousel-item" data-id="keerthi-crouton-garlic-toast-jar" data-name="KEERTHI CRUNCHY TOAST CROUTONS (JAR)" data-ingredients="Oven-baked bread cubes, herb butter, roasted garlic, oregano, sea salt." data-eyebrow="HERMETIC JAR" data-tagline="Oven-Crisped Bread Bites • Herb Butter • Roasted Garlic" data-price="₹120" data-badge="Soup & Tea" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-14-19-26-29.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CRUNCHY TOAST CROUTONS (JAR) details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-26-29.jpg" alt="KEERTHI CRUNCHY TOAST CROUTONS (JAR)" loading="lazy" />
+                  <span class="badge ">Soup & Tea</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CRUNCHY TOAST CROUTONS (JAR)</h3>
+                  <p><strong>Ingredients:</strong> Oven-baked bread cubes, herb butter, roasted garlic, oregano, sea salt.</p>
+                  <div class="product-footer">
+                    <span class="price">₹120</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CRUNCHY BUTTER RUSK (JAR) -->
+            <li class="product-carousel-item" data-id="keerthi-crunchy-butter-rusk-jar" data-name="KEERTHI CRUNCHY BUTTER RUSK (JAR)" data-ingredients="Double-baked bread slices, butter, sugar, cardamom, milk solids." data-eyebrow="HERMETIC JAR" data-tagline="Double-Baked Loaf Slices • Fragrant Cardamom • Airtight Jar" data-price="₹140" data-badge="Best Seller" data-badge-class="bestseller" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-14-19-27-17.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CRUNCHY BUTTER RUSK (JAR) details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-27-17.jpg" alt="KEERTHI CRUNCHY BUTTER RUSK (JAR)" loading="lazy" />
+                  <span class="badge bestseller">Best Seller</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CRUNCHY BUTTER RUSK (JAR)</h3>
+                  <p><strong>Ingredients:</strong> Double-baked bread slices, butter, sugar, cardamom, milk solids.</p>
+                  <div class="product-footer">
+                    <span class="price">₹140</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI FINE IDIYAPPAM SEV -->
+            <li class="product-carousel-item" data-id="keerthi-fine-idiyappam-sev" data-name="KEERTHI FINE IDIYAPPAM SEV" data-ingredients="Fine rice flour, white sesame seeds, pure ghee, sea salt, sunflower oil." data-eyebrow="DELICATE NOODLES" data-tagline="Extra Fine Vermicelli Crisp • Fragrant Ghee • White Sesame" data-price="₹85" data-badge="Traditional" data-badge-class="traditional" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-14-19-27-44.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI FINE IDIYAPPAM SEV details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-27-44.jpg" alt="KEERTHI FINE IDIYAPPAM SEV" loading="lazy" />
+                  <span class="badge traditional">Traditional</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI FINE IDIYAPPAM SEV</h3>
+                  <p><strong>Ingredients:</strong> Fine rice flour, white sesame seeds, pure ghee, sea salt, sunflower oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPICY KARA BOONDI -->
+            <li class="product-carousel-item" data-id="keerthi-spicy-kara-boondi" data-name="KEERTHI SPICY KARA BOONDI" data-ingredients="Gram flour, roasted cashews, curry leaves, Kashmiri chilli, asafoetida, salt, oil." data-eyebrow="GOLDEN PEARLS" data-tagline="Golden Gram Pearls • Roasted Cashews • Crisp Curry Leaves" data-price="₹80" data-badge="Spicy 🌶" data-badge-class="spicy" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-28-48.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICY KARA BOONDI details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-28-48.jpg" alt="KEERTHI SPICY KARA BOONDI" loading="lazy" />
+                  <span class="badge spicy">Spicy 🌶</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICY KARA BOONDI</h3>
+                  <p><strong>Ingredients:</strong> Gram flour, roasted cashews, curry leaves, Kashmiri chilli, asafoetida, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI ROASTED PEPPER CASHEWS -->
+            <li class="product-carousel-item" data-id="keerthi-roasted-pepper-cashews" data-name="KEERTHI ROASTED PEPPER CASHEWS" data-ingredients="Whole premium cashew nuts (W320), Tellicherry black pepper, Himalayan pink salt, pure cow ghee." data-eyebrow="EXPORT QUALITY" data-tagline="Malabar Whole Cashews • Crushed Tellicherry Pepper • Ghee" data-price="₹240" data-badge="Premium Nut" data-badge-class="bestseller" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-29-09.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI ROASTED PEPPER CASHEWS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-29-09.jpg" alt="KEERTHI ROASTED PEPPER CASHEWS" loading="lazy" />
+                  <span class="badge bestseller">Premium Nut</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI ROASTED PEPPER CASHEWS</h3>
+                  <p><strong>Ingredients:</strong> Whole premium cashew nuts (W320), Tellicherry black pepper, Himalayan pink salt, pure cow ghee.</p>
+                  <div class="product-footer">
+                    <span class="price">₹240</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SWEET MADHURA KAJA -->
+            <li class="product-carousel-item" data-id="keerthi-sweet-madhura-kaja" data-name="KEERTHI SWEET MADHURA KAJA" data-ingredients="Refined flour, pure ghee, cane sugar, green cardamom, sunflower oil." data-eyebrow="SWEET CONFECTION" data-tagline="Flaky Layered Pastry • Sugar Crust • Cardamom Essence" data-price="₹95" data-badge="Sweet 🍯" data-badge-class="sweet" data-category="sweets" data-img="/images/blum/PHOTO-2026-10-14-19-29-29.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SWEET MADHURA KAJA details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-29-29.jpg" alt="KEERTHI SWEET MADHURA KAJA" loading="lazy" />
+                  <span class="badge sweet">Sweet 🍯</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SWEET MADHURA KAJA</h3>
+                  <p><strong>Ingredients:</strong> Refined flour, pure ghee, cane sugar, green cardamom, sunflower oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MALABAR RIBBON MURUKKU -->
+            <li class="product-carousel-item" data-id="keerthi-malabar-ribbon-murukku" data-name="KEERTHI MALABAR RIBBON MURUKKU" data-ingredients="Rice flour, gram flour, butter, cumin seeds, salt, refined oil." data-eyebrow="CRISPY BITES" data-tagline="Wavy Ribbon Texture • Butter Crisp • Mild Spices" data-price="₹85" data-badge="Crispy" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-14-19-29-50.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MALABAR RIBBON MURUKKU details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-29-50.jpg" alt="KEERTHI MALABAR RIBBON MURUKKU" loading="lazy" />
+                  <span class="badge ">Crispy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MALABAR RIBBON MURUKKU</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, gram flour, butter, cumin seeds, salt, refined oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPICED TWISTED MURUKKU -->
+            <li class="product-carousel-item" data-id="keerthi-spiced-twisted-murukku" data-name="KEERTHI SPICED TWISTED MURUKKU" data-ingredients="Rice flour, urad flour, crushed red chilli, cumin, sesame, butter, salt, oil." data-eyebrow="SAVOURY SPIRAL" data-tagline="Twisted Coil Murukku • Fiery Red Chilli • Cumin Seeds" data-price="₹85" data-badge="Hot & Crisp" data-badge-class="spicy" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-14-19-30-09.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICED TWISTED MURUKKU details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-30-09.jpg" alt="KEERTHI SPICED TWISTED MURUKKU" loading="lazy" />
+                  <span class="badge spicy">Hot & Crisp</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICED TWISTED MURUKKU</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, urad flour, crushed red chilli, cumin, sesame, butter, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MALABAR ONION PAKODA -->
+            <li class="product-carousel-item" data-id="keerthi-malabar-onion-pakoda" data-name="KEERTHI MALABAR ONION PAKODA" data-ingredients="Fresh red onions, gram flour, rice flour, green chilli, ginger, curry leaves, salt, oil." data-eyebrow="HOMESTYLE TASTE" data-tagline="Caramelized Red Onions • Ginger • Fresh Green Chillies" data-price="₹85" data-badge="Savory Snack" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-14-19-30-28.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MALABAR ONION PAKODA details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-14-19-30-28.jpg" alt="KEERTHI MALABAR ONION PAKODA" loading="lazy" />
+                  <span class="badge ">Savory Snack</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MALABAR ONION PAKODA</h3>
+                  <p><strong>Ingredients:</strong> Fresh red onions, gram flour, rice flour, green chilli, ginger, curry leaves, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPICY DIAMOND CUTS -->
+            <li class="product-carousel-item" data-id="keerthi-spicy-diamond-cuts" data-name="KEERTHI SPICY DIAMOND CUTS" data-ingredients="Refined flour, Kashmiri chilli powder, carom seeds (ajwain), black sesame, salt, oil." data-eyebrow="CHILLI DIAMOND" data-tagline="Bite-Sized Diamond Bites • Ajwain • Kashmiri Chilli" data-price="₹85" data-badge="Spicy 🌶" data-badge-class="spicy" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-08-54-29.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICY DIAMOND CUTS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-08-54-29.jpg" alt="KEERTHI SPICY DIAMOND CUTS" loading="lazy" />
+                  <span class="badge spicy">Spicy 🌶</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICY DIAMOND CUTS</h3>
+                  <p><strong>Ingredients:</strong> Refined flour, Kashmiri chilli powder, carom seeds (ajwain), black sesame, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI GOLDEN SEV MIXTURE -->
+            <li class="product-carousel-item" data-id="keerthi-golden-sev-mixture" data-name="KEERTHI GOLDEN SEV MIXTURE" data-ingredients="Fine besan sev, roasted peanuts, turmeric, mild salt, curry leaves, oil." data-eyebrow="TRADITIONAL BLEND" data-tagline="Fine Golden Threads • Roasted Peanuts • Fragrant Curry Leaves" data-price="₹85" data-badge="Mild & Tasty" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-08-54-56.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI GOLDEN SEV MIXTURE details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-08-54-56.jpg" alt="KEERTHI GOLDEN SEV MIXTURE" loading="lazy" />
+                  <span class="badge ">Mild & Tasty</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI GOLDEN SEV MIXTURE</h3>
+                  <p><strong>Ingredients:</strong> Fine besan sev, roasted peanuts, turmeric, mild salt, curry leaves, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI FIERY RED MIXTURE -->
+            <li class="product-carousel-item" data-id="keerthi-fiery-red-mixture" data-name="KEERTHI FIERY RED MIXTURE" data-ingredients="Spicy sev, kara boondi, roasted groundnuts, dried red chillies, curry leaves, salt, oil." data-eyebrow="EXTRA SPICY" data-tagline="Fiery Chilli Spiced • Boondi • Peanuts • Spicy Sev" data-price="₹85" data-badge="Hot 🌶" data-badge-class="spicy" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-08-55-21.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI FIERY RED MIXTURE details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-08-55-21.jpg" alt="KEERTHI FIERY RED MIXTURE" loading="lazy" />
+                  <span class="badge spicy">Hot 🌶</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI FIERY RED MIXTURE</h3>
+                  <p><strong>Ingredients:</strong> Spicy sev, kara boondi, roasted groundnuts, dried red chillies, curry leaves, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MINI SWEET ROLLS (JAR) -->
+            <li class="product-carousel-item" data-id="keerthi-mini-sweet-rolls-jar" data-name="KEERTHI MINI SWEET ROLLS (JAR)" data-ingredients="Flaky baked pastry rolls, cardamom, cane sugar, butter, cinnamon, milk." data-eyebrow="HERMETIC JAR" data-tagline="Rolled Pastry Bites • Cinnamon Sugar • Airtight Jar" data-price="₹130" data-badge="Jar Special" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-08-58-46.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MINI SWEET ROLLS (JAR) details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-08-58-46.jpg" alt="KEERTHI MINI SWEET ROLLS (JAR)" loading="lazy" />
+                  <span class="badge ">Jar Special</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MINI SWEET ROLLS (JAR)</h3>
+                  <p><strong>Ingredients:</strong> Flaky baked pastry rolls, cardamom, cane sugar, butter, cinnamon, milk.</p>
+                  <div class="product-footer">
+                    <span class="price">₹130</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI AUTHENTIC KUZHALAPPAM -->
+            <li class="product-carousel-item" data-id="keerthi-authentic-kuzhalappam" data-name="KEERTHI AUTHENTIC KUZHALAPPAM" data-ingredients="Roasted rice flour, fresh coconut milk, small shallots, cumin, sesame seeds, salt, oil." data-eyebrow="TRADITIONAL TUBE" data-tagline="Traditional Cannoli Tubes • Coconut Milk • Shallots & Cumin" data-price="₹95" data-badge="Kerala Classic" data-badge-class="traditional" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-15-09-03-22.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI AUTHENTIC KUZHALAPPAM details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-03-22.jpg" alt="KEERTHI AUTHENTIC KUZHALAPPAM" loading="lazy" />
+                  <span class="badge traditional">Kerala Classic</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI AUTHENTIC KUZHALAPPAM</h3>
+                  <p><strong>Ingredients:</strong> Roasted rice flour, fresh coconut milk, small shallots, cumin, sesame seeds, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI WHITE BUTTER MURUKKU -->
+            <li class="product-carousel-item" data-id="keerthi-white-butter-murukku" data-name="KEERTHI WHITE BUTTER MURUKKU" data-ingredients="Finely milled white rice flour, butter, white sesame, cumin, salt, refined oil." data-eyebrow="CREAMY CRUNCH" data-tagline="Snow-White Sev • Creamy Butter • Toasted Sesame" data-price="₹85" data-badge="Melt In Mouth" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-15-09-03-58.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI WHITE BUTTER MURUKKU details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-03-58.jpg" alt="KEERTHI WHITE BUTTER MURUKKU" loading="lazy" />
+                  <span class="badge ">Melt In Mouth</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI WHITE BUTTER MURUKKU</h3>
+                  <p><strong>Ingredients:</strong> Finely milled white rice flour, butter, white sesame, cumin, salt, refined oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI RING CHEEDA MURUKKU -->
+            <li class="product-carousel-item" data-id="keerthi-ring-cheeda-murukku" data-name="KEERTHI RING CHEEDA MURUKKU" data-ingredients="Rice flour, roasted urad dal, grated coconut, cumin, butter, salt, oil." data-eyebrow="RICE RINGS" data-tagline="Crunchy Golden Rings • Toasted Coconut • Roasted Urad Dal" data-price="₹85" data-badge="Traditional" data-badge-class="traditional" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-15-09-04-16.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI RING CHEEDA MURUKKU details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-04-16.jpg" alt="KEERTHI RING CHEEDA MURUKKU" loading="lazy" />
+                  <span class="badge traditional">Traditional</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI RING CHEEDA MURUKKU</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, roasted urad dal, grated coconut, cumin, butter, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI AVAL (POHA) MIXTURE -->
+            <li class="product-carousel-item" data-id="keerthi-aval-poha-mixture" data-name="KEERTHI AVAL (POHA) MIXTURE" data-ingredients="Puffed rice flakes (aval), roasted peanuts, fried gram, curry leaves, turmeric, salt, oil." data-eyebrow="LIGHT SAVOURY" data-tagline="Feather-Light Rice Flakes • Peanuts • Roasted Dal" data-price="₹85" data-badge="Light & Crisp" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-09-05-07.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI AVAL (POHA) MIXTURE details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-05-07.jpg" alt="KEERTHI AVAL (POHA) MIXTURE" loading="lazy" />
+                  <span class="badge ">Light & Crisp</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI AVAL (POHA) MIXTURE</h3>
+                  <p><strong>Ingredients:</strong> Puffed rice flakes (aval), roasted peanuts, fried gram, curry leaves, turmeric, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CORNFLAKES SPICY MIX -->
+            <li class="product-carousel-item" data-id="keerthi-cornflakes-spicy-mix" data-name="KEERTHI CORNFLAKES SPICY MIX" data-ingredients="Crispy cornflakes, cashew nuts, raisins, curry leaves, chaat masala, Kashmiri chilli, oil." data-eyebrow="CRUNCHY FLAKES" data-tagline="Crisp Corn Flakes • Plump Raisins • Fried Cashews" data-price="₹85" data-badge="Crunchy" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-09-05-34.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CORNFLAKES SPICY MIX details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-05-34.jpg" alt="KEERTHI CORNFLAKES SPICY MIX" loading="lazy" />
+                  <span class="badge ">Crunchy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CORNFLAKES SPICY MIX</h3>
+                  <p><strong>Ingredients:</strong> Crispy cornflakes, cashew nuts, raisins, curry leaves, chaat masala, Kashmiri chilli, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI BANANA CHIPS (COCONUT OIL) -->
+            <li class="product-carousel-item" data-id="keerthi-banana-chips-pure-coconut-oil" data-name="KEERTHI BANANA CHIPS (COCONUT OIL)" data-ingredients="Raw Nendran banana, 100% pure cold-pressed coconut oil, rock salt, turmeric." data-eyebrow="VILLAGE PRESS" data-tagline="Fried in 100% Pure Coconut Oil • Fresh Nendran • Turmeric" data-price="₹130" data-badge="100% Coconut Oil" data-badge-class="bestseller" data-category="chips" data-img="/images/blum/PHOTO-2026-10-15-09-05-52.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI BANANA CHIPS (COCONUT OIL) details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-05-52.jpg" alt="KEERTHI BANANA CHIPS (COCONUT OIL)" loading="lazy" />
+                  <span class="badge bestseller">100% Coconut Oil</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI BANANA CHIPS (COCONUT OIL)</h3>
+                  <p><strong>Ingredients:</strong> Raw Nendran banana, 100% pure cold-pressed coconut oil, rock salt, turmeric.</p>
+                  <div class="product-footer">
+                    <span class="price">₹130</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CRISPY MILK RUSK -->
+            <li class="product-carousel-item" data-id="keerthi-crispy-milk-rusk" data-name="KEERTHI CRISPY MILK RUSK" data-ingredients="Wheat flour, dairy milk, cane sugar, butter, yeast, cardamom." data-eyebrow="DOUBLE BAKED" data-tagline="Twice-Baked Milk Bread • Sweet Cardamom • Perfect with Chai" data-price="₹80" data-badge="Breakfast Favorite" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-09-06-14.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CRISPY MILK RUSK details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-06-14.jpg" alt="KEERTHI CRISPY MILK RUSK" loading="lazy" />
+                  <span class="badge ">Breakfast Favorite</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CRISPY MILK RUSK</h3>
+                  <p><strong>Ingredients:</strong> Wheat flour, dairy milk, cane sugar, butter, yeast, cardamom.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CARDAMOM CAKE RUSK -->
+            <li class="product-carousel-item" data-id="keerthi-cardamom-cake-rusk" data-name="KEERTHI CARDAMOM CAKE RUSK" data-ingredients="Sponge cake slices, eggs, pure butter, cardamom, cane sugar, wheat flour." data-eyebrow="CAKE CRUST" data-tagline="Toasted Sponge Cake • Aromatic Green Cardamom • Golden Crisp" data-price="₹95" data-badge="Special" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-09-06-33.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CARDAMOM CAKE RUSK details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-06-33.jpg" alt="KEERTHI CARDAMOM CAKE RUSK" loading="lazy" />
+                  <span class="badge ">Special</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CARDAMOM CAKE RUSK</h3>
+                  <p><strong>Ingredients:</strong> Sponge cake slices, eggs, pure butter, cardamom, cane sugar, wheat flour.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI RICH BUTTER COOKIES -->
+            <li class="product-carousel-item" data-id="keerthi-rich-butter-cookies" data-name="KEERTHI RICH BUTTER COOKIES" data-ingredients="Refined flour, salted dairy butter, cane sugar, milk solids, natural vanilla." data-eyebrow="BAKERY SWEET" data-tagline="Golden Baked Rounds • Creamy Butter • Vanilla Aroma" data-price="₹95" data-badge="Pure Butter" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-09-06-53.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI RICH BUTTER COOKIES details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-06-53.jpg" alt="KEERTHI RICH BUTTER COOKIES" loading="lazy" />
+                  <span class="badge ">Pure Butter</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI RICH BUTTER COOKIES</h3>
+                  <p><strong>Ingredients:</strong> Refined flour, salted dairy butter, cane sugar, milk solids, natural vanilla.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CRUNCHY MURUKKU BATONS -->
+            <li class="product-carousel-item" data-id="keerthi-crunchy-murukku-batons" data-name="KEERTHI CRUNCHY MURUKKU BATONS" data-ingredients="Rice flour, cumin seeds, white sesame, butter, salt, refined oil." data-eyebrow="BATON STICKS" data-tagline="Straight Murukku Sticks • Butter Infused • Cumin Seeds" data-price="₹85" data-badge="Crunchy" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-15-09-07-19.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CRUNCHY MURUKKU BATONS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-07-19.jpg" alt="KEERTHI CRUNCHY MURUKKU BATONS" loading="lazy" />
+                  <span class="badge ">Crunchy</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CRUNCHY MURUKKU BATONS</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, cumin seeds, white sesame, butter, salt, refined oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SQUARE TEA BISCUITS -->
+            <li class="product-carousel-item" data-id="keerthi-square-tea-biscuits" data-name="KEERTHI SQUARE TEA BISCUITS" data-ingredients="Wheat flour, caramelized sugar, malt extract, butter, milk." data-eyebrow="CHAI ESSENTIAL" data-tagline="Crisp Square Biscuits • Malt Extract • Perfect for Dipping" data-price="₹80" data-badge="Tea Time" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-09-07-39.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SQUARE TEA BISCUITS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-07-39.jpg" alt="KEERTHI SQUARE TEA BISCUITS" loading="lazy" />
+                  <span class="badge ">Tea Time</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SQUARE TEA BISCUITS</h3>
+                  <p><strong>Ingredients:</strong> Wheat flour, caramelized sugar, malt extract, butter, milk.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SALTED BOONDI & GRAM -->
+            <li class="product-carousel-item" data-id="keerthi-salted-boondi-gram" data-name="KEERTHI SALTED BOONDI & GRAM" data-ingredients="Gram flour boondi, roasted chickpeas, Himalayan pink salt, curry leaves, oil." data-eyebrow="GOLDEN PEARLS" data-tagline="Crispy Gram Pearls • Roasted Gram • Himalayan Salt" data-price="₹80" data-badge="Mild & Salty" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-09-08-00.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SALTED BOONDI & GRAM details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-08-00.jpg" alt="KEERTHI SALTED BOONDI & GRAM" loading="lazy" />
+                  <span class="badge ">Mild & Salty</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SALTED BOONDI & GRAM</h3>
+                  <p><strong>Ingredients:</strong> Gram flour boondi, roasted chickpeas, Himalayan pink salt, curry leaves, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹80</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SWEET ACHAPPAM (ROSETTE) -->
+            <li class="product-carousel-item" data-id="keerthi-sweet-achappam-rosette" data-name="KEERTHI SWEET ACHAPPAM (ROSETTE)" data-ingredients="Rice flour, fresh coconut milk, eggs, sugar, black sesame seeds, cumin, refined oil." data-eyebrow="FESTIVAL ICON" data-tagline="Crisp Rose Cookies • Fresh Coconut Milk • Black Sesame" data-price="₹95" data-badge="Festival Special" data-badge-class="sweet" data-category="sweets" data-img="/images/blum/PHOTO-2026-10-15-09-08-25.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SWEET ACHAPPAM (ROSETTE) details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-08-25.jpg" alt="KEERTHI SWEET ACHAPPAM (ROSETTE)" loading="lazy" />
+                  <span class="badge sweet">Festival Special</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SWEET ACHAPPAM (ROSETTE)</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, fresh coconut milk, eggs, sugar, black sesame seeds, cumin, refined oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPECIAL PREMIUM RUSK -->
+            <li class="product-carousel-item" data-id="keerthi-special-premium-rusk" data-name="KEERTHI SPECIAL PREMIUM RUSK" data-ingredients="Enriched wheat flour, condensed milk, pure butter, cane sugar, cardamom seeds." data-eyebrow="SIGNATURE BAKE" data-tagline="Signature Keerthi Packaging • Extra Crunchy • Double Baked" data-price="₹85" data-badge="Signature Rusk" data-badge-class="bestseller" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-09-08-42.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPECIAL PREMIUM RUSK details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-08-42.jpg" alt="KEERTHI SPECIAL PREMIUM RUSK" loading="lazy" />
+                  <span class="badge bestseller">Signature Rusk</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPECIAL PREMIUM RUSK</h3>
+                  <p><strong>Ingredients:</strong> Enriched wheat flour, condensed milk, pure butter, cane sugar, cardamom seeds.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI THICK BUTTER SEV -->
+            <li class="product-carousel-item" data-id="keerthi-thick-butter-sev" data-name="KEERTHI THICK BUTTER SEV" data-ingredients="Gram flour, dairy butter, mild salt, turmeric, refined oil." data-eyebrow="BUTTER CRUNCH" data-tagline="Thick Sev Strands • Melt In Mouth Butter • Mild Salt" data-price="₹85" data-badge="Butter Sev" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-15-09-29-26.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI THICK BUTTER SEV details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-29-26.jpg" alt="KEERTHI THICK BUTTER SEV" loading="lazy" />
+                  <span class="badge ">Butter Sev</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI THICK BUTTER SEV</h3>
+                  <p><strong>Ingredients:</strong> Gram flour, dairy butter, mild salt, turmeric, refined oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI CRISPY SWEET KAJA -->
+            <li class="product-carousel-item" data-id="keerthi-crispy-sweet-kaja" data-name="KEERTHI CRISPY SWEET KAJA" data-ingredients="Layered flour pastry, crystallized sugar glaze, cardamom, pure ghee." data-eyebrow="SWEET DIAMOND" data-tagline="Crisp Layered Sweet • Cardamom Glaze • Traditional Kerala Sweet" data-price="₹95" data-badge="Sweet 🍯" data-badge-class="sweet" data-category="sweets" data-img="/images/blum/PHOTO-2026-10-15-09-29-46.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI CRISPY SWEET KAJA details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-29-46.jpg" alt="KEERTHI CRISPY SWEET KAJA" loading="lazy" />
+                  <span class="badge sweet">Sweet 🍯</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI CRISPY SWEET KAJA</h3>
+                  <p><strong>Ingredients:</strong> Layered flour pastry, crystallized sugar glaze, cardamom, pure ghee.</p>
+                  <div class="product-footer">
+                    <span class="price">₹95</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI VANILLA TEA BISCUITS -->
+            <li class="product-carousel-item" data-id="keerthi-vanilla-tea-biscuits" data-name="KEERTHI VANILLA TEA BISCUITS" data-ingredients="Wheat flour, butter, sugar, vanilla extract, milk powder, salt." data-eyebrow="CLASSIC BISCUIT" data-tagline="Golden Baked Rounds • Creamy Vanilla • Tea Time Delight" data-price="₹85" data-badge="Family Pack" data-badge-class="" data-category="biscuits" data-img="/images/blum/PHOTO-2026-10-15-09-30-05.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI VANILLA TEA BISCUITS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-30-05.jpg" alt="KEERTHI VANILLA TEA BISCUITS" loading="lazy" />
+                  <span class="badge ">Family Pack</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI VANILLA TEA BISCUITS</h3>
+                  <p><strong>Ingredients:</strong> Wheat flour, butter, sugar, vanilla extract, milk powder, salt.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SPICY FRIED GREEN PEAS -->
+            <li class="product-carousel-item" data-id="keerthi-spicy-fried-green-peas" data-name="KEERTHI SPICY FRIED GREEN PEAS" data-ingredients="Whole dried green peas, red chilli, rock salt, chaat masala, curry leaves, oil." data-eyebrow="WHOLE GREEN PEAS" data-tagline="Crunchy Fried Peas • Fiery Red Chilli • Rock Salt" data-price="₹85" data-badge="Spicy 🌶" data-badge-class="spicy" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-09-30-25.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SPICY FRIED GREEN PEAS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-30-25.jpg" alt="KEERTHI SPICY FRIED GREEN PEAS" loading="lazy" />
+                  <span class="badge spicy">Spicy 🌶</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SPICY FRIED GREEN PEAS</h3>
+                  <p><strong>Ingredients:</strong> Whole dried green peas, red chilli, rock salt, chaat masala, curry leaves, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MINI RING MURUKKU -->
+            <li class="product-carousel-item" data-id="keerthi-mini-ring-murukku" data-name="KEERTHI MINI RING MURUKKU" data-ingredients="Rice flour, white sesame, urad dal, cumin, butter, salt, oil." data-eyebrow="PETITE RINGS" data-tagline="Mini Golden Hoops • Sesame & Cumin • Crisp Texture" data-price="₹85" data-badge="Bite Sized" data-badge-class="" data-category="murukku" data-img="/images/blum/PHOTO-2026-10-15-09-30-44.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MINI RING MURUKKU details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-30-44.jpg" alt="KEERTHI MINI RING MURUKKU" loading="lazy" />
+                  <span class="badge ">Bite Sized</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MINI RING MURUKKU</h3>
+                  <p><strong>Ingredients:</strong> Rice flour, white sesame, urad dal, cumin, butter, salt, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI ROASTED SALTED CASHEWS -->
+            <li class="product-carousel-item" data-id="keerthi-roasted-salted-cashews" data-name="KEERTHI ROASTED SALTED CASHEWS" data-ingredients="Whole jumbo Kerala cashews (W240), sea salt, pure cow ghee." data-eyebrow="ROYAL CASHEW" data-tagline="Jumbo Kerala Cashews • Ghee Roasted • Sea Salt" data-price="₹240" data-badge="Premium 👑" data-badge-class="bestseller" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-09-36-25.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI ROASTED SALTED CASHEWS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-36-25.jpg" alt="KEERTHI ROASTED SALTED CASHEWS" loading="lazy" />
+                  <span class="badge bestseller">Premium 👑</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI ROASTED SALTED CASHEWS</h3>
+                  <p><strong>Ingredients:</strong> Whole jumbo Kerala cashews (W240), sea salt, pure cow ghee.</p>
+                  <div class="product-footer">
+                    <span class="price">₹240</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI MALABAR PEAS MIXTURE -->
+            <li class="product-carousel-item" data-id="keerthi-malabar-peas-mixture" data-name="KEERTHI MALABAR PEAS MIXTURE" data-ingredients="Green peas, gram flour sev, peanuts, curry leaves, red chilli, spices, oil." data-eyebrow="SAVOURY MEDLEY" data-tagline="Fried Green Peas • Sev Strands • Roasted Peanuts" data-price="₹85" data-badge="Crunchy Mix" data-badge-class="" data-category="mixtures" data-img="/images/blum/PHOTO-2026-10-15-09-36-55.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI MALABAR PEAS MIXTURE details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-36-55.jpg" alt="KEERTHI MALABAR PEAS MIXTURE" loading="lazy" />
+                  <span class="badge ">Crunchy Mix</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI MALABAR PEAS MIXTURE</h3>
+                  <p><strong>Ingredients:</strong> Green peas, gram flour sev, peanuts, curry leaves, red chilli, spices, oil.</p>
+                  <div class="product-footer">
+                    <span class="price">₹85</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI SWEET SOMASI / KAJA -->
+            <li class="product-carousel-item" data-id="keerthi-sweet-somasi-kaja" data-name="KEERTHI SWEET SOMASI / KAJA" data-ingredients="Wheat flour pastry, grated roasted coconut, semolina (rava), sugar, cardamom, chopped nuts." data-eyebrow="TRADITIONAL SWEET" data-tagline="Coconut Stuffed Crescent • Cardamom • Golden Crisp" data-price="₹110" data-badge="Sweet 🍯" data-badge-class="sweet" data-category="sweets" data-img="/images/blum/PHOTO-2026-10-15-09-38-07.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI SWEET SOMASI / KAJA details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-38-07.jpg" alt="KEERTHI SWEET SOMASI / KAJA" loading="lazy" />
+                  <span class="badge sweet">Sweet 🍯</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI SWEET SOMASI / KAJA</h3>
+                  <p><strong>Ingredients:</strong> Wheat flour pastry, grated roasted coconut, semolina (rava), sugar, cardamom, chopped nuts.</p>
+                  <div class="product-footer">
+                    <span class="price">₹110</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <!-- KEERTHI FRESH GOLDEN TEA MUFFINS -->
+            <li class="product-carousel-item" data-id="keerthi-fresh-golden-tea-muffins" data-name="KEERTHI FRESH GOLDEN TEA MUFFINS" data-ingredients="Flour, dairy butter, eggs, cane sugar, pure cardamom, crushed cashew bits, vanilla essence." data-eyebrow="OVEN FRESH" data-tagline="Straight From The Oven • Golden Brown Crust • Crushed Cashews" data-price="₹120" data-badge="Bakery Fresh 🧁" data-badge-class="bestseller" data-category="cakes" data-img="/images/blum/PHOTO-2026-10-15-09-44-49.jpg">
+              <article class="product-card" tabindex="0" role="button" aria-label="View KEERTHI FRESH GOLDEN TEA MUFFINS details">
+                <div class="product-img-wrap">
+                  <img src="/images/blum/PHOTO-2026-10-15-09-44-49.jpg" alt="KEERTHI FRESH GOLDEN TEA MUFFINS" loading="lazy" />
+                  <span class="badge bestseller">Bakery Fresh 🧁</span>
+                </div>
+                <div class="product-info">
+                  <h3>KEERTHI FRESH GOLDEN TEA MUFFINS</h3>
+                  <p><strong>Ingredients:</strong> Flour, dairy butter, eggs, cane sugar, pure cardamom, crushed cashew bits, vanilla essence.</p>
+                  <div class="product-footer">
+                    <span class="price">₹120</span>
+                    <span class="tap-hint"><i class="ri-hand-coin-line"></i> Tap to explore</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class="actions">
+            <button class="prev" id="carouselPrev" aria-label="Previous"><i class="ri-arrow-left-s-line"></i></button>
+            <button class="next" id="carouselNext" aria-label="Next"><i class="ri-arrow-right-s-line"></i></button>
+          </div>
+          <div class="drag-proxy"></div>
+        </div>
+      </div>
+
+      <!-- All 55 Products Grid View (Activated when "View All" on right corner is clicked) -->
+      <div class="all-products-grid-wrap" id="allProductsGridWrap" style="display: none;">
+        <!-- Category Chips and Search Toolbar -->
+        <div class="catalogue-toolbar">
+          <div class="catalogue-categories" id="catalogueCategories">
+            <button type="button" class="category-chip active" data-category="all">All Snacks (55)</button>
+            <button type="button" class="category-chip" data-category="chips">Banana &amp; Tapioca Chips</button>
+            <button type="button" class="category-chip" data-category="mixtures">Kerala Mixtures</button>
+            <button type="button" class="category-chip" data-category="murukku">Murukku &amp; Savouries</button>
+            <button type="button" class="category-chip" data-category="sweets">Traditional Sweets</button>
+            <button type="button" class="category-chip" data-category="biscuits">Biscuits &amp; Rusks</button>
+          </div>
+          <div class="catalogue-search-box">
+            <i class="ri-search-line"></i>
+            <input type="text" id="catalogueSearchInput" placeholder="Search 55 snacks..." autocomplete="off">
+            <span class="catalogue-count-badge" id="catalogueCountBadge">55 items</span>
+          </div>
+        </div>
+
+        <!-- 47 Products Grid Container -->
+        <div class="all-products-grid" id="allProductsGrid">
+          <!-- Dynamically populated from 47 coverflow items -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Description Modal -->
+  <div class="product-modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="product-modal">
+      <button class="product-modal-close" id="productModalClose" aria-label="Close"><i class="ri-close-line"></i></button>
+      <div class="product-modal-img-wrap">
+        <img src="" alt="" class="product-modal-img" id="productModalImg" />
+        <span class="product-modal-badge" id="productModalBadge"></span>
+      </div>
+      <div class="product-modal-body">
+        <p class="product-modal-eyebrow" id="productModalEyebrow"></p>
+        <h2 class="product-modal-name" id="productModalName"></h2>
+        <p class="product-modal-tagline" id="productModalTagline"></p>
+        <div class="product-modal-desc" id="productModalDesc"></div>
+        <div class="product-modal-footer">
+          <span class="product-modal-price" id="productModalPrice"></span>
+          <button type="button" class="btn-modal-order" id="productModalAddToCart">
+            Add to Bag <i class="ri-shopping-bag-3-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. OUR STORY PANORAMIC HERITAGE SECTION
+       ========================================================================== -->
+  <section class="story-banner-section" id="our-story">
+    <div class="site-container">
+      <div class="our-story-card-box">
+        <div class="our-story-card-inner">
+          <div class="story-content-left">
+            <span class="story-eyebrow"><i class="ri-history-line"></i> Tradition &amp; Heritage</span>
+            <h2 class="story-card-title">Our Story —</h2>
+            <p class="story-card-text">
+              Keerthi Bakery, a proud brand from the Peekay Group, brings you authentic Kerala snacks made with the finest ingredients. Our commitment to quality, tradition and great taste has made us a trusted choice in homes across the region.
+            </p>
+          </div>
+          <a href="#about-heritage" class="btn-story-tan">
+            <span>Know More About Us</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. TRUST BADGES STRIP & NEWSLETTER ROW (EXACT MOCKUP)
+       ========================================================================== -->
+  <section class="trust-newsletter-section">
+    <div class="site-container">
+      <div class="trust-newsletter-grid">
+        <!-- 5 Trust Badges Strip -->
+        <div class="trust-strip-card">
+          <div class="trust-item-box">
+            <i class="ri-truck-line"></i>
+            <div>
+              <h4 class="trust-item-title">Free Delivery</h4>
+              <span class="trust-item-sub">on orders above ₹499</span>
+            </div>
+          </div>
+          <div class="trust-item-box">
+            <i class="ri-refresh-line"></i>
+            <div>
+              <h4 class="trust-item-title">Easy Returns</h4>
+              <span class="trust-item-sub">Hassle free returns</span>
+            </div>
+          </div>
+          <div class="trust-item-box">
+            <i class="ri-shield-check-line"></i>
+            <div>
+              <h4 class="trust-item-title">Secure Payments</h4>
+              <span class="trust-item-sub">100% safe &amp; secure</span>
+            </div>
+          </div>
+          <div class="trust-item-box">
+            <i class="ri-award-line"></i>
+            <div>
+              <h4 class="trust-item-title">Quality Products</h4>
+              <span class="trust-item-sub">Made with care</span>
+            </div>
+          </div>
+          <div class="trust-item-box">
+            <i class="ri-map-pin-line"></i>
+            <div>
+              <h4 class="trust-item-title">Pan India Delivery</h4>
+              <span class="trust-item-sub">Across 3000+ pin codes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter Card (Dark Green Pill Banner) -->
+        <div class="newsletter-promo-card">
+          <div>
+            <h3 class="newsletter-title">Get Special Offers &amp; Updates</h3>
+            <p class="newsletter-sub">Join our newsletter and get 10% OFF on your first order.</p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn-newsletter-subscribe">
+              <span>Subscribe</span>
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. ABOUT HERITAGE & LEADERSHIP (PEEKAY GROUP 30-YEAR LEGACY)
+       ========================================================================== -->
+  <section class="about-heritage-section" id="about-heritage" style="padding: 60px 0; background: #ffffff; border-top: 1px solid var(--kg-border);">
+    <div class="site-container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div>
+          <span style="color: var(--kg-green); font-size: 0.85rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Since 1996 • 30 Years of Excellence</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.4rem; font-weight: 800; color: var(--kg-text-dark); margin: 10px 0 20px 0; line-height: 1.2;">
+            The Golden Standard of Authentic Kerala Taste
+          </h2>
+          <p style="color: var(--kg-text-body); font-size: 1.02rem; line-height: 1.7; margin-bottom: 20px;">
+            Founded in Kadavathur under the visionary leadership of the Pee Kay Group, Keerthi Bakery began with a single promise: never compromise on pure ingredients. For three decades, our master bakers have used only 100% cold-pressed coconut oil, hand-harvested Malabar spices, and authentic local recipes.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px;">
+            <div style="background: var(--kg-cream-bg); padding: 16px; border-radius: 12px; border: 1px solid var(--kg-border); text-align: center;">
+              <div style="font-size: 1.8rem; font-weight: 900; color: var(--kg-green);">30+</div>
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--kg-text-muted);">Years of Quality</div>
+            </div>
+            <div style="background: var(--kg-cream-bg); padding: 16px; border-radius: 12px; border: 1px solid var(--kg-border); text-align: center;">
+              <div style="font-size: 1.8rem; font-weight: 900; color: var(--kg-green);">100%</div>
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--kg-text-muted);">Pure Coconut Oil</div>
+            </div>
+            <div style="background: var(--kg-cream-bg); padding: 16px; border-radius: 12px; border: 1px solid var(--kg-border); text-align: center;">
+              <div style="font-size: 1.8rem; font-weight: 900; color: var(--kg-green);">10L+</div>
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--kg-text-muted);">Happy Families</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid var(--kg-border); height: 100%; min-height: 360px; max-height: 420px;">
+          <picture>
+            <source srcset="/images/keerthi_heritage_snacks.webp" type="image/webp">
+            <img src="/images/keerthi_heritage_snacks.jpg" alt="Keerthi Bakery Signature Selection - Authentic Kerala Snacks" style="width: 100%; height: 100%; min-height: 360px; display: block; object-fit: cover; object-position: center;" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. MASTER STORE FOOTER (DEEP FOREST GREEN AESTHETIC)
+       ========================================================================== -->
+  <footer class="master-store-footer" id="footer">
+    <div class="site-container">
+      <div class="footer-main-grid">
+        <!-- Col 1: Brand Info & FSSAI -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery" style="height: 52px; width: auto; object-fit: contain;">
+          </div>
+          <p class="footer-col-text">
+            Keerthi Bakery is part of the Pee Kay Group, Kadavathur. For three decades, we've served Kerala with fresh, authentic, and quality bakery products made with love.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); padding: 6px 14px; border-radius: 8px; font-size: 0.78rem; color: #fef5ea;">
+            <i class="ri-shield-check-fill" style="color: var(--kg-tan);"></i>
+            <span>FSSAI Lic: 11319001000452 • ISO 22000 Certified</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Flavour Collections -->
+        <div>
+          <h4 class="footer-col-title">Our Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#shop-all">Pure Coconut Oil Banana Chips</a></li>
+            <li><a href="#shop-all">Sharkkara Upperi (Marayoor Jaggery)</a></li>
+            <li><a href="#shop-all">Masala Spicy Tapioca Sticks</a></li>
+            <li><a href="#shop-all">Keerthi Special Malabar Mixture</a></li>
+            <li><a href="#shop-all">Crisp Golden Swirl Biscuits</a></li>
+            <li><a href="#shop-all">Jackfruit (Chakka) Chips</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop-all">Shop All Snacks</a></li>
+            <li><a href="#best-sellers">Best Sellers</a></li>
+            <li><a href="#combo-offers">Combo Offers</a></li>
+            <li><a href="#our-story">Our 30-Year Heritage</a></li>
+            <li><a href="#about-heritage">Pee Kay Group Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Quality & Support -->
+        <div>
+          <h4 class="footer-col-title">Customer Care</h4>
+          <p class="footer-col-text">Direct telephone and WhatsApp support for orders and wholesale enquiries:</p>
+          <div style="font-size: 1.25rem; font-weight: 800; color: var(--kg-tan); margin-bottom: 12px;">
+            +91 94471 23450
+          </div>
+          <a href="https://wa.me/919447123450?text=Hello%20Keerthi%20Bakery,%20I%20would%20like%20to%20order%20snacks!" 
+             target="_blank" 
+             style="display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #ffffff; font-weight: 800; font-size: 0.85rem; padding: 10px 20px; border-radius: var(--radius-pill); text-decoration: none;">
+            <i class="ri-whatsapp-fill" style="font-size: 1.1rem;"></i>
+            <span>WhatsApp Order</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Keerthi Bakery, Kadavathur — Pee Kay Group. Since 1996 • 30 Years of Real Taste, Real Quality. All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 18px;">
+          <a href="#home" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+          <a href="#home" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms of Service</a>
+          <a href="#home" style="color: rgba(255,255,255,0.7); text-decoration: none;">Shipping Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer Backdrop & Container -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer" aria-hidden="true">
+    <div class="drawer-header cart-drawer-header">
+      <div class="drawer-title-group cart-drawer-title-group">
+        <div class="drawer-title-wrap">
+          <h3 class="drawer-title cart-drawer-title">Your Fresh Cart</h3>
+          <span class="drawer-subtitle">Pure Coconut Oil Snacks &amp; Bakes</span>
+        </div>
+        <span class="drawer-count-badge cart-drawer-count" id="drawer-item-count">0 items</span>
+      </div>
+      <button type="button" class="drawer-close-btn cart-drawer-close-btn" id="cart-drawer-close" aria-label="Close cart">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="free-shipping-meter cart-shipping-bar" id="free-shipping-meter">
+      <div class="fs-text cart-shipping-text" id="free-shipping-text">Add <strong>₹499</strong> for <strong>FREE Delivery</strong> across Kerala &amp; India!</div>
+      <div class="fs-progress-bg cart-progress-track">
+        <div class="fs-progress-bar cart-progress-fill" id="free-shipping-progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Items List / Drawer Body -->
+    <div class="drawer-body cart-drawer-items" id="cart-drawer-items">
+      <!-- Dynamically populated by cart-drawer-ui.js -->
+    </div>
+
+    <!-- Footer Summary & Checkout -->
+    <div class="drawer-footer cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <!-- Dynamically populated by cart-drawer-ui.js -->
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       WISHLIST DRAWER (SLIDE-OVER ON RIGHT)
+       ========================================================================== -->
+  <div class="wishlist-drawer-backdrop" id="wishlist-drawer-backdrop"></div>
+  <aside class="wishlist-drawer" id="wishlist-drawer" aria-label="My Wishlist Drawer" aria-hidden="true">
+    <div class="drawer-header wishlist-drawer-header">
+      <div class="drawer-title-group">
+        <div class="drawer-title-wrap">
+          <h3 class="drawer-title">My Saved Snacks</h3>
+          <span class="drawer-subtitle">Your Favourite Kerala Delicacies</span>
+        </div>
+        <span class="drawer-count-badge" id="wishlist-drawer-count">0 items</span>
+      </div>
+      <button type="button" class="drawer-close-btn" id="wishlist-drawer-close" aria-label="Close wishlist">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Items List / Drawer Body -->
+    <div class="drawer-body wishlist-drawer-items" id="wishlist-drawer-items">
+      <!-- Dynamically populated by wishlist-ui.js -->
+    </div>
+
+    <!-- Footer Actions -->
+    <div class="drawer-footer wishlist-drawer-footer" id="wishlist-drawer-footer" style="display: none;">
+      <button type="button" class="btn-wishlist-move-all" id="wishlist-move-all-btn">
+        <i class="ri-shopping-cart-2-line"></i>
+        <span>Add All to Cart</span>
+      </button>
+      <button type="button" class="btn-wishlist-clear" id="wishlist-clear-btn">
+        Clear Wishlist
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       USER ACCOUNT DRAWER (SLIDE-OVER ON RIGHT)
+       ========================================================================== -->
+  <div class="account-drawer-backdrop" id="account-drawer-backdrop"></div>
+  <aside class="account-drawer" id="account-drawer" aria-label="My Account Drawer" aria-hidden="true">
+    <div class="drawer-header account-drawer-header">
+      <div class="drawer-title-group">
+        <div class="account-avatar-circle">
+          <i class="ri-user-smile-line"></i>
+        </div>
+        <div class="drawer-title-wrap">
+          <h3 class="drawer-title">Keerthi Club Patron</h3>
+          <span class="drawer-subtitle">Aman Yoonus • +91 98475 72417</span>
+        </div>
+      </div>
+      <button type="button" class="drawer-close-btn" id="account-drawer-close" aria-label="Close account">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Tier & Coins Perk Banner -->
+    <div class="account-tier-banner">
+      <div class="tier-badge-row">
+        <span class="tier-pill-gold"><i class="ri-vip-crown-fill"></i> Gold Member</span>
+        <span class="tier-points-pill"><i class="ri-copper-coin-fill"></i> 350 Coins (₹350 OFF)</span>
+      </div>
+      <p class="tier-perk-text">🎉 You enjoy <strong>Free Express Delivery</strong> on all orders across Kerala!</p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="account-tabs-bar">
+      <button type="button" class="account-tab-btn active" data-tab="orders">
+        <i class="ri-shopping-bag-3-line"></i> Orders
+      </button>
+      <button type="button" class="account-tab-btn" data-tab="profile">
+        <i class="ri-user-3-line"></i> Profile
+      </button>
+      <button type="button" class="account-tab-btn" data-tab="addresses">
+        <i class="ri-map-pin-line"></i> Addresses
+      </button>
+    </div>
+
+    <div class="drawer-body account-drawer-body">
+      <!-- TAB 1: ORDERS -->
+      <div class="account-tab-pane active" id="tab-orders">
+        <!-- Active Order -->
+        <div class="account-order-card active-order">
+          <div class="order-card-header">
+            <div>
+              <span class="order-badge-live"><i class="ri-radio-button-line"></i> Active Order</span>
+              <h4 class="order-number">Order #KB-2026-9421</h4>
+            </div>
+            <span class="order-amount">₹263</span>
+          </div>
+          <p class="order-items-preview">2x Keerthi Banana Chips, 1x Tapioca Stick Masala</p>
+          <div class="order-tracker-bar">
+            <div class="tracker-step done"><span>✓ Placed</span></div>
+            <div class="tracker-step done"><span>✓ Fried &amp; Packed</span></div>
+            <div class="tracker-step current"><span>🚚 Out for Delivery</span></div>
+          </div>
+          <div class="order-actions-row">
+            <button type="button" class="btn-account-track" id="btn-track-active-order">
+              <i class="ri-navigation-line"></i> Track Delivery
+            </button>
+          </div>
+        </div>
+
+        <!-- Past Order -->
+        <div class="account-order-card past-order">
+          <div class="order-card-header">
+            <div>
+              <span class="order-badge-done">✓ Delivered (12 Oct)</span>
+              <h4 class="order-number">Order #KB-2026-8810</h4>
+            </div>
+            <span class="order-amount">₹299</span>
+          </div>
+          <p class="order-items-preview">1x Snack Combo Pack (3 Items)</p>
+          <div class="order-actions-row">
+            <button type="button" class="btn-account-reorder" id="btn-reorder-combo">
+              <i class="ri-refresh-line"></i> Reorder in 1-Click
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PROFILE -->
+      <div class="account-tab-pane" id="tab-profile">
+        <form class="account-profile-form" id="accountProfileForm">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="account-input" value="Aman Yoonus" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <div class="input-verified-wrap">
+              <input type="tel" class="account-input" value="+91 98475 72417" required>
+              <span class="verified-tag"><i class="ri-checkbox-circle-fill"></i> Verified</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" class="account-input" value="aman.yoonus@keerthibakery.in" required>
+          </div>
+          <div class="form-group">
+            <label>Preferred Outlet</label>
+            <select class="account-input">
+              <option selected>Keerthi Bakery — Main Road, Kozhikode</option>
+              <option>Keerthi Bakery — Mavoor Road, Calicut</option>
+              <option>Keerthi Bakery — Beach Road, Kozhikode</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-save-profile">
+            <i class="ri-save-line"></i> Save Profile Details
+          </button>
+        </form>
+      </div>
+
+      <!-- TAB 3: ADDRESSES -->
+      <div class="account-tab-pane" id="tab-addresses">
+        <div class="address-card default-address">
+          <div class="address-header">
+            <span class="address-title"><i class="ri-home-4-line"></i> Home (Default)</span>
+            <span class="address-badge">Primary</span>
+          </div>
+          <p class="address-text">14/2B, Beach Road, Near Corporation Office, Kozhikode, Kerala - 673001</p>
+          <span class="address-phone"><i class="ri-phone-line"></i> +91 98475 72417</span>
+        </div>
+
+        <div class="address-card">
+          <div class="address-header">
+            <span class="address-title"><i class="ri-building-line"></i> Office</span>
+          </div>
+          <p class="address-text">Peekay Tech Park, Infopark Phase II, Kakkanad, Kochi, Kerala - 682042</p>
+          <span class="address-phone"><i class="ri-phone-line"></i> +91 98475 72417</span>
+        </div>
+
+        <button type="button" class="btn-add-address" id="btn-add-address">
+          <i class="ri-add-line"></i> Add New Delivery Address
+        </button>
+      </div>
+    </div>
+
+    <!-- Account Footer -->
+    <div class="drawer-footer account-drawer-footer">
+      <a href="https://wa.me/919847572417" target="_blank" rel="noopener" class="btn-account-whatsapp">
+        <i class="ri-whatsapp-line"></i> Chat with Baker on WhatsApp
+      </a>
+      <button type="button" class="btn-account-logout" id="btn-account-logout">
+        <i class="ri-logout-box-r-line"></i> Switch / Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- Express Checkout Modal (#checkout-modal) -->
+  <div class="modal-wrap" id="checkout-modal" role="dialog" aria-modal="true" aria-label="Express Checkout">
+    <div class="checkout-modal-backdrop modal-backdrop"></div>
+    <div class="checkout-modal-card modal-card">
+      <button type="button" class="checkout-modal-close modal-close-btn" aria-label="Close Checkout">✕</button>
+      <div class="checkout-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Main JavaScript Bundle -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

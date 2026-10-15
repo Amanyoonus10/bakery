@@ -1,0 +1,1324 @@
+/* ==========================================================================
+   KEERTHI BAKERY — CAKES & PATISSERIE STUDIO (BAKEVERSE DESIGN SPEC)
+   ========================================================================== */
+@import "./cart-drawer.css";
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Bakeverse Color Tokens */
+  --hero-dark: #1a100a;
+  --hero-dark-surface: #241710;
+  --gold-accent: #d99b64;
+  --gold-hover: #c4864c;
+  --gold-light: #fef5ec;
+  --cream-bg: #fcf9f4;
+  --cream-surface: #ffffff;
+  --text-dark: #20140c;
+  --text-muted: #6b5d52;
+  --text-light: #948578;
+  --border-cream: rgba(217, 155, 100, 0.2);
+  --border-subtle: #eae3d9;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 0px;
+  --shadow-soft: 0 8px 24px rgba(32, 20, 12, 0.06);
+  --shadow-hover: 0 16px 36px rgba(32, 20, 12, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body.cakes-page {
+  font-family: var(--font-sans);
+  background-color: var(--ivory-peach, #fff6ee);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   1. BAKEVERSE HEADER / NAVBAR
+   ========================================================================== */
+.bakeverse-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(217, 155, 100, 0.15);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+/* Logo */
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.brand-wheat-icon {
+  width: 34px;
+  height: 34px;
+  color: var(--gold-accent);
+}
+
+.brand-name-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+  letter-spacing: -0.3px;
+}
+
+.brand-sub-caption {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-top: 3px;
+}
+
+/* Center Nav */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #3b2c24;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-accent);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold-accent);
+  border-radius: 2px;
+}
+
+/* Right Icons */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #3b2c24;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-icon-btn:hover {
+  color: var(--gold-accent);
+  background: rgba(217, 155, 100, 0.08);
+}
+
+.cart-btn-badge .badge-count {
+  position: absolute;
+  top: 0px;
+  right: -2px;
+  background: var(--gold-accent);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* Mobile Nav Drawer for Cakes Page */
+.cake-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+.cake-mobile-drawer.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.cake-mobile-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cake-mobile-drawer.is-open .cake-mobile-drawer-backdrop {
+  opacity: 1;
+}
+
+.cake-mobile-drawer-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 82%;
+  max-width: 340px;
+  height: 100%;
+  background: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.cake-mobile-drawer.is-open .cake-mobile-drawer-inner {
+  transform: translateX(0);
+}
+
+.cake-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(217, 155, 100, 0.2);
+  margin-bottom: 24px;
+}
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #3b2c24;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+}
+
+.cake-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drawer-nav-link {
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #20140c;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: color 0.2s ease;
+}
+
+.drawer-nav-link:hover,
+.drawer-nav-link.active {
+  color: var(--gold-accent);
+}
+
+/* ==========================================================================
+   2. HERO SECTION — EXACT BAKEVERSE LAYOUT
+   ========================================================================== */
+.bakeverse-hero {
+  position: relative;
+  background: var(--hero-dark);
+  background-image: radial-gradient(circle at 60% 40%, rgba(55, 34, 20, 0.6) 0%, rgba(26, 16, 10, 0.98) 85%);
+  padding: 60px 0 0 0;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 40px;
+}
+
+.hero-left-col {
+  padding-right: 15px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 18px;
+}
+
+.hero-eyebrow::after {
+  content: '•';
+  color: var(--gold-accent);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 4.8vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 30px;
+  max-width: 480px;
+  font-weight: 400;
+}
+
+.hero-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-shop-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold-accent);
+  color: #1a0f08 !important;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 13px 28px;
+  border-radius: 0px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(217, 155, 100, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-shop-now:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(217, 155, 100, 0.45);
+}
+
+.btn-explore-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 13px 26px;
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-explore-menu:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Hero Right Display (Reference Image) */
+.hero-right-col {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-display-img {
+  width: 100%;
+  max-width: 660px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease;
+}
+
+.hero-display-img:hover {
+  transform: scale(1.015);
+}
+
+/* Organic Bottom Wave Curve */
+.hero-bottom-curve-wrap {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  margin-top: 10px;
+  z-index: 3;
+}
+
+.hero-curve-svg {
+  display: block;
+  width: 100%;
+  height: 55px;
+}
+
+/* ==========================================================================
+   3. FOUR PILLARS / FEATURES BAR
+   ========================================================================== */
+.bakeverse-features-section {
+  background: var(--cream-bg);
+  padding: 24px 0 46px 0;
+  border-bottom: 1px solid rgba(217, 155, 100, 0.12);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.feature-pill-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 14px;
+  transition: transform 0.2s ease;
+}
+
+.feature-pill-card:hover {
+  transform: translateY(-2px);
+}
+
+.feature-icon-circle {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid rgba(217, 155, 100, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-accent);
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(217, 155, 100, 0.08);
+}
+
+.feature-text-block h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.feature-text-block p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   4. CATEGORIES SECTION — "OUR CATEGORIES / Discover Our Delicious Range"
+   ========================================================================== */
+.bakeverse-categories-section {
+  background: var(--cream-bg);
+  padding: 60px 0 80px 0;
+}
+
+.section-centered-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+}
+
+.section-eyebrow-accent {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 8px;
+}
+
+.section-serif-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.section-serif-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.categories-5-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.category-slice-card {
+  position: relative;
+  height: 155px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.category-slice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.category-slice-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.category-slice-card:hover .category-slice-img {
+  transform: scale(1.08);
+}
+
+.category-slice-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 9, 5, 0.92) 0%, rgba(16, 9, 5, 0.35) 55%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 14px;
+}
+
+.category-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card-text h3 {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.category-card-text span {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px;
+}
+
+.category-card-btn {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 0px;
+  background: #ffffff;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.category-slice-card:hover .category-card-btn {
+  background: var(--gold-accent);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   5. OUR STORY SECTION — "Baking Happiness Since Day One"
+   ========================================================================== */
+.bakeverse-story-section {
+  position: relative;
+  background: var(--hero-dark);
+  background-image: radial-gradient(circle at 20% 50%, rgba(55, 34, 20, 0.5) 0%, rgba(26, 16, 10, 0.98) 100%);
+  padding: 80px 0;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.story-left-content {
+  padding-right: 20px;
+}
+
+.story-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 12px;
+}
+
+.story-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+.story-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 28px;
+}
+
+.btn-story-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 12px 24px;
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-story-learn:hover {
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+  color: #1a0f08 !important;
+  transform: translateY(-2px);
+}
+
+.story-images-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.story-img-card {
+  flex: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  height: 200px;
+}
+
+.story-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.story-img-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. CAKE CATALOG & INTERACTIVE STUDIO SECTION
+   ========================================================================== */
+.cakes-catalog-section {
+  background: #ffffff;
+  padding: 80px 0;
+  border-top: 1px solid rgba(217, 155, 100, 0.15);
+}
+
+/* Filter Bar */
+.catalog-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.filter-pills-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-pill-btn {
+  background: var(--cream-bg);
+  border: 1.5px solid var(--border-cream);
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-pill-btn:hover {
+  border-color: var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+.filter-pill-btn.active {
+  background: var(--text-dark);
+  border-color: var(--text-dark);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(32, 20, 12, 0.25);
+}
+
+.search-and-sort-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.search-input-wrap i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.cake-search-field {
+  width: 100%;
+  padding: 12px 18px 12px 46px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--cream-bg);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.cake-search-field:focus {
+  border-color: var(--gold-accent);
+  background: #ffffff;
+}
+
+.sort-select {
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--cream-bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Cake Cards Grid */
+.cakes-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+.cake-grid-card {
+  background: #ffffff;
+  border: 1px solid rgba(217, 155, 100, 0.18);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+}
+
+.cake-grid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(217, 155, 100, 0.45);
+}
+
+.card-top-visual {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #fbf7f2;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-top-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.cake-grid-card:hover .card-top-visual img {
+  transform: scale(1.06);
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.card-badge.badge-gold {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.card-badge.badge-red {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.card-badge.badge-dark {
+  background: #271b12;
+  color: #ffffff;
+}
+
+.card-badge.badge-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.card-badge.badge-green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.quick-view-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cake-grid-card:hover .quick-view-hint {
+  opacity: 1;
+}
+
+/* Card Body */
+.card-content-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-category-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.card-cake-title {
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.card-cake-title:hover {
+  color: var(--gold-accent);
+}
+
+.card-tagline {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Weight Selector */
+.weight-selector-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.weight-pill {
+  padding: 4px 10px;
+  border-radius: 0px;
+  border: 1px solid var(--border-subtle);
+  background: var(--cream-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.weight-pill:hover,
+.weight-pill.selected {
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+  color: #1a0f08;
+}
+
+/* Price & Order Row */
+.card-price-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.card-live-price {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.card-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-card-cart {
+  background: var(--text-dark);
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 0px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-card-cart:hover {
+  background: var(--gold-accent);
+  color: #1a0f08;
+}
+
+.btn-card-wa {
+  background: #25d366;
+  color: #ffffff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.btn-card-wa:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   7. CUSTOM CELEBRATION STUDIO BANNER
+   ========================================================================== */
+.custom-order-banner-section {
+  background: var(--hero-dark);
+  background-image: linear-gradient(135deg, rgba(36, 23, 16, 0.95) 0%, rgba(26, 16, 10, 0.98) 100%);
+  padding: 70px 0;
+  color: #ffffff;
+  border-top: 1px solid rgba(217, 155, 100, 0.2);
+}
+
+.custom-banner-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.custom-banner-info h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 2.9rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.custom-banner-info p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+.custom-perks-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.custom-perk-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold-accent);
+}
+
+.custom-banner-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-custom-wa-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 13px 26px;
+  border-radius: 0px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-custom-wa-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+}
+
+.custom-banner-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-banner-preview img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   8. QUICK VIEW MODAL
+   ========================================================================== */
+.cake-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cake-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cake-modal-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 90%;
+  max-width: 820px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cake-modal-dialog.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cake-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.cake-modal-img-wrap {
+  position: relative;
+  background: #fbf7f2;
+}
+
+.cake-modal-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 340px;
+}
+
+.cake-modal-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cake-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 0px;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cake-modal-close-btn:hover {
+  background: var(--text-dark);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.bakeverse-footer {
+  background: var(--hero-dark);
+  color: #ffffff;
+  padding: 70px 0 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 36px;
+  margin-bottom: 50px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gold-accent);
+  margin-bottom: 18px;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-list a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links-list a:hover {
+  color: var(--gold-accent);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================================
+   10. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .categories-5-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .hero-right-col {
+    justify-content: center;
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .custom-banner-card {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .categories-5-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .cakes-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .cake-modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
