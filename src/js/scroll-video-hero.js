@@ -34,9 +34,9 @@ export function initScrollVideoHero() {
   let isIntersecting = true;
   let lastSoundTickIndex = -1;
 
-  // 1. Resize canvas to exact viewport device pixels with Retina resolution
+  // 1. Resize canvas to exact viewport device pixels with native high-DPI resolution
   function resizeCanvas() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.max(window.devicePixelRatio || 1, 1);
     const w = window.innerWidth;
     const h = window.innerHeight;
 
@@ -45,28 +45,15 @@ export function initScrollVideoHero() {
     canvas.style.width = w + "px";
     canvas.style.height = h + "px";
 
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+
     // Immediate draw on resize
     drawFrame(Math.round(actualFrameIndex));
   }
 
   window.addEventListener("resize", resizeCanvas, { passive: true });
   resizeCanvas();
-
-// Pre-computed ambient edge palette for the 120 frames to ensure zero harsh borders on any aspect ratio
-const FRAME_BG_COLORS = [
-  "#504732", "#514833", "#514833", "#524934", "#524934", "#524934", "#524934", "#524834", "#544a35", "#544a35",
-  "#544b36", "#534935", "#544a35", "#544a35", "#544a35", "#544a35", "#544a35", "#544a35", "#544a36", "#554b36",
-  "#544b36", "#544b35", "#544a35", "#544a35", "#534935", "#866b48", "#876c48", "#856b49", "#856b4a", "#876b46",
-  "#876b46", "#866a46", "#876c48", "#866b49", "#856a49", "#866a48", "#866b48", "#886d49", "#866c49", "#866b49",
-  "#846a49", "#856a49", "#856a49", "#846a48", "#856946", "#876b46", "#896c47", "#866a48", "#866a47", "#866946",
-  "#876a45", "#856c47", "#876e48", "#876e49", "#88704a", "#89714b", "#8e754f", "#8f764f", "#907750", "#8f7751",
-  "#8f7751", "#8f7852", "#907853", "#907853", "#907853", "#8f7853", "#8f7852", "#8e7752", "#8e7752", "#8d7752",
-  "#8d7652", "#8c7652", "#8c7551", "#8b7551", "#8a7450", "#89734f", "#88724e", "#87714d", "#87714d", "#87714e",
-  "#87714d", "#86704c", "#866f4b", "#856f4b", "#bfaf95", "#beac92", "#beac92", "#beac91", "#bead92", "#bfad92",
-  "#bfad92", "#bfae93", "#c0ae93", "#c0ae93", "#c0ae93", "#c0ae93", "#c0ae93", "#c0ae93", "#c0ae93", "#c0ae93",
-  "#c0ae93", "#c0af93", "#c1af93", "#c1af93", "#c1af93", "#c1af93", "#c0ae93", "#c0ae92", "#c0ae92", "#c0ae92",
-  "#c0ae92", "#c0ae92", "#c0ad92", "#bfad91", "#bfad91", "#bfad91", "#bfad91", "#bfad91", "#bfad91", "#bfad91"
-];
 
   // Helper to guarantee a frame is always drawn without blank flicker even while streaming in background
   function getNearestLoadedFrame(targetIdx) {
@@ -88,7 +75,7 @@ const FRAME_BG_COLORS = [
     return frames[0] || null;
   }
 
-  // 2. Draw Frame in FULL VIEW (Zero Cropping, complete 16:9 4K frame visible)
+  // 2. Draw Frame in IMMERSIVE FULL-SCREEN COVER MODE (Edge-to-edge, zero downscaling, true 4K resolution)
   function drawFrame(index) {
     if (!ctx) return;
     const clampedIndex = Math.max(0, Math.min(FRAME_COUNT - 1, index));
@@ -101,16 +88,15 @@ const FRAME_BG_COLORS = [
     const iw = img.naturalWidth || FRAME_WIDTH;
     const ih = img.naturalHeight || FRAME_HEIGHT;
 
-    // Full View Math: Math.min guarantees the entire 4K frame is visible without cutting off any text or edges
-    const scale = Math.min(cw / iw, ch / ih);
+    // Full Screen Cover Math: Math.max ensures 100% viewport coverage without letterboxing or downscaling
+    const scale = Math.max(cw / iw, ch / ih);
     const sw = Math.round(iw * scale);
     const sh = Math.round(ih * scale);
     const sx = Math.round((cw - sw) / 2);
     const sy = Math.round((ch - sh) / 2);
 
-    // Seamless ambient background matching the exact frame tone across screen aspect ratios
-    ctx.fillStyle = FRAME_BG_COLORS[clampedIndex] || "#504732";
-    ctx.fillRect(0, 0, cw, ch);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
 
     ctx.drawImage(img, sx, sy, sw, sh);
   }
