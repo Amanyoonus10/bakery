@@ -1300,25 +1300,239 @@ body.cakes-page {
 }
 
 @media (max-width: 768px) {
+  /* Header */
+  .header-inner {
+    height: 64px;
+  }
+  .brand-logo-link {
+    gap: 8px;
+  }
+  .brand-wheat-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .brand-main-title {
+    font-size: 1.22rem;
+  }
+  .brand-sub-caption {
+    font-size: 0.56rem;
+    letter-spacing: 0.8px;
+  }
   .header-nav {
     display: none;
   }
-  .mobile-menu-btn {
-    display: block;
+  .header-right-actions {
+    gap: 6px;
   }
+  .nav-icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hero Section */
+  .bakeverse-hero {
+    padding: 30px 0 20px;
+  }
+  .hero-eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 1.6px;
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 7.5vw, 2.9rem);
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+  .hero-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero-btn-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .btn-shop-now,
+  .btn-explore-menu {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .hero-right-col {
+    margin-top: 10px;
+  }
+  .hero-display-img {
+    max-height: 260px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* 4 Pillars Features */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .feature-pill-card {
+    padding: 12px 10px;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .feature-icon-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+  .feature-info h4 {
+    font-size: 0.85rem;
+  }
+  .feature-info p {
+    font-size: 0.72rem;
+  }
+
+  /* 5 Categories Grid */
   .categories-5-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-  .features-grid {
-    grid-template-columns: 1fr;
+  .category-show-card {
+    padding: 14px 10px;
+    border-radius: 14px;
   }
+
+  /* Catalog Filter & Controls */
+  .catalog-controls {
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .filter-pills-row {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    gap: 8px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  .filter-pills-row::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-pill-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+  .search-and-sort-bar {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .search-input-wrap,
+  .sort-select {
+    width: 100%;
+  }
+  .cake-search-field {
+    padding: 10px 16px 10px 42px;
+    font-size: 0.88rem;
+  }
+  .sort-select {
+    padding: 10px 16px;
+    font-size: 0.86rem;
+  }
+
+  /* Cake Cards Grid */
   .cakes-cards-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .cake-grid-card {
+    border-radius: 16px;
+  }
+  .card-top-visual {
+    height: 220px;
+  }
+  .card-content-body {
+    padding: 18px 16px;
+  }
+  .card-cake-title {
+    font-size: 1.22rem;
+  }
+  .card-price-action-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .btn-card-cart {
+    padding: 9px 15px;
+    font-size: 0.85rem;
+  }
+
+  /* Custom Order Banner */
+  .custom-banner-card {
+    grid-template-columns: 1fr;
+    padding: 26px 18px;
+    border-radius: 18px;
+    text-align: center;
+  }
+  .custom-banner-info h2 {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+  .custom-banner-info p {
+    font-size: 0.92rem;
+  }
+  .btn-custom-wa {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  /* Modal Dialogs */
+  .cake-modal-content {
+    width: 95vw;
+    max-height: 88vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+    border-radius: 16px;
   }
   .cake-modal-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .modal-cake-img-wrap {
+    height: 220px;
+  }
+
+  /* Footer */
+  .bakeverse-footer {
+    padding: 44px 0 calc(28px + env(safe-area-inset-bottom));
   }
   .footer-top-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .categories-5-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.15rem;
   }
 }

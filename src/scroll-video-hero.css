@@ -365,14 +365,41 @@
 }
 
 @media (max-width: 768px) {
+  .preloader-emblem {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 16px;
+  }
+  .preloader-logo-img {
+    width: 82px;
+  }
+  .preloader-percent {
+    font-size: 3rem;
+    margin-bottom: 14px;
+  }
+  .preloader-status {
+    font-size: 0.72rem;
+    padding: 0 16px;
+  }
   .btn-skip-scroll-intro {
-    top: 16px;
-    right: 16px;
-    padding: 8px 16px;
-    font-size: 0.76rem;
+    top: 14px;
+    right: 14px;
+    padding: 8px 14px;
+    font-size: 0.72rem;
+    letter-spacing: 0.8px;
   }
   .btn-enter-store-cta {
-    padding: 12px 24px;
-    font-size: 0.85rem;
+    padding: 12px 22px;
+    font-size: 0.84rem;
+    letter-spacing: 0.8px;
+  }
+  .scroll-video-indicator {
+    bottom: 16px;
+    font-size: 0.68rem;
+    letter-spacing: 1.2px;
+  }
+  .scroll-mouse-icon {
+    width: 18px;
+    height: 28px;
   }
 }
