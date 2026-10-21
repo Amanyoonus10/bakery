@@ -96,11 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Initialize Interactive Wishlist UI & Sync
   initWishlistUI(showToast);
 
-  // 4. Real-time Search Input (Desktop & Mobile Synchronized)
-  const storeSearchInput = document.getElementById("storeSearchInput");
-  const mobileStoreSearchInput = document.getElementById("mobileStoreSearchInput");
+  // 4. Interactive Omnisearch Modal (Search Bar Optimized to Button)
+  initSearchModal(showToast);
 
-  function filterSnacks(query) {
+  function filterSnacksOnPage(query) {
     document.querySelectorAll(".store-prod-card, .catalogue-prod-card, .cards li").forEach((card) => {
       const name = (card.dataset.name || card.querySelector(".catalogue-prod-title, .store-prod-title, h3")?.textContent || "").toLowerCase();
       if (!query || name.includes(query)) {
@@ -111,24 +110,213 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (storeSearchInput) {
-    storeSearchInput.addEventListener("input", (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      filterSnacks(q);
-      if (mobileStoreSearchInput && mobileStoreSearchInput.value !== e.target.value) {
-        mobileStoreSearchInput.value = e.target.value;
-      }
-    });
-  }
+  function initSearchModal(showToast) {
+    const headerSearchBtn = document.getElementById("headerSearchBtn");
+    const searchModal = document.getElementById("searchModal");
+    const searchModalBackdrop = document.getElementById("searchModalBackdrop");
+    const closeSearchModalBtn = document.getElementById("closeSearchModalBtn");
+    const modalSearchInput = document.getElementById("modalSearchInput");
+    const clearModalSearchBtn = document.getElementById("clearModalSearchBtn");
+    const searchModalChips = document.getElementById("searchModalChips");
+    const modalSearchResults = document.getElementById("modalSearchResults");
+    const btnModalViewAll = document.getElementById("btnModalViewAll");
 
-  if (mobileStoreSearchInput) {
-    mobileStoreSearchInput.addEventListener("input", (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      filterSnacks(q);
-      if (storeSearchInput && storeSearchInput.value !== e.target.value) {
-        storeSearchInput.value = e.target.value;
+    if (!searchModal) return;
+
+    let activeCategory = "all";
+
+    function openSearchModal() {
+      searchModal.classList.add("active");
+      document.body.classList.add("modal-open");
+      renderResults();
+      setTimeout(() => {
+        if (modalSearchInput) modalSearchInput.focus();
+      }, 80);
+    }
+
+    function closeSearchModal() {
+      searchModal.classList.remove("active");
+      document.body.classList.remove("modal-open");
+    }
+
+    if (headerSearchBtn) {
+      headerSearchBtn.addEventListener("click", openSearchModal);
+    }
+
+    if (closeSearchModalBtn) {
+      closeSearchModalBtn.addEventListener("click", closeSearchModal);
+    }
+
+    if (searchModalBackdrop) {
+      searchModalBackdrop.addEventListener("click", closeSearchModal);
+    }
+
+    if (clearModalSearchBtn) {
+      clearModalSearchBtn.addEventListener("click", () => {
+        if (modalSearchInput) {
+          modalSearchInput.value = "";
+          clearModalSearchBtn.style.display = "none";
+          filterSnacksOnPage("");
+          renderResults();
+          modalSearchInput.focus();
+        }
+      });
+    }
+
+    // Keyboard shortcuts: Cmd+K / Ctrl+K or / to open, ESC to close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && searchModal.classList.contains("active")) {
+        closeSearchModal();
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        if (searchModal.classList.contains("active")) {
+          closeSearchModal();
+        } else {
+          openSearchModal();
+        }
       }
     });
+
+    if (modalSearchInput) {
+      modalSearchInput.addEventListener("input", (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        if (clearModalSearchBtn) {
+          clearModalSearchBtn.style.display = q ? "block" : "none";
+        }
+        filterSnacksOnPage(q);
+        renderResults();
+      });
+    }
+
+    if (searchModalChips) {
+      searchModalChips.addEventListener("click", (e) => {
+        const chip = e.target.closest(".modal-chip");
+        if (!chip) return;
+        searchModalChips.querySelectorAll(".modal-chip").forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        activeCategory = chip.dataset.category || "all";
+        renderResults();
+      });
+    }
+
+    if (btnModalViewAll) {
+      btnModalViewAll.addEventListener("click", () => {
+        closeSearchModal();
+        const viewAllBtn = document.getElementById("btnToggleAllProducts");
+        if (viewAllBtn && viewAllBtn.getAttribute("aria-expanded") !== "true") {
+          viewAllBtn.click();
+        }
+        const target = document.getElementById("products") || document.getElementById("shop-all");
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
+    function renderResults() {
+      if (!modalSearchResults) return;
+      const query = (modalSearchInput?.value || "").toLowerCase().trim();
+
+      let filtered = PRODUCTS;
+      if (activeCategory !== "all") {
+        filtered = filtered.filter((p) => p.category === activeCategory);
+      }
+
+      if (query) {
+        filtered = filtered.filter((p) => {
+          const name = (p.name || "").toLowerCase();
+          const mlName = (p.malayalamName || "").toLowerCase();
+          const desc = (p.description || "").toLowerCase();
+          const cat = (p.category || "").toLowerCase();
+          const tags = (p.tags || []).join(" ").toLowerCase();
+          return name.includes(query) || mlName.includes(query) || desc.includes(query) || cat.includes(query) || tags.includes(query);
+        });
+      }
+
+      if (filtered.length === 0) {
+        modalSearchResults.innerHTML = `
+          <div class="modal-search-empty">
+            <i class="ri-search-eye-line"></i>
+            <h4>No snacks matching "${query}"</h4>
+            <p>Try searching for "banana chips", "pakoda", "murukku", or "rusk".</p>
+          </div>
+        `;
+        return;
+      }
+
+      const displayList = filtered.slice(0, 24);
+      const headerTitle = query
+        ? `Found ${filtered.length} Authentic Snack${filtered.length > 1 ? "s" : ""}`
+        : activeCategory !== "all"
+        ? `${activeCategory.toUpperCase()} (${filtered.length})`
+        : `🔥 Malabar Bakery Favourites (${filtered.length} Available)`;
+
+      modalSearchResults.innerHTML = `
+        <div class="search-section-header">
+          <span>${headerTitle}</span>
+          ${filtered.length > 24 ? `<span style="font-size:0.7rem; color:#8c7e73;">Showing first 24</span>` : ""}
+        </div>
+        ${displayList
+          .map(
+            (p) => `
+          <div class="modal-result-item" data-id="${p.id}" role="button" tabindex="0">
+            <img src="${p.imageCutout || p.image}" alt="${p.name}" class="modal-result-thumb" loading="lazy">
+            <div class="modal-result-info">
+              <div class="modal-result-name">${p.name}</div>
+              <div class="modal-result-sub">${p.tagline || p.malayalamName || p.unit || "Authentic Kerala snack"}</div>
+              <div class="modal-result-meta">
+                <span class="modal-result-price">₹${p.price}</span>
+                ${p.badge ? `<span class="modal-result-badge">${p.badge}</span>` : ""}
+              </div>
+            </div>
+            <button type="button" class="modal-result-add-btn" data-add-id="${p.id}" aria-label="Add ${p.name} to cart">
+              <i class="ri-shopping-cart-2-line"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        `
+          )
+          .join("")}
+      `;
+
+      // Direct Add to Cart buttons
+      modalSearchResults.querySelectorAll(".modal-result-add-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const id = btn.dataset.addId;
+          const prod = PRODUCTS.find((x) => x.id === id);
+          if (prod) {
+            cart.addItem({
+              id: prod.id,
+              name: prod.name,
+              price: prod.price,
+              image: prod.image,
+              unit: prod.unit || "Pack"
+            });
+            playTickSound();
+            showToast(`Added ${prod.name} to cart! 🛍️`);
+            window.dispatchEvent(new CustomEvent("cart:open"));
+            closeSearchModal();
+          }
+        });
+      });
+
+      // Click card to scroll to item
+      modalSearchResults.querySelectorAll(".modal-result-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const id = item.dataset.id;
+          closeSearchModal();
+          const card = document.querySelector(`.product-carousel-item[data-id="${id}"], .catalogue-prod-card[data-id="${id}"]`);
+          if (card) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            card.classList.add("highlight-pulse");
+            setTimeout(() => card.classList.remove("highlight-pulse"), 2000);
+          } else {
+            const target = document.getElementById("products") || document.getElementById("shop-all");
+            if (target) target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    }
   }
 
   // 5. Category Promo Card Filters

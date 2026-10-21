@@ -144,14 +144,16 @@
       <!-- Vertical divider line -->
       <span class="header-divider" aria-hidden="true"></span>
 
-      <!-- Desktop Search Bar -->
-      <div class="header-search-bar desktop-search-bar">
-        <i class="ri-search-line"></i>
-        <input type="text" id="storeSearchInput" class="header-search-input" placeholder="Search snacks..." autocomplete="off">
-      </div>
-
-      <!-- Right Header Actions Cluster: Account, Wishlist, Cart, Hamburger Toggle -->
+      <!-- Right Header Actions Cluster: Search Button, Account, Wishlist, Cart, Hamburger Toggle -->
       <div class="nav-icons store-header-actions">
+        <!-- Search Button (Icon Button on mobile & desktop) -->
+        <button type="button" class="header-action-item search-trigger-btn" id="headerSearchBtn" aria-label="Search authentic Kerala snacks" title="Search Snacks (Cmd+K)">
+          <div class="action-icon-wrap">
+            <i class="ri-search-line"></i>
+          </div>
+          <span>Search</span>
+        </button>
+
         <!-- User Account -->
         <button type="button" class="header-action-item" id="userAccountBtn" aria-label="Account" title="My Account">
           <div class="action-icon-wrap">
@@ -186,14 +188,6 @@
             <line class="bar bar-bot" x1="3" y1="14" x2="17" y2="14" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
-      </div>
-
-      <!-- Dedicated Full-Width Mobile Search Bar -->
-      <div class="mobile-search-bar-wrap">
-        <div class="mobile-search-pill">
-          <i class="ri-search-line"></i>
-          <input type="text" id="mobileStoreSearchInput" class="mobile-search-input" placeholder="Search 55 authentic Kerala snacks..." autocomplete="off">
-        </div>
       </div>
     </div>
   </header>
@@ -1792,6 +1786,61 @@
     <div class="checkout-modal-card modal-card">
       <button type="button" class="checkout-modal-close modal-close-btn" aria-label="Close Checkout">✕</button>
       <div class="checkout-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Interactive Full-Feature Search Modal -->
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Search 55 Authentic Kerala Snacks">
+    <div class="search-modal-backdrop" id="searchModalBackdrop"></div>
+    <div class="search-modal-card">
+      <!-- Modal Top Bar -->
+      <div class="search-modal-header">
+        <div class="search-modal-title-group">
+          <div class="search-modal-badge">
+            <i class="ri-search-line"></i>
+          </div>
+          <div>
+            <h3 class="search-modal-title">Search Kerala Snacks</h3>
+            <span class="search-modal-subtitle">55 Authentic Specialties Fresh from Kadavathur</span>
+          </div>
+        </div>
+        <button type="button" class="search-modal-close" id="closeSearchModalBtn" aria-label="Close search">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <!-- Search Input Area -->
+      <div class="search-modal-input-wrap">
+        <i class="ri-search-2-line search-input-icon"></i>
+        <input type="text" id="modalSearchInput" class="modal-search-field" placeholder="Search banana chips, mixture, murukku, halwa, biscuits..." autocomplete="off">
+        <button type="button" class="search-modal-clear" id="clearModalSearchBtn" aria-label="Clear search" style="display: none;">
+          <i class="ri-close-circle-fill"></i>
+        </button>
+      </div>
+
+      <!-- Quick Category Chips -->
+      <div class="search-modal-chips" id="searchModalChips">
+        <button type="button" class="modal-chip active" data-category="all">All (55)</button>
+        <button type="button" class="modal-chip" data-category="chips">🍌 Chips</button>
+        <button type="button" class="modal-chip" data-category="mixtures">🌶️ Mixtures</button>
+        <button type="button" class="modal-chip" data-category="murukku">🌾 Murukku</button>
+        <button type="button" class="modal-chip" data-category="biscuits">🍪 Biscuits</button>
+        <button type="button" class="modal-chip" data-category="sweets">🍯 Sweets</button>
+      </div>
+
+      <!-- Live Results Area -->
+      <div class="search-modal-results" id="modalSearchResults">
+        <!-- Injected dynamically by main.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="search-modal-footer">
+        <span class="search-hint-text"><kbd>ESC</kbd> to close &bull; Tap any snack to view &amp; order</span>
+        <button type="button" class="btn-modal-view-all" id="btnModalViewAll">
+          <span>View All 55 Snacks</span>
+          <i class="ri-arrow-right-line"></i>
+        </button>
+      </div>
     </div>
   </div>
 
