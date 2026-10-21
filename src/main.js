@@ -96,19 +96,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Initialize Interactive Wishlist UI & Sync
   initWishlistUI(showToast);
 
-  // 4. Real-time Search Input
+  // 4. Real-time Search Input (Desktop & Mobile Synchronized)
   const storeSearchInput = document.getElementById("storeSearchInput");
+  const mobileStoreSearchInput = document.getElementById("mobileStoreSearchInput");
+
+  function filterSnacks(query) {
+    document.querySelectorAll(".store-prod-card, .catalogue-prod-card, .cards li").forEach((card) => {
+      const name = (card.dataset.name || card.querySelector(".catalogue-prod-title, .store-prod-title, h3")?.textContent || "").toLowerCase();
+      if (!query || name.includes(query)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
   if (storeSearchInput) {
     storeSearchInput.addEventListener("input", (e) => {
-      const query = e.target.value.toLowerCase().trim();
-      document.querySelectorAll(".store-prod-card").forEach((card) => {
-        const title = (card.dataset.name || "").toLowerCase();
-        if (!query || title.includes(query)) {
-          card.style.display = "";
-        } else {
-          card.style.display = "none";
-        }
-      });
+      const q = e.target.value.toLowerCase().trim();
+      filterSnacks(q);
+      if (mobileStoreSearchInput && mobileStoreSearchInput.value !== e.target.value) {
+        mobileStoreSearchInput.value = e.target.value;
+      }
+    });
+  }
+
+  if (mobileStoreSearchInput) {
+    mobileStoreSearchInput.addEventListener("input", (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      filterSnacks(q);
+      if (storeSearchInput && storeSearchInput.value !== e.target.value) {
+        storeSearchInput.value = e.target.value;
+      }
     });
   }
 

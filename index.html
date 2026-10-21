@@ -144,14 +144,14 @@
       <!-- Vertical divider line -->
       <span class="header-divider" aria-hidden="true"></span>
 
-      <!-- Right Header Actions Cluster: Search, Account, Wishlist, Cart, Hamburger Toggle -->
-      <div class="nav-icons store-header-actions">
-        <!-- Search Input Pill -->
-        <div class="header-search-bar">
-          <i class="ri-search-line"></i>
-          <input type="text" id="storeSearchInput" class="header-search-input" placeholder="Search snacks..." autocomplete="off">
-        </div>
+      <!-- Desktop Search Bar -->
+      <div class="header-search-bar desktop-search-bar">
+        <i class="ri-search-line"></i>
+        <input type="text" id="storeSearchInput" class="header-search-input" placeholder="Search snacks..." autocomplete="off">
+      </div>
 
+      <!-- Right Header Actions Cluster: Account, Wishlist, Cart, Hamburger Toggle -->
+      <div class="nav-icons store-header-actions">
         <!-- User Account -->
         <button type="button" class="header-action-item" id="userAccountBtn" aria-label="Account" title="My Account">
           <div class="action-icon-wrap">
@@ -186,6 +186,14 @@
             <line class="bar bar-bot" x1="3" y1="14" x2="17" y2="14" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
+      </div>
+
+      <!-- Dedicated Full-Width Mobile Search Bar -->
+      <div class="mobile-search-bar-wrap">
+        <div class="mobile-search-pill">
+          <i class="ri-search-line"></i>
+          <input type="text" id="mobileStoreSearchInput" class="mobile-search-input" placeholder="Search 55 authentic Kerala snacks..." autocomplete="off">
+        </div>
       </div>
     </div>
   </header>
