@@ -1511,16 +1511,16 @@ body.keerthi-redesign-body {
 /* Card Image Box */
 .card-image-box {
   width: 100%;
-  height: 175px;
+  height: 230px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 0 10px 0;
   overflow: hidden;
-  border-radius: 0px;
+  border-radius: 8px;
   background-color: #faf8f5;
-  border: 1.5px solid #ded6ca;
-  padding: 10px;
+  border: 1px solid #e8e2d8;
+  padding: 12px 10px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
   transition: border-color 0.25s ease, background-color 0.25s ease;
 }
@@ -2145,10 +2145,10 @@ body.keerthi-redesign-body {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 24px;
-  padding: 12px 18px;
+  padding: 12px 20px;
   background: #ffffff;
   border: 1px solid #ebd9c4;
-  border-radius: 0px;
+  border-radius: 50px;
   box-shadow: 0 4px 16px rgba(15, 56, 34, 0.04);
 }
 
@@ -2166,8 +2166,8 @@ body.keerthi-redesign-body {
 }
 
 .category-chip {
-  padding: 8px 16px;
-  border-radius: 0px;
+  padding: 8px 18px;
+  border-radius: 50px;
   border: 1px solid #ebd9c4;
   background: #fdfaf6;
   color: #0f3822;
@@ -2194,10 +2194,10 @@ body.keerthi-redesign-body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #fdfaf6;
+  background: #faf8f5;
   border: 1px solid #ebd9c4;
-  border-radius: 0px;
-  padding: 6px 14px;
+  border-radius: 50px;
+  padding: 6px 16px;
   min-width: 260px;
   flex-shrink: 0;
 }
@@ -2226,144 +2226,429 @@ body.keerthi-redesign-body {
   white-space: nowrap;
 }
 
-/* 47 Products Responsive Grid */
+/* ==========================================================================
+   HALDIRAM'S COLLECTION / SAVORIES LAYOUT REPLICATION
+   2-Column Mobile Grid, Terracotta Palette, Weight Pills, ADD + Button
+   ========================================================================== */
+
 .all-products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: block;
+  width: 100%;
   margin-bottom: 40px;
 }
 
-@media (max-width: 1200px) {
-  .all-products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Haldiram's Toolbar Container */
+.haldiram-toolbar-container {
+  margin-bottom: 24px;
 }
 
-@media (max-width: 860px) {
-  .catalogue-toolbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .catalogue-search-box {
-    width: 100%;
-  }
-  .all-products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-}
-
-@media (max-width: 520px) {
-  .all-products-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Catalogue Product Card */
-.catalogue-prod-card {
-  background: #ffffff;
-  border: 1.5px solid #ded6ca;
-  border-radius: 0px;
-  padding: 12px;
-  position: relative;
+.haldiram-subbar {
   display: flex;
-  flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #ffffff;
+  border: 1px solid #ebe5df;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  margin-bottom: 14px;
 }
 
-.catalogue-prod-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(15, 56, 34, 0.12);
+.haldiram-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #20150e;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.haldiram-filter-btn:hover {
+  background: #fdfaf6;
+  color: #0f3822;
+}
+
+.haldiram-filter-btn i {
+  font-size: 1.15rem;
+  color: #374151;
+}
+
+.haldiram-sort-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.haldiram-sort-custom {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #20150e;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #ebe5df;
+  transition: border-color 0.2s ease;
+}
+
+.haldiram-sort-custom:hover {
   border-color: #0f3822;
 }
 
-.catalogue-img-box {
+.haldiram-sort-custom .sort-text {
+  font-weight: 700;
+  color: #374151;
+}
+
+.haldiram-sort-select {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 180px;
-  background: #faf8f5;
-  border: 1.5px solid #ded6ca;
-  border-radius: 0px;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.haldiram-sort-custom i {
+  font-size: 1.1rem;
+  color: #4b5563;
+  pointer-events: none;
+}
+
+.haldiram-filter-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  transition: all 0.25s ease;
+}
+
+@media (max-width: 860px) {
+  .haldiram-filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Haldiram's Product Grid: Compact 5 Columns on Desktop, 2 on Mobile */
+.haldiram-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px 12px;
+}
+
+@media (max-width: 1200px) {
+  .haldiram-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 10px;
+  }
+}
+
+@media (max-width: 950px) {
+  .haldiram-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .haldiram-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px 8px !important;
+  }
+}
+
+/* Haldiram's Compact Product Card */
+.haldiram-card {
+  background: #ffffff;
+  border: 1px solid #ebe5df;
+  border-radius: 10px;
+  padding: 8px 8px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.haldiram-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 56, 34, 0.08);
+  border-color: #0f3822;
+}
+
+/* Compact Image Container */
+.haldiram-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 0.85;
+  max-height: 175px;
+  background: #fbf8f5;
+  border-radius: 8px;
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  padding: 8px 6px;
   cursor: pointer;
-  padding: 0;
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  margin-bottom: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.catalogue-prod-card:hover .catalogue-img-box {
-  border-color: #0f3822;
-  background: #fdfcf9;
-}
-
-.catalogue-prod-img {
+.haldiram-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-  padding: 0;
-  border-radius: 0;
+  max-height: 155px;
+  object-fit: contain;
   display: block;
-  transition: transform 0.35s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.catalogue-prod-card:hover .catalogue-prod-img {
+.haldiram-card:hover .haldiram-img {
   transform: scale(1.05);
 }
 
-.catalogue-card-content {
+/* Subtle Badge & Wishlist */
+.haldiram-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: #0f3822;
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  z-index: 2;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.haldiram-badge.spicy {
+  background: #dc2626;
+}
+
+.haldiram-badge.bestseller {
+  background: #0f3822;
+  color: #facc15;
+}
+
+.haldiram-wishlist-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #9ca3af;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.haldiram-wishlist-btn:hover,
+.haldiram-wishlist-btn.active {
+  color: #dc2626;
+  background: #ffffff;
+}
+
+/* Content Area */
+.haldiram-content {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.catalogue-eyebrow {
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: #888;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+.haldiram-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 5px;
 }
 
-.catalogue-prod-title {
-  font-family: var(--font-serif, 'Playfair Display', serif);
-  font-size: 1.05rem;
+.haldiram-title {
+  font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
   font-weight: 700;
   color: #0f3822;
-  margin: 0 0 6px 0;
   line-height: 1.25;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.catalogue-prod-title:hover {
-  color: #d99b64;
-}
-
-.catalogue-ingredients {
-  font-size: 0.78rem;
-  color: #666;
-  line-height: 1.4;
-  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex: 1;
+  min-height: 2.15em;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.catalogue-price-row {
+.haldiram-card:hover .haldiram-title {
+  color: #165333;
+}
+
+/* Indian Vegetarian Symbol */
+.haldiram-veg-icon {
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid #16a34a;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.haldiram-veg-dot {
+  width: 5.5px;
+  height: 5.5px;
+  border-radius: 50%;
+  background: #16a34a;
+  display: block;
+}
+
+/* Compact Weight Selector Pills (Variants) */
+.haldiram-weights-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+  min-height: 22px;
+}
+
+.haldiram-weight-pill {
+  border: 1px solid #ded8d2;
+  background: #ffffff;
+  color: #78716c;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.haldiram-weight-pill:hover {
+  border-color: #0f3822;
+  color: #0f3822;
+}
+
+.haldiram-weight-pill.active {
+  border-color: #0f3822;
+  color: #0f3822;
+  font-weight: 700;
+  background: #f8f3eb;
+  box-shadow: 0 1px 2px rgba(15, 56, 34, 0.1);
+}
+
+/* Compact Price Row */
+.haldiram-price-row {
+  margin: 2px 0 6px 0;
+}
+
+.haldiram-price {
+  font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f3822;
+}
+
+/* Full Width Authentic Cream ADD + Button */
+.haldiram-add-btn {
+  width: 100%;
+  background: #f8f3eb;
+  color: #0f3822;
+  border: 1.5px solid #ded6ca;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  padding-top: 8px;
-  border-top: 1px dashed #ebd9c4;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.haldiram-add-btn:hover {
+  background: #0f3822;
+  color: #ffffff;
+  border-color: #0f3822;
+  box-shadow: 0 3px 8px rgba(15, 56, 34, 0.18);
+}
+
+.haldiram-add-btn:active {
+  transform: scale(0.98);
+  background: #092315;
+}
+
+.haldiram-add-btn .add-plus {
+  font-size: 0.95rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.haldiram-add-btn.added-success {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  border-color: #16a34a !important;
+}
+
+@media (max-width: 480px) {
+  .haldiram-card {
+    padding: 7px 7px 8px 7px;
+    border-radius: 8px;
+  }
+  .haldiram-img-box {
+    max-height: 135px;
+    padding: 6px 4px;
+  }
+  .haldiram-title {
+    font-size: 0.78rem;
+    min-height: 2.1em;
+  }
+  .haldiram-weight-pill {
+    font-size: 0.62rem;
+    padding: 2px 4px;
+  }
+  .haldiram-price {
+    font-size: 0.92rem;
+  }
+  .haldiram-add-btn {
+    padding: 6px 8px;
+    font-size: 0.74rem;
+    border-radius: 5px;
+  }
 }
 
 .catalogue-price {

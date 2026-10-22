@@ -11,6 +11,9 @@ export function initAllProductsView(showToast) {
   const searchInput = document.getElementById("catalogueSearchInput");
   const hintPill = document.getElementById("showcaseHintPill");
   const subtitleEl = document.getElementById("showcaseSubtitle");
+  const sortSelect = document.getElementById("haldiramSortSelect");
+  const filterBtn = document.getElementById("btnHaldiramFilter");
+  const filterPanel = document.getElementById("haldiramFilterPanel");
 
   if (!toggleBtn || !coverflowContainer || !gridWrap || !gridContainer) return;
 
@@ -35,15 +38,15 @@ export function initAllProductsView(showToast) {
     const upper = name.toUpperCase();
     let category = explicitCat || "murukku";
     if (!explicitCat) {
-    if (upper.includes("CHIPS") || upper.includes("UPPERI") || upper.includes("TAPIOCA STICK")) {
-      category = "chips";
-    } else if (upper.includes("MIXTURE") || upper.includes("OMAPPODI")) {
-      category = "mixtures";
-    } else if (upper.includes("SWEET") || upper.includes("KAJA") || upper.includes("LADDUMANI") || upper.includes("MADHURASEVA")) {
-      category = "sweets";
-    } else if (upper.includes("BISCUIT") || upper.includes("RUSK") || upper.includes("VARKEY")) {
-      category = "biscuits";
-    }
+      if (upper.includes("CHIPS") || upper.includes("UPPERI") || upper.includes("TAPIOCA STICK")) {
+        category = "chips";
+      } else if (upper.includes("MIXTURE") || upper.includes("OMAPPODI") || upper.includes("PAKODA")) {
+        category = "mixtures";
+      } else if (upper.includes("SWEET") || upper.includes("KAJA") || upper.includes("LADDUMANI") || upper.includes("MADHURASEVA")) {
+        category = "sweets";
+      } else if (upper.includes("BISCUIT") || upper.includes("RUSK") || upper.includes("VARKEY")) {
+        category = "biscuits";
+      }
     }
 
     products.push({
@@ -57,11 +60,88 @@ export function initAllProductsView(showToast) {
       badge,
       badgeClass,
       img,
-      category
+      category,
+      rating: 4.8 + ((index % 3) * 0.1)
     });
   });
 
-  // Render 55 Products in Grid
+  // Haldiram's Package Weight Options per product
+  function getProductWeights(prod) {
+    if (prod.category === "biscuits") {
+      return [
+        { label: "250 gm", mult: 1 },
+        { label: "500 gm", mult: 1.9 },
+        { label: "1 kg", mult: 3.6 }
+      ];
+    } else if (prod.category === "sweets") {
+      return [
+        { label: "250 gm", mult: 1 },
+        { label: "500 gm", mult: 1.95 },
+        { label: "1 kg", mult: 3.8 }
+      ];
+    } else {
+      // Authentic Haldiram's Savories Options: 200 gm, 400 gm, 600 gm, 1 kg
+      return [
+        { label: "200 gm", mult: 1 },
+        { label: "400 gm", mult: 1.9 },
+        { label: "600 gm", mult: 2.8 },
+        { label: "1 kg", mult: 4.4 }
+      ];
+    }
+  }
+
+  // Generate Haldiram's Style Product Card
+  function generateCardHtml(prod) {
+    const isSaved = wishlist.hasItem(prod.id);
+    const weights = getProductWeights(prod);
+    const defaultWeight = weights[0].label;
+    const basePrice = prod.price;
+
+    return `
+      <div class="haldiram-card" data-id="${prod.id}" data-name="${prod.name}" data-base-price="${basePrice}" data-current-price="${basePrice}" data-selected-weight="${defaultWeight}" data-img="${prod.img}" data-category="${prod.category}">
+        <div class="haldiram-img-box" role="button" tabindex="0" title="Click to view ${prod.name}">
+          ${prod.badge ? `<span class="haldiram-badge ${prod.badgeClass || ''}">${prod.badge}</span>` : ''}
+          <button type="button" class="haldiram-wishlist-btn ${isSaved ? 'active' : ''}" aria-label="Add ${prod.name} to Wishlist">
+            <i class="${isSaved ? 'ri-heart-fill' : 'ri-heart-line'}"></i>
+          </button>
+          <img src="${prod.img}" alt="${prod.name}" class="haldiram-img" loading="lazy" onerror="if (this.src.endsWith('.webp')) { this.src = this.src.replace('.webp', '.png'); } else { this.src='/images/card_banana_chips_clean.jpg'; }">
+        </div>
+        <div class="haldiram-content">
+          <div class="haldiram-title-row">
+            <h3 class="haldiram-title" role="button" tabindex="0" title="${prod.name}">${prod.name}</h3>
+            <span class="haldiram-veg-icon" title="100% Pure Vegetarian">
+              <span class="haldiram-veg-dot"></span>
+            </span>
+          </div>
+
+          <!-- Weight Selection Pills -->
+          <div class="haldiram-weights-row" aria-label="Select package size">
+            ${weights.map((w, idx) => `
+              <button type="button" 
+                      class="haldiram-weight-pill ${idx === 0 ? 'active' : ''}" 
+                      data-weight="${w.label}" 
+                      data-mult="${w.mult}">
+                ${w.label}
+              </button>
+            `).join('')}
+          </div>
+
+          <!-- Price formatted in Indian retail slash-dash style: ₹60/- -->
+          <div class="haldiram-price-row">
+            <span class="haldiram-price">₹${basePrice}/-</span>
+          </div>
+
+          <!-- Prominent Full-Width Terracotta ADD + Button -->
+          <button type="button" class="haldiram-add-btn" aria-label="Add ${prod.name} to cart">
+            <span>ADD</span>
+            <span class="add-plus">+</span>
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  // Render Products in Haldiram's Grid
   function renderGrid(filteredProducts = products) {
     if (!gridContainer) return;
 
@@ -81,144 +161,124 @@ export function initAllProductsView(showToast) {
       countBadge.textContent = `${filteredProducts.length} items`;
     }
 
-    gridContainer.innerHTML = filteredProducts.map(prod => {
-      const isSaved = wishlist.hasItem(prod.id);
-      return `
-        <div class="catalogue-prod-card store-prod-card" data-id="${prod.id}" data-name="${prod.name}" data-price="${prod.price}" data-img="${prod.img}" data-category="${prod.category}">
-          ${prod.badge ? `<span class="card-badge-pill ${prod.badgeClass || 'badge-red'}">${prod.badge}</span>` : ''}
-          <button type="button" class="card-wishlist-btn ${isSaved ? 'active' : ''}" aria-label="Add ${prod.name} to Wishlist">
-            <i class="${isSaved ? 'ri-heart-fill' : 'ri-heart-line'}"></i>
-          </button>
-          <div class="catalogue-img-box" role="button" tabindex="0" title="Click to view ingredients and details">
-            <img src="${prod.img}" alt="${prod.name}" class="catalogue-prod-img" loading="lazy" onerror="this.src='/images/card_banana_chips_clean.jpg'">
-          </div>
-          <div class="catalogue-card-content">
-            <span class="catalogue-eyebrow">${prod.eyebrow}</span>
-            <h3 class="catalogue-prod-title" role="button" tabindex="0">${prod.name}</h3>
-            <p class="catalogue-ingredients" title="${prod.ingredients}">${prod.tagline || prod.ingredients}</p>
-            <div class="catalogue-price-row">
-              <span class="catalogue-price">₹${prod.price}</span>
-              <span class="catalogue-stock"><i class="ri-check-line"></i> Fresh &amp; In Stock</span>
-            </div>
-            <div class="catalogue-actions-row">
-              <div class="card-stepper">
-                <button type="button" class="stepper-btn stepper-minus">-</button>
-                <span class="stepper-val">1</span>
-                <button type="button" class="stepper-btn stepper-plus">+</button>
-              </div>
-              <button type="button" class="btn-catalogue-add-cart">
-                <i class="ri-shopping-cart-2-line"></i>
-                <span>Add to Cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join("");
+    gridContainer.innerHTML = `
+      <div class="haldiram-grid">
+        ${filteredProducts.map(generateCardHtml).join("")}
+      </div>
+    `;
 
     bindCardEvents();
   }
 
-  // Bind Card Interactions (Steppers, Add to Cart, Wishlist, Modal)
+  // Bind Card Interactions (Weight Variant, ADD +, Wishlist, Modal)
   function bindCardEvents() {
-    gridContainer.querySelectorAll(".catalogue-prod-card").forEach(card => {
+    gridContainer.querySelectorAll(".haldiram-card").forEach(card => {
       const id = card.dataset.id;
       const name = card.dataset.name;
-      const price = parseInt(card.dataset.price) || 89;
+      const basePrice = parseInt(card.dataset.basePrice) || 89;
       const img = card.dataset.img;
 
-      // 1. Steppers
-      const minusBtn = card.querySelector(".stepper-minus");
-      const plusBtn = card.querySelector(".stepper-plus");
-      const valEl = card.querySelector(".stepper-val");
-      let qty = 1;
-
-      if (minusBtn && plusBtn && valEl) {
-        minusBtn.onclick = (e) => {
+      // 1. Weight Variant Switching
+      card.querySelectorAll(".haldiram-weight-pill").forEach(pill => {
+        pill.onclick = (e) => {
           e.stopPropagation();
-          if (qty > 1) {
-            qty--;
-            valEl.textContent = qty;
+          card.querySelectorAll(".haldiram-weight-pill").forEach(p => p.classList.remove("active"));
+          pill.classList.add("active");
+
+          const mult = parseFloat(pill.dataset.mult) || 1;
+          const weight = pill.dataset.weight;
+          const newPrice = Math.round(basePrice * mult);
+
+          card.dataset.currentPrice = newPrice;
+          card.dataset.selectedWeight = weight;
+
+          const priceEl = card.querySelector(".haldiram-price");
+          if (priceEl) {
+            priceEl.textContent = `₹${newPrice}/-`;
           }
         };
-        plusBtn.onclick = (e) => {
-          e.stopPropagation();
-          qty++;
-          valEl.textContent = qty;
-        };
-      }
+      });
 
-      // 2. Add to Cart
-      const addBtn = card.querySelector(".btn-catalogue-add-cart");
+      // 2. Full-Width ADD + Button
+      const addBtn = card.querySelector(".haldiram-add-btn");
       if (addBtn) {
         addBtn.onclick = (e) => {
           e.stopPropagation();
+          const currentPrice = parseInt(card.dataset.currentPrice) || basePrice;
+          const currentWeight = card.dataset.selectedWeight || "200 gm";
+          const weightSlug = currentWeight.toLowerCase().replace(/[^a-z0-9]+/g, "");
+
           cart.addItem({
-            productId: id,
-            productName: name,
-            unitPrice: price,
+            productId: `${id}-${weightSlug}`,
+            productName: `${name} (${currentWeight})`,
+            unitPrice: currentPrice,
             productImage: img,
-            quantity: qty
+            quantity: 1
           });
+
+          // Visual feedback
+          const originalContent = addBtn.innerHTML;
+          addBtn.classList.add("added-success");
+          addBtn.innerHTML = `<span>ADDED</span> <i class="ri-check-line"></i>`;
+          setTimeout(() => {
+            addBtn.classList.remove("added-success");
+            addBtn.innerHTML = originalContent;
+          }, 1200);
 
           try {
             confetti({
-              particleCount: 50,
+              particleCount: 45,
               spread: 60,
               origin: { y: 0.7 },
-              colors: ['#0f3822', '#e2b87f', '#d32f2f', '#10b981']
+              colors: ['#0f3822', '#e2b87f', '#f8f3eb', '#16a34a']
             });
           } catch (err) {}
 
-          showToast(`Added ${qty}x ${name} to your cart! 🛍️`);
+          showToast(`Added ${name} (${currentWeight}) to your cart! 🛍️`);
           window.dispatchEvent(new CustomEvent("cart:open"));
         };
       }
 
       // 3. Wishlist Heart
-      const wishBtn = card.querySelector(".card-wishlist-btn");
+      const wishBtn = card.querySelector(".haldiram-wishlist-btn");
       if (wishBtn) {
         wishBtn.onclick = (e) => {
           e.stopPropagation();
-          const wasAdded = wishlist.toggleItem({
-            productId: id,
-            productName: name,
-            unitPrice: price,
-            productImage: img
-          });
-
           const icon = wishBtn.querySelector("i");
-          if (wasAdded) {
+          if (wishlist.hasItem(id)) {
+            wishlist.removeItem(id);
+            wishBtn.classList.remove("active");
+            if (icon) {
+              icon.classList.remove("ri-heart-fill");
+              icon.classList.add("ri-heart-line");
+            }
+            showToast(`Removed ${name} from Wishlist`);
+          } else {
+            wishlist.addItem({
+              id: id,
+              name: name,
+              price: parseInt(card.dataset.currentPrice) || basePrice,
+              image: img,
+              category: card.dataset.category
+            });
             wishBtn.classList.add("active");
             if (icon) {
               icon.classList.remove("ri-heart-line");
               icon.classList.add("ri-heart-fill");
             }
             showToast(`Saved ${name} to Wishlist! ❤️`);
-            try {
-              confetti({
-                particleCount: 25,
-                spread: 45,
-                origin: { y: 0.65 },
-                colors: ['#d32f2f', '#e2b87f']
-              });
-            } catch (err) {}
-          } else {
-            wishBtn.classList.remove("active");
-            if (icon) {
-              icon.classList.remove("ri-heart-fill");
-              icon.classList.add("ri-heart-line");
-            }
-            showToast(`Removed from Wishlist`);
           }
         };
       }
 
-      // 4. Open Details Modal on Image / Title Click
-      const clickables = card.querySelectorAll(".catalogue-img-box, .catalogue-prod-title");
+      // 4. Open Product Details Page on Image / Title Click
+      const clickables = card.querySelectorAll(".haldiram-img-box, .haldiram-title");
       clickables.forEach(el => {
-        el.onclick = () => {
-          openProductModal(id);
+        el.onclick = (e) => {
+          if (e.target.closest(".haldiram-wishlist-btn") || e.target.closest(".haldiram-add-btn") || e.target.closest(".haldiram-weight-pill")) {
+            return;
+          }
+          window.location.href = `product.html?id=${encodeURIComponent(id)}`;
         };
       });
     });
@@ -257,7 +317,7 @@ export function initAllProductsView(showToast) {
         </p>
       `;
     }
-    if (modalPrice) modalPrice.textContent = `₹${prod.price}`;
+    if (modalPrice) modalPrice.textContent = `₹${prod.price}/-`;
 
     if (modalAddToCart) {
       modalAddToCart.onclick = () => {
@@ -274,7 +334,7 @@ export function initAllProductsView(showToast) {
             particleCount: 50,
             spread: 70,
             origin: { y: 0.7 },
-            colors: ['#0f3822', '#e2b87f', '#d32f2f']
+            colors: ['#0f3822', '#e2b87f', '#f8f3eb', '#16a34a']
           });
         } catch (err) {}
         showToast(`Added ${prod.name} to Cart! 🛍️`);
@@ -285,10 +345,44 @@ export function initAllProductsView(showToast) {
     modal.classList.add("is-open");
   }
 
-  // Initial Grid Render
-  renderGrid();
+  // Filter and Sort Controller
+  function applyFilterAndSort() {
+    const activeChip = document.querySelector(".category-chip.active");
+    const activeCat = activeChip ? activeChip.dataset.category : "all";
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    const sortVal = sortSelect ? sortSelect.value : "featured";
 
-  // Toggle Between 3D Coverflow and Grid View
+    let result = [...products];
+
+    // Category filter
+    if (activeCat !== "all") {
+      result = result.filter(p => p.category === activeCat);
+    }
+
+    // Search query filter
+    if (query) {
+      result = result.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.tagline.toLowerCase().includes(query) ||
+        p.ingredients.toLowerCase().includes(query)
+      );
+    }
+
+    // Sort order
+    if (sortVal === "price-low") {
+      result.sort((a, b) => a.price - b.price);
+    } else if (sortVal === "price-high") {
+      result.sort((a, b) => b.price - a.price);
+    } else if (sortVal === "name-asc") {
+      result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortVal === "popular") {
+      result.sort((a, b) => b.rating - a.rating);
+    }
+
+    renderGrid(result);
+  }
+
+  // Toggle Between 3D Coverflow and Haldiram's Grid View
   let isGridView = false;
 
   function setViewMode(gridActive) {
@@ -300,7 +394,6 @@ export function initAllProductsView(showToast) {
       gridWrap.style.display = "block";
       toggleBtn.classList.add("active-grid");
 
-      // Update button text & icon
       toggleBtn.innerHTML = `
         <div class="view-all-text-wrap">
           <span class="view-all-label">3D Carousel</span>
@@ -314,15 +407,14 @@ export function initAllProductsView(showToast) {
       if (hintPill) {
         hintPill.innerHTML = `
           <i class="ri-layout-grid-line"></i>
-          <span>Showing all 55 authentic Kerala snacks • Filter by category or search below</span>
+          <span>Showing 55 freshly packed Kerala savouries • Haldiram's collection view</span>
         `;
       }
 
       if (subtitleEl) {
-        subtitleEl.textContent = "Browse all 55 authentic Kerala snacks, freshly made and delivered directly to your door.";
+        subtitleEl.textContent = "Browse authentic Kerala snacks & savouries with customized weights, instant add, and fast delivery.";
       }
 
-      // Smooth scroll to showcase
       const target = document.getElementById("products");
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -332,7 +424,6 @@ export function initAllProductsView(showToast) {
       coverflowContainer.style.display = "block";
       toggleBtn.classList.remove("active-grid");
 
-      // Update button text & icon back to View All
       toggleBtn.innerHTML = `
         <div class="view-all-text-wrap">
           <span class="view-all-label">View All</span>
@@ -360,49 +451,60 @@ export function initAllProductsView(showToast) {
     setViewMode(!isGridView);
   });
 
+  // Filter Button Toggle for Panel on mobile
+  if (filterBtn && filterPanel) {
+    filterBtn.addEventListener("click", () => {
+      const isExpanded = filterBtn.getAttribute("aria-expanded") === "true";
+      filterBtn.setAttribute("aria-expanded", String(!isExpanded));
+      filterPanel.classList.toggle("mobile-hidden");
+    });
+  }
+
   // Category Filter Chips
   const categoryChips = document.querySelectorAll(".category-chip");
   categoryChips.forEach(chip => {
     chip.addEventListener("click", () => {
       categoryChips.forEach(c => c.classList.remove("active"));
       chip.classList.add("active");
-
-      const cat = chip.dataset.category;
-      if (cat === "all") {
-        renderGrid(products);
-      } else {
-        const filtered = products.filter(p => p.category === cat);
-        renderGrid(filtered);
-      }
+      applyFilterAndSort();
     });
   });
 
   // Search Input Filter
   if (searchInput) {
-    searchInput.addEventListener("input", (e) => {
-      const query = e.target.value.toLowerCase().trim();
-      const activeChip = document.querySelector(".category-chip.active");
-      const activeCat = activeChip ? activeChip.dataset.category : "all";
-
-      let filtered = products;
-      if (activeCat !== "all") {
-        filtered = filtered.filter(p => p.category === activeCat);
-      }
-
-      if (query) {
-        filtered = filtered.filter(p => 
-          p.name.toLowerCase().includes(query) ||
-          p.tagline.toLowerCase().includes(query) ||
-          p.ingredients.toLowerCase().includes(query)
-        );
-      }
-
-      renderGrid(filtered);
+    searchInput.addEventListener("input", () => {
+      applyFilterAndSort();
     });
   }
+
+  // Sort Dropdown
+  if (sortSelect) {
+    sortSelect.addEventListener("change", () => {
+      applyFilterAndSort();
+    });
+  }
+
+  // Initial Grid Render
+  renderGrid();
 
   // Also bind any other "Shop All" buttons to open grid view
   window.addEventListener("products:view-all", () => {
     setViewMode(true);
+  });
+
+  // If URL hash points to shop-all, activate grid view automatically
+  if (window.location.hash === "#shop-all" || window.location.hash === "#products") {
+    setViewMode(true);
+  }
+
+  document.querySelectorAll('a[href="#shop-all"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      setViewMode(true);
+      const target = document.getElementById("products");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
 }

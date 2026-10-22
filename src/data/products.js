@@ -20,13 +20,15 @@ export const PRODUCTS = [
       "spicy",
       "tea-time"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-02-09.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-02-09.webp",
+    "image": "/images/products/keerthi_spicy_kadala_pakoda.webp",
+    "imageWebp": "/images/products/keerthi_spicy_kadala_pakoda.webp",
     "imageCutout": "/images/products_blum/keerthi_spicy_kadala_pakoda_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.9,
     "reviewCount": 350,
-    "rawFileName": "PHOTO-2026-10-14-19-02-09.jpg"
+    "rawFileName": "15BF2B21-4018-4E7A-8CE8-FC41E457B586 2.PNG",
+    "studioImage": "/images/products/15BF2B21-4018-4E7A-8CE8-FC41E457B586 2.PNG",
+    "imagePng": "/images/products/keerthi_spicy_kadala_pakoda.png"
   },
   {
     "id": "keerthi-golden-jackfruit-chips",
@@ -49,13 +51,15 @@ export const PRODUCTS = [
       "bestseller",
       "coconut-oil"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-06-59.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-06-59.webp",
+    "image": "/images/products/keerthi_golden_jackfruit_chips.webp",
+    "imageWebp": "/images/products/keerthi_golden_jackfruit_chips.webp",
     "imageCutout": "/images/products_blum/keerthi_golden_jackfruit_chips_transparent.png",
     "priceText": "₹145 / 250g Pouch",
     "rating": 4.91,
     "reviewCount": 397,
-    "rawFileName": "PHOTO-2026-10-14-19-06-59.jpg"
+    "rawFileName": "B5D66385-1633-419B-A0C9-96ACCB5C2558 2.PNG",
+    "studioImage": "/images/products/B5D66385-1633-419B-A0C9-96ACCB5C2558 2.PNG",
+    "imagePng": "/images/products/keerthi_golden_jackfruit_chips.png"
   },
   {
     "id": "keerthi-kerala-banana-chips",
@@ -78,13 +82,15 @@ export const PRODUCTS = [
       "kerala",
       "bestseller"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-07-24.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-07-24.webp",
+    "image": "/images/products/keerthi_kerala_banana_chips.webp",
+    "imageWebp": "/images/products/keerthi_kerala_banana_chips.webp",
     "imageCutout": "/images/products_blum/keerthi_kerala_banana_chips_transparent.png",
     "priceText": "₹120 / 250g Pouch",
     "rating": 4.92,
     "reviewCount": 444,
-    "rawFileName": "PHOTO-2026-10-14-19-07-24.jpg"
+    "rawFileName": "767C352C-ED38-472F-A066-47EE7C0344E9.PNG",
+    "studioImage": "/images/products/767C352C-ED38-472F-A066-47EE7C0344E9.PNG",
+    "imagePng": "/images/products/keerthi_kerala_banana_chips.png"
   },
   {
     "id": "keerthi-spicy-tapioca-chips",
@@ -106,13 +112,15 @@ export const PRODUCTS = [
       "kappa",
       "spicy"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-08-37.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-08-37.webp",
+    "image": "/images/products/keerthi_spicy_tapioca_chips.webp",
+    "imageWebp": "/images/products/keerthi_spicy_tapioca_chips.webp",
     "imageCutout": "/images/products_blum/keerthi_spicy_tapioca_chips_transparent.png",
     "priceText": "₹80 / 200g Pouch",
     "rating": 4.930000000000001,
     "reviewCount": 491,
-    "rawFileName": "PHOTO-2026-10-14-19-08-37.jpg"
+    "rawFileName": "3CBD43D0-812C-4C93-B3C2-96D48B150F09.PNG",
+    "studioImage": "/images/products/3CBD43D0-812C-4C93-B3C2-96D48B150F09.PNG",
+    "imagePng": "/images/products/keerthi_spicy_tapioca_chips.png"
   },
   {
     "id": "keerthi-round-kai-murukku",
@@ -134,13 +142,15 @@ export const PRODUCTS = [
       "traditional",
       "tea-time"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-09-07.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-09-07.webp",
+    "image": "/images/products/keerthi_round_kai_murukku.webp",
+    "imageWebp": "/images/products/keerthi_round_kai_murukku.webp",
     "imageCutout": "/images/products_blum/keerthi_round_kai_murukku_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.94,
     "reviewCount": 538,
-    "rawFileName": "PHOTO-2026-10-14-19-09-07.jpg"
+    "rawFileName": "B60187C7-E8BB-4C48-B6F5-3B442154AEDE.PNG",
+    "studioImage": "/images/products/B60187C7-E8BB-4C48-B6F5-3B442154AEDE.PNG",
+    "imagePng": "/images/products/keerthi_round_kai_murukku.png"
   },
   {
     "id": "keerthi-special-malabar-mixture",
@@ -162,13 +172,15 @@ export const PRODUCTS = [
       "malabar",
       "popular"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-09-30.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-09-30.webp",
+    "image": "/images/products/keerthi_special_malabar_mixture.webp",
+    "imageWebp": "/images/products/keerthi_special_malabar_mixture.webp",
     "imageCutout": "/images/products_blum/keerthi_special_malabar_mixture_transparent.png",
     "priceText": "₹95 / 250g Pouch",
     "rating": 4.95,
     "reviewCount": 585,
-    "rawFileName": "PHOTO-2026-10-14-19-09-30.jpg"
+    "rawFileName": "AB3499F2-0E2F-4DE6-A298-531F61F3EFFB 2.PNG",
+    "studioImage": "/images/products/AB3499F2-0E2F-4DE6-A298-531F61F3EFFB 2.PNG",
+    "imagePng": "/images/products/keerthi_special_malabar_mixture.png"
   },
   {
     "id": "keerthi-hot-spice-mixture",
@@ -190,13 +202,15 @@ export const PRODUCTS = [
       "spicy",
       "mixture"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-10-38.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-10-38.webp",
+    "image": "/images/products/keerthi_hot_spice_mixture.webp",
+    "imageWebp": "/images/products/keerthi_hot_spice_mixture.webp",
     "imageCutout": "/images/products_blum/keerthi_hot_spice_mixture_transparent.png",
     "priceText": "₹90 / 200g Pouch",
     "rating": 4.96,
     "reviewCount": 632,
-    "rawFileName": "PHOTO-2026-10-14-19-10-38.jpg"
+    "rawFileName": "C14CA84F-ACF9-4020-9997-0A37393FC740.PNG",
+    "studioImage": "/images/products/C14CA84F-ACF9-4020-9997-0A37393FC740.PNG",
+    "imagePng": "/images/products/keerthi_hot_spice_mixture.png"
   },
   {
     "id": "keerthi-malabar-kara-sev",
@@ -218,13 +232,15 @@ export const PRODUCTS = [
       "karasev",
       "pepper"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-10-58.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-10-58.webp",
+    "image": "/images/products/keerthi_malabar_kara_sev.webp",
+    "imageWebp": "/images/products/keerthi_malabar_kara_sev.webp",
     "imageCutout": "/images/products_blum/keerthi_malabar_kara_sev_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.970000000000001,
     "reviewCount": 679,
-    "rawFileName": "PHOTO-2026-10-14-19-10-58.jpg"
+    "rawFileName": "9167616F-F90E-4B84-B6CE-2643B1739B8B.PNG",
+    "studioImage": "/images/products/9167616F-F90E-4B84-B6CE-2643B1739B8B.PNG",
+    "imagePng": "/images/products/keerthi_malabar_kara_sev.png"
   },
   {
     "id": "keerthi-green-peas-masala-mix",
@@ -246,13 +262,15 @@ export const PRODUCTS = [
       "chaat",
       "snack"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-20-48.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-20-48.webp",
+    "image": "/images/products/keerthi_green_peas_masala_mix.webp",
+    "imageWebp": "/images/products/keerthi_green_peas_masala_mix.webp",
     "imageCutout": "/images/products_blum/keerthi_green_peas_masala_mix_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.98,
     "reviewCount": 726,
-    "rawFileName": "PHOTO-2026-10-14-19-20-48.jpg"
+    "rawFileName": "3CD62687-A339-4BA5-898E-C95F9EDC5AF5.PNG",
+    "studioImage": "/images/products/3CD62687-A339-4BA5-898E-C95F9EDC5AF5.PNG",
+    "imagePng": "/images/products/keerthi_green_peas_masala_mix.png"
   },
   {
     "id": "keerthi-golden-butter-biscuits",
@@ -274,13 +292,15 @@ export const PRODUCTS = [
       "butter",
       "tea-time"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-21-16.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-21-16.webp",
+    "image": "/images/products/keerthi_golden_butter_biscuits.webp",
+    "imageWebp": "/images/products/keerthi_golden_butter_biscuits.webp",
     "imageCutout": "/images/products_blum/keerthi_golden_butter_biscuits_transparent.png",
     "priceText": "₹90 / 250g Pouch",
     "rating": 4.9,
     "reviewCount": 773,
-    "rawFileName": "PHOTO-2026-10-14-19-21-16.jpg"
+    "rawFileName": "06C4DE3B-A425-4F84-A10D-B5C341ED171A.PNG",
+    "studioImage": "/images/products/06C4DE3B-A425-4F84-A10D-B5C341ED171A.PNG",
+    "imagePng": "/images/products/keerthi_golden_butter_biscuits.png"
   },
   {
     "id": "keerthi-coconut-macaroons",
@@ -302,13 +322,15 @@ export const PRODUCTS = [
       "coconut",
       "sweet"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-21-42.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-21-42.webp",
+    "image": "/images/products/keerthi_coconut_macaroons.webp",
+    "imageWebp": "/images/products/keerthi_coconut_macaroons.webp",
     "imageCutout": "/images/products_blum/keerthi_coconut_macaroons_transparent.png",
     "priceText": "₹110 / 200g Pouch",
     "rating": 4.91,
     "reviewCount": 820,
-    "rawFileName": "PHOTO-2026-10-14-19-21-42.jpg"
+    "rawFileName": "25D9D685-384C-411D-891A-CB33195E796E.PNG",
+    "studioImage": "/images/products/25D9D685-384C-411D-891A-CB33195E796E.PNG",
+    "imagePng": "/images/products/keerthi_coconut_macaroons.png"
   },
   {
     "id": "keerthi-malabar-ribbon-pakoda",
@@ -330,13 +352,15 @@ export const PRODUCTS = [
       "pakoda",
       "murukku"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-22-18.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-22-18.webp",
+    "image": "/images/products/keerthi_malabar_ribbon_pakoda.webp",
+    "imageWebp": "/images/products/keerthi_malabar_ribbon_pakoda.webp",
     "imageCutout": "/images/products_blum/keerthi_malabar_ribbon_pakoda_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.92,
     "reviewCount": 867,
-    "rawFileName": "PHOTO-2026-10-14-19-22-18.jpg"
+    "rawFileName": "DF4FA6DB-A4E7-4935-A7B3-3C8028939080.PNG",
+    "studioImage": "/images/products/DF4FA6DB-A4E7-4935-A7B3-3C8028939080.PNG",
+    "imagePng": "/images/products/keerthi_malabar_ribbon_pakoda.png"
   },
   {
     "id": "keerthi-spicy-omapodi-sev",
@@ -358,13 +382,15 @@ export const PRODUCTS = [
       "ajwain",
       "sev"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-22-39.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-22-39.webp",
+    "image": "/images/products/keerthi_spicy_omapodi_sev.webp",
+    "imageWebp": "/images/products/keerthi_spicy_omapodi_sev.webp",
     "imageCutout": "/images/products_blum/keerthi_spicy_omapodi_sev_transparent.png",
     "priceText": "₹80 / 200g Pouch",
     "rating": 4.930000000000001,
     "reviewCount": 914,
-    "rawFileName": "PHOTO-2026-10-14-19-22-39.jpg"
+    "rawFileName": "D466EB94-A825-42D4-97F7-6BCE6E37A0F2.PNG",
+    "studioImage": "/images/products/D466EB94-A825-42D4-97F7-6BCE6E37A0F2.PNG",
+    "imagePng": "/images/products/keerthi_spicy_omapodi_sev.png"
   },
   {
     "id": "keerthi-sweet-diamond-shankarpali",
@@ -386,13 +412,15 @@ export const PRODUCTS = [
       "sweet",
       "diamond"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-23-21.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-23-21.webp",
+    "image": "/images/products/keerthi_sweet_diamond_shankarpali.webp",
+    "imageWebp": "/images/products/keerthi_sweet_diamond_shankarpali.webp",
     "imageCutout": "/images/products_blum/keerthi_sweet_diamond_shankarpali_transparent.png",
     "priceText": "₹90 / 250g Pouch",
     "rating": 4.94,
     "reviewCount": 961,
-    "rawFileName": "PHOTO-2026-10-14-19-23-21.jpg"
+    "rawFileName": "4AEAFE51-C1C1-4DE4-A32A-EBB732003D82.PNG",
+    "studioImage": "/images/products/4AEAFE51-C1C1-4DE4-A32A-EBB732003D82.PNG",
+    "imagePng": "/images/products/keerthi_sweet_diamond_shankarpali.png"
   },
   {
     "id": "keerthi-butter-murukku-sticks",
@@ -414,13 +442,15 @@ export const PRODUCTS = [
       "sticks",
       "butter"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-23-38.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-23-38.webp",
+    "image": "/images/products/keerthi_butter_murukku_sticks.webp",
+    "imageWebp": "/images/products/keerthi_butter_murukku_sticks.webp",
     "imageCutout": "/images/products_blum/keerthi_butter_murukku_sticks_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.95,
     "reviewCount": 1008,
-    "rawFileName": "PHOTO-2026-10-14-19-23-38.jpg"
+    "rawFileName": "FB34ED2D-57C0-4F17-ADDF-0FF0EBB0AA91.PNG",
+    "studioImage": "/images/products/FB34ED2D-57C0-4F17-ADDF-0FF0EBB0AA91.PNG",
+    "imagePng": "/images/products/keerthi_butter_murukku_sticks.png"
   },
   {
     "id": "keerthi-masala-roasted-peanuts",
@@ -442,13 +472,15 @@ export const PRODUCTS = [
       "kadala",
       "roasted"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-24-04.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-24-04.webp",
+    "image": "/images/products/keerthi_masala_roasted_peanuts.webp",
+    "imageWebp": "/images/products/keerthi_masala_roasted_peanuts.webp",
     "imageCutout": "/images/products_blum/keerthi_masala_roasted_peanuts_transparent.png",
     "priceText": "₹75 / 200g Pouch",
     "rating": 4.96,
     "reviewCount": 1055,
-    "rawFileName": "PHOTO-2026-10-14-19-24-04.jpg"
+    "rawFileName": "18C72558-94CB-4F1A-AAD9-A43263CB8E38.PNG",
+    "studioImage": "/images/products/18C72558-94CB-4F1A-AAD9-A43263CB8E38.PNG",
+    "imagePng": "/images/products/keerthi_masala_roasted_peanuts.png"
   },
   {
     "id": "keerthi-cashew-butter-cookies",
@@ -470,13 +502,15 @@ export const PRODUCTS = [
       "cashew",
       "biscuits"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-24-54.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-24-54.webp",
+    "image": "/images/products/keerthi_cashew_butter_cookies.webp",
+    "imageWebp": "/images/products/keerthi_cashew_butter_cookies.webp",
     "imageCutout": "/images/products_blum/keerthi_cashew_butter_cookies_transparent.png",
     "priceText": "₹110 / 250g Pouch",
     "rating": 4.970000000000001,
     "reviewCount": 1102,
-    "rawFileName": "PHOTO-2026-10-14-19-24-54.jpg"
+    "rawFileName": "8D75C0DE-A39A-4740-B104-F4CACA50DB13.PNG",
+    "studioImage": "/images/products/8D75C0DE-A39A-4740-B104-F4CACA50DB13.PNG",
+    "imagePng": "/images/products/keerthi_cashew_butter_cookies.png"
   },
   {
     "id": "keerthi-crispy-tapioca-wafers",
@@ -498,13 +532,15 @@ export const PRODUCTS = [
       "wafers",
       "chips"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-25-17.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-25-17.webp",
+    "image": "/images/products/keerthi_crispy_tapioca_wafers.webp",
+    "imageWebp": "/images/products/keerthi_crispy_tapioca_wafers.webp",
     "imageCutout": "/images/products_blum/keerthi_crispy_tapioca_wafers_transparent.png",
     "priceText": "₹80 / 200g Pouch",
     "rating": 4.98,
     "reviewCount": 1149,
-    "rawFileName": "PHOTO-2026-10-14-19-25-17.jpg"
+    "rawFileName": "10CAA2ED-B8B5-4E8C-8308-987E840979D0.PNG",
+    "studioImage": "/images/products/10CAA2ED-B8B5-4E8C-8308-987E840979D0.PNG",
+    "imagePng": "/images/products/keerthi_crispy_tapioca_wafers.png"
   },
   {
     "id": "keerthi-swirl-pinwheel-cookies-jar",
@@ -526,13 +562,15 @@ export const PRODUCTS = [
       "jar",
       "pinwheel"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-25-56.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-25-56.webp",
+    "image": "/images/products/keerthi_swirl_pinwheel_cookies_jar.webp",
+    "imageWebp": "/images/products/keerthi_swirl_pinwheel_cookies_jar.webp",
     "imageCutout": "/images/products_blum/keerthi_swirl_pinwheel_cookies_jar_transparent.png",
     "priceText": "₹130 / 350g Jar",
     "rating": 4.9,
     "reviewCount": 1196,
-    "rawFileName": "PHOTO-2026-10-14-19-25-56.jpg"
+    "rawFileName": "3124CB42-EE97-4F7D-AEEA-5FE646585C06.PNG",
+    "studioImage": "/images/products/3124CB42-EE97-4F7D-AEEA-5FE646585C06.PNG",
+    "imagePng": "/images/products/keerthi_swirl_pinwheel_cookies_jar.png"
   },
   {
     "id": "keerthi-crouton-garlic-toast-jar",
@@ -554,13 +592,15 @@ export const PRODUCTS = [
       "croutons",
       "jar"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-26-29.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-26-29.webp",
+    "image": "/images/products/keerthi_crouton_garlic_toast_jar.webp",
+    "imageWebp": "/images/products/keerthi_crouton_garlic_toast_jar.webp",
     "imageCutout": "/images/products_blum/keerthi_crouton_garlic_toast_jar_transparent.png",
     "priceText": "₹120 / 300g Jar",
     "rating": 4.91,
     "reviewCount": 1243,
-    "rawFileName": "PHOTO-2026-10-14-19-26-29.jpg"
+    "rawFileName": "A6CF437C-3D86-4835-B22F-B2AC48E6D235.PNG",
+    "studioImage": "/images/products/A6CF437C-3D86-4835-B22F-B2AC48E6D235.PNG",
+    "imagePng": "/images/products/keerthi_crouton_garlic_toast_jar.png"
   },
   {
     "id": "keerthi-crunchy-butter-rusk-jar",
@@ -582,13 +622,15 @@ export const PRODUCTS = [
       "jar",
       "bestseller"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-27-17.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-27-17.webp",
+    "image": "/images/products/keerthi_crunchy_butter_rusk_jar.webp",
+    "imageWebp": "/images/products/keerthi_crunchy_butter_rusk_jar.webp",
     "imageCutout": "/images/products_blum/keerthi_crunchy_butter_rusk_jar_transparent.png",
     "priceText": "₹140 / 400g Jar",
     "rating": 4.92,
     "reviewCount": 1290,
-    "rawFileName": "PHOTO-2026-10-14-19-27-17.jpg"
+    "rawFileName": "2C674462-9EC7-48E6-8F0E-B7EEBA577DEB.PNG",
+    "studioImage": "/images/products/2C674462-9EC7-48E6-8F0E-B7EEBA577DEB.PNG",
+    "imagePng": "/images/products/keerthi_crunchy_butter_rusk_jar.png"
   },
   {
     "id": "keerthi-fine-idiyappam-sev",
@@ -610,13 +652,15 @@ export const PRODUCTS = [
       "idiyappam",
       "traditional"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-27-44.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-27-44.webp",
+    "image": "/images/products/keerthi_fine_idiyappam_sev.webp",
+    "imageWebp": "/images/products/keerthi_fine_idiyappam_sev.webp",
     "imageCutout": "/images/products_blum/keerthi_fine_idiyappam_sev_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.930000000000001,
     "reviewCount": 1337,
-    "rawFileName": "PHOTO-2026-10-14-19-27-44.jpg"
+    "rawFileName": "3A62BBDC-B56A-40E8-B138-96F85DB3B39D 2.PNG",
+    "studioImage": "/images/products/3A62BBDC-B56A-40E8-B138-96F85DB3B39D 2.PNG",
+    "imagePng": "/images/products/keerthi_fine_idiyappam_sev.png"
   },
   {
     "id": "keerthi-spicy-kara-boondi",
@@ -638,13 +682,15 @@ export const PRODUCTS = [
       "spicy",
       "mixture"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-28-48.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-28-48.webp",
+    "image": "/images/products/keerthi_spicy_kara_boondi.webp",
+    "imageWebp": "/images/products/keerthi_spicy_kara_boondi.webp",
     "imageCutout": "/images/products_blum/keerthi_spicy_kara_boondi_transparent.png",
     "priceText": "₹80 / 200g Pouch",
     "rating": 4.94,
     "reviewCount": 1384,
-    "rawFileName": "PHOTO-2026-10-14-19-28-48.jpg"
+    "rawFileName": "CD27F256-8A3A-41E9-AA45-2CBC50106EAB.PNG",
+    "studioImage": "/images/products/CD27F256-8A3A-41E9-AA45-2CBC50106EAB.PNG",
+    "imagePng": "/images/products/keerthi_spicy_kara_boondi.png"
   },
   {
     "id": "keerthi-roasted-pepper-cashews",
@@ -666,13 +712,15 @@ export const PRODUCTS = [
       "kaju",
       "premium"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-29-09.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-29-09.webp",
+    "image": "/images/products/keerthi_roasted_pepper_cashews.webp",
+    "imageWebp": "/images/products/keerthi_roasted_pepper_cashews.webp",
     "imageCutout": "/images/products_blum/keerthi_roasted_pepper_cashews_transparent.png",
     "priceText": "₹240 / 200g Pouch",
     "rating": 4.95,
     "reviewCount": 1431,
-    "rawFileName": "PHOTO-2026-10-14-19-29-09.jpg"
+    "rawFileName": "87FE8350-66F5-4476-A766-EDB716A8D5DF.PNG",
+    "studioImage": "/images/products/87FE8350-66F5-4476-A766-EDB716A8D5DF.PNG",
+    "imagePng": "/images/products/keerthi_roasted_pepper_cashews.png"
   },
   {
     "id": "keerthi-sweet-madhura-kaja",
@@ -694,13 +742,15 @@ export const PRODUCTS = [
       "sweet",
       "malabar"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-29-29.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-29-29.webp",
+    "image": "/images/products/keerthi_sweet_madhura_kaja.webp",
+    "imageWebp": "/images/products/keerthi_sweet_madhura_kaja.webp",
     "imageCutout": "/images/products_blum/keerthi_sweet_madhura_kaja_transparent.png",
     "priceText": "₹95 / 250g Pouch",
     "rating": 4.96,
     "reviewCount": 1478,
-    "rawFileName": "PHOTO-2026-10-14-19-29-29.jpg"
+    "rawFileName": "08FDD65C-03E4-4C82-9039-D60A0C41567F.PNG",
+    "studioImage": "/images/products/08FDD65C-03E4-4C82-9039-D60A0C41567F.PNG",
+    "imagePng": "/images/products/keerthi_sweet_madhura_kaja.png"
   },
   {
     "id": "keerthi-malabar-ribbon-murukku",
@@ -722,13 +772,15 @@ export const PRODUCTS = [
       "ribbon",
       "crunchy"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-29-50.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-29-50.webp",
+    "image": "/images/products/keerthi_malabar_ribbon_murukku.webp",
+    "imageWebp": "/images/products/keerthi_malabar_ribbon_murukku.webp",
     "imageCutout": "/images/products_blum/keerthi_malabar_ribbon_murukku_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.970000000000001,
     "reviewCount": 1525,
-    "rawFileName": "PHOTO-2026-10-14-19-29-50.jpg"
+    "rawFileName": "656607B6-1E9F-4DDE-A0A7-F38A763B4E69.PNG",
+    "studioImage": "/images/products/656607B6-1E9F-4DDE-A0A7-F38A763B4E69.PNG",
+    "imagePng": "/images/products/keerthi_malabar_ribbon_murukku.png"
   },
   {
     "id": "keerthi-spiced-twisted-murukku",
@@ -750,13 +802,15 @@ export const PRODUCTS = [
       "twisted",
       "spicy"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-30-09.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-30-09.webp",
+    "image": "/images/products/keerthi_spiced_twisted_murukku.webp",
+    "imageWebp": "/images/products/keerthi_spiced_twisted_murukku.webp",
     "imageCutout": "/images/products_blum/keerthi_spiced_twisted_murukku_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.98,
     "reviewCount": 372,
-    "rawFileName": "PHOTO-2026-10-14-19-30-09.jpg"
+    "rawFileName": "DFD2D89C-4548-4B44-A200-E0644046661B.PNG",
+    "studioImage": "/images/products/DFD2D89C-4548-4B44-A200-E0644046661B.PNG",
+    "imagePng": "/images/products/keerthi_spiced_twisted_murukku.png"
   },
   {
     "id": "keerthi-malabar-onion-pakoda",
@@ -778,13 +832,15 @@ export const PRODUCTS = [
       "onion",
       "snack"
     ],
-    "image": "/images/blum/PHOTO-2026-10-14-19-30-28.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-14-19-30-28.webp",
+    "image": "/images/products/keerthi_malabar_onion_pakoda.webp",
+    "imageWebp": "/images/products/keerthi_malabar_onion_pakoda.webp",
     "imageCutout": "/images/products_blum/keerthi_malabar_onion_pakoda_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.9,
     "reviewCount": 419,
-    "rawFileName": "PHOTO-2026-10-14-19-30-28.jpg"
+    "rawFileName": "3C070FAD-B809-4BD7-A6A0-2516F73A978F.PNG",
+    "studioImage": "/images/products/3C070FAD-B809-4BD7-A6A0-2516F73A978F.PNG",
+    "imagePng": "/images/products/keerthi_malabar_onion_pakoda.png"
   },
   {
     "id": "keerthi-spicy-diamond-cuts",
@@ -806,13 +862,15 @@ export const PRODUCTS = [
       "spicy",
       "cuts"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-08-54-29.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-08-54-29.webp",
+    "image": "/images/products/keerthi_spicy_diamond_cuts.webp",
+    "imageWebp": "/images/products/keerthi_spicy_diamond_cuts.webp",
     "imageCutout": "/images/products_blum/keerthi_spicy_diamond_cuts_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.91,
     "reviewCount": 466,
-    "rawFileName": "PHOTO-2026-10-15-08-54-29.jpg"
+    "rawFileName": "7D653D7A-D55C-424E-9921-A54792A2CDBC.PNG",
+    "studioImage": "/images/products/7D653D7A-D55C-424E-9921-A54792A2CDBC.PNG",
+    "imagePng": "/images/products/keerthi_spicy_diamond_cuts.png"
   },
   {
     "id": "keerthi-golden-sev-mixture",
@@ -834,13 +892,15 @@ export const PRODUCTS = [
       "mixture",
       "golden"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-08-54-56.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-08-54-56.webp",
+    "image": "/images/products/keerthi_golden_sev_mixture.webp",
+    "imageWebp": "/images/products/keerthi_golden_sev_mixture.webp",
     "imageCutout": "/images/products_blum/keerthi_golden_sev_mixture_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.92,
     "reviewCount": 513,
-    "rawFileName": "PHOTO-2026-10-15-08-54-56.jpg"
+    "rawFileName": "0FE6D2AC-3540-42BC-8D6E-798F96BF2545.PNG",
+    "studioImage": "/images/products/0FE6D2AC-3540-42BC-8D6E-798F96BF2545.PNG",
+    "imagePng": "/images/products/keerthi_golden_sev_mixture.png"
   },
   {
     "id": "keerthi-fiery-red-mixture",
@@ -862,13 +922,15 @@ export const PRODUCTS = [
       "red",
       "spicy"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-08-55-21.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-08-55-21.webp",
+    "image": "/images/products/keerthi_fiery_red_mixture.webp",
+    "imageWebp": "/images/products/keerthi_fiery_red_mixture.webp",
     "imageCutout": "/images/products_blum/keerthi_fiery_red_mixture_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.930000000000001,
     "reviewCount": 560,
-    "rawFileName": "PHOTO-2026-10-15-08-55-21.jpg"
+    "rawFileName": "0206072B-32E5-48C1-B9BD-35CBF5D5CEB0 2.PNG",
+    "studioImage": "/images/products/0206072B-32E5-48C1-B9BD-35CBF5D5CEB0 2.PNG",
+    "imagePng": "/images/products/keerthi_fiery_red_mixture.png"
   },
   {
     "id": "keerthi-mini-sweet-rolls-jar",
@@ -890,13 +952,15 @@ export const PRODUCTS = [
       "sweet",
       "jar"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-08-58-46.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-08-58-46.webp",
+    "image": "/images/products/keerthi_mini_sweet_rolls_jar.webp",
+    "imageWebp": "/images/products/keerthi_mini_sweet_rolls_jar.webp",
     "imageCutout": "/images/products_blum/keerthi_mini_sweet_rolls_jar_transparent.png",
     "priceText": "₹130 / 300g Jar",
     "rating": 4.94,
     "reviewCount": 607,
-    "rawFileName": "PHOTO-2026-10-15-08-58-46.jpg"
+    "rawFileName": "F128F084-6216-40CB-BBC8-1497527DD913 2.PNG",
+    "studioImage": "/images/products/F128F084-6216-40CB-BBC8-1497527DD913 2.PNG",
+    "imagePng": "/images/products/keerthi_mini_sweet_rolls_jar.png"
   },
   {
     "id": "keerthi-authentic-kuzhalappam",
@@ -918,13 +982,15 @@ export const PRODUCTS = [
       "traditional",
       "kerala"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-03-22.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-03-22.webp",
+    "image": "/images/products/keerthi_authentic_kuzhalappam.webp",
+    "imageWebp": "/images/products/keerthi_authentic_kuzhalappam.webp",
     "imageCutout": "/images/products_blum/keerthi_authentic_kuzhalappam_transparent.png",
     "priceText": "₹95 / 250g Pouch",
     "rating": 4.95,
     "reviewCount": 654,
-    "rawFileName": "PHOTO-2026-10-15-09-03-22.jpg"
+    "rawFileName": "B1FD063E-C0A4-453E-92A2-0A5737BDC954.PNG",
+    "studioImage": "/images/products/B1FD063E-C0A4-453E-92A2-0A5737BDC954.PNG",
+    "imagePng": "/images/products/keerthi_authentic_kuzhalappam.png"
   },
   {
     "id": "keerthi-white-butter-murukku",
@@ -946,13 +1012,15 @@ export const PRODUCTS = [
       "butter",
       "white"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-03-58.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-03-58.webp",
+    "image": "/images/products/keerthi_white_butter_murukku.webp",
+    "imageWebp": "/images/products/keerthi_white_butter_murukku.webp",
     "imageCutout": "/images/products_blum/keerthi_white_butter_murukku_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.96,
     "reviewCount": 701,
-    "rawFileName": "PHOTO-2026-10-15-09-03-58.jpg"
+    "rawFileName": "F5F17967-30F6-4990-AD0E-E91B9CC584FE.PNG",
+    "studioImage": "/images/products/F5F17967-30F6-4990-AD0E-E91B9CC584FE.PNG",
+    "imagePng": "/images/products/keerthi_white_butter_murukku.png"
   },
   {
     "id": "keerthi-ring-cheeda-murukku",
@@ -974,13 +1042,15 @@ export const PRODUCTS = [
       "valayappam",
       "murukku"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-04-16.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-04-16.webp",
+    "image": "/images/products/keerthi_ring_cheeda_murukku.webp",
+    "imageWebp": "/images/products/keerthi_ring_cheeda_murukku.webp",
     "imageCutout": "/images/products_blum/keerthi_ring_cheeda_murukku_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.970000000000001,
     "reviewCount": 748,
-    "rawFileName": "PHOTO-2026-10-15-09-04-16.jpg"
+    "rawFileName": "5215068D-8FAA-4084-8325-C5C0EA95CC89.PNG",
+    "studioImage": "/images/products/5215068D-8FAA-4084-8325-C5C0EA95CC89.PNG",
+    "imagePng": "/images/products/keerthi_ring_cheeda_murukku.png"
   },
   {
     "id": "keerthi-aval-poha-mixture",
@@ -1002,13 +1072,15 @@ export const PRODUCTS = [
       "poha",
       "mixture"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-05-07.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-05-07.webp",
+    "image": "/images/products/keerthi_aval_poha_mixture.webp",
+    "imageWebp": "/images/products/keerthi_aval_poha_mixture.webp",
     "imageCutout": "/images/products_blum/keerthi_aval_poha_mixture_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.98,
     "reviewCount": 795,
-    "rawFileName": "PHOTO-2026-10-15-09-05-07.jpg"
+    "rawFileName": "90455308-7230-4519-9594-7B51FAAAD1AE.PNG",
+    "studioImage": "/images/products/90455308-7230-4519-9594-7B51FAAAD1AE.PNG",
+    "imagePng": "/images/products/keerthi_aval_poha_mixture.png"
   },
   {
     "id": "keerthi-cornflakes-spicy-mix",
@@ -1030,13 +1102,15 @@ export const PRODUCTS = [
       "mixture",
       "sweet-spicy"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-05-34.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-05-34.webp",
+    "image": "/images/products/keerthi_cornflakes_spicy_mix.webp",
+    "imageWebp": "/images/products/keerthi_cornflakes_spicy_mix.webp",
     "imageCutout": "/images/products_blum/keerthi_cornflakes_spicy_mix_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.9,
     "reviewCount": 842,
-    "rawFileName": "PHOTO-2026-10-15-09-05-34.jpg"
+    "rawFileName": "AC127AF2-BE54-4E03-969D-E79CF3566F60.PNG",
+    "studioImage": "/images/products/AC127AF2-BE54-4E03-969D-E79CF3566F60.PNG",
+    "imagePng": "/images/products/keerthi_cornflakes_spicy_mix.png"
   },
   {
     "id": "keerthi-banana-chips-pure-coconut-oil",
@@ -1059,13 +1133,15 @@ export const PRODUCTS = [
       "kerala",
       "bestseller"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-05-52.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-05-52.webp",
+    "image": "/images/products/keerthi_banana_chips_pure_coconut_oil.webp",
+    "imageWebp": "/images/products/keerthi_banana_chips_pure_coconut_oil.webp",
     "imageCutout": "/images/products_blum/keerthi_banana_chips_pure_coconut_oil_transparent.png",
     "priceText": "₹130 / 250g Pouch",
     "rating": 4.91,
     "reviewCount": 889,
-    "rawFileName": "PHOTO-2026-10-15-09-05-52.jpg"
+    "rawFileName": "AC5A6F65-51A5-4D68-A312-C2FF8A641083 2.PNG",
+    "studioImage": "/images/products/AC5A6F65-51A5-4D68-A312-C2FF8A641083 2.PNG",
+    "imagePng": "/images/products/keerthi_banana_chips_pure_coconut_oil.png"
   },
   {
     "id": "keerthi-crispy-milk-rusk",
@@ -1087,13 +1163,15 @@ export const PRODUCTS = [
       "milk",
       "tea-time"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-06-14.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-06-14.webp",
+    "image": "/images/products/keerthi_crispy_milk_rusk.webp",
+    "imageWebp": "/images/products/keerthi_crispy_milk_rusk.webp",
     "imageCutout": "/images/products_blum/keerthi_crispy_milk_rusk_transparent.png",
     "priceText": "₹80 / 300g Pack",
     "rating": 4.92,
     "reviewCount": 936,
-    "rawFileName": "PHOTO-2026-10-15-09-06-14.jpg"
+    "rawFileName": "0D3D15F2-FDEA-4BEF-BEBB-124DAB87F2D4.PNG",
+    "studioImage": "/images/products/0D3D15F2-FDEA-4BEF-BEBB-124DAB87F2D4.PNG",
+    "imagePng": "/images/products/keerthi_crispy_milk_rusk.png"
   },
   {
     "id": "keerthi-cardamom-cake-rusk",
@@ -1115,13 +1193,15 @@ export const PRODUCTS = [
       "cardamom",
       "biscuits"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-06-33.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-06-33.webp",
+    "image": "/images/products/keerthi_cardamom_cake_rusk.webp",
+    "imageWebp": "/images/products/keerthi_cardamom_cake_rusk.webp",
     "imageCutout": "/images/products_blum/keerthi_cardamom_cake_rusk_transparent.png",
     "priceText": "₹95 / 300g Pack",
     "rating": 4.930000000000001,
     "reviewCount": 983,
-    "rawFileName": "PHOTO-2026-10-15-09-06-33.jpg"
+    "rawFileName": "8D5C5911-C7AC-4E59-BCB2-81F1897BB38C.PNG",
+    "studioImage": "/images/products/8D5C5911-C7AC-4E59-BCB2-81F1897BB38C.PNG",
+    "imagePng": "/images/products/keerthi_cardamom_cake_rusk.png"
   },
   {
     "id": "keerthi-rich-butter-cookies",
@@ -1143,13 +1223,15 @@ export const PRODUCTS = [
       "butter",
       "biscuits"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-06-53.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-06-53.webp",
+    "image": "/images/products/keerthi_rich_butter_cookies.webp",
+    "imageWebp": "/images/products/keerthi_rich_butter_cookies.webp",
     "imageCutout": "/images/products_blum/keerthi_rich_butter_cookies_transparent.png",
     "priceText": "₹95 / 250g Pouch",
     "rating": 4.94,
     "reviewCount": 1030,
-    "rawFileName": "PHOTO-2026-10-15-09-06-53.jpg"
+    "rawFileName": "8C91CC0D-9E78-4375-92F1-A868AC1165A1.PNG",
+    "studioImage": "/images/products/8C91CC0D-9E78-4375-92F1-A868AC1165A1.PNG",
+    "imagePng": "/images/products/keerthi_rich_butter_cookies.png"
   },
   {
     "id": "keerthi-crunchy-murukku-batons",
@@ -1171,13 +1253,15 @@ export const PRODUCTS = [
       "batons",
       "sticks"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-07-19.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-07-19.webp",
+    "image": "/images/products/keerthi_crunchy_murukku_batons.webp",
+    "imageWebp": "/images/products/keerthi_crunchy_murukku_batons.webp",
     "imageCutout": "/images/products_blum/keerthi_crunchy_murukku_batons_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.95,
     "reviewCount": 1077,
-    "rawFileName": "PHOTO-2026-10-15-09-07-19.jpg"
+    "rawFileName": "2422EE1D-DCD7-4B4A-AE53-DA95ED5E1CE1 2.PNG",
+    "studioImage": "/images/products/2422EE1D-DCD7-4B4A-AE53-DA95ED5E1CE1 2.PNG",
+    "imagePng": "/images/products/keerthi_crunchy_murukku_batons.png"
   },
   {
     "id": "keerthi-square-tea-biscuits",
@@ -1199,13 +1283,15 @@ export const PRODUCTS = [
       "tea",
       "square"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-07-39.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-07-39.webp",
+    "image": "/images/products/keerthi_square_tea_biscuits.webp",
+    "imageWebp": "/images/products/keerthi_square_tea_biscuits.webp",
     "imageCutout": "/images/products_blum/keerthi_square_tea_biscuits_transparent.png",
     "priceText": "₹80 / 250g Pouch",
     "rating": 4.96,
     "reviewCount": 1124,
-    "rawFileName": "PHOTO-2026-10-15-09-07-39.jpg"
+    "rawFileName": "172FC66B-8244-4C19-8F70-11830BCF3A54.PNG",
+    "studioImage": "/images/products/172FC66B-8244-4C19-8F70-11830BCF3A54.PNG",
+    "imagePng": "/images/products/keerthi_square_tea_biscuits.png"
   },
   {
     "id": "keerthi-salted-boondi-gram",
@@ -1227,13 +1313,15 @@ export const PRODUCTS = [
       "salted",
       "snack"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-08-00.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-08-00.webp",
+    "image": "/images/products/keerthi_salted_boondi_gram.webp",
+    "imageWebp": "/images/products/keerthi_salted_boondi_gram.webp",
     "imageCutout": "/images/products_blum/keerthi_salted_boondi_gram_transparent.png",
     "priceText": "₹80 / 200g Pouch",
     "rating": 4.970000000000001,
     "reviewCount": 1171,
-    "rawFileName": "PHOTO-2026-10-15-09-08-00.jpg"
+    "rawFileName": "87B187EE-9BAF-4DB3-A142-EA536AB006FC.PNG",
+    "studioImage": "/images/products/87B187EE-9BAF-4DB3-A142-EA536AB006FC.PNG",
+    "imagePng": "/images/products/keerthi_salted_boondi_gram.png"
   },
   {
     "id": "keerthi-sweet-achappam-rosette",
@@ -1256,13 +1344,15 @@ export const PRODUCTS = [
       "sweet",
       "kerala"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-08-25.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-08-25.webp",
+    "image": "/images/products/keerthi_sweet_achappam_rosette.webp",
+    "imageWebp": "/images/products/keerthi_sweet_achappam_rosette.webp",
     "imageCutout": "/images/products_blum/keerthi_sweet_achappam_rosette_transparent.png",
     "priceText": "₹95 / 200g Pouch",
     "rating": 4.98,
     "reviewCount": 1218,
-    "rawFileName": "PHOTO-2026-10-15-09-08-25.jpg"
+    "rawFileName": "B4422C63-5CF8-477A-A1E0-51EEDB51B3DF.PNG",
+    "studioImage": "/images/products/B4422C63-5CF8-477A-A1E0-51EEDB51B3DF.PNG",
+    "imagePng": "/images/products/keerthi_sweet_achappam_rosette.png"
   },
   {
     "id": "keerthi-special-premium-rusk",
@@ -1284,13 +1374,15 @@ export const PRODUCTS = [
       "special",
       "bestseller"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-08-42.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-08-42.webp",
+    "image": "/images/products/keerthi_special_premium_rusk.webp",
+    "imageWebp": "/images/products/keerthi_special_premium_rusk.webp",
     "imageCutout": "/images/products_blum/keerthi_special_premium_rusk_transparent.png",
     "priceText": "₹85 / 300g Pack",
     "rating": 4.9,
     "reviewCount": 1265,
-    "rawFileName": "PHOTO-2026-10-15-09-08-42.jpg"
+    "rawFileName": "08D219D4-8665-4867-9220-55979998A803.PNG",
+    "studioImage": "/images/products/08D219D4-8665-4867-9220-55979998A803.PNG",
+    "imagePng": "/images/products/keerthi_special_premium_rusk.png"
   },
   {
     "id": "keerthi-thick-butter-sev",
@@ -1312,13 +1404,15 @@ export const PRODUCTS = [
       "butter",
       "murukku"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-29-26.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-29-26.webp",
+    "image": "/images/products/keerthi_thick_butter_sev.webp",
+    "imageWebp": "/images/products/keerthi_thick_butter_sev.webp",
     "imageCutout": "/images/products_blum/keerthi_thick_butter_sev_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.91,
     "reviewCount": 1312,
-    "rawFileName": "PHOTO-2026-10-15-09-29-26.jpg"
+    "rawFileName": "2B3B2389-9AB9-49F2-BD90-58C6E3BD8C27.PNG",
+    "studioImage": "/images/products/2B3B2389-9AB9-49F2-BD90-58C6E3BD8C27.PNG",
+    "imagePng": "/images/products/keerthi_thick_butter_sev.png"
   },
   {
     "id": "keerthi-crispy-sweet-kaja",
@@ -1340,13 +1434,15 @@ export const PRODUCTS = [
       "sweet",
       "traditional"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-29-46.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-29-46.webp",
+    "image": "/images/products/keerthi_crispy_sweet_kaja.webp",
+    "imageWebp": "/images/products/keerthi_crispy_sweet_kaja.webp",
     "imageCutout": "/images/products_blum/keerthi_crispy_sweet_kaja_transparent.png",
     "priceText": "₹95 / 250g Pouch",
     "rating": 4.92,
     "reviewCount": 1359,
-    "rawFileName": "PHOTO-2026-10-15-09-29-46.jpg"
+    "rawFileName": "92531F63-750C-440F-8FC6-B53588A5AB40.PNG",
+    "studioImage": "/images/products/92531F63-750C-440F-8FC6-B53588A5AB40.PNG",
+    "imagePng": "/images/products/keerthi_crispy_sweet_kaja.png"
   },
   {
     "id": "keerthi-vanilla-tea-biscuits",
@@ -1368,13 +1464,15 @@ export const PRODUCTS = [
       "vanilla",
       "tea-time"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-30-05.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-30-05.webp",
+    "image": "/images/products/keerthi_vanilla_tea_biscuits.webp",
+    "imageWebp": "/images/products/keerthi_vanilla_tea_biscuits.webp",
     "imageCutout": "/images/products_blum/keerthi_vanilla_tea_biscuits_transparent.png",
     "priceText": "₹85 / 250g Pouch",
     "rating": 4.930000000000001,
     "reviewCount": 1406,
-    "rawFileName": "PHOTO-2026-10-15-09-30-05.jpg"
+    "rawFileName": "15091FF8-FE80-4EBB-92DC-1BEE117681F8.PNG",
+    "studioImage": "/images/products/15091FF8-FE80-4EBB-92DC-1BEE117681F8.PNG",
+    "imagePng": "/images/products/keerthi_vanilla_tea_biscuits.png"
   },
   {
     "id": "keerthi-spicy-fried-green-peas",
@@ -1396,13 +1494,15 @@ export const PRODUCTS = [
       "greenpeas",
       "spicy"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-30-25.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-30-25.webp",
+    "image": "/images/products/keerthi_spicy_fried_green_peas.webp",
+    "imageWebp": "/images/products/keerthi_spicy_fried_green_peas.webp",
     "imageCutout": "/images/products_blum/keerthi_spicy_fried_green_peas_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.94,
     "reviewCount": 1453,
-    "rawFileName": "PHOTO-2026-10-15-09-30-25.jpg"
+    "rawFileName": "391F1547-6DAA-44BF-9D38-E081D5521A1B.PNG",
+    "studioImage": "/images/products/391F1547-6DAA-44BF-9D38-E081D5521A1B.PNG",
+    "imagePng": "/images/products/keerthi_spicy_fried_green_peas.png"
   },
   {
     "id": "keerthi-mini-ring-murukku",
@@ -1424,13 +1524,15 @@ export const PRODUCTS = [
       "ring",
       "mini"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-30-44.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-30-44.webp",
+    "image": "/images/products/keerthi_mini_ring_murukku.webp",
+    "imageWebp": "/images/products/keerthi_mini_ring_murukku.webp",
     "imageCutout": "/images/products_blum/keerthi_mini_ring_murukku_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.95,
     "reviewCount": 1500,
-    "rawFileName": "PHOTO-2026-10-15-09-30-44.jpg"
+    "rawFileName": "39F35E8E-BFA3-45FF-8C58-B16F81B0AC42.PNG",
+    "studioImage": "/images/products/39F35E8E-BFA3-45FF-8C58-B16F81B0AC42.PNG",
+    "imagePng": "/images/products/keerthi_mini_ring_murukku.png"
   },
   {
     "id": "keerthi-roasted-salted-cashews",
@@ -1453,13 +1555,15 @@ export const PRODUCTS = [
       "premium",
       "ghee"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-36-25.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-36-25.webp",
+    "image": "/images/products/keerthi_roasted_salted_cashews.webp",
+    "imageWebp": "/images/products/keerthi_roasted_salted_cashews.webp",
     "imageCutout": "/images/products_blum/keerthi_roasted_salted_cashews_transparent.png",
     "priceText": "₹240 / 200g Pouch",
     "rating": 4.96,
     "reviewCount": 1547,
-    "rawFileName": "PHOTO-2026-10-15-09-36-25.jpg"
+    "rawFileName": "EA9EB58E-2F95-4CB5-88A4-E571DD18553A.PNG",
+    "studioImage": "/images/products/EA9EB58E-2F95-4CB5-88A4-E571DD18553A.PNG",
+    "imagePng": "/images/products/keerthi_roasted_salted_cashews.png"
   },
   {
     "id": "keerthi-malabar-peas-mixture",
@@ -1481,13 +1585,15 @@ export const PRODUCTS = [
       "peas",
       "malabar"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-36-55.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-36-55.webp",
+    "image": "/images/products/keerthi_malabar_peas_mixture.webp",
+    "imageWebp": "/images/products/keerthi_malabar_peas_mixture.webp",
     "imageCutout": "/images/products_blum/keerthi_malabar_peas_mixture_transparent.png",
     "priceText": "₹85 / 200g Pouch",
     "rating": 4.970000000000001,
     "reviewCount": 394,
-    "rawFileName": "PHOTO-2026-10-15-09-36-55.jpg"
+    "rawFileName": "EF9E3DB6-AECD-4873-92D7-C6276E1CBC75.PNG",
+    "studioImage": "/images/products/EF9E3DB6-AECD-4873-92D7-C6276E1CBC75.PNG",
+    "imagePng": "/images/products/keerthi_malabar_peas_mixture.png"
   },
   {
     "id": "keerthi-sweet-somasi-kaja",
@@ -1509,13 +1615,15 @@ export const PRODUCTS = [
       "kaja",
       "sweet"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-38-07.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-38-07.webp",
+    "image": "/images/products/keerthi_sweet_somasi_kaja.webp",
+    "imageWebp": "/images/products/keerthi_sweet_somasi_kaja.webp",
     "imageCutout": "/images/products_blum/keerthi_sweet_somasi_kaja_transparent.png",
     "priceText": "₹110 / 250g Pouch",
     "rating": 4.98,
     "reviewCount": 441,
-    "rawFileName": "PHOTO-2026-10-15-09-38-07.jpg"
+    "rawFileName": "6AEA90E3-344F-4953-ACC2-A802B4786A31.PNG",
+    "studioImage": "/images/products/6AEA90E3-344F-4953-ACC2-A802B4786A31.PNG",
+    "imagePng": "/images/products/keerthi_sweet_somasi_kaja.png"
   },
   {
     "id": "keerthi-fresh-golden-tea-muffins",
@@ -1538,13 +1646,15 @@ export const PRODUCTS = [
       "cupcakes",
       "fresh"
     ],
-    "image": "/images/blum/PHOTO-2026-10-15-09-44-49.jpg",
-    "imageWebp": "/images/blum/PHOTO-2026-10-15-09-44-49.webp",
+    "image": "/images/products/keerthi_fresh_golden_tea_muffins.webp",
+    "imageWebp": "/images/products/keerthi_fresh_golden_tea_muffins.webp",
     "imageCutout": "/images/products_blum/keerthi_fresh_golden_tea_muffins_transparent.png",
     "priceText": "₹120 / Box of 12",
     "rating": 4.9,
     "reviewCount": 488,
-    "rawFileName": "PHOTO-2026-10-15-09-44-49.jpg"
+    "rawFileName": "FF7752E5-89D1-4A84-800D-A70331471BD3.PNG",
+    "studioImage": "/images/products/FF7752E5-89D1-4A84-800D-A70331471BD3.PNG",
+    "imagePng": "/images/products/keerthi_fresh_golden_tea_muffins.png"
   }
 ];
 

@@ -1,5 +1,4 @@
 import { cart } from "./cart.js";
-import { ADDONS } from "../data/products.js";
 
 export function initCartDrawerUI(showToast) {
   const drawer = document.getElementById("cart-drawer");
@@ -164,30 +163,6 @@ export function initCartDrawerUI(showToast) {
           `).join('')}
         </div>
 
-        <!-- Add-on Upsells Section -->
-        <div class="drawer-addons-section">
-          <div class="addons-heading">
-            <span>✨ Frequently Paired Malabar Snacks</span>
-          </div>
-          <div class="addons-slider">
-            ${ADDONS.map(addon => {
-              const isAlreadyInCart = summary.items.some(i => i.productId === addon.id);
-              return `
-                <div class="addon-chip-card">
-                  <span class="addon-chip-icon">${addon.icon}</span>
-                  <div class="addon-chip-info">
-                    <div class="addon-chip-name">${addon.name}</div>
-                    <div class="addon-chip-price">+₹${addon.price}</div>
-                  </div>
-                  <button type="button" class="btn-addon-add ${isAlreadyInCart ? 'added' : ''}" data-addon-id="${addon.id}">
-                    ${isAlreadyInCart ? 'Added ✓' : '+ Add'}
-                  </button>
-                </div>
-              `;
-            }).join('')}
-          </div>
-        </div>
-
         <!-- Freshness Packaging & Delivery Option -->
         <div class="drawer-slot-section">
           <div class="slot-title">📦 Delivery &amp; Packaging Preference</div>
@@ -302,16 +277,6 @@ export function initCartDrawerUI(showToast) {
         cart.removeItem(btn.dataset.key);
         renderDrawer();
         showToast("Item removed from cart");
-      };
-    });
-
-    // Addon quick add
-    drawerItemsContainer.querySelectorAll(".btn-addon-add").forEach(btn => {
-      btn.onclick = () => {
-        const addonId = btn.dataset.addonId;
-        cart.addAddon(addonId);
-        renderDrawer();
-        showToast("Fresh snack add-on added!");
       };
     });
 

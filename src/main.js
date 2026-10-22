@@ -578,18 +578,87 @@ function initCoverflowSection(showToast) {
   const carouselSpacing = 0.04;
   const carouselSnap = gsap.utils.snap(carouselSpacing);
 
-  gsap.set(carouselCards, { xPercent: 400, opacity: 0, scale: 0 });
+  gsap.set(carouselCards, { xPercent: 500, opacity: 0, scale: 0, rotateY: 0 });
 
+  // Custom multi-card stage animation: showcases 3 products clearly in front (Left, Center, Right)
   const carouselAnimateFunc = element => {
     const tl = gsap.timeline();
+
+    // 1. xPercent path (spreads the 3 front cards so all 3 are fully visible side-by-side)
     tl.fromTo(element,
-      { scale: 0.2, opacity: 0 },
-      { scale: 1, opacity: 1, zIndex: 100, duration: 0.5, yoyo: true, repeat: 1, ease: "power1.in", immediateRender: false }
-    ).fromTo(element,
-      { xPercent: 350 },
-      { xPercent: -350, duration: 1, ease: "none", immediateRender: false },
-      0
-    );
+      { xPercent: 500 },
+      { xPercent: 430, duration: 0.34, ease: "none", immediateRender: false }, 0
+    )
+    .to(element, { xPercent: 335, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
+    .to(element, { xPercent: 230, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
+    .to(element, { xPercent: 120, duration: 0.04, ease: "power1.out", immediateRender: false }, 0.42) // Slot +1 (Right Front Card)
+    .to(element, { xPercent: 0, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.46)   // Slot 0 (Center Front Card)
+    .to(element, { xPercent: -120, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.50) // Slot -1 (Left Front Card)
+    .to(element, { xPercent: -230, duration: 0.04, ease: "power1.in", immediateRender: false }, 0.54)
+    .to(element, { xPercent: -335, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
+    .to(element, { xPercent: -430, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
+    .to(element, { xPercent: -500, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
+
+    // 2. Scale path (3 cards in front have prominent scale: 0.94 - 1.05)
+    tl.fromTo(element,
+      { scale: 0.35 },
+      { scale: 0.50, duration: 0.34, ease: "none", immediateRender: false }, 0
+    )
+    .to(element, { scale: 0.65, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
+    .to(element, { scale: 0.80, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
+    .to(element, { scale: 0.94, duration: 0.04, ease: "power1.out", immediateRender: false }, 0.42) // Right Front Card
+    .to(element, { scale: 1.05, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.46) // Center Front Card
+    .to(element, { scale: 0.94, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.50) // Left Front Card
+    .to(element, { scale: 0.80, duration: 0.04, ease: "power1.in", immediateRender: false }, 0.54)
+    .to(element, { scale: 0.65, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
+    .to(element, { scale: 0.50, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
+    .to(element, { scale: 0.35, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
+
+    // 3. Opacity path (All 3 front cards have 0.98 - 1.0 opacity)
+    tl.fromTo(element,
+      { opacity: 0 },
+      { opacity: 0.25, duration: 0.34, ease: "none", immediateRender: false }, 0
+    )
+    .to(element, { opacity: 0.55, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
+    .to(element, { opacity: 0.85, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
+    .to(element, { opacity: 0.98, duration: 0.04, ease: "none", immediateRender: false }, 0.42)
+    .to(element, { opacity: 1.00, duration: 0.04, ease: "none", immediateRender: false }, 0.46)
+    .to(element, { opacity: 0.98, duration: 0.04, ease: "none", immediateRender: false }, 0.50)
+    .to(element, { opacity: 0.85, duration: 0.04, ease: "none", immediateRender: false }, 0.54)
+    .to(element, { opacity: 0.55, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
+    .to(element, { opacity: 0.25, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
+    .to(element, { opacity: 0, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
+
+    // 4. zIndex path (Front cards have priority zIndex 90-100)
+    tl.fromTo(element,
+      { zIndex: 10 },
+      { zIndex: 35, duration: 0.34, ease: "none", immediateRender: false }, 0
+    )
+    .to(element, { zIndex: 55, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
+    .to(element, { zIndex: 75, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
+    .to(element, { zIndex: 90, duration: 0.04, ease: "none", immediateRender: false }, 0.42)
+    .to(element, { zIndex: 100, duration: 0.04, ease: "none", immediateRender: false }, 0.46)
+    .to(element, { zIndex: 90, duration: 0.04, ease: "none", immediateRender: false }, 0.50)
+    .to(element, { zIndex: 75, duration: 0.04, ease: "none", immediateRender: false }, 0.54)
+    .to(element, { zIndex: 55, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
+    .to(element, { zIndex: 35, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
+    .to(element, { zIndex: 10, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
+
+    // 5. rotateY 3D angle (subtle inward curvature)
+    tl.fromTo(element,
+      { rotateY: -35 },
+      { rotateY: -28, duration: 0.34, ease: "none", immediateRender: false }, 0
+    )
+    .to(element, { rotateY: -20, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
+    .to(element, { rotateY: -14, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
+    .to(element, { rotateY: -8, duration: 0.04, ease: "none", immediateRender: false }, 0.42)
+    .to(element, { rotateY: 0, duration: 0.04, ease: "none", immediateRender: false }, 0.46)
+    .to(element, { rotateY: 8, duration: 0.04, ease: "none", immediateRender: false }, 0.50)
+    .to(element, { rotateY: 14, duration: 0.04, ease: "none", immediateRender: false }, 0.54)
+    .to(element, { rotateY: 20, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
+    .to(element, { rotateY: 28, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
+    .to(element, { rotateY: 35, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
+
     return tl;
   };
 
@@ -711,7 +780,13 @@ function initCoverflowSection(showToast) {
 
     card.addEventListener("click", (e) => {
       if (isDraggingCard) return;
-      openProductModal(card);
+      const li = card.closest("li");
+      const id = li?.dataset.id || card.dataset.id;
+      if (id) {
+        window.location.href = `product.html?id=${encodeURIComponent(id)}`;
+      } else {
+        openProductModal(card);
+      }
     });
   });
 

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — Keerthi Bakery | Pee Kay Group</title>
+  <meta name="description" content="Authentic Kerala savouries, crispy coconut oil banana chips, and gourmet snacks from Keerthi Bakery, Kadavathur. Since 1996.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/keerthi-redesign.css">
+  <link rel="stylesheet" href="/src/cart-drawer.css">
+  <link rel="stylesheet" href="/src/product-page.css">
+</head>
+<body class="product-detail-body haldiram-theme-body">
+
+  <!-- ==========================================================================
+       1. TOP ANNOUNCEMENT BAR (Peach banner with delivery timeline)
+       ========================================================================== -->
+  <aside class="haldiram-topbar" aria-label="Store announcement">
+    <div class="haldiram-container haldiram-topbar-inner">
+      <div class="haldiram-topbar-left">
+        <span class="delivery-notice-text">
+          Estimated Standard Delivery Timeline of 3-5 Working Days, Though Delivery Time May Vary Depending On Pin Code. CAUTION: Beware of Fraud! We do not accept / encourage cash...
+        </span>
+      </div>
+      <div class="haldiram-topbar-right">
+        <a href="mailto:support@keerthibakery.com" class="topbar-link">
+          <i class="ri-mail-line"></i> support@keerthibakery.com
+        </a>
+        <span class="topbar-sep">|</span>
+        <a href="#footer" class="topbar-link">Contact Us</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       2. MAIN STORE HEADER (Clean White with Wide Search & Actions)
+       ========================================================================== -->
+  <header class="haldiram-header" id="header">
+    <div class="haldiram-container haldiram-header-inner">
+      <!-- Left: Brand Logo & Buy a Gift -->
+      <div class="haldiram-header-left">
+        <a href="index.html" class="haldiram-logo-link" title="Keerthi Bakery - Peekay Group">
+          <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery - Peekay Group" class="haldiram-logo-img">
+        </a>
+        <span class="haldiram-header-divider" aria-hidden="true"></span>
+        <a href="index.html#shop-all" class="haldiram-buy-gift">
+          <i class="ri-gift-line"></i>
+          <span>Buy a Gift</span>
+        </a>
+      </div>
+
+      <!-- Center: Wide Search Bar with Search Icon -->
+      <div class="haldiram-search-wrap">
+        <form class="haldiram-search-form" id="haldiramSearchForm" onsubmit="event.preventDefault(); window.location.href='index.html#shop-all';">
+          <input 
+            type="text" 
+            id="haldiramSearchInput" 
+            class="haldiram-search-input" 
+            placeholder="Search For Anything..." 
+            autocomplete="off"
+            aria-label="Search products"
+          >
+          <button type="submit" class="haldiram-search-btn" aria-label="Submit search">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Right: User & Cart Actions -->
+      <div class="haldiram-header-right">
+        <button type="button" class="haldiram-icon-action account-trigger-btn" id="headerAccountBtn" aria-label="Account">
+          <i class="ri-user-line"></i>
+        </button>
+
+        <button type="button" class="haldiram-icon-action cart-trigger-btn haldiram-cart-pill" id="headerCartBtn" aria-label="View Shopping Cart">
+          <i class="ri-shopping-bag-line"></i>
+          <span class="haldiram-cart-badge" id="headerCartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. SUB-NAVIGATION CATEGORY BAR
+       ========================================================================== -->
+  <nav class="haldiram-cat-nav" aria-label="Product categories">
+    <div class="haldiram-container haldiram-cat-nav-inner">
+      <div class="haldiram-cat-links">
+        <a href="index.html#shop-all" class="cat-link active">Shop All <i class="ri-arrow-down-s-line"></i></a>
+        <a href="index.html#shop-all" class="cat-link">Gift Hampers</a>
+        <a href="index.html#shop-all" class="cat-link">Sweets</a>
+        <a href="index.html#shop-all" class="cat-link">Savories</a>
+        <a href="cakes.html" class="cat-link">Bakery</a>
+        <a href="index.html#shop-all" class="cat-link">Beverages</a>
+        <a href="index.html#shop-all" class="cat-link">Ready To Eat</a>
+        <a href="index.html#shop-all" class="cat-link">Ghee</a>
+        <a href="index.html#shop-all" class="cat-link">Dry Fruits</a>
+        <a href="index.html#shop-all" class="cat-link">Ready To Cook</a>
+      </div>
+      <div class="haldiram-bulk-order">
+        <a href="index.html#footer" class="bulk-order-link">Bulk Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       4. BREADCRUMBS ROW WITH CIRCULAR SHARE BUTTON
+       ========================================================================== -->
+  <div class="haldiram-breadcrumb-strip">
+    <div class="haldiram-container haldiram-breadcrumb-inner">
+      <nav class="haldiram-breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="index.html#shop-all">Products</a>
+        <span class="sep">/</span>
+        <a href="index.html#shop-all" id="pdpBreadcrumbCategory">Savouries &amp; Snacks</a>
+        <span class="sep">/</span>
+        <span class="current" id="pdpBreadcrumbCurrent">Loading Product...</span>
+      </nav>
+
+      <button type="button" class="haldiram-share-circle-btn" id="haldiramShareBtn" aria-label="Share product" title="Share this product">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. MAIN PRODUCT SECTION (2 COLUMNS: Hero Image | Product Buy Box & Tabs)
+       ========================================================================== -->
+  <main class="haldiram-main-section">
+    <div class="haldiram-container haldiram-product-grid">
+
+      <!-- LEFT COLUMN: Product Hero Visual (Rounded Frame) -->
+      <div class="haldiram-visual-col">
+        <div class="haldiram-image-frame" id="haldiramImgFrame">
+          <img 
+            src="/images/products/keerthi_spicy_kadala_pakoda.webp" 
+            alt="Product Showcase" 
+            class="haldiram-hero-image" 
+            id="pdpMainImg"
+          >
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Title, Price, Excerpt, Delivery, Variant, CTA, Tabs -->
+      <div class="haldiram-buybox-col">
+        <!-- Title -->
+        <h1 class="haldiram-title" id="pdpTitle">Loading Product...</h1>
+
+        <!-- Price -->
+        <div class="haldiram-price-group">
+          <div class="haldiram-price-row">
+            <span class="haldiram-price-val" id="pdpLivePrice">₹85/-</span>
+          </div>
+          <div class="haldiram-tax-text">(Inclusive of all taxes)</div>
+        </div>
+
+        <!-- Excerpt / Short Description -->
+        <div class="haldiram-excerpt-box">
+          <span class="haldiram-excerpt-text" id="pdpShortDesc">
+            Loading description...
+          </span>
+          <button type="button" class="haldiram-readmore-link" id="pdpReadMoreBtn">Read More</button>
+        </div>
+
+        <!-- Deliver To / Pincode Section -->
+        <div class="haldiram-delivery-box">
+          <label for="haldiramPincodeInput" class="haldiram-delivery-label">Deliver to</label>
+          <div class="haldiram-delivery-input-row">
+            <input 
+              type="text" 
+              id="haldiramPincodeInput" 
+              class="haldiram-pincode-field" 
+              value="670676" 
+              maxlength="6"
+              placeholder="Enter Pincode"
+            >
+            <button type="button" class="haldiram-check-link" id="haldiramPincodeBtn">Check</button>
+          </div>
+          <div class="haldiram-delivery-status" id="haldiramPincodeStatus">
+            Delivery available in your area.
+          </div>
+        </div>
+
+        <!-- Variant / Weight Selector -->
+        <div class="haldiram-variant-group">
+          <div class="haldiram-variant-label">Quantity :</div>
+          <div class="haldiram-variant-pills" id="pdpWeightsGrid">
+            <button type="button" class="haldiram-variant-pill active" data-weight="95 gm" data-price="50">
+              95 gm
+            </button>
+          </div>
+        </div>
+
+        <!-- Stepper + CHECKOUT CTA Row -->
+        <div class="haldiram-cta-row">
+          <div class="haldiram-stepper-box">
+            <button type="button" class="haldiram-step-btn minus" id="pdpQtyMinus" aria-label="Decrease quantity">−</button>
+            <span class="haldiram-step-val" id="pdpQtyVal">1</span>
+            <button type="button" class="haldiram-step-btn plus" id="pdpQtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+
+          <button type="button" class="haldiram-btn-checkout" id="pdpCheckoutBtn">
+            CHECKOUT
+          </button>
+        </div>
+
+        <!-- DESCRIPTION & DETAILS Tabs Section -->
+        <div class="haldiram-tabs-wrapper" id="haldiramTabsWrapper">
+          <div class="haldiram-tabs-header" role="tablist">
+            <button type="button" class="haldiram-tab-nav active" data-target="tab-desc" role="tab" aria-selected="true">
+              DESCRIPTION
+            </button>
+            <button type="button" class="haldiram-tab-nav" data-target="tab-details" role="tab" aria-selected="false">
+              DETAILS
+            </button>
+          </div>
+
+          <!-- Description Tab Pane -->
+          <div class="haldiram-tab-content active" id="tab-desc" role="tabpanel">
+            <p class="desc-hook" id="pdpDescHook">
+              Simple flavour. Serious crunch. The kind of snack that mysteriously disappears before you realise you have eaten half the pack.
+            </p>
+            <p class="desc-body" id="pdpDescBody">
+              Haldiram's Classic Salted Chips are crisp, golden potato slices seasoned with just the right touch of salt. Thinly sliced from premium hand-picked potatoes and kettle fried to golden perfection.
+            </p>
+          </div>
+
+          <!-- Details Tab Pane -->
+          <div class="haldiram-tab-content" id="tab-details" role="tabpanel">
+            <div class="haldiram-details-grid">
+              <div class="detail-item">
+                <span class="detail-label">Ingredients:</span>
+                <span class="detail-value" id="pdpDetailsIngredients">Selected Potatoes, Edible Vegetable Oil, Iodized Salt.</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Nutritional Values (per 100g):</span>
+                <span class="detail-value" id="pdpDetailsNutrition">Energy: 546 kcal • Protein: 6.8g • Carbohydrates: 51.2g • Fat: 35g</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Shelf Life:</span>
+                <span class="detail-value">4 Months from packaging date</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Dietary Preference:</span>
+                <span class="detail-value">100% Vegetarian (Pure Veg)</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Manufacturer &amp; FSSAI:</span>
+                <span class="detail-value">Keerthi Bakery (Pee Kay Group), Kadavathur, Kerala. Lic No: 11317006000214</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       6. SUGGESTIONS SECTION ("YOU MAY ALSO LIKE")
+       ========================================================================== -->
+  <section class="haldiram-suggestions-section">
+    <div class="haldiram-container">
+      <div class="haldiram-suggestions-head">
+        <h2 class="suggestions-title">You May Also Like</h2>
+      </div>
+
+      <div class="haldiram-cards-grid" id="pdpSuggestionsGrid">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. STORE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" id="footer">
+    <div class="haldiram-container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery" class="footer-logo">
+          <p class="footer-tagline">Real Taste. Real Quality. Proud brand from Pee Kay Group, Kadavathur, Kerala. Since 1996.</p>
+          <div class="footer-contact-info">
+            <p><i class="ri-map-pin-line"></i> Pee Kay Group, Kadavathur, Kannur, Kerala 670676</p>
+            <p><i class="ri-phone-line"></i> +91 94471 23450 / +91 98475 72417</p>
+            <p><i class="ri-mail-line"></i> orders@keerthibakery.com</p>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Shop Savouries</h4>
+          <ul class="footer-links">
+            <li><a href="product.html?id=classic-salted-chips">Classic Salted Chips</a></li>
+            <li><a href="index.html#shop-all">Pure Coconut Oil Banana Chips</a></li>
+            <li><a href="index.html#shop-all">Sharkkara Upperi (Jaggery)</a></li>
+            <li><a href="index.html#shop-all">Keerthi Malabar Mixture</a></li>
+            <li><a href="index.html#shop-all">Crispy Murukku &amp; Pakoda</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Cake Studio</h4>
+          <ul class="footer-links">
+            <li><a href="cakes.html">Celebration Cakes</a></li>
+            <li><a href="cakes.html">Belgian Truffle Gateau</a></li>
+            <li><a href="cakes.html">Fresh Fruit Cakes</a></li>
+            <li><a href="cakes.html">Custom Wedding Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#our-story">Our 30-Year Heritage</a></li>
+            <li><a href="index.html#footer">Track Order</a></li>
+            <li><a href="index.html#footer">Delivery Policy</a></li>
+            <li><a href="index.html#footer">FSSAI Certified</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Keerthi Bakery — Pee Kay Group. All Rights Reserved. Crafted with authentic Malabar love.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer Backdrop & Container -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer" aria-hidden="true">
+    <div class="drawer-header cart-drawer-header">
+      <div class="drawer-title-group cart-drawer-title-group">
+        <div class="drawer-title-wrap">
+          <h3 class="drawer-title cart-drawer-title">Your Fresh Cart</h3>
+          <span class="drawer-subtitle">Pure Coconut Oil Snacks &amp; Bakes</span>
+        </div>
+        <span class="drawer-count-badge cart-drawer-count" id="drawer-item-count">0 items</span>
+      </div>
+      <button type="button" class="drawer-close-btn cart-drawer-close-btn" id="cart-drawer-close" aria-label="Close cart">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="free-shipping-meter cart-shipping-bar" id="free-shipping-meter">
+      <div class="fs-text cart-shipping-text" id="free-shipping-text">Add <strong>₹499</strong> for <strong>FREE Delivery</strong> across Kerala &amp; India!</div>
+      <div class="fs-progress-bg cart-progress-track">
+        <div class="fs-progress-bar cart-progress-fill" id="free-shipping-progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Items List / Drawer Body -->
+    <div class="drawer-body cart-drawer-items" id="cart-drawer-items">
+      <!-- Dynamically populated by cart-drawer-ui.js -->
+    </div>
+
+    <!-- Footer Summary & Checkout -->
+    <div class="drawer-footer cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <!-- Dynamically populated by cart-drawer-ui.js -->
+    </div>
+  </aside>
+
+  <!-- Wishlist Drawer -->
+  <div class="wishlist-drawer-backdrop" id="wishlist-drawer-backdrop"></div>
+  <aside class="wishlist-drawer" id="wishlist-drawer" aria-label="My Wishlist Drawer" aria-hidden="true">
+    <div class="drawer-header wishlist-drawer-header">
+      <div class="drawer-title-group">
+        <div class="drawer-title-wrap">
+          <h3 class="drawer-title">My Saved Snacks</h3>
+          <span class="drawer-subtitle">Your Favourite Kerala Delicacies</span>
+        </div>
+        <span class="drawer-count-badge" id="wishlist-drawer-count">0 items</span>
+      </div>
+      <button type="button" class="drawer-close-btn" id="wishlist-drawer-close" aria-label="Close wishlist">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <div class="drawer-body wishlist-drawer-items" id="wishlist-drawer-items"></div>
+  </aside>
+
+  <!-- ==========================================================================
+       8. CART DRAWER & CHECKOUT MODALS
+       ========================================================================== -->
+  <div class="modal-wrap" id="checkout-modal" role="dialog" aria-modal="true" aria-label="Express Checkout">
+    <div class="checkout-modal-backdrop modal-backdrop"></div>
+    <div class="checkout-modal-card modal-card">
+      <button type="button" class="checkout-modal-close modal-close-btn" aria-label="Close Checkout">✕</button>
+      <div class="checkout-modal-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/js/product-page.js"></script>
+</body>
+</html>

@@ -24,3 +24,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 .vercel
+
+# Staging raw assets
+jjjjjjj/
