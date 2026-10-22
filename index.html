@@ -335,30 +335,30 @@
             Crispy. Natural. <em>Irresistible.</em>
           </h2>
           <p class="coverflow-subtitle" id="showcaseSubtitle">
-            Swipe sideways on your trackpad or drag with your mouse to explore 55 freshly prepared Malabar snack specialties.
+            Browse authentic Kerala snacks &amp; savouries with customized weights, instant add, and fast delivery.
           </p>
           <div class="coverflow-hint-pill" id="showcaseHintPill">
-            <i class="ri-drag-move-fill"></i>
-            <span>Trackpad horizontal swipe enabled • Tactile tick sound feedback • Tap card to explore</span>
+            <i class="ri-layout-grid-line"></i>
+            <span>Showing 55 freshly packed Kerala savouries • Haldiram's collection view</span>
           </div>
         </div>
 
         <!-- Right Corner Option: View All / Toggle View -->
         <div class="showcase-corner-action">
-          <button type="button" class="btn-showcase-view-all" id="btnToggleAllProducts" aria-expanded="false" title="View all 55 Kerala snacks in grid view">
+          <button type="button" class="btn-showcase-view-all active-grid" id="btnToggleAllProducts" aria-expanded="true" title="Switch to 3D carousel view">
             <div class="view-all-text-wrap">
-              <span class="view-all-label">View All</span>
-              <span class="view-all-sub">55 Snacks</span>
+              <span class="view-all-label">3D Carousel</span>
+              <span class="view-all-sub">Swipe View</span>
             </div>
             <div class="view-all-icon-circle">
-              <i class="ri-grid-fill"></i>
+              <i class="ri-film-line"></i>
             </div>
           </button>
         </div>
       </div>
 
-      <!-- 3D Coverflow Gallery Container -->
-      <div class="gallery-container">
+      <!-- 3D Coverflow Gallery Container (Hidden by default, available on toggle) -->
+      <div class="gallery-container" style="display: none;">
         <div class="gallery">
           <ul class="cards" id="coverflowCards">
             <!-- KEERTHI SPICY KADALA PAKODA -->
@@ -1305,8 +1305,8 @@
         </div>
       </div>
 
-      <!-- All 55 Products Grid View (Activated when "View All" on right corner is clicked) -->
-      <div class="all-products-grid-wrap" id="allProductsGridWrap" style="display: none;">
+      <!-- All 55 Products Grid View (Default View) -->
+      <div class="all-products-grid-wrap" id="allProductsGridWrap" style="display: block;">
         <!-- Haldiram's Style Subheader Toolbar: Filter & Sort -->
         <div class="haldiram-toolbar-container">
           <div class="haldiram-subbar">

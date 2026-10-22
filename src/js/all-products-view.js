@@ -497,10 +497,10 @@ export function initAllProductsView(showToast) {
     renderGrid(result);
   }
 
-  // Toggle Between 3D Coverflow and Haldiram's Grid View
-  let isGridView = false;
+  // Toggle Between 3D Coverflow and Haldiram's Grid View (Default: Grid View)
+  let isGridView = true;
 
-  function setViewMode(gridActive) {
+  function setViewMode(gridActive, shouldScroll = false) {
     isGridView = gridActive;
     toggleBtn.setAttribute("aria-expanded", isGridView);
 
@@ -530,9 +530,11 @@ export function initAllProductsView(showToast) {
         subtitleEl.textContent = "Browse authentic Kerala snacks & savouries with customized weights, instant add, and fast delivery.";
       }
 
-      const target = document.getElementById("products");
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (shouldScroll) {
+        const target = document.getElementById("products");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
     } else {
       gridWrap.style.display = "none";
@@ -541,7 +543,7 @@ export function initAllProductsView(showToast) {
 
       toggleBtn.innerHTML = `
         <div class="view-all-text-wrap">
-          <span class="view-all-label">View All</span>
+          <span class="view-all-label">Grid View</span>
           <span class="view-all-sub">55 Snacks</span>
         </div>
         <div class="view-all-icon-circle">
@@ -563,7 +565,7 @@ export function initAllProductsView(showToast) {
   }
 
   toggleBtn.addEventListener("click", () => {
-    setViewMode(!isGridView);
+    setViewMode(!isGridView, false);
   });
 
   // Filter Button Toggle for Panel on mobile
@@ -599,27 +601,24 @@ export function initAllProductsView(showToast) {
     });
   }
 
-  // Initial Grid Render
+  // Initial Grid Render & Set Grid View as Default
   renderGrid();
+  setViewMode(true, false);
 
   // Also bind any other "Shop All" buttons to open grid view
   window.addEventListener("products:view-all", () => {
-    setViewMode(true);
+    setViewMode(true, true);
   });
 
-  // If URL hash points to shop-all, activate grid view automatically
+  // If URL hash points to shop-all, activate grid view automatically and scroll
   if (window.location.hash === "#shop-all" || window.location.hash === "#products") {
-    setViewMode(true);
+    setViewMode(true, true);
   }
 
   document.querySelectorAll('a[href="#shop-all"]').forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      setViewMode(true);
-      const target = document.getElementById("products");
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+      setViewMode(true, true);
     });
   });
 
