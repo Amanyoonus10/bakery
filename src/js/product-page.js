@@ -321,44 +321,120 @@ function renderSuggestions(currentProduct) {
 
   const suggestions = PRODUCTS.filter(p => p.id !== currentProduct.id).slice(0, 4);
 
-  grid.innerHTML = suggestions.map(prod => {
-    const formatted = formatTitle(prod.name);
-    return `
-      <div class="haldiram-card">
-        <div class="haldiram-card-img-wrap" onclick="window.location.href='product.html?id=${prod.id}'">
-          ${prod.badge ? `<span class="haldiram-card-badge">${prod.badge}</span>` : ''}
-          <img src="${prod.image}" alt="${formatted}" class="haldiram-card-img" loading="lazy" onerror="this.src='/images/card_banana_chips_clean.jpg'">
-        </div>
-        <div class="haldiram-card-body">
-          <h3 class="haldiram-card-title" onclick="window.location.href='product.html?id=${prod.id}'">${formatted}</h3>
-          <div class="haldiram-card-price-row">
-            <span class="haldiram-card-price">₹${prod.price}/-</span>
-            <button type="button" class="haldiram-card-add-btn" data-id="${prod.id}" data-name="${formatted}" data-price="${prod.price}" data-img="${prod.image}">
-              ADD +
-            </button>
+  function getQty(id) {
+    const item = cart.items.find(i => i.productId === id || i.productId.startsWith(`${id}-`));
+    return item ? item.quantity : 0;
+  }
+
+  function updateCard(card) {
+    const id = card.dataset.id;
+    const qty = getQty(id);
+    const addBtn = card.querySelector(".haldiram-card-add-btn");
+    const stepper = card.querySelector(".haldiram-suggestion-stepper");
+    const val = card.querySelector(".mini-step-val");
+
+    if (qty > 0) {
+      if (addBtn) addBtn.style.display = "none";
+      if (stepper) stepper.style.display = "flex";
+      if (val) val.textContent = qty;
+    } else {
+      if (stepper) stepper.style.display = "none";
+      if (addBtn) addBtn.style.display = "flex";
+    }
+  }
+
+  function renderGrid() {
+    grid.innerHTML = suggestions.map(prod => {
+      const formatted = formatTitle(prod.name);
+      const initialQty = getQty(prod.id);
+      return `
+        <div class="haldiram-card" data-id="${prod.id}" data-name="${formatted}" data-price="${prod.price}" data-img="${prod.image}">
+          <div class="haldiram-card-img-wrap" onclick="window.location.href='product.html?id=${prod.id}'">
+            ${prod.badge ? `<span class="haldiram-card-badge">${prod.badge}</span>` : ''}
+            <img src="${prod.image}" alt="${formatted}" class="haldiram-card-img" loading="lazy" onerror="this.src='/images/card_banana_chips_clean.jpg'">
+          </div>
+          <div class="haldiram-card-body">
+            <h3 class="haldiram-card-title" onclick="window.location.href='product.html?id=${prod.id}'">${formatted}</h3>
+            <div class="haldiram-card-price-row">
+              <span class="haldiram-card-price">₹${prod.price}/-</span>
+              <div class="haldiram-suggestion-action-wrap">
+                <button type="button" class="haldiram-card-add-btn" data-id="${prod.id}" data-name="${formatted}" data-price="${prod.price}" data-img="${prod.image}" style="${initialQty > 0 ? 'display: none;' : 'display: flex;'}">
+                  ADD +
+                </button>
+                <div class="haldiram-suggestion-stepper" data-id="${prod.id}" style="${initialQty > 0 ? 'display: flex;' : 'display: none;'}">
+                  <button type="button" class="mini-step-btn minus" aria-label="Decrease quantity">−</button>
+                  <span class="mini-step-val">${initialQty || 1}</span>
+                  <button type="button" class="mini-step-btn plus" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-  }).join("");
+      `;
+    }).join("");
 
-  grid.querySelectorAll(".haldiram-card-add-btn").forEach(btn => {
-    btn.onclick = (e) => {
-      e.stopPropagation();
-      const id = btn.dataset.id;
-      const name = btn.dataset.name;
-      const price = parseInt(btn.dataset.price) || 85;
-      const img = btn.dataset.img;
+    grid.querySelectorAll(".haldiram-card").forEach(card => {
+      const id = card.dataset.id;
+      const name = card.dataset.name;
+      const price = parseInt(card.dataset.price) || 85;
+      const img = card.dataset.img;
 
-      cart.addItem({
-        id: id,
-        name: name,
-        price: price,
-        image: img
-      }, 1);
+      const addBtn = card.querySelector(".haldiram-card-add-btn");
+      const plusBtn = card.querySelector(".mini-step-btn.plus");
+      const minusBtn = card.querySelector(".mini-step-btn.minus");
 
-      showToast(`Added ${name} to Cart!`);
-      updateHeaderCartCount();
-    };
+      if (addBtn) {
+        addBtn.onclick = (e) => {
+          e.stopPropagation();
+          cart.addItem({
+            productId: id,
+            productName: name,
+            unitPrice: price,
+            productImage: img,
+            quantity: 1
+          });
+          updateCard(card);
+          showToast(`Added ${name} to Cart! 🛍️`);
+          updateHeaderCartCount();
+        };
+      }
+
+      if (plusBtn) {
+        plusBtn.onclick = (e) => {
+          e.stopPropagation();
+          const item = cart.items.find(i => i.productId === id || i.productId.startsWith(`${id}-`));
+          if (item) {
+            cart.updateQuantity(item.itemKey, 1);
+          } else {
+            cart.addItem({
+              productId: id,
+              productName: name,
+              unitPrice: price,
+              productImage: img,
+              quantity: 1
+            });
+          }
+          updateCard(card);
+          updateHeaderCartCount();
+        };
+      }
+
+      if (minusBtn) {
+        minusBtn.onclick = (e) => {
+          e.stopPropagation();
+          const item = cart.items.find(i => i.productId === id || i.productId.startsWith(`${id}-`));
+          if (!item) return;
+          cart.updateQuantity(item.itemKey, -1);
+          updateCard(card);
+          updateHeaderCartCount();
+        };
+      }
+    });
+  }
+
+  renderGrid();
+
+  window.addEventListener("cart:updated", () => {
+    grid.querySelectorAll(".haldiram-card").forEach(updateCard);
   });
 }

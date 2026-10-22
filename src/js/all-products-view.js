@@ -90,12 +90,51 @@ export function initAllProductsView(showToast) {
     }
   }
 
+  // Helper to query quantity of a specific card's selected variant from cart
+  function getVariantCartQty(id, weight) {
+    const weightSlug = (weight || "200 gm").toLowerCase().replace(/[^a-z0-9]+/g, "");
+    const targetVariantId = `${id}-${weightSlug}`;
+    const cartItem = cart.items.find(i => i.productId === targetVariantId);
+    return cartItem ? cartItem.quantity : 0;
+  }
+
+  // Update a single card's stepper/ADD button display based on current cart state
+  function updateCardStepperState(card) {
+    const id = card.dataset.id;
+    const currentWeight = card.dataset.selectedWeight || "200 gm";
+    const qty = getVariantCartQty(id, currentWeight);
+
+    const addBtn = card.querySelector(".haldiram-add-btn");
+    const stepper = card.querySelector(".haldiram-card-stepper");
+    const stepperVal = card.querySelector(".haldiram-stepper-val");
+
+    if (!addBtn || !stepper || !stepperVal) return;
+
+    if (qty > 0) {
+      addBtn.style.display = "none";
+      stepper.style.display = "flex";
+      stepperVal.textContent = qty;
+    } else {
+      stepper.style.display = "none";
+      addBtn.style.display = "flex";
+    }
+  }
+
+  // Update all product cards in grid when cart state changes
+  function updateAllCardSteppers() {
+    if (!gridContainer) return;
+    gridContainer.querySelectorAll(".haldiram-card").forEach(card => {
+      updateCardStepperState(card);
+    });
+  }
+
   // Generate Haldiram's Style Product Card
   function generateCardHtml(prod) {
     const isSaved = wishlist.hasItem(prod.id);
     const weights = getProductWeights(prod);
     const defaultWeight = weights[0].label;
     const basePrice = prod.price;
+    const initialQty = getVariantCartQty(prod.id, defaultWeight);
 
     return `
       <div class="haldiram-card" data-id="${prod.id}" data-name="${prod.name}" data-base-price="${basePrice}" data-current-price="${basePrice}" data-selected-weight="${defaultWeight}" data-img="${prod.img}" data-category="${prod.category}">
@@ -131,11 +170,18 @@ export function initAllProductsView(showToast) {
             <span class="haldiram-price">₹${basePrice}/-</span>
           </div>
 
-          <!-- Prominent Full-Width Terracotta ADD + Button -->
-          <button type="button" class="haldiram-add-btn" aria-label="Add ${prod.name} to cart">
-            <span>ADD</span>
-            <span class="add-plus">+</span>
-          </button>
+          <!-- Card Action Container: switches between ADD + and - [count] + -->
+          <div class="haldiram-action-wrap">
+            <button type="button" class="haldiram-add-btn" aria-label="Add ${prod.name} to cart" style="${initialQty > 0 ? 'display: none;' : 'display: flex;'}">
+              <span>ADD</span>
+              <span class="add-plus">+</span>
+            </button>
+            <div class="haldiram-card-stepper" aria-label="Quantity for ${prod.name}" style="${initialQty > 0 ? 'display: flex;' : 'display: none;'}">
+              <button type="button" class="haldiram-stepper-btn haldiram-stepper-minus" aria-label="Decrease quantity">−</button>
+              <span class="haldiram-stepper-val">${initialQty || 1}</span>
+              <button type="button" class="haldiram-stepper-btn haldiram-stepper-plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
         </div>
       </div>
     `;
@@ -170,13 +216,19 @@ export function initAllProductsView(showToast) {
     bindCardEvents();
   }
 
-  // Bind Card Interactions (Weight Variant, ADD +, Wishlist, Modal)
+  // Bind Card Interactions (Weight Variant, ADD +, Stepper +/- , Wishlist, Navigation)
   function bindCardEvents() {
     gridContainer.querySelectorAll(".haldiram-card").forEach(card => {
       const id = card.dataset.id;
       const name = card.dataset.name;
       const basePrice = parseInt(card.dataset.basePrice) || 89;
       const img = card.dataset.img;
+
+      const addBtn = card.querySelector(".haldiram-add-btn");
+      const stepper = card.querySelector(".haldiram-card-stepper");
+      const stepperVal = card.querySelector(".haldiram-stepper-val");
+      const minusBtn = card.querySelector(".haldiram-stepper-minus");
+      const plusBtn = card.querySelector(".haldiram-stepper-plus");
 
       // 1. Weight Variant Switching
       card.querySelectorAll(".haldiram-weight-pill").forEach(pill => {
@@ -196,11 +248,13 @@ export function initAllProductsView(showToast) {
           if (priceEl) {
             priceEl.textContent = `₹${newPrice}/-`;
           }
+
+          // Instantly sync the stepper state to the newly selected weight!
+          updateCardStepperState(card);
         };
       });
 
-      // 2. Full-Width ADD + Button
-      const addBtn = card.querySelector(".haldiram-add-btn");
+      // 2. Initial ADD + Click -> Transitions to [- 1 +] stepper
       if (addBtn) {
         addBtn.onclick = (e) => {
           e.stopPropagation();
@@ -211,35 +265,96 @@ export function initAllProductsView(showToast) {
           cart.addItem({
             productId: `${id}-${weightSlug}`,
             productName: `${name} (${currentWeight})`,
+            weight: currentWeight,
             unitPrice: currentPrice,
             productImage: img,
             quantity: 1
           });
 
-          // Visual feedback
-          const originalContent = addBtn.innerHTML;
-          addBtn.classList.add("added-success");
-          addBtn.innerHTML = `<span>ADDED</span> <i class="ri-check-line"></i>`;
-          setTimeout(() => {
-            addBtn.classList.remove("added-success");
-            addBtn.innerHTML = originalContent;
-          }, 1200);
+          // Transition to stepper display immediately
+          addBtn.style.display = "none";
+          stepper.style.display = "flex";
+          if (stepperVal) {
+            stepperVal.textContent = "1";
+            stepperVal.classList.add("qty-bump");
+            setTimeout(() => stepperVal.classList.remove("qty-bump"), 250);
+          }
 
           try {
             confetti({
-              particleCount: 45,
-              spread: 60,
+              particleCount: 35,
+              spread: 50,
               origin: { y: 0.7 },
               colors: ['#0f3822', '#e2b87f', '#f8f3eb', '#16a34a']
             });
           } catch (err) {}
 
-          showToast(`Added ${name} (${currentWeight}) to your cart! 🛍️`);
-          window.dispatchEvent(new CustomEvent("cart:open"));
+          showToast(`Added ${name} (${currentWeight}) to cart! 🛍️`);
         };
       }
 
-      // 3. Wishlist Heart
+      // 3. Plus Button (+) -> Increments Quantity
+      if (plusBtn) {
+        plusBtn.onclick = (e) => {
+          e.stopPropagation();
+          const currentPrice = parseInt(card.dataset.currentPrice) || basePrice;
+          const currentWeight = card.dataset.selectedWeight || "200 gm";
+          const weightSlug = currentWeight.toLowerCase().replace(/[^a-z0-9]+/g, "");
+          const targetVariantId = `${id}-${weightSlug}`;
+
+          const cartItem = cart.items.find(i => i.productId === targetVariantId);
+          if (cartItem) {
+            cart.updateQuantity(cartItem.itemKey, 1);
+          } else {
+            cart.addItem({
+              productId: targetVariantId,
+              productName: `${name} (${currentWeight})`,
+              weight: currentWeight,
+              unitPrice: currentPrice,
+              productImage: img,
+              quantity: 1
+            });
+          }
+
+          const updated = cart.items.find(i => i.productId === targetVariantId);
+          if (stepperVal && updated) {
+            stepperVal.textContent = updated.quantity;
+            stepperVal.classList.add("qty-bump");
+            setTimeout(() => stepperVal.classList.remove("qty-bump"), 250);
+          }
+        };
+      }
+
+      // 4. Minus Button (-) -> Decrements Quantity or Removes Item
+      if (minusBtn) {
+        minusBtn.onclick = (e) => {
+          e.stopPropagation();
+          const currentWeight = card.dataset.selectedWeight || "200 gm";
+          const weightSlug = currentWeight.toLowerCase().replace(/[^a-z0-9]+/g, "");
+          const targetVariantId = `${id}-${weightSlug}`;
+
+          const cartItem = cart.items.find(i => i.productId === targetVariantId);
+          if (!cartItem) return;
+
+          if (cartItem.quantity > 1) {
+            cart.updateQuantity(cartItem.itemKey, -1);
+            const updated = cart.items.find(i => i.productId === targetVariantId);
+            if (stepperVal && updated) {
+              stepperVal.textContent = updated.quantity;
+              stepperVal.classList.add("qty-bump");
+              setTimeout(() => stepperVal.classList.remove("qty-bump"), 250);
+            }
+          } else {
+            // Reached 0 -> remove from cart and revert to ADD + button
+            cart.updateQuantity(cartItem.itemKey, -1);
+            stepper.style.display = "none";
+            addBtn.style.display = "flex";
+            showToast(`Removed ${name} (${currentWeight}) from cart`);
+          }
+        };
+      }
+
+      // 5. Wishlist Heart
       const wishBtn = card.querySelector(".haldiram-wishlist-btn");
       if (wishBtn) {
         wishBtn.onclick = (e) => {
@@ -271,11 +386,11 @@ export function initAllProductsView(showToast) {
         };
       }
 
-      // 4. Open Product Details Page on Image / Title Click
+      // 6. Open Product Details Page on Image / Title Click
       const clickables = card.querySelectorAll(".haldiram-img-box, .haldiram-title");
       clickables.forEach(el => {
         el.onclick = (e) => {
-          if (e.target.closest(".haldiram-wishlist-btn") || e.target.closest(".haldiram-add-btn") || e.target.closest(".haldiram-weight-pill")) {
+          if (e.target.closest(".haldiram-wishlist-btn") || e.target.closest(".haldiram-action-wrap") || e.target.closest(".haldiram-weight-pill")) {
             return;
           }
           window.location.href = `product.html?id=${encodeURIComponent(id)}`;
@@ -507,4 +622,11 @@ export function initAllProductsView(showToast) {
       }
     });
   });
+
+  // Re-sync all card steppers whenever the cart updates
+  window.addEventListener("cart:updated", () => {
+    updateAllCardSteppers();
+  });
 }
+
+
