@@ -6,11 +6,12 @@ import shutil
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 
-VIDEO_PATH = "/Users/amanyoonus/Desktop/1792091044478583.mp4"
+VIDEO_PATH = "/Users/amanyoonus/Desktop/1793015283219940.mp4"
 OUTPUT_DIR = "/Users/amanyoonus/Desktop/bakery/public/scroll-sequence"
+DIST_DIR = "/Users/amanyoonus/Desktop/bakery/dist/scroll-sequence"
 TEMP_DIR = "/tmp/keerthi_4k_raw_frames"
 TOTAL_FRAMES = 120
-FPS = f"{TOTAL_FRAMES}/6.916667"
+FPS = f"{TOTAL_FRAMES}/10.0"
 
 def main():
     print(f"--- Starting 4K Uncompressed Scroll Sequence Extraction ---")
@@ -20,38 +21,41 @@ def main():
         shutil.rmtree(TEMP_DIR)
     os.makedirs(TEMP_DIR, exist_ok=True)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    if os.path.exists("/Users/amanyoonus/Desktop/bakery/dist"):
+        os.makedirs(DIST_DIR, exist_ok=True)
     
-    # Step 1: Extract 120 frames at full 4K (3840x2160) without any downscaling
-    print("Step 1: Extracting 120 frames at 3840x2160 using ffmpeg...")
+    # Step 1: Extract 120 frames at full 4K (3840x2160) without any downscaling or JPEG loss (raw BMP)
+    print("Step 1: Extracting 120 frames at 3840x2160 uncompressed (BMP) using ffmpeg...")
     cmd = [
         "ffmpeg", "-y",
         "-i", VIDEO_PATH,
         "-vf", f"fps={FPS}",
         "-frames:v", str(TOTAL_FRAMES),
-        "-q:v", "1", # Highest possible JPEG quality from ffmpeg
-        os.path.join(TEMP_DIR, "frame_%04d.jpg")
+        os.path.join(TEMP_DIR, "frame_%04d.bmp")
     ]
     p = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if p.returncode != 0:
         print("FFmpeg error:", p.stderr.decode("utf-8", errors="ignore"))
         sys.exit(1)
         
-    extracted_files = sorted([os.path.join(TEMP_DIR, f) for f in os.listdir(TEMP_DIR) if f.endswith(".jpg")])
+    extracted_files = sorted([os.path.join(TEMP_DIR, f) for f in os.listdir(TEMP_DIR) if f.endswith(".bmp")])
     print(f"Extracted {len(extracted_files)} frames to {TEMP_DIR}")
     
     # Check resolution
     with Image.open(extracted_files[0]) as sample:
         print(f"Verified resolution: {sample.size[0]} x {sample.size[1]} (4K UHD)")
     
-    # Step 2: Convert to crystal-clear, uncompressed-quality WebP (quality=94, method=4)
-    print("Step 2: Encoding to pristine 4K WebP with zero downscaling...")
+    # Step 2: Convert to crystal-clear, uncompressed-quality WebP (quality=100, no downscaling)
+    print("Step 2: Encoding to pristine 4K WebP (quality=100) with zero downscaling...")
     def process_frame(idx_file):
         idx, src_path = idx_file
         dest_filename = f"frame_{str(idx+1).zfill(4)}.webp"
         dest_path = os.path.join(OUTPUT_DIR, dest_filename)
         with Image.open(src_path) as im:
-            # Save at 3840x2160 with quality=94 for razor-sharp visual fidelity
-            im.save(dest_path, "WEBP", quality=94, method=3)
+            # Save at 3840x2160 with quality=100 for maximum visual fidelity
+            im.save(dest_path, "WEBP", quality=100, method=4)
+        if os.path.exists(DIST_DIR):
+            shutil.copyfile(dest_path, os.path.join(DIST_DIR, dest_filename))
         return os.path.getsize(dest_path)
 
     start_conv = time.time()
