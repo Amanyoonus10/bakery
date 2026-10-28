@@ -6,7 +6,6 @@ import { initCheckoutModal } from "./js/checkout-modal.js";
 import { initWishlistUI } from "./js/wishlist-ui.js";
 import { initAccountUI } from "./js/account-ui.js";
 import { initAllProductsView } from "./js/all-products-view.js";
-import { initScrollVideoHero } from "./js/scroll-video-hero.js";
 import { playTickSound } from "./js/tick-sound.js";
 import confetti from "canvas-confetti";
 
@@ -32,14 +31,10 @@ export function showToast(message) {
 window.showBakeryToast = showToast;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 0. Initialize Scroll Video Hero Sequence & Zero-Lag Preloader
-  initScrollVideoHero();
-
-  // 0.1 Brand Logo Language Switcher (English <-> Malayalam)
+  // 0. Brand Logo Language Switcher (English <-> Malayalam)
   const langBtn = document.getElementById("langSwitchBtn");
   const mainLogo = document.getElementById("mainStoreLogo");
   const langLabel = document.getElementById("langSwitchLabel");
-  const preloaderLogo = document.querySelector(".preloader-logo-img");
   let currentLang = "en";
 
   try {
@@ -54,10 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (langLabel) {
       langLabel.textContent = isEn ? "EN • മലയാളം" : "മലയാളം • EN";
     }
-    const logos = [mainLogo, preloaderLogo].filter(Boolean);
-    logos.forEach((img) => {
-      img.src = src;
-    });
+    if (mainLogo) {
+      mainLogo.src = src;
+    }
     try {
       localStorage.setItem("keerthi_brand_lang", lang);
     } catch (e) {}
@@ -254,10 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnModalViewAll) {
       btnModalViewAll.addEventListener("click", () => {
         closeSearchModal();
-        const viewAllBtn = document.getElementById("btnToggleAllProducts");
-        if (viewAllBtn && viewAllBtn.getAttribute("aria-expanded") !== "true") {
-          viewAllBtn.click();
-        }
         const target = document.getElementById("products") || document.getElementById("shop-all");
         if (target) target.scrollIntoView({ behavior: "smooth" });
       });
@@ -411,10 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 9. Initialize 3D Coverflow Side-Scrolling Carousel with Trackpad & Tick Sound
-  initCoverflowSection(showToast);
-
-  // 9B. Initialize View All (47 Products) Grid & Toggle
+  // 9. Initialize 55 Products Haldiram-Style Grid Catalogue
   initAllProductsView(showToast);
 
   // 10. Initialize GSAP 3-Panel Overlay Navigation (Apsara Bakes Menubar Style)
@@ -614,344 +601,4 @@ function initNavOverlay() {
       if (isOpen) toggleNav();
     });
   });
-}
-
-// ==========================================================================
-// 3D COVERFLOW HORIZONTAL SIDE-SCROLLING CAROUSEL WITH TICK SOUND & TRACKPAD
-// ==========================================================================
-function initCoverflowSection(showToast) {
-  if (!window.gsap) return;
-  if (window.Draggable) gsap.registerPlugin(Draggable);
-
-  const carouselCards = gsap.utils.toArray("#coverflowCards li");
-  if (!carouselCards.length) return;
-
-  const carouselSpacing = 0.04;
-  const carouselSnap = gsap.utils.snap(carouselSpacing);
-
-  gsap.set(carouselCards, { xPercent: 500, opacity: 0, scale: 0, rotateY: 0 });
-
-  // Custom multi-card stage animation: showcases 3 products clearly in front (Left, Center, Right)
-  const carouselAnimateFunc = element => {
-    const tl = gsap.timeline();
-
-    // 1. xPercent path (spreads the 3 front cards so all 3 are fully visible side-by-side)
-    tl.fromTo(element,
-      { xPercent: 500 },
-      { xPercent: 430, duration: 0.34, ease: "none", immediateRender: false }, 0
-    )
-    .to(element, { xPercent: 335, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
-    .to(element, { xPercent: 230, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
-    .to(element, { xPercent: 120, duration: 0.04, ease: "power1.out", immediateRender: false }, 0.42) // Slot +1 (Right Front Card)
-    .to(element, { xPercent: 0, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.46)   // Slot 0 (Center Front Card)
-    .to(element, { xPercent: -120, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.50) // Slot -1 (Left Front Card)
-    .to(element, { xPercent: -230, duration: 0.04, ease: "power1.in", immediateRender: false }, 0.54)
-    .to(element, { xPercent: -335, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
-    .to(element, { xPercent: -430, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
-    .to(element, { xPercent: -500, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
-
-    // 2. Scale path (3 cards in front have prominent scale: 0.94 - 1.05)
-    tl.fromTo(element,
-      { scale: 0.35 },
-      { scale: 0.50, duration: 0.34, ease: "none", immediateRender: false }, 0
-    )
-    .to(element, { scale: 0.65, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
-    .to(element, { scale: 0.80, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
-    .to(element, { scale: 0.94, duration: 0.04, ease: "power1.out", immediateRender: false }, 0.42) // Right Front Card
-    .to(element, { scale: 1.05, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.46) // Center Front Card
-    .to(element, { scale: 0.94, duration: 0.04, ease: "power1.inOut", immediateRender: false }, 0.50) // Left Front Card
-    .to(element, { scale: 0.80, duration: 0.04, ease: "power1.in", immediateRender: false }, 0.54)
-    .to(element, { scale: 0.65, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
-    .to(element, { scale: 0.50, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
-    .to(element, { scale: 0.35, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
-
-    // 3. Opacity path (All 3 front cards have 0.98 - 1.0 opacity)
-    tl.fromTo(element,
-      { opacity: 0 },
-      { opacity: 0.25, duration: 0.34, ease: "none", immediateRender: false }, 0
-    )
-    .to(element, { opacity: 0.55, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
-    .to(element, { opacity: 0.85, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
-    .to(element, { opacity: 0.98, duration: 0.04, ease: "none", immediateRender: false }, 0.42)
-    .to(element, { opacity: 1.00, duration: 0.04, ease: "none", immediateRender: false }, 0.46)
-    .to(element, { opacity: 0.98, duration: 0.04, ease: "none", immediateRender: false }, 0.50)
-    .to(element, { opacity: 0.85, duration: 0.04, ease: "none", immediateRender: false }, 0.54)
-    .to(element, { opacity: 0.55, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
-    .to(element, { opacity: 0.25, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
-    .to(element, { opacity: 0, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
-
-    // 4. zIndex path (Front cards have priority zIndex 90-100)
-    tl.fromTo(element,
-      { zIndex: 10 },
-      { zIndex: 35, duration: 0.34, ease: "none", immediateRender: false }, 0
-    )
-    .to(element, { zIndex: 55, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
-    .to(element, { zIndex: 75, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
-    .to(element, { zIndex: 90, duration: 0.04, ease: "none", immediateRender: false }, 0.42)
-    .to(element, { zIndex: 100, duration: 0.04, ease: "none", immediateRender: false }, 0.46)
-    .to(element, { zIndex: 90, duration: 0.04, ease: "none", immediateRender: false }, 0.50)
-    .to(element, { zIndex: 75, duration: 0.04, ease: "none", immediateRender: false }, 0.54)
-    .to(element, { zIndex: 55, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
-    .to(element, { zIndex: 35, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
-    .to(element, { zIndex: 10, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
-
-    // 5. rotateY 3D angle (subtle inward curvature)
-    tl.fromTo(element,
-      { rotateY: -35 },
-      { rotateY: -28, duration: 0.34, ease: "none", immediateRender: false }, 0
-    )
-    .to(element, { rotateY: -20, duration: 0.04, ease: "none", immediateRender: false }, 0.34)
-    .to(element, { rotateY: -14, duration: 0.04, ease: "none", immediateRender: false }, 0.38)
-    .to(element, { rotateY: -8, duration: 0.04, ease: "none", immediateRender: false }, 0.42)
-    .to(element, { rotateY: 0, duration: 0.04, ease: "none", immediateRender: false }, 0.46)
-    .to(element, { rotateY: 8, duration: 0.04, ease: "none", immediateRender: false }, 0.50)
-    .to(element, { rotateY: 14, duration: 0.04, ease: "none", immediateRender: false }, 0.54)
-    .to(element, { rotateY: 20, duration: 0.04, ease: "none", immediateRender: false }, 0.58)
-    .to(element, { rotateY: 28, duration: 0.04, ease: "none", immediateRender: false }, 0.62)
-    .to(element, { rotateY: 35, duration: 0.34, ease: "none", immediateRender: false }, 0.66);
-
-    return tl;
-  };
-
-  const carouselLoop = buildSeamlessLoop(carouselCards, carouselSpacing, carouselAnimateFunc);
-  const carouselPlayhead = { offset: 0 };
-  const carouselWrapTime = gsap.utils.wrap(0, carouselLoop.duration());
-  let lastTickSlot = 0;
-
-  const carouselScrub = gsap.to(carouselPlayhead, {
-    offset: 0,
-    onUpdate() {
-      carouselLoop.time(carouselWrapTime(carouselPlayhead.offset));
-      const currentSlot = Math.round(carouselPlayhead.offset / carouselSpacing);
-      if (currentSlot !== lastTickSlot) {
-        playTickSound(0.38);
-        lastTickSlot = currentSlot;
-      }
-    },
-    duration: 0.45,
-    ease: "power3",
-    paused: true
-  });
-
-  function carouselGoTo(offset) {
-    const snapped = carouselSnap(offset);
-    carouselScrub.vars.offset = snapped;
-    carouselScrub.invalidate().restart();
-  }
-
-  // Initialize carousel front card immediately on load
-  carouselGoTo(0);
-
-  // Prev / Next button actions
-  const prevBtn = document.getElementById("carouselPrev") || document.querySelector(".gallery .prev");
-  const nextBtn = document.getElementById("carouselNext") || document.querySelector(".gallery .next");
-
-  prevBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    carouselGoTo(carouselPlayhead.offset - carouselSpacing);
-  });
-
-  nextBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    carouselGoTo(carouselPlayhead.offset + carouselSpacing);
-  });
-
-  // Trackpad Side Movement (Horizontal swipe left/right) with Mechanical Tick Sound
-  const galleryContainer = document.querySelector(".gallery-container") || document.getElementById("products");
-  let wheelTimeout = null;
-
-  if (galleryContainer) {
-    galleryContainer.addEventListener("wheel", (e) => {
-      // Determine if event is a horizontal trackpad swipe or shift-scroll
-      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey;
-      if (isHorizontal) {
-        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.deltaY || e.deltaX);
-        if (Math.abs(delta) > 1) {
-          e.preventDefault(); // Stop native horizontal back/forward navigation
-          
-          carouselPlayhead.offset += delta * 0.00035;
-          carouselLoop.time(carouselWrapTime(carouselPlayhead.offset));
-          
-          const currentSlot = Math.round(carouselPlayhead.offset / carouselSpacing);
-          if (currentSlot !== lastTickSlot) {
-            playTickSound(0.38);
-            lastTickSlot = currentSlot;
-          }
-
-          clearTimeout(wheelTimeout);
-          wheelTimeout = setTimeout(() => {
-            carouselGoTo(carouselPlayhead.offset);
-          }, 110);
-        }
-      }
-    }, { passive: false });
-  }
-
-  // Draggable for desktop drag / touch swipe
-  if (document.querySelector(".drag-proxy") && window.Draggable) {
-    Draggable.create(".drag-proxy", {
-      type: "x",
-      trigger: ".cards",
-      onPress() {
-        this.startOffset = carouselPlayhead.offset;
-      },
-      onDrag() {
-        const newOffset = this.startOffset + (this.startX - this.x) * 0.0025;
-        carouselPlayhead.offset = newOffset;
-        carouselLoop.time(carouselWrapTime(newOffset));
-        const currentSlot = Math.round(newOffset / carouselSpacing);
-        if (currentSlot !== lastTickSlot) {
-          playTickSound(0.35);
-          lastTickSlot = currentSlot;
-        }
-      },
-      onDragEnd() {
-        carouselGoTo(carouselPlayhead.offset);
-      }
-    });
-  }
-
-  // Card click interaction -> Opens Product Details Modal
-  let isDraggingCard = false;
-  let clickStartX = 0;
-  let clickStartY = 0;
-
-  carouselCards.forEach(card => {
-    card.addEventListener("pointerdown", (e) => {
-      isDraggingCard = false;
-      clickStartX = e.clientX;
-      clickStartY = e.clientY;
-    });
-
-    card.addEventListener("pointermove", (e) => {
-      if (Math.hypot(e.clientX - clickStartX, e.clientY - clickStartY) > 8) {
-        isDraggingCard = true;
-      }
-    });
-
-    card.addEventListener("click", (e) => {
-      if (isDraggingCard) return;
-      const li = card.closest("li");
-      const id = li?.dataset.id || card.dataset.id;
-      if (id) {
-        window.location.href = `product.html?id=${encodeURIComponent(id)}`;
-      } else {
-        openProductModal(card);
-      }
-    });
-  });
-
-  // Modal setup
-  function openProductModal(card) {
-    const name = card.dataset.name || "Keerthi Savouries";
-    const ingredients = card.dataset.ingredients || "Banana, Coconut Oil, Turmeric, Salt";
-    const price = card.dataset.price || "₹89";
-    const badge = card.dataset.badge || "";
-    const img = card.dataset.img || card.querySelector("img")?.src || "/images/card_banana_chips_clean.jpg";
-    const eyebrow = card.dataset.eyebrow || "AUTHENTIC KERALA BAKERY";
-    const tagline = card.dataset.tagline || "";
-
-    const modal = document.getElementById("productModal");
-    if (!modal) return;
-
-    const modalImg = document.getElementById("productModalImg");
-    const modalBadge = document.getElementById("productModalBadge");
-    const modalEyebrow = document.getElementById("productModalEyebrow");
-    const modalName = document.getElementById("productModalName");
-    const modalTagline = document.getElementById("productModalTagline");
-    const modalDesc = document.getElementById("productModalDesc");
-    const modalPrice = document.getElementById("productModalPrice");
-
-    if (modalImg) modalImg.src = img;
-    if (modalBadge) {
-      modalBadge.textContent = badge;
-      modalBadge.style.display = badge ? "inline-block" : "none";
-    }
-    if (modalEyebrow) modalEyebrow.textContent = eyebrow;
-    if (modalName) modalName.textContent = name;
-    if (modalTagline) modalTagline.textContent = tagline;
-    if (modalDesc) {
-      modalDesc.innerHTML = `<p><strong>Ingredients:</strong> ${ingredients}</p><p style="margin-top:8px; font-size:0.86rem; color:#666;">Crafted with authentic Malabar recipe, fresh local ingredients, and zero preservatives.</p>`;
-    }
-    if (modalPrice) modalPrice.textContent = price;
-
-    const addBtn = document.getElementById("productModalAddToCart");
-    if (addBtn) {
-      addBtn.onclick = () => {
-        const numPrice = parseInt(price.replace(/[^0-9]/g, "")) || 89;
-        cart.addItem({
-          productId: name.toLowerCase().replace(/[^a-z0-9]/g, "-"),
-          productName: name,
-          unitPrice: numPrice,
-          productImage: img,
-          quantity: 1
-        });
-        modal.classList.remove("is-open");
-        try {
-          confetti({
-            particleCount: 50,
-            spread: 70,
-            origin: { y: 0.7 },
-            colors: ['#0f3822', '#e2b87f', '#d32f2f', '#10b981']
-          });
-        } catch (err) {}
-        showToast(`Added ${name} to your cart! 🛍️`);
-        window.dispatchEvent(new CustomEvent("cart:open"));
-      };
-    }
-
-    modal.classList.add("is-open");
-  }
-
-  document.getElementById("productModalClose")?.addEventListener("click", () => {
-    document.getElementById("productModal")?.classList.remove("is-open");
-  });
-
-  document.getElementById("productModal")?.addEventListener("click", (e) => {
-    if (e.target === e.currentTarget) {
-      e.currentTarget.classList.remove("is-open");
-    }
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      document.getElementById("productModal")?.classList.remove("is-open");
-    }
-  });
-
-  function buildSeamlessLoop(items, spacing, animateFunc) {
-    let overlap = Math.ceil(1 / spacing),
-      startTime = items.length * spacing + 0.5,
-      loopTime = (items.length + overlap) * spacing + 1,
-      rawSequence = gsap.timeline({ paused: true }),
-      seamlessLoop = gsap.timeline({
-        paused: true,
-        repeat: -1,
-        onRepeat() {
-          this._time === this._dur && (this._tTime += this._dur - 0.01);
-        }
-      }),
-      l = items.length + overlap * 2,
-      time, i, index;
-
-    for (i = 0; i < l; i++) {
-      index = i % items.length;
-      time = i * spacing;
-      rawSequence.add(animateFunc(items[index]), time);
-      i <= items.length && seamlessLoop.add("label" + i, time);
-    }
-
-    rawSequence.time(startTime);
-    seamlessLoop.to(rawSequence, {
-      time: loopTime,
-      duration: loopTime - startTime,
-      ease: "none"
-    }).fromTo(rawSequence, { time: overlap * spacing + 1 }, {
-      time: startTime,
-      duration: startTime - (overlap * spacing + 1),
-      immediateRender: false,
-      ease: "none"
-    });
-    return seamlessLoop;
-  }
 }

@@ -1,69 +1,36 @@
 import { cart } from "./cart.js";
 import { wishlist } from "./wishlist-store.js";
+import { PRODUCTS } from "../data/products.js";
 import confetti from "canvas-confetti";
 
 export function initAllProductsView(showToast) {
-  const toggleBtn = document.getElementById("btnToggleAllProducts");
-  const coverflowContainer = document.querySelector(".gallery-container");
   const gridWrap = document.getElementById("allProductsGridWrap");
   const gridContainer = document.getElementById("allProductsGrid");
   const countBadge = document.getElementById("catalogueCountBadge");
   const searchInput = document.getElementById("catalogueSearchInput");
-  const hintPill = document.getElementById("showcaseHintPill");
-  const subtitleEl = document.getElementById("showcaseSubtitle");
   const sortSelect = document.getElementById("haldiramSortSelect");
   const filterBtn = document.getElementById("btnHaldiramFilter");
   const filterPanel = document.getElementById("haldiramFilterPanel");
 
-  if (!toggleBtn || !coverflowContainer || !gridWrap || !gridContainer) return;
+  if (!gridWrap || !gridContainer) return;
 
-  // Extract all 55 products from coverflow cards
-  const carouselItems = document.querySelectorAll("#coverflowCards li");
-  const products = [];
-
-  carouselItems.forEach((li, index) => {
-    const name = li.dataset.name || `Snack ${index + 1}`;
-    const ingredients = li.dataset.ingredients || "";
-    const eyebrow = li.dataset.eyebrow || "AUTHENTIC KERALA BAKERY";
-    const tagline = li.dataset.tagline || "";
-    const priceStr = li.dataset.price || "₹89";
-    const price = parseInt(priceStr.replace(/[^0-9]/g, "")) || 89;
-    const badge = li.dataset.badge || "";
-    const badgeClass = li.dataset.badgeClass || "";
-    const img = li.dataset.img || "/images/card_banana_chips_clean.jpg";
-    const id = li.dataset.id || name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    const explicitCat = li.dataset.category;
-
-    // Category detection heuristic
-    const upper = name.toUpperCase();
-    let category = explicitCat || "murukku";
-    if (!explicitCat) {
-      if (upper.includes("CHIPS") || upper.includes("UPPERI") || upper.includes("TAPIOCA STICK")) {
-        category = "chips";
-      } else if (upper.includes("MIXTURE") || upper.includes("OMAPPODI") || upper.includes("PAKODA")) {
-        category = "mixtures";
-      } else if (upper.includes("SWEET") || upper.includes("KAJA") || upper.includes("LADDUMANI") || upper.includes("MADHURASEVA")) {
-        category = "sweets";
-      } else if (upper.includes("BISCUIT") || upper.includes("RUSK") || upper.includes("VARKEY")) {
-        category = "biscuits";
-      }
-    }
-
-    products.push({
-      id,
-      name,
-      ingredients,
-      eyebrow,
-      tagline,
-      price,
-      priceStr,
-      badge,
-      badgeClass,
-      img,
-      category,
-      rating: 4.8 + ((index % 3) * 0.1)
-    });
-  });
+  // Use all 55 products directly from products dataset
+  const products = PRODUCTS.map((prod, index) => ({
+    id: prod.id,
+    name: prod.name,
+    ingredients: prod.ingredients || "",
+    eyebrow: prod.eyebrow || "AUTHENTIC KERALA BAKERY",
+    tagline: prod.tagline || "",
+    price: prod.price || 89,
+    priceStr: `₹${prod.price || 89}`,
+    badge: prod.badge || "",
+    badgeClass: prod.badgeClass || "",
+    img: prod.imageWebp || prod.image || "/images/card_banana_chips_clean.jpg",
+    category: prod.category || "mixtures",
+    rating: prod.rating || (4.8 + ((index % 3) * 0.1)),
+    description: prod.description || "",
+    nutrition: prod.nutrition || ""
+  }));
 
   // Haldiram's Package Weight Options per product
   function getProductWeights(prod) {
@@ -497,77 +464,6 @@ export function initAllProductsView(showToast) {
     renderGrid(result);
   }
 
-  // Toggle Between 3D Coverflow and Haldiram's Grid View (Default: Grid View)
-  let isGridView = true;
-
-  function setViewMode(gridActive, shouldScroll = false) {
-    isGridView = gridActive;
-    toggleBtn.setAttribute("aria-expanded", isGridView);
-
-    if (isGridView) {
-      coverflowContainer.style.display = "none";
-      gridWrap.style.display = "block";
-      toggleBtn.classList.add("active-grid");
-
-      toggleBtn.innerHTML = `
-        <div class="view-all-text-wrap">
-          <span class="view-all-label">3D Carousel</span>
-          <span class="view-all-sub">Swipe View</span>
-        </div>
-        <div class="view-all-icon-circle">
-          <i class="ri-film-line"></i>
-        </div>
-      `;
-
-      if (hintPill) {
-        hintPill.innerHTML = `
-          <i class="ri-layout-grid-line"></i>
-          <span>Showing 55 freshly packed Kerala savouries • Haldiram's collection view</span>
-        `;
-      }
-
-      if (subtitleEl) {
-        subtitleEl.textContent = "Browse authentic Kerala snacks & savouries with customized weights, instant add, and fast delivery.";
-      }
-
-      if (shouldScroll) {
-        const target = document.getElementById("products");
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }
-    } else {
-      gridWrap.style.display = "none";
-      coverflowContainer.style.display = "block";
-      toggleBtn.classList.remove("active-grid");
-
-      toggleBtn.innerHTML = `
-        <div class="view-all-text-wrap">
-          <span class="view-all-label">Grid View</span>
-          <span class="view-all-sub">55 Snacks</span>
-        </div>
-        <div class="view-all-icon-circle">
-          <i class="ri-grid-fill"></i>
-        </div>
-      `;
-
-      if (hintPill) {
-        hintPill.innerHTML = `
-          <i class="ri-drag-move-fill"></i>
-          <span>Trackpad horizontal swipe enabled • Tactile tick sound feedback • Tap card to explore</span>
-        `;
-      }
-
-      if (subtitleEl) {
-        subtitleEl.textContent = "Swipe sideways on your trackpad or drag with your mouse to explore 55 freshly prepared Malabar snack specialties.";
-      }
-    }
-  }
-
-  toggleBtn.addEventListener("click", () => {
-    setViewMode(!isGridView, false);
-  });
-
   // Filter Button Toggle for Panel on mobile
   if (filterBtn && filterPanel) {
     filterBtn.addEventListener("click", () => {
@@ -601,24 +497,27 @@ export function initAllProductsView(showToast) {
     });
   }
 
-  // Initial Grid Render & Set Grid View as Default
+  // Initial Grid Render: 55 snacks displayed immediately
   renderGrid();
-  setViewMode(true, false);
 
-  // Also bind any other "Shop All" buttons to open grid view
-  window.addEventListener("products:view-all", () => {
-    setViewMode(true, true);
-  });
+  // Scroll to products on Shop All actions
+  const scrollToProducts = () => {
+    const target = document.getElementById("products") || document.getElementById("shop-all");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
-  // If URL hash points to shop-all, activate grid view automatically and scroll
+  window.addEventListener("products:view-all", scrollToProducts);
+
   if (window.location.hash === "#shop-all" || window.location.hash === "#products") {
-    setViewMode(true, true);
+    setTimeout(scrollToProducts, 100);
   }
 
-  document.querySelectorAll('a[href="#shop-all"]').forEach(link => {
+  document.querySelectorAll('a[href="#shop-all"], a[href="#products"]').forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      setViewMode(true, true);
+      scrollToProducts();
     });
   });
 
