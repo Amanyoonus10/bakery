@@ -1439,9 +1439,10 @@ body.keerthi-redesign-body {
   line-height: 1.15;
 }
 
-/* Product Stage - Pedestal & Frame */
+/* Product Stage - Interactive Side-Scroll Panorama */
 .hero-product-stage {
   width: 100%;
+  aspect-ratio: 16 / 9.2;
   position: relative;
   border-radius: 18px;
   overflow: hidden;
@@ -1449,30 +1450,94 @@ body.keerthi-redesign-body {
     0 0 65px rgba(202, 165, 95, 0.22),
     0 24px 60px rgba(0, 0, 0, 0.65),
     0 4px 16px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(202, 165, 95, 0.4);
+  border: 1.5px solid rgba(202, 165, 95, 0.45);
   background: #140d08;
 }
 
+/* Horizontal Slider Track */
+.hero-slider-track {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-slider-track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+/* Slide Item */
+.hero-slide-item {
+  flex: 0 0 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-slide-item picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.hero-product-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-slide-item:hover .hero-product-img {
+  transform: scale(1.025);
+}
+
+/* Slide Badge (Top-Right) */
 .stage-flagship-tag {
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 3;
+  z-index: 4;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(14, 9, 6, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(202, 165, 95, 0.4);
+  gap: 7px;
+  background: rgba(14, 9, 6, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(202, 165, 95, 0.45);
   color: #caa55f;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition: transform 0.3s ease;
 }
 
 .stage-flagship-tag i {
@@ -1480,47 +1545,138 @@ body.keerthi-redesign-body {
   font-size: 0.82rem;
 }
 
-.hero-product-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+/* Floating Navigation Arrows (Left & Right) */
+.hero-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(14, 9, 6, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(202, 165, 95, 0.45);
+  color: #fbe8c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  opacity: 0.85;
+  padding: 0;
 }
 
-.hero-product-stage:hover .hero-product-img {
-  transform: scale(1.02);
+.hero-slider-nav.hero-slider-prev {
+  left: 14px;
 }
 
-/* Tasting Ribbon directly underneath the packets */
+.hero-slider-nav.hero-slider-next {
+  right: 14px;
+}
+
+.hero-slider-nav:hover {
+  opacity: 1;
+  background: #8D191D;
+  color: #ffffff;
+  border-color: #f59e0b;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 22px rgba(202, 165, 95, 0.6);
+}
+
+.hero-slider-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Floating Controls Pill (Top-Left: Counter & Dots) */
+.hero-slider-controls {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(14, 9, 6, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(202, 165, 95, 0.45);
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.hero-slider-counter {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #caa55f;
+  letter-spacing: 0.8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-slider-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.slider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(202, 165, 95, 0.35);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slider-dot.active {
+  width: 18px;
+  border-radius: 999px;
+  background: #caa55f;
+  box-shadow: 0 0 10px rgba(202, 165, 95, 0.7);
+}
+
+.slider-dot:hover:not(.active) {
+  background: rgba(202, 165, 95, 0.7);
+}
+
+/* Tasting Ribbon directly underneath each slide */
 .stage-tasting-ribbon {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, rgba(14, 9, 6, 0.0) 0%, rgba(14, 9, 6, 0.9) 100%);
-  padding: 24px 14px 10px 14px;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, rgba(14, 9, 6, 0.0) 0%, rgba(14, 9, 6, 0.75) 50%, rgba(14, 9, 6, 0.95) 100%);
+  padding: 32px 14px 12px 14px;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 .taste-chip {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: #fbe8c5;
-  background: rgba(18, 12, 8, 0.72);
+  background: rgba(18, 12, 8, 0.76);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid rgba(202, 165, 95, 0.35);
   letter-spacing: 0.4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .taste-chip i {
@@ -3447,13 +3603,43 @@ body.keerthi-redesign-body {
     font-size: 1.25rem;
   }
   .hero-product-stage {
-    border-radius: 12px;
+    border-radius: 14px;
+    aspect-ratio: 16 / 10;
   }
   .stage-flagship-tag {
-    font-size: 0.58rem;
-    padding: 3px 8px;
+    font-size: 0.56rem;
+    padding: 3px 9px;
     top: 8px;
     right: 8px;
+    gap: 4px;
+  }
+  .hero-slider-controls {
+    top: 8px;
+    left: 8px;
+    padding: 3px 8px;
+    gap: 6px;
+  }
+  .hero-slider-counter {
+    font-size: 0.58rem;
+  }
+  .slider-dot {
+    width: 5px;
+    height: 5px;
+  }
+  .slider-dot.active {
+    width: 14px;
+  }
+  .hero-slider-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    opacity: 0.85;
+  }
+  .hero-slider-nav.hero-slider-prev {
+    left: 6px;
+  }
+  .hero-slider-nav.hero-slider-next {
+    right: 6px;
   }
   .stage-tasting-ribbon {
     display: none;

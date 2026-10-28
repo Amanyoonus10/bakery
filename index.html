@@ -301,34 +301,201 @@
           </div>
         </div>
 
-        <!-- 5-Packet Panorama Stage with Pedestal & Tasting Ribbon -->
-        <div class="hero-product-stage">
-          <!-- Flagship Badge Tag -->
-          <div class="stage-flagship-tag">
-            <i class="ri-award-fill"></i>
-            <span>Peekay Group Flagship Selection</span>
+        <!-- Product Panorama Stage with Interactive Side-Scroll Carousel -->
+        <div class="hero-product-stage" id="heroProductStage" aria-roledescription="carousel" aria-label="Keerthi Bakery Signature Collections">
+          
+          <!-- Slide Track (Supports swipe, touch, and drag) -->
+          <div class="hero-slider-track" id="heroSliderTrack">
+            
+            <!-- Slide 1: Flagship 5-Packets Selection -->
+            <div class="hero-slide-item active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 7: Flagship Selection">
+              <div class="stage-flagship-tag">
+                <i class="ri-award-fill"></i>
+                <span>Peekay Group Flagship Selection</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-1-flagship.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-1-flagship.png" 
+                     alt="Keerthi Bakery Signature Kerala Snacks Collection - Banana Chips, Mixture, Cashews, Rings, Murukku" 
+                     class="hero-product-img"
+                     width="1916" 
+                     height="1077" 
+                     loading="eager" 
+                     fetchpriority="high" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-leaf-line"></i> Banana Chips</span>
+                <span class="taste-chip"><i class="ri-fire-line"></i> Kerala Mixture</span>
+                <span class="taste-chip"><i class="ri-vip-diamond-line"></i> Roasted Cashews</span>
+                <span class="taste-chip"><i class="ri-donut-chart-line"></i> Crispy Rings</span>
+                <span class="taste-chip"><i class="ri-star-smile-line"></i> Butter Murukku</span>
+              </div>
+            </div>
+
+            <!-- Slide 2: Authentic Malabar Savouries & Murukku -->
+            <div class="hero-slide-item" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 7: Malabar Savouries">
+              <div class="stage-flagship-tag">
+                <i class="ri-copper-diamond-line"></i>
+                <span>Authentic Malabar Savouries</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-2-murukku-collection.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-2-murukku-collection.png" 
+                     alt="Keerthi Authentic Kerala Murukku and Crunchy Savouries on Rustic Wood" 
+                     class="hero-product-img"
+                     width="1672" 
+                     height="941" 
+                     loading="lazy" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-star-smile-line"></i> Butter Murukku</span>
+                <span class="taste-chip"><i class="ri-donut-chart-line"></i> Crispy Rings</span>
+                <span class="taste-chip"><i class="ri-fire-line"></i> Spicy Sev</span>
+                <span class="taste-chip"><i class="ri-leaf-line"></i> Hot Mixture</span>
+              </div>
+            </div>
+
+            <!-- Slide 3: Pure Coconut Oil Banana & Tapioca Chips -->
+            <div class="hero-slide-item" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 7: Banana and Tapioca Chips">
+              <div class="stage-flagship-tag">
+                <i class="ri-sun-line"></i>
+                <span>Pure Coconut Oil Fried Chips</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-3-banana-tapioca-chips.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-3-banana-tapioca-chips.jpg" 
+                     alt="Golden Crispy Banana Chips and Kappa Tapioca Chips in Fresh Coconut Oil" 
+                     class="hero-product-img"
+                     width="2752" 
+                     height="1536" 
+                     loading="lazy" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-leaf-line"></i> Golden Banana Chips</span>
+                <span class="taste-chip"><i class="ri-sparkling-line"></i> Kappa Tapioca</span>
+                <span class="taste-chip"><i class="ri-drop-line"></i> Pure Coconut Oil</span>
+                <span class="taste-chip"><i class="ri-sun-cloudy-line"></i> Sea Salt Crisps</span>
+              </div>
+            </div>
+
+            <!-- Slide 4: Heritage Sweets & Sharkara Upperi -->
+            <div class="hero-slide-item" data-index="3" role="group" aria-roledescription="slide" aria-label="4 of 7: Traditional Sweets and Upperi">
+              <div class="stage-flagship-tag">
+                <i class="ri-heart-3-line"></i>
+                <span>Heritage Sweets & Sharkara Upperi</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-4-traditional-sweets-upperi.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-4-traditional-sweets-upperi.jpg" 
+                     alt="Keerthi Traditional Kerala Sharkara Upperi and Sweet Delicacies" 
+                     class="hero-product-img"
+                     width="2752" 
+                     height="1536" 
+                     loading="lazy" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-seedling-line"></i> Sharkara Upperi</span>
+                <span class="taste-chip"><i class="ri-cake-3-line"></i> Sweet Kaja</span>
+                <span class="taste-chip"><i class="ri-heart-pulse-line"></i> Jaggery Glaze</span>
+                <span class="taste-chip"><i class="ri-leaf-line"></i> Ginger & Cardamom</span>
+              </div>
+            </div>
+
+            <!-- Slide 5: Oven-Fresh Rusks & Biscuits -->
+            <div class="hero-slide-item" data-index="4" role="group" aria-roledescription="slide" aria-label="5 of 7: Oven-Fresh Rusks and Biscuits">
+              <div class="stage-flagship-tag">
+                <i class="ri-cup-line"></i>
+                <span>Oven-Fresh Rusks & Biscuits</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-5-bakery-rusks-biscuits.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-5-bakery-rusks-biscuits.jpg" 
+                     alt="Artisanal Bakery Rusks, Butter Cookies and Tea-Time Delights" 
+                     class="hero-product-img"
+                     width="2752" 
+                     height="1536" 
+                     loading="lazy" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-cup-line"></i> Crispy Milk Rusk</span>
+                <span class="taste-chip"><i class="ri-heart-line"></i> Butter Biscuits</span>
+                <span class="taste-chip"><i class="ri-time-line"></i> Chai-Time Favorite</span>
+                <span class="taste-chip"><i class="ri-fire-line"></i> Daily Baked</span>
+              </div>
+            </div>
+
+            <!-- Slide 6: Traditional Ribbon Pakoda & Fryums -->
+            <div class="hero-slide-item" data-index="5" role="group" aria-roledescription="slide" aria-label="6 of 7: Ribbon Pakoda and Fryums">
+              <div class="stage-flagship-tag">
+                <i class="ri-fire-fill"></i>
+                <span>Traditional Ribbon Pakoda & Fryums</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-6-ribbon-pakoda-fryums.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-6-ribbon-pakoda-fryums.jpg" 
+                     alt="Keerthi Bakery Crunchy Ribbon Pakoda and Crispy Fryums" 
+                     class="hero-product-img"
+                     width="2752" 
+                     height="1536" 
+                     loading="lazy" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-fire-line"></i> Ribbon Pakoda</span>
+                <span class="taste-chip"><i class="ri-donut-chart-line"></i> Crunchy Fryums</span>
+                <span class="taste-chip"><i class="ri-leaf-line"></i> Roasted Curry Leaves</span>
+                <span class="taste-chip"><i class="ri-star-line"></i> Kerala Crunch</span>
+              </div>
+            </div>
+
+            <!-- Slide 7: Complete Kerala Mixture Range -->
+            <div class="hero-slide-item" data-index="6" role="group" aria-roledescription="slide" aria-label="7 of 7: Kerala Mixture Range">
+              <div class="stage-flagship-tag">
+                <i class="ri-sparkling-fill"></i>
+                <span>Complete Kerala Mixture Range</span>
+              </div>
+              <picture>
+                <source srcset="/images/hero-slider/slide-7-kerala-mixtures-range.webp" type="image/webp">
+                <img src="/images/hero-slider/slide-7-kerala-mixtures-range.png" 
+                     alt="All Varieties of Kerala Mixtures, Kara Boondi, Spicy Sev and Namkeens" 
+                     class="hero-product-img"
+                     width="1672" 
+                     height="941" 
+                     loading="lazy" />
+              </picture>
+              <div class="stage-tasting-ribbon">
+                <span class="taste-chip"><i class="ri-fire-line"></i> Malabar Special</span>
+                <span class="taste-chip"><i class="ri-bubble-chart-line"></i> Kara Boondi</span>
+                <span class="taste-chip"><i class="ri-restaurant-line"></i> Spicy Sev</span>
+                <span class="taste-chip"><i class="ri-award-line"></i> Roasted Peanuts</span>
+              </div>
+            </div>
+
           </div>
 
-          <picture>
-            <source srcset="/images/hero_products_clean.webp" type="image/webp">
-            <source srcset="/images/hero_products_clean.jpg" type="image/jpeg">
-            <img src="/images/hero_products_clean.png" 
-                 alt="Keerthi Bakery Signature Kerala Snacks Collection - Banana Chips, Mixture, Cashews, Rings, Murukku" 
-                 class="hero-product-img"
-                 width="1916" 
-                 height="821" 
-                 loading="eager" 
-                 fetchpriority="high" />
-          </picture>
+          <!-- Slider Navigation Arrows (Floating Glass Arrows) -->
+          <button type="button" class="hero-slider-nav hero-slider-prev" id="heroSliderPrev" aria-label="Previous slide">
+            <i class="ri-arrow-left-s-line"></i>
+          </button>
+          <button type="button" class="hero-slider-nav hero-slider-next" id="heroSliderNext" aria-label="Next slide">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
 
-          <!-- Interactive Tasting Ribbon directly underneath the packets -->
-          <div class="stage-tasting-ribbon">
-            <span class="taste-chip"><i class="ri-leaf-line"></i> Banana Chips</span>
-            <span class="taste-chip"><i class="ri-fire-line"></i> Kerala Mixture</span>
-            <span class="taste-chip"><i class="ri-vip-diamond-line"></i> Roasted Cashews</span>
-            <span class="taste-chip"><i class="ri-donut-chart-line"></i> Crispy Rings</span>
-            <span class="taste-chip"><i class="ri-star-smile-line"></i> Butter Murukku</span>
+          <!-- Slider Progress Bar & Dots Floating Pill (Top-Left) -->
+          <div class="hero-slider-controls">
+            <div class="hero-slider-counter" id="heroSliderCounter" aria-live="polite">
+              <span class="counter-curr">01</span> / <span class="counter-total">07</span>
+            </div>
+            <div class="hero-slider-dots" id="heroSliderDots" role="tablist" aria-label="Slide Selector">
+              <button type="button" class="slider-dot active" data-index="0" aria-label="Slide 1"></button>
+              <button type="button" class="slider-dot" data-index="1" aria-label="Slide 2"></button>
+              <button type="button" class="slider-dot" data-index="2" aria-label="Slide 3"></button>
+              <button type="button" class="slider-dot" data-index="3" aria-label="Slide 4"></button>
+              <button type="button" class="slider-dot" data-index="4" aria-label="Slide 5"></button>
+              <button type="button" class="slider-dot" data-index="5" aria-label="Slide 6"></button>
+              <button type="button" class="slider-dot" data-index="6" aria-label="Slide 7"></button>
+            </div>
           </div>
+
         </div>
       </div>
 

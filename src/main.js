@@ -85,7 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 1. Initialize Cart Drawer and Checkout
+  // 1. Initialize Hero Product Stage Side-Scroll Carousel
+  initHeroSlider();
+
+  // 2. Initialize Cart Drawer and Checkout
   initCartDrawerUI(showToast);
   initCheckoutModal(showToast);
 
@@ -607,3 +610,208 @@ function initNavOverlay() {
     });
   });
 }
+
+// ==========================================================================
+// HERO PRODUCT STAGE: INTERACTIVE SIDE-SCROLL CAROUSEL
+// ==========================================================================
+function initHeroSlider() {
+    const stage = document.getElementById("heroProductStage");
+    const track = document.getElementById("heroSliderTrack");
+    const prevBtn = document.getElementById("heroSliderPrev");
+    const nextBtn = document.getElementById("heroSliderNext");
+    const dots = document.querySelectorAll("#heroSliderDots .slider-dot");
+    const counterCurr = document.querySelector("#heroSliderCounter .counter-curr");
+    const slides = document.querySelectorAll(".hero-slide-item");
+
+    if (!stage || !track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoSlideTimer = null;
+    let isUserInteracting = false;
+
+    // Helper: Update UI indicators (active dot, counter text, active class)
+    function updateSlideUI(idx) {
+      currentIndex = idx;
+      if (counterCurr) {
+        counterCurr.textContent = String(idx + 1).padStart(2, "0");
+      }
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === idx);
+        dot.setAttribute("aria-selected", i === idx ? "true" : "false");
+      });
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === idx);
+      });
+    }
+
+    let isProgrammaticScrolling = false;
+
+    // Scroll directly to slide index
+    function goToSlide(idx, smooth = true) {
+      if (idx < 0) idx = totalSlides - 1;
+      if (idx >= totalSlides) idx = 0;
+
+      const targetSlide = slides[idx];
+      if (targetSlide && track) {
+        isProgrammaticScrolling = true;
+        const targetScroll = targetSlide.offsetLeft;
+        track.scrollTo({
+          left: targetScroll,
+          behavior: smooth ? "smooth" : "auto"
+        });
+        setTimeout(() => {
+          isProgrammaticScrolling = false;
+        }, smooth ? 450 : 20);
+      }
+      updateSlideUI(idx);
+    }
+
+    // Auto Advance Timer (every 4.5 seconds)
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(() => {
+        if (!isUserInteracting) {
+          goToSlide((currentIndex + 1) % totalSlides);
+        }
+      }, 4500);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
+    function pauseThenRestartAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    // Navigation Buttons
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+        pauseThenRestartAutoSlide();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+        pauseThenRestartAutoSlide();
+      });
+    }
+
+    // Indicator Dots
+    dots.forEach((dot) => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetIdx = parseInt(dot.getAttribute("data-index"), 10);
+        if (!isNaN(targetIdx)) {
+          goToSlide(targetIdx);
+          pauseThenRestartAutoSlide();
+        }
+      });
+    });
+
+    // Detect native swipe / trackpad horizontal scrolling
+    let scrollDebounce = null;
+    track.addEventListener("scroll", () => {
+      if (isProgrammaticScrolling) return;
+      if (scrollDebounce) cancelAnimationFrame(scrollDebounce);
+      scrollDebounce = requestAnimationFrame(() => {
+        if (isProgrammaticScrolling) return;
+        const slideWidth = track.clientWidth || 1;
+        const rawIndex = Math.round(track.scrollLeft / slideWidth);
+        const clampedIndex = Math.max(0, Math.min(rawIndex, totalSlides - 1));
+        if (clampedIndex !== currentIndex) {
+          updateSlideUI(clampedIndex);
+        }
+      });
+    }, { passive: true });
+
+    // Desktop Mouse Drag to Scroll
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    track.addEventListener("mousedown", (e) => {
+      if (e.target.closest("button") || e.target.closest("a")) return;
+      isDragging = true;
+      isUserInteracting = true;
+      startX = e.pageX - track.offsetLeft;
+      scrollStart = track.scrollLeft;
+      track.classList.add("is-dragging");
+      stopAutoSlide();
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollStart - walk;
+    });
+
+    function endDrag() {
+      if (!isDragging) return;
+      isDragging = false;
+      isUserInteracting = false;
+      track.classList.remove("is-dragging");
+      const slideWidth = track.clientWidth || 1;
+      const targetIndex = Math.round(track.scrollLeft / slideWidth);
+      goToSlide(targetIndex);
+      startAutoSlide();
+    }
+
+    window.addEventListener("mouseup", endDrag);
+
+    // Pause on Hover & Touch Interaction
+    stage.addEventListener("mouseenter", () => {
+      isUserInteracting = true;
+      stopAutoSlide();
+    });
+
+    stage.addEventListener("mouseleave", () => {
+      isUserInteracting = false;
+      startAutoSlide();
+    });
+
+    stage.addEventListener("touchstart", () => {
+      isUserInteracting = true;
+      stopAutoSlide();
+    }, { passive: true });
+
+    stage.addEventListener("touchend", () => {
+      isUserInteracting = false;
+      startAutoSlide();
+    }, { passive: true });
+
+    // Keyboard navigation (ArrowLeft & ArrowRight)
+    stage.setAttribute("tabindex", "0");
+    stage.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+        pauseThenRestartAutoSlide();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+        pauseThenRestartAutoSlide();
+      }
+    });
+
+    // Deep-link initial slide if provided in URL (e.g. ?slide=1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialSlideParam = parseInt(urlParams.get("slide"), 10);
+    if (!isNaN(initialSlideParam) && initialSlideParam >= 0 && initialSlideParam < totalSlides) {
+      goToSlide(initialSlideParam, false);
+    }
+
+    // Start auto advance
+    startAutoSlide();
+  }
