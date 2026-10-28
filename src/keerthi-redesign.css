@@ -1110,33 +1110,35 @@ body.keerthi-redesign-body {
   }
 }
 
-/* ── 3. Full-Width Panoramic Hero Section ── */
+/* ── 3. Full-Width Panoramic Hero Section (Natural Proportions As-Is) ── */
 .mockup-hero-section {
   position: relative;
   width: 100%;
-  min-height: 580px;
-  background: url('/images/keerthi_hero_banner.jpg') center center / cover no-repeat;
   background-color: #120d09;
-  display: flex;
-  align-items: center;
+  display: block;
   overflow: hidden;
   border-bottom: 1px solid rgba(202, 165, 95, 0.2);
+  line-height: 0;
 }
 
 .mockup-hero-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(14, 10, 7, 0.90) 0%,
-    rgba(14, 10, 7, 0.80) 30%,
-    rgba(14, 10, 7, 0.55) 50%,
-    rgba(14, 10, 7, 0.22) 75%,
-    rgba(14, 10, 7, 0.05) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
+  display: none !important;
+}
+
+.hero-banner-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.hero-banner-full-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .hero-mockup-inner {
@@ -3118,20 +3120,16 @@ body.keerthi-redesign-body {
     padding: 10px 18px !important;
   }
 
-  /* Mockup Hero — Accurately Proportioned Layout for Mobile */
+  /* Mockup Hero — Natural Proportions Banner */
   .mockup-hero-section {
     min-height: auto;
-    padding: 22px 0 16px;
-    background-position: right 20% center;
+    padding: 0;
     position: relative;
+    display: block;
+    line-height: 0;
   }
   .mockup-hero-section::before {
-    background: linear-gradient(
-      180deg,
-      rgba(14, 10, 7, 0.82) 0%,
-      rgba(14, 10, 7, 0.68) 50%,
-      rgba(14, 10, 7, 0.88) 100%
-    ) !important;
+    display: none !important;
   }
   .hero-mockup-inner {
     grid-template-columns: 1fr;
