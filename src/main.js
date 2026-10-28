@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 0. Brand Logo Language Switcher (English <-> Malayalam)
   const langBtn = document.getElementById("langSwitchBtn");
   const mainLogo = document.getElementById("mainStoreLogo");
+  const footerLogo = document.getElementById("footerStoreLogo");
   const langLabel = document.getElementById("langSwitchLabel");
   let currentLang = "en";
 
@@ -45,12 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateLogoState(lang) {
     currentLang = lang;
     const isEn = lang === "en";
-    const src = isEn ? "/images/keerthi_logo_clean_hq.png" : "/images/keerthi_logo_ml.png";
+    const srcPng = isEn ? "/images/keerthi_logo_clean_hq.png" : "/images/keerthi_logo_ml.png";
+    const srcWebp = isEn ? "/images/keerthi_logo_clean_hq.webp" : "/images/keerthi_logo_ml.webp";
     if (langLabel) {
       langLabel.textContent = isEn ? "EN • മലയാളം" : "മലയാളം • EN";
     }
     if (mainLogo) {
-      mainLogo.src = src;
+      mainLogo.src = srcPng;
+    }
+    if (footerLogo) {
+      footerLogo.src = srcWebp;
     }
     try {
       localStorage.setItem("keerthi_brand_lang", lang);
