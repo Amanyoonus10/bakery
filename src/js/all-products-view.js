@@ -25,7 +25,7 @@ export function initAllProductsView(showToast) {
     priceStr: `₹${prod.price || 89}`,
     badge: prod.badge || "",
     badgeClass: prod.badgeClass || "",
-    img: prod.imageCutout || prod.imageWebp || prod.image || "/images/card_banana_chips_clean.jpg",
+    img: prod.imageWebp || prod.image || "/images/card_banana_chips_clean.jpg",
     category: prod.category || "mixtures",
     rating: prod.rating || (4.8 + ((index % 3) * 0.1)),
     description: prod.description || "",
