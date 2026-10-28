@@ -2340,6 +2340,59 @@ body.keerthi-redesign-body {
 }
 
 /* ==========================================================================
+   4. AUTHENTIC SAVOURIES & SNACKS CATALOGUE (FRAMED SHOWCASE)
+   ========================================================================== */
+.products-section {
+  position: relative;
+  padding: clamp(36px, 4.5vw, 60px) 0;
+  background: var(--kg-cream-bg, #fdfaf6);
+  border-top: 1px solid rgba(202, 165, 95, 0.22);
+  border-bottom: 1px solid rgba(202, 165, 95, 0.22);
+}
+
+.catalogue-showcase-frame {
+  background: #ffffff;
+  border: 1.5px solid #ebd9c4;
+  border-radius: 24px;
+  box-shadow: 
+    0 0 0 1px rgba(202, 165, 95, 0.16),
+    0 12px 40px rgba(92, 6, 18, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: clamp(32px, 3.8vw, 50px) clamp(18px, 2.8vw, 38px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Regal Gradient Hairline Top Border Accent (Burgundy & Warm Gold) */
+.catalogue-showcase-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5C0612 0%, #8d191d 25%, #caa55f 50%, #8d191d 75%, #5C0612 100%);
+  z-index: 2;
+}
+
+.catalogue-showcase-frame .all-products-grid {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 20px 0;
+  }
+  .catalogue-showcase-frame {
+    border-radius: 16px;
+    padding: 22px 12px 24px 12px;
+    border-width: 1px;
+    box-shadow: 0 4px 16px rgba(92, 6, 18, 0.04);
+  }
+}
+
+/* ==========================================================================
    INTERACTIVE COVERFLOW SIDE-SCROLL SHOWCASE SECTION
    ========================================================================== */
 .coverflow-showcase-section {

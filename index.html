@@ -412,69 +412,71 @@
   <!-- ==========================================================================
        4. AUTHENTIC SAVOURIES & SNACKS CATALOGUE (ALL 55 PRODUCTS)
        ========================================================================== -->
-  <section class="products-section" id="products" style="padding-top: 2rem;">
+  <section class="products-section" id="products">
     <div id="shop-all" style="position: relative; top: -80px; visibility: hidden;" aria-hidden="true"></div>
     <div class="site-container">
-      <!-- Header Row with Left/Center Titles -->
-      <div class="showcase-header-row" style="margin-bottom: 1.5rem;">
-        <div class="coverflow-header-wrap">
-          <div class="coverflow-eyebrow">
-            <i class="ri-sparkling-fill"></i> Kerala's Authentic Savouries
+      <div class="catalogue-showcase-frame" id="catalogueShowcaseFrame">
+        <!-- Header Row with Left/Center Titles -->
+        <div class="showcase-header-row" style="margin-bottom: 1.5rem;">
+          <div class="coverflow-header-wrap">
+            <div class="coverflow-eyebrow">
+              <i class="ri-sparkling-fill"></i> Kerala's Authentic Savouries
+            </div>
+            <h2 class="coverflow-title">
+              Crispy. Natural. <em>Irresistible.</em>
+            </h2>
+            <p class="coverflow-subtitle" id="showcaseSubtitle">
+              Explore 55 freshly prepared Malabar snack specialties with customized weights, instant add, and fast delivery.
+            </p>
           </div>
-          <h2 class="coverflow-title">
-            Crispy. Natural. <em>Irresistible.</em>
-          </h2>
-          <p class="coverflow-subtitle" id="showcaseSubtitle">
-            Explore 55 freshly prepared Malabar snack specialties with customized weights, instant add, and fast delivery.
-          </p>
         </div>
-      </div>
 
-      <!-- All 55 Products Grid View (Default View) -->
-      <div class="all-products-grid-wrap" id="allProductsGridWrap" style="display: block;">
-        <!-- Haldiram's Style Subheader Toolbar: Filter & Sort -->
-        <div class="haldiram-toolbar-container">
-          <div class="haldiram-subbar">
-            <button type="button" class="haldiram-filter-btn" id="btnHaldiramFilter" aria-expanded="false" title="Filter snacks by category">
-              <span class="filter-label">Filter</span>
-              <i class="ri-equalizer-line"></i>
-            </button>
-            <div class="haldiram-sort-wrap">
-              <div class="haldiram-sort-custom">
-                <span class="sort-text">Sort By</span>
-                <select id="haldiramSortSelect" class="haldiram-sort-select" aria-label="Sort snacks">
-                  <option value="featured">Featured</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="name-asc">Name: A to Z</option>
-                  <option value="popular">Popularity</option>
-                </select>
-                <i class="ri-arrow-down-s-line"></i>
+        <!-- All 55 Products Grid View (Default View) -->
+        <div class="all-products-grid-wrap" id="allProductsGridWrap" style="display: block;">
+          <!-- Haldiram's Style Subheader Toolbar: Filter & Sort -->
+          <div class="haldiram-toolbar-container">
+            <div class="haldiram-subbar">
+              <button type="button" class="haldiram-filter-btn" id="btnHaldiramFilter" aria-expanded="false" title="Filter snacks by category">
+                <span class="filter-label">Filter</span>
+                <i class="ri-equalizer-line"></i>
+              </button>
+              <div class="haldiram-sort-wrap">
+                <div class="haldiram-sort-custom">
+                  <span class="sort-text">Sort By</span>
+                  <select id="haldiramSortSelect" class="haldiram-sort-select" aria-label="Sort snacks">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name-asc">Name: A to Z</option>
+                    <option value="popular">Popularity</option>
+                  </select>
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Chips and Search Toolbar -->
+            <div class="haldiram-filter-panel" id="haldiramFilterPanel">
+              <div class="catalogue-categories" id="catalogueCategories">
+                <button type="button" class="category-chip active" data-category="all">All Snacks (55)</button>
+                <button type="button" class="category-chip" data-category="chips">Banana &amp; Tapioca Chips</button>
+                <button type="button" class="category-chip" data-category="mixtures">Kerala Mixtures</button>
+                <button type="button" class="category-chip" data-category="murukku">Murukku &amp; Savouries</button>
+                <button type="button" class="category-chip" data-category="sweets">Traditional Sweets</button>
+                <button type="button" class="category-chip" data-category="biscuits">Biscuits &amp; Rusks</button>
+              </div>
+              <div class="catalogue-search-box">
+                <i class="ri-search-line"></i>
+                <input type="text" id="catalogueSearchInput" placeholder="Search 55 snacks..." autocomplete="off">
+                <span class="catalogue-count-badge" id="catalogueCountBadge">55 items</span>
               </div>
             </div>
           </div>
 
-          <!-- Category Chips and Search Toolbar -->
-          <div class="haldiram-filter-panel" id="haldiramFilterPanel">
-            <div class="catalogue-categories" id="catalogueCategories">
-              <button type="button" class="category-chip active" data-category="all">All Snacks (55)</button>
-              <button type="button" class="category-chip" data-category="chips">Banana &amp; Tapioca Chips</button>
-              <button type="button" class="category-chip" data-category="mixtures">Kerala Mixtures</button>
-              <button type="button" class="category-chip" data-category="murukku">Murukku &amp; Savouries</button>
-              <button type="button" class="category-chip" data-category="sweets">Traditional Sweets</button>
-              <button type="button" class="category-chip" data-category="biscuits">Biscuits &amp; Rusks</button>
-            </div>
-            <div class="catalogue-search-box">
-              <i class="ri-search-line"></i>
-              <input type="text" id="catalogueSearchInput" placeholder="Search 55 snacks..." autocomplete="off">
-              <span class="catalogue-count-badge" id="catalogueCountBadge">55 items</span>
-            </div>
+          <!-- Haldiram's Products Grid Container -->
+          <div class="all-products-grid" id="allProductsGrid">
+            <!-- Dynamically populated from coverflow items -->
           </div>
-        </div>
-
-        <!-- Haldiram's Products Grid Container -->
-        <div class="all-products-grid" id="allProductsGrid">
-          <!-- Dynamically populated from coverflow items -->
         </div>
       </div>
     </div>
