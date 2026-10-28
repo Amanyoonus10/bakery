@@ -3083,6 +3083,55 @@ body.keerthi-redesign-body {
   margin-bottom: 24px;
 }
 
+.heritage-lead-quote {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--kg-green, #8d191d);
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--kg-tan, #caa55f);
+}
+
+.heritage-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.heritage-narrative p {
+  color: var(--kg-text-body, #5c4e43);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.heritage-promise-pill {
+  margin: 20px 0 24px 0;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(202, 165, 95, 0.14) 0%, rgba(141, 25, 29, 0.08) 100%);
+  border-left: 4px solid var(--kg-green, #8d191d);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(141, 25, 29, 0.05);
+}
+
+.promise-motto-text {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--kg-green, #8d191d);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.promise-motto-text span {
+  color: var(--kg-tan-hover, #ba944f);
+  font-weight: 800;
+}
+
 .about-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
