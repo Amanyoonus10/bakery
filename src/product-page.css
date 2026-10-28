@@ -563,26 +563,21 @@ body.haldiram-theme-body {
 .haldiram-image-frame {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #ffffff;
+  background: transparent;
   border-radius: 18px;
-  border: 1.5px solid rgba(196, 142, 76, 0.45);
-  box-shadow: 
-    0 8px 24px rgba(92, 6, 18, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: none;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 20px;
+  padding: 16px 12px;
   position: relative;
-  overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: visible;
 }
 
 .haldiram-image-frame:hover {
-  border-color: #caa55f;
-  box-shadow: 
-    0 10px 28px rgba(141, 25, 29, 0.12),
-    inset 0 2px 6px rgba(184, 134, 11, 0.08);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .haldiram-hero-image {
@@ -592,12 +587,13 @@ body.haldiram-theme-body {
   height: auto;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.09));
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 16px 32px rgba(43, 4, 11, 0.20));
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
 }
 
 .haldiram-hero-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.05) translateY(-4px);
+  filter: drop-shadow(0 22px 42px rgba(43, 4, 11, 0.26));
 }
 
 /* ── Right Column: Info & Buy Box ── */
@@ -1030,14 +1026,14 @@ body.haldiram-theme-body {
   width: 100%;
   aspect-ratio: 1 / 0.95;
   min-height: 220px;
-  background: linear-gradient(180deg, #fdfbf9 0%, #f6f0ea 100%);
-  overflow: hidden;
+  background: transparent;
+  overflow: visible;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 12px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 14px 10px;
+  border-bottom: none;
 }
 
 .haldiram-card-img {
@@ -1046,12 +1042,13 @@ body.haldiram-theme-body {
   max-height: 195px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 10px 18px rgba(43, 4, 11, 0.16));
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
 }
 
 .haldiram-card-img-wrap:hover .haldiram-card-img {
-  transform: scale(1.06);
+  transform: scale(1.08) translateY(-4px);
+  filter: drop-shadow(0 16px 26px rgba(43, 4, 11, 0.24));
 }
 
 .haldiram-card-badge {
