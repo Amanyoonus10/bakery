@@ -3522,7 +3522,7 @@ body.keerthi-redesign-body {
 
 .about-heritage-grid {
   display: grid;
-  grid-template-columns: 1.16fr 0.84fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(32px, 3.8vw, 52px);
   align-items: center;
   position: relative;
@@ -3695,9 +3695,8 @@ body.keerthi-redesign-body {
     0 0 0 1px rgba(202, 165, 95, 0.4),
     0 0 30px rgba(10, 31, 56, 0.8);
   border: 2px solid rgba(202, 165, 95, 0.5);
-  height: 100%;
-  min-height: 480px;
-  max-height: 560px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   background: #040d18;
   display: flex;
   flex-direction: column;
@@ -3747,8 +3746,6 @@ body.keerthi-redesign-body {
 .about-heritage-section .about-heritage-img {
   width: 100%;
   height: 100%;
-  min-height: 480px;
-  max-height: 560px;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -4243,14 +4240,18 @@ body.keerthi-redesign-body {
     font-size: 0.72rem;
   }
   .about-image-card {
-    min-height: 280px;
-    max-height: 360px;
-    height: 320px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
     border-radius: 16px;
   }
   .about-heritage-img {
-    min-height: 280px;
-    max-height: 360px;
+    width: 100%;
+    height: 100%;
+    min-height: unset;
+    max-height: unset;
   }
   .heritage-image-floating-badge {
     top: 10px;
