@@ -1110,24 +1110,39 @@ body.keerthi-redesign-body {
   }
 }
 
-/* ── 3. Royal 2-Column Panoramic Hero Section ── */
+/* ── 3. Royal 2-Column Panoramic Hero Section (Ultra-Impressive Luxury Edition) ── */
 .mockup-hero-section {
   position: relative;
   width: 100%;
-  background: radial-gradient(ellipse at 70% 50%, #24160e 0%, #140d08 60%, #0d0805 100%);
-  border-bottom: 1px solid rgba(202, 165, 95, 0.25);
-  padding: 34px 0 38px 0;
+  background: radial-gradient(ellipse at 75% 45%, rgba(202, 165, 95, 0.2) 0%, rgba(141, 25, 29, 0.16) 30%, #110b07 70%, #080504 100%);
+  border-bottom: 1px solid rgba(202, 165, 95, 0.28);
+  padding: 36px 0 40px 0;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
 }
 
+/* Ambient Golden Glow Halo behind Stage */
+.hero-ambient-glow {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 650px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(202, 165, 95, 0.18) 0%, rgba(141, 25, 29, 0.12) 40%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero-master-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 0.9fr 1.35fr;
   align-items: center;
-  gap: 36px;
+  gap: 40px;
   width: 100%;
 }
 
@@ -1139,128 +1154,218 @@ body.keerthi-redesign-body {
   z-index: 2;
 }
 
-.hero-kerala-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: rgba(202, 165, 95, 0.14);
-  border: 1px solid rgba(202, 165, 95, 0.35);
-  color: var(--kg-tan);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-}
-
-.hero-kerala-eyebrow i {
-  color: #f59e0b;
-}
-
-.hero-master-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.3rem, 3.4vw, 3.3rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: #ffffff;
-  letter-spacing: -0.5px;
-  margin: 0 0 14px 0;
-}
-
-.hero-title-accent {
-  font-style: italic;
-  color: var(--kg-tan);
-}
-
-.hero-master-sub {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.98rem;
-  line-height: 1.55;
-  margin: 0 0 20px 0;
-  max-width: 520px;
-  font-weight: 400;
-}
-
-.hero-actions-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 22px;
-  flex-wrap: wrap;
-}
-
-.btn-hero-tan-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: var(--kg-tan);
-  color: var(--kg-text-dark);
-  font-weight: 800;
-  font-size: 0.95rem;
-  padding: 12px 26px;
-  border-radius: 0px;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s ease;
-}
-
-.btn-hero-tan-pill:hover {
-  background-color: var(--kg-tan-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(202, 165, 95, 0.35);
-}
-
-.btn-hero-ghost-pill {
+/* Prestige Heritage Pill */
+.hero-prestige-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(202, 165, 95, 0.18) 0%, rgba(141, 25, 29, 0.25) 100%);
+  border: 1px solid rgba(202, 165, 95, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.prestige-sparkle {
+  color: #f59e0b;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+
+.prestige-text {
+  color: #fbe8c5;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.prestige-dot {
+  color: var(--kg-tan);
+  opacity: 0.6;
+}
+
+.prestige-highlight {
+  color: var(--kg-tan);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Master Title with Gold Shimmer */
+.hero-master-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.08;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  letter-spacing: -0.5px;
+  margin: 0 0 14px 0;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title-shimmer {
+  font-style: italic;
   font-weight: 700;
-  font-size: 0.92rem;
-  padding: 12px 22px;
+  background: linear-gradient(120deg, #fbe8c5 0%, #caa55f 30%, #fff2cc 50%, #caa55f 70%, #d8b467 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-gold-shimmer 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes text-gold-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-master-sub {
+  color: rgba(255, 246, 238, 0.9);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  max-width: 520px;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Heritage Stats Bar (Social Proof) */
+.hero-heritage-stats {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(18, 12, 8, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(202, 165, 95, 0.28);
+  border-radius: 12px;
+  padding: 10px 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-number {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #caa55f;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-stat-number i {
+  color: #f59e0b;
+  font-size: 1rem;
+}
+
+.hero-stat-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 2px;
+}
+
+.hero-stat-sep {
+  width: 1px;
+  height: 26px;
+  background: rgba(202, 165, 95, 0.3);
+}
+
+/* High-Impact Action Buttons */
+.hero-actions-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-gold-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #e8c77f 0%, #caa55f 50%, #b58b3e 100%);
+  color: #1a0f07;
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 13px 28px;
   border-radius: 0px;
   text-decoration: none;
+  box-shadow: 0 8px 25px rgba(202, 165, 95, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.3px;
+}
+
+.btn-hero-gold-glow i {
+  transition: transform 0.25s ease;
+}
+
+.btn-hero-gold-glow:hover {
+  background: linear-gradient(135deg, #f0d494 0%, #d4b26f 50%, #c4994c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(202, 165, 95, 0.55), 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-hero-gold-glow:hover i {
+  transform: translateX(4px);
+}
+
+.btn-hero-ghost-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 13px 22px;
+  border-radius: 0px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: all 0.25s ease;
 }
 
-.btn-hero-ghost-pill:hover {
-  background: rgba(255, 255, 255, 0.16);
+.btn-hero-ghost-luxury:hover {
+  background: rgba(202, 165, 95, 0.12);
   border-color: var(--kg-tan);
   color: var(--kg-tan);
   transform: translateY(-2px);
 }
 
-/* Trust Feature Badges Box */
-.hero-trust-box {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px 16px;
-  background: rgba(20, 14, 10, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(202, 165, 95, 0.28);
-  padding: 12px 18px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 490px;
-  box-sizing: border-box;
+/* Trust Bar Compact */
+.hero-trust-bar-compact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 18px;
 }
 
-.trust-box-item {
+.trust-mini-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  color: #ffffff;
-  font-size: 0.78rem;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.76rem;
   font-weight: 700;
   white-space: nowrap;
 }
 
-.trust-box-item i {
+.trust-mini-pill i {
   color: var(--kg-tan);
   font-size: 0.92rem;
 }
@@ -1284,60 +1389,95 @@ body.keerthi-redesign-body {
 
 .hero-cursive-caption {
   font-family: var(--font-script);
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   color: #fbe8c5;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
   transform: rotate(-2deg);
 }
 
+/* Embossed 3D Royal Gold Seal */
 .circular-kerala-stamp {
-  width: 74px;
-  height: 74px;
-  border: 2px dashed var(--kg-tan);
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: rgba(141, 25, 29, 0.85);
-  backdrop-filter: blur(10px);
+  background: radial-gradient(circle, #a11c21 0%, #750e12 70%, #52070a 100%);
+  border: 2px dashed #caa55f;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.25);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--kg-tan);
-  text-align: center;
-  padding: 4px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-  animation: stamp-pulse 4s infinite ease-in-out;
+  animation: stamp-pulse 5s infinite ease-in-out;
   flex-shrink: 0;
 }
 
 @keyframes stamp-pulse {
   0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.04) rotate(4deg); }
+  50% { transform: scale(1.05) rotate(4deg); }
 }
 
-.circular-kerala-stamp i {
-  font-size: 1.4rem;
+.stamp-inner-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #caa55f;
+  padding: 4px;
+}
+
+.stamp-inner-ring i {
+  font-size: 1.5rem;
   color: #f59e0b;
 }
 
-.circular-kerala-stamp span {
-  font-size: 0.52rem;
+.stamp-inner-ring span {
+  font-size: 0.54rem;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  margin-top: 2px;
-  line-height: 1.2;
+  margin-top: 1px;
+  line-height: 1.15;
 }
 
+/* Product Stage - Pedestal & Frame */
 .hero-product-stage {
   width: 100%;
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 
-    0 24px 60px rgba(0, 0, 0, 0.55),
-    0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(202, 165, 95, 0.32);
-  background: #18110b;
+    0 0 65px rgba(202, 165, 95, 0.22),
+    0 24px 60px rgba(0, 0, 0, 0.65),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(202, 165, 95, 0.4);
+  background: #140d08;
+}
+
+.stage-flagship-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 9, 6, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(202, 165, 95, 0.4);
+  color: #caa55f;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.stage-flagship-tag i {
+  color: #f59e0b;
+  font-size: 0.82rem;
 }
 
 .hero-product-img {
@@ -1349,7 +1489,43 @@ body.keerthi-redesign-body {
 }
 
 .hero-product-stage:hover .hero-product-img {
-  transform: scale(1.015);
+  transform: scale(1.02);
+}
+
+/* Tasting Ribbon directly underneath the packets */
+.stage-tasting-ribbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(14, 9, 6, 0.0) 0%, rgba(14, 9, 6, 0.9) 100%);
+  padding: 24px 14px 10px 14px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.taste-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fbe8c5;
+  background: rgba(18, 12, 8, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(202, 165, 95, 0.35);
+  letter-spacing: 0.4px;
+}
+
+.taste-chip i {
+  color: #caa55f;
+  font-size: 0.8rem;
 }
 
 /* ── 4. Category Showcase Cards (3 Grid) ── */
@@ -3181,17 +3357,29 @@ body.keerthi-redesign-body {
     padding: 10px 18px !important;
   }
 
-  /* Mockup Hero — Royal 2-Column Responsive Layout for Mobile */
+  /* Mockup Hero — Royal 2-Column Responsive Layout for Mobile (Elevated Edition) */
   .mockup-hero-section {
-    padding: 24px 0 20px 0;
+    padding: 22px 0 18px 0;
+  }
+  .hero-ambient-glow {
+    display: none;
   }
   .hero-master-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .hero-left-editorial {
     max-width: 100%;
     width: 100%;
+  }
+  .hero-prestige-badge {
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+  .prestige-text,
+  .prestige-highlight {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
   }
   .hero-master-title {
     font-size: clamp(1.85rem, 6.2vw, 2.3rem);
@@ -3201,35 +3389,41 @@ body.keerthi-redesign-body {
   .hero-master-sub {
     font-size: 0.86rem;
     line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .hero-heritage-stats {
+    padding: 8px 12px;
+    gap: 12px;
     margin-bottom: 16px;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hero-stat-number {
+    font-size: 1rem;
+  }
+  .hero-stat-label {
+    font-size: 0.6rem;
   }
   .hero-actions-wrap {
     gap: 10px;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
-  .btn-hero-tan-pill,
-  .btn-hero-ghost-pill {
+  .btn-hero-gold-glow,
+  .btn-hero-ghost-luxury {
     padding: 10px 18px;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
   }
-  .hero-trust-box {
+  .hero-trust-bar-compact {
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 10px;
+    gap: 6px 10px;
     width: 100%;
-    padding: 10px 14px;
-    box-sizing: border-box;
   }
-  .trust-box-item {
-    font-size: 0.72rem;
-    white-space: normal;
+  .trust-mini-pill {
+    font-size: 0.7rem;
     line-height: 1.25;
-    gap: 6px;
-  }
-  .trust-box-item i {
-    color: var(--kg-tan);
-    font-size: 0.95rem;
-    flex-shrink: 0;
   }
   .hero-right-showcase {
     width: 100%;
@@ -3237,25 +3431,32 @@ body.keerthi-redesign-body {
   .hero-showcase-header {
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .circular-kerala-stamp {
-    width: 64px;
-    height: 64px;
-    padding: 4px;
+    width: 62px;
+    height: 62px;
   }
-  .circular-kerala-stamp i {
+  .stamp-inner-ring i {
     font-size: 1.15rem;
   }
-  .circular-kerala-stamp span {
-    font-size: 0.46rem;
+  .stamp-inner-ring span {
+    font-size: 0.44rem;
   }
   .hero-cursive-caption {
-    font-size: 1.3rem;
-    white-space: normal;
+    font-size: 1.25rem;
   }
   .hero-product-stage {
     border-radius: 12px;
+  }
+  .stage-flagship-tag {
+    font-size: 0.58rem;
+    padding: 3px 8px;
+    top: 8px;
+    right: 8px;
+  }
+  .stage-tasting-ribbon {
+    display: none;
   }
 
   /* Category 3-Grid */
