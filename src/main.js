@@ -612,206 +612,216 @@ function initNavOverlay() {
 }
 
 // ==========================================================================
-// HERO PRODUCT STAGE: INTERACTIVE SIDE-SCROLL CAROUSEL
+// HERO PRODUCT STAGE: SEAMLESS INFINITE LOOP CAROUSEL (NO BUTTONS / PURE VISUALS)
 // ==========================================================================
 function initHeroSlider() {
-    const stage = document.getElementById("heroProductStage");
-    const track = document.getElementById("heroSliderTrack");
-    const prevBtn = document.getElementById("heroSliderPrev");
-    const nextBtn = document.getElementById("heroSliderNext");
-    const dots = document.querySelectorAll("#heroSliderDots .slider-dot");
-    const counterCurr = document.querySelector("#heroSliderCounter .counter-curr");
-    const slides = document.querySelectorAll(".hero-slide-item");
+  const stage = document.getElementById("heroProductStage");
+  const track = document.getElementById("heroSliderTrack");
+  if (!stage || !track) return;
 
-    if (!stage || !track || slides.length === 0) return;
+  const originalSlides = Array.from(track.querySelectorAll(".hero-slide-item"));
+  const total = originalSlides.length;
+  if (total <= 1) return;
 
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    let autoSlideTimer = null;
-    let isUserInteracting = false;
+  // Clone first and last slide for seamless infinite wrap
+  const firstClone = originalSlides[0].cloneNode(true);
+  const lastClone = originalSlides[total - 1].cloneNode(true);
+  firstClone.classList.add("hero-slide-clone");
+  lastClone.classList.add("hero-slide-clone");
 
-    // Helper: Update UI indicators (active dot, counter text, active class)
-    function updateSlideUI(idx) {
-      currentIndex = idx;
-      if (counterCurr) {
-        counterCurr.textContent = String(idx + 1).padStart(2, "0");
-      }
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === idx);
-        dot.setAttribute("aria-selected", i === idx ? "true" : "false");
-      });
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === idx);
-      });
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, originalSlides[0]);
+
+  // Current index in track with clones:
+  // Index 0: lastClone (slide 7)
+  // Index 1..total: originalSlides (1 to 7)
+  // Index total+1: firstClone (slide 1)
+  let currentIndex = 1;
+  let isTransitioning = false;
+  let autoTimer = null;
+  const TRANSITION_DURATION = 750; // ms
+  const SLIDE_INTERVAL = 3400; // ms
+
+  function updateTransform(animated = true) {
+    if (animated) {
+      track.style.transition = `transform ${TRANSITION_DURATION}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+    } else {
+      track.style.transition = "none";
     }
-
-    let isProgrammaticScrolling = false;
-
-    // Scroll directly to slide index
-    function goToSlide(idx, smooth = true) {
-      if (idx < 0) idx = totalSlides - 1;
-      if (idx >= totalSlides) idx = 0;
-
-      const targetSlide = slides[idx];
-      if (targetSlide && track) {
-        isProgrammaticScrolling = true;
-        const targetScroll = targetSlide.offsetLeft;
-        track.scrollTo({
-          left: targetScroll,
-          behavior: smooth ? "smooth" : "auto"
-        });
-        setTimeout(() => {
-          isProgrammaticScrolling = false;
-        }, smooth ? 450 : 20);
-      }
-      updateSlideUI(idx);
-    }
-
-    // Auto Advance Timer (every 4.5 seconds)
-    function startAutoSlide() {
-      stopAutoSlide();
-      autoSlideTimer = setInterval(() => {
-        if (!isUserInteracting) {
-          goToSlide((currentIndex + 1) % totalSlides);
-        }
-      }, 4500);
-    }
-
-    function stopAutoSlide() {
-      if (autoSlideTimer) {
-        clearInterval(autoSlideTimer);
-        autoSlideTimer = null;
-      }
-    }
-
-    function pauseThenRestartAutoSlide() {
-      stopAutoSlide();
-      startAutoSlide();
-    }
-
-    // Navigation Buttons
-    if (prevBtn) {
-      prevBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        goToSlide(currentIndex - 1);
-        pauseThenRestartAutoSlide();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        goToSlide(currentIndex + 1);
-        pauseThenRestartAutoSlide();
-      });
-    }
-
-    // Indicator Dots
-    dots.forEach((dot) => {
-      dot.addEventListener("click", (e) => {
-        e.preventDefault();
-        const targetIdx = parseInt(dot.getAttribute("data-index"), 10);
-        if (!isNaN(targetIdx)) {
-          goToSlide(targetIdx);
-          pauseThenRestartAutoSlide();
-        }
-      });
-    });
-
-    // Detect native swipe / trackpad horizontal scrolling
-    let scrollDebounce = null;
-    track.addEventListener("scroll", () => {
-      if (isProgrammaticScrolling) return;
-      if (scrollDebounce) cancelAnimationFrame(scrollDebounce);
-      scrollDebounce = requestAnimationFrame(() => {
-        if (isProgrammaticScrolling) return;
-        const slideWidth = track.clientWidth || 1;
-        const rawIndex = Math.round(track.scrollLeft / slideWidth);
-        const clampedIndex = Math.max(0, Math.min(rawIndex, totalSlides - 1));
-        if (clampedIndex !== currentIndex) {
-          updateSlideUI(clampedIndex);
-        }
-      });
-    }, { passive: true });
-
-    // Desktop Mouse Drag to Scroll
-    let isDragging = false;
-    let startX = 0;
-    let scrollStart = 0;
-
-    track.addEventListener("mousedown", (e) => {
-      if (e.target.closest("button") || e.target.closest("a")) return;
-      isDragging = true;
-      isUserInteracting = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollStart = track.scrollLeft;
-      track.classList.add("is-dragging");
-      stopAutoSlide();
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      track.scrollLeft = scrollStart - walk;
-    });
-
-    function endDrag() {
-      if (!isDragging) return;
-      isDragging = false;
-      isUserInteracting = false;
-      track.classList.remove("is-dragging");
-      const slideWidth = track.clientWidth || 1;
-      const targetIndex = Math.round(track.scrollLeft / slideWidth);
-      goToSlide(targetIndex);
-      startAutoSlide();
-    }
-
-    window.addEventListener("mouseup", endDrag);
-
-    // Pause on Hover & Touch Interaction
-    stage.addEventListener("mouseenter", () => {
-      isUserInteracting = true;
-      stopAutoSlide();
-    });
-
-    stage.addEventListener("mouseleave", () => {
-      isUserInteracting = false;
-      startAutoSlide();
-    });
-
-    stage.addEventListener("touchstart", () => {
-      isUserInteracting = true;
-      stopAutoSlide();
-    }, { passive: true });
-
-    stage.addEventListener("touchend", () => {
-      isUserInteracting = false;
-      startAutoSlide();
-    }, { passive: true });
-
-    // Keyboard navigation (ArrowLeft & ArrowRight)
-    stage.setAttribute("tabindex", "0");
-    stage.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        goToSlide(currentIndex - 1);
-        pauseThenRestartAutoSlide();
-      } else if (e.key === "ArrowRight") {
-        e.preventDefault();
-        goToSlide(currentIndex + 1);
-        pauseThenRestartAutoSlide();
-      }
-    });
-
-    // Deep-link initial slide if provided in URL (e.g. ?slide=1)
-    const urlParams = new URLSearchParams(window.location.search);
-    const initialSlideParam = parseInt(urlParams.get("slide"), 10);
-    if (!isNaN(initialSlideParam) && initialSlideParam >= 0 && initialSlideParam < totalSlides) {
-      goToSlide(initialSlideParam, false);
-    }
-
-    // Start auto advance
-    startAutoSlide();
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
+
+  // Set initial position at real slide 1 without animation
+  updateTransform(false);
+
+  function nextSlide() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
+    updateTransform(true);
+
+    // Safety timeout in case transitionend does not fire
+    setTimeout(() => {
+      if (isTransitioning) {
+        checkBoundary();
+        isTransitioning = false;
+      }
+    }, TRANSITION_DURATION + 100);
+  }
+
+  function prevSlide() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
+    updateTransform(true);
+
+    // Safety timeout in case transitionend does not fire
+    setTimeout(() => {
+      if (isTransitioning) {
+        checkBoundary();
+        isTransitioning = false;
+      }
+    }, TRANSITION_DURATION + 100);
+  }
+
+  function checkBoundary() {
+    if (currentIndex >= total + 1) {
+      // Slid forward into firstClone -> seamlessly snap to real Slide 1
+      currentIndex = 1;
+      updateTransform(false);
+      void track.offsetWidth; // Force synchronous reflow
+    } else if (currentIndex <= 0) {
+      // Slid backward into lastClone -> seamlessly snap to real Slide (total)
+      currentIndex = total;
+      updateTransform(false);
+      void track.offsetWidth; // Force synchronous reflow
+    }
+  }
+
+  // Seamless boundary wrap when transition ends
+  track.addEventListener("transitionend", (e) => {
+    if (e.target !== track || (e.propertyName && e.propertyName !== "transform")) return;
+    checkBoundary();
+    isTransitioning = false;
+  });
+
+  // Auto-advance loop
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoTimer = setInterval(() => {
+      nextSlide();
+    }, SLIDE_INTERVAL);
+  }
+
+  function stopAutoSlide() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  // Mobile Touch Swipe Support
+  let touchStartX = 0;
+  let touchDeltaX = 0;
+  let isSwiping = false;
+
+  stage.addEventListener("touchstart", (e) => {
+    stopAutoSlide();
+    if (isTransitioning) return;
+    touchStartX = e.touches[0].clientX;
+    touchDeltaX = 0;
+    isSwiping = true;
+    track.style.transition = "none";
+  }, { passive: true });
+
+  stage.addEventListener("touchmove", (e) => {
+    if (!isSwiping || isTransitioning) return;
+    touchDeltaX = e.touches[0].clientX - touchStartX;
+    const stageWidth = stage.clientWidth || 1;
+    const dragPercent = (touchDeltaX / stageWidth) * 100;
+    track.style.transform = `translateX(calc(-${currentIndex * 100}% + ${dragPercent}%))`;
+  }, { passive: true });
+
+  stage.addEventListener("touchend", () => {
+    if (!isSwiping) return;
+    isSwiping = false;
+    const threshold = 45; // min px to trigger slide
+    if (touchDeltaX < -threshold) {
+      nextSlide();
+    } else if (touchDeltaX > threshold) {
+      prevSlide();
+    } else {
+      updateTransform(true);
+    }
+    startAutoSlide();
+  }, { passive: true });
+
+  // Desktop Mouse Drag Support
+  let mouseStartX = 0;
+  let mouseDeltaX = 0;
+  let isMouseDragging = false;
+
+  stage.addEventListener("mousedown", (e) => {
+    if (isTransitioning) return;
+    isMouseDragging = true;
+    mouseStartX = e.clientX;
+    mouseDeltaX = 0;
+    track.classList.add("is-dragging");
+    track.style.transition = "none";
+    stopAutoSlide();
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isMouseDragging || isTransitioning) return;
+    e.preventDefault();
+    mouseDeltaX = e.clientX - mouseStartX;
+    const stageWidth = stage.clientWidth || 1;
+    const dragPercent = (mouseDeltaX / stageWidth) * 100;
+    track.style.transform = `translateX(calc(-${currentIndex * 100}% + ${dragPercent}%))`;
+  });
+
+  window.addEventListener("mouseup", () => {
+    if (!isMouseDragging) return;
+    isMouseDragging = false;
+    track.classList.remove("is-dragging");
+    const threshold = 50;
+    if (mouseDeltaX < -threshold) {
+      nextSlide();
+    } else if (mouseDeltaX > threshold) {
+      prevSlide();
+    } else {
+      updateTransform(true);
+    }
+    startAutoSlide();
+  });
+
+  // Pause when tab is inactive to prevent timer drift
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoSlide();
+    } else {
+      checkBoundary();
+      updateTransform(false);
+      startAutoSlide();
+    }
+  });
+
+  // Keyboard navigation for accessibility
+  stage.setAttribute("tabindex", "0");
+  stage.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      nextSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      prevSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    }
+  });
+
+  // Start auto-advancing
+  startAutoSlide();
+}
