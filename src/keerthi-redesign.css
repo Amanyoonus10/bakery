@@ -2386,20 +2386,24 @@ body.keerthi-redesign-body {
 }
 
 .catalogue-showcase-frame {
-  background: #ffffff;
-  border: 1.5px solid #ebd9c4;
+  background-color: #2b040b;
+  background: 
+    radial-gradient(ellipse at 80% 20%, rgba(202, 165, 95, 0.16) 0%, transparent 48%),
+    radial-gradient(circle at 20% 30%, rgba(166, 34, 39, 0.38) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 40%, #4c0c16 0%, #36060f 40%, #240309 75%, #180206 100%);
+  border: 1.5px solid rgba(202, 165, 95, 0.45);
   border-radius: 24px;
   box-shadow: 
-    0 0 0 1px rgba(202, 165, 95, 0.16),
-    0 12px 40px rgba(92, 6, 18, 0.05),
-    0 2px 8px rgba(0, 0, 0, 0.02);
+    0 0 0 1px rgba(202, 165, 95, 0.22),
+    0 20px 60px rgba(24, 2, 6, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.25);
   padding: clamp(32px, 3.8vw, 50px) clamp(18px, 2.8vw, 38px);
   position: relative;
   overflow: hidden;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Regal Gradient Hairline Top Border Accent (Burgundy & Warm Gold) */
+/* Regal Gradient Hairline Top Border Accent (Warm Gold) */
 .catalogue-showcase-frame::before {
   content: "";
   position: absolute;
@@ -2407,12 +2411,140 @@ body.keerthi-redesign-body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #5C0612 0%, #8d191d 25%, #caa55f 50%, #8d191d 75%, #5C0612 100%);
+  background: linear-gradient(90deg, #caa55f 0%, #f4d085 25%, #caa55f 50%, #f4d085 75%, #caa55f 100%);
   z-index: 2;
 }
 
 .catalogue-showcase-frame .all-products-grid {
   margin-bottom: 8px;
+}
+
+/* Typography on Deep Burgundy Frame */
+.catalogue-showcase-frame .coverflow-eyebrow {
+  color: #caa55f;
+  background: rgba(202, 165, 95, 0.14);
+  border: 1px solid rgba(202, 165, 95, 0.35);
+}
+
+.catalogue-showcase-frame .coverflow-eyebrow i {
+  color: #f4d085;
+}
+
+.catalogue-showcase-frame .coverflow-title {
+  color: #ffffff;
+}
+
+.catalogue-showcase-frame .coverflow-title em {
+  color: #caa55f;
+}
+
+.catalogue-showcase-frame .coverflow-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Haldiram Subbar & Filters on Deep Burgundy Frame */
+.catalogue-showcase-frame .haldiram-subbar {
+  background: rgba(36, 4, 10, 0.72);
+  border: 1px solid rgba(202, 165, 95, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.catalogue-showcase-frame .haldiram-filter-btn {
+  color: #ffffff;
+}
+
+.catalogue-showcase-frame .haldiram-filter-btn .filter-label {
+  color: #ffffff;
+}
+
+.catalogue-showcase-frame .haldiram-filter-btn i {
+  color: #caa55f;
+}
+
+.catalogue-showcase-frame .haldiram-sort-custom {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(202, 165, 95, 0.35);
+  color: #ffffff;
+}
+
+.catalogue-showcase-frame .haldiram-sort-custom .sort-text {
+  color: #f3e8dc;
+}
+
+.catalogue-showcase-frame .haldiram-sort-custom i {
+  color: #caa55f;
+}
+
+.catalogue-showcase-frame .haldiram-sort-select {
+  color: #ffffff;
+  background: #2b040b;
+}
+
+.catalogue-showcase-frame .haldiram-sort-select option {
+  background: #240309;
+  color: #ffffff;
+}
+
+/* Category Chips on Deep Burgundy Frame */
+.catalogue-showcase-frame .category-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(202, 165, 95, 0.3);
+  color: #f5eedf;
+}
+
+.catalogue-showcase-frame .category-chip:hover {
+  background: rgba(202, 165, 95, 0.2);
+  border-color: #caa55f;
+  color: #ffffff;
+}
+
+.catalogue-showcase-frame .category-chip.active {
+  background: linear-gradient(135deg, #caa55f 0%, #b38b42 100%);
+  color: #1c0307;
+  border-color: #caa55f;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(202, 165, 95, 0.35);
+}
+
+/* Catalogue Search Box on Deep Burgundy Frame */
+.catalogue-showcase-frame .catalogue-search-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(202, 165, 95, 0.32);
+}
+
+.catalogue-showcase-frame .catalogue-search-box i {
+  color: #caa55f;
+}
+
+.catalogue-showcase-frame .catalogue-search-box input {
+  color: #ffffff;
+}
+
+.catalogue-showcase-frame .catalogue-search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.catalogue-showcase-frame .catalogue-count-badge {
+  background: rgba(202, 165, 95, 0.22);
+  color: #f4d085;
+  border: 1px solid rgba(202, 165, 95, 0.35);
+}
+
+/* Product Cards on Deep Burgundy Frame */
+.catalogue-showcase-frame .haldiram-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(202, 165, 95, 0.35);
+  box-shadow: 0 8px 24px rgba(10, 2, 4, 0.25);
+}
+
+.catalogue-showcase-frame .haldiram-card:hover {
+  transform: translateY(-5px);
+  border-color: #caa55f;
+  box-shadow: 
+    0 16px 36px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(202, 165, 95, 0.25);
 }
 
 @media (max-width: 768px) {
