@@ -1986,11 +1986,37 @@ body.keerthi-redesign-body {
 
 /* ── Why Choose Keerthi Bakery Section ── */
 .why-choose-section {
-  padding: 56px 0 64px 0;
+  padding: clamp(36px, 4.5vw, 60px) 0;
   background: var(--kg-cream-bg, #fdfaf6);
-  border-top: 1px solid rgba(202, 165, 95, 0.28);
-  border-bottom: 1px solid rgba(202, 165, 95, 0.28);
+  border-top: 1px solid rgba(202, 165, 95, 0.22);
+  border-bottom: 1px solid rgba(202, 165, 95, 0.22);
   position: relative;
+}
+
+.why-choose-frame {
+  background: #ffffff;
+  border: 1.5px solid #ebd9c4;
+  border-radius: 24px;
+  box-shadow: 
+    0 0 0 1px rgba(202, 165, 95, 0.16),
+    0 12px 40px rgba(92, 6, 18, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: clamp(36px, 4vw, 56px) clamp(20px, 3vw, 42px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Regal Gradient Hairline Top Border Accent (Burgundy & Warm Gold) */
+.why-choose-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5C0612 0%, #8d191d 25%, #caa55f 50%, #8d191d 75%, #5C0612 100%);
+  z-index: 2;
 }
 
 .why-choose-header {
@@ -2048,20 +2074,20 @@ body.keerthi-redesign-body {
 
 .why-choose-card {
   background: #ffffff;
-  border: 1.5px solid rgba(202, 165, 95, 0.32);
+  border: 1.5px solid #ebe5df;
   border-radius: 16px;
   padding: 28px 24px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 4px 18px rgba(141, 25, 29, 0.04);
+  box-shadow: 0 4px 14px rgba(9, 27, 50, 0.04);
 }
 
 .why-choose-card:hover {
   transform: translateY(-5px);
-  border-color: var(--kg-tan, #caa55f);
-  box-shadow: 0 12px 32px rgba(141, 25, 29, 0.1);
+  border-color: #8d191d;
+  box-shadow: 0 14px 32px rgba(141, 25, 29, 0.12);
 }
 
 .why-card-top {
@@ -2124,10 +2150,19 @@ body.keerthi-redesign-body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .why-choose-section {
-    padding: 40px 0;
+    padding: 20px 0;
   }
+  .why-choose-frame {
+    border-radius: 16px;
+    padding: 26px 14px 28px 14px;
+    border-width: 1px;
+    box-shadow: 0 4px 16px rgba(92, 6, 18, 0.04);
+  }
+}
+
+@media (max-width: 640px) {
   .why-choose-grid {
     grid-template-columns: 1fr;
     gap: 16px;
