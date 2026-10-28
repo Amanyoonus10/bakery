@@ -1114,8 +1114,8 @@ body.keerthi-redesign-body {
 .mockup-hero-section {
   position: relative;
   width: 100%;
-  min-height: 560px;
-  background: url('/images/hero_products_clean.jpg') right center / cover no-repeat;
+  min-height: 580px;
+  background: url('/images/keerthi_hero_banner.jpg') center center / cover no-repeat;
   background-color: #120d09;
   display: flex;
   align-items: center;
@@ -1129,11 +1129,11 @@ body.keerthi-redesign-body {
   inset: 0;
   background: linear-gradient(
     90deg,
-    #120d09 0%,
-    rgba(18, 13, 9, 0.98) 28%,
-    rgba(18, 13, 9, 0.88) 42%,
-    rgba(18, 13, 9, 0.35) 65%,
-    rgba(18, 13, 9, 0.0) 100%
+    rgba(14, 10, 7, 0.90) 0%,
+    rgba(14, 10, 7, 0.80) 30%,
+    rgba(14, 10, 7, 0.55) 50%,
+    rgba(14, 10, 7, 0.22) 75%,
+    rgba(14, 10, 7, 0.05) 100%
   );
   z-index: 1;
   pointer-events: none;
