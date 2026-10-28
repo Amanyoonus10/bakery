@@ -428,13 +428,20 @@ body.haldiram-theme-body {
 }
 
 .pdp-showcase-frame {
-  background: #ffffff;
-  border: 1.5px solid #ebd9c4;
+  background-color: #f7d7ba;
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.75) 0%, transparent 48%),
+    radial-gradient(circle at 15% 85%, rgba(235, 172, 126, 0.4) 0%, transparent 55%),
+    linear-gradient(155deg, #fbe8d5 0%, #f6d2b2 45%, #ecc094 80%, #dfab78 100%);
+  border: 1.5px solid rgba(196, 142, 76, 0.65);
+  border-top: 3px solid #caa55f;
   border-radius: 24px;
   box-shadow: 
-    0 0 0 1px rgba(202, 165, 95, 0.16),
-    0 12px 40px rgba(92, 6, 18, 0.05),
-    0 2px 8px rgba(0, 0, 0, 0.02);
+    0 0 0 1px rgba(202, 165, 95, 0.2),
+    0 16px 48px rgba(92, 6, 18, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(184, 133, 68, 0.2);
   padding: clamp(32px, 3.8vw, 48px) clamp(24px, 3.2vw, 44px);
   position: relative;
   overflow: hidden;
@@ -449,16 +456,18 @@ body.haldiram-theme-body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #5C0612 0%, #8d191d 25%, #caa55f 50%, #8d191d 75%, #5C0612 100%);
+  background: linear-gradient(90deg, #5C0612 0%, #caa55f 25%, #fbedb0 50%, #caa55f 75%, #5C0612 100%);
   z-index: 2;
 }
 
 .pdp-showcase-frame:hover {
-  border-color: #d4af37;
+  border-color: #fadb7f;
+  border-top-color: #fce49c;
   box-shadow: 
-    0 0 0 1px rgba(202, 165, 95, 0.25),
-    0 16px 48px rgba(92, 6, 18, 0.08),
-    0 4px 12px rgba(0, 0, 0, 0.03);
+    0 0 0 1px rgba(202, 165, 95, 0.35),
+    0 20px 54px rgba(92, 6, 18, 0.16),
+    0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 .haldiram-product-grid {
@@ -554,12 +563,12 @@ body.haldiram-theme-body {
 .haldiram-image-frame {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: linear-gradient(180deg, #ffffff 0%, #faf6ef 100%);
+  background: #ffffff;
   border-radius: 18px;
-  border: 1.5px solid #ebd9c4;
+  border: 1.5px solid rgba(196, 142, 76, 0.45);
   box-shadow: 
-    0 4px 16px rgba(141, 25, 29, 0.04),
-    inset 0 2px 6px rgba(184, 134, 11, 0.05);
+    0 8px 24px rgba(92, 6, 18, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -572,7 +581,7 @@ body.haldiram-theme-body {
 .haldiram-image-frame:hover {
   border-color: #caa55f;
   box-shadow: 
-    0 8px 24px rgba(141, 25, 29, 0.08),
+    0 10px 28px rgba(141, 25, 29, 0.12),
     inset 0 2px 6px rgba(184, 134, 11, 0.08);
 }
 
@@ -600,8 +609,8 @@ body.haldiram-theme-body {
 .haldiram-title {
   font-family: inherit;
   font-size: 32px;
-  font-weight: 500;
-  color: #1f2937;
+  font-weight: 700;
+  color: #2b040b;
   line-height: 1.25;
   margin: 0 0 10px 0;
   letter-spacing: -0.01em;
@@ -626,13 +635,13 @@ body.haldiram-theme-body {
 
 .haldiram-price-val {
   font-size: 26px;
-  font-weight: 700;
-  color: #1f2937;
+  font-weight: 800;
+  color: #2b040b;
 }
 
 .haldiram-tax-text {
   font-size: 12px;
-  color: #6b7280;
+  color: #5c1622;
   margin-top: 2px;
 }
 
@@ -641,7 +650,7 @@ body.haldiram-theme-body {
   margin-bottom: 22px;
   font-size: 14px;
   line-height: 1.6;
-  color: #4b5563;
+  color: #4a151f;
 }
 
 .haldiram-excerpt-text {
@@ -651,9 +660,9 @@ body.haldiram-theme-body {
 .haldiram-readmore-link {
   background: transparent;
   border: none;
-  color: #1f2937;
+  color: #2b040b;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
   cursor: pointer;
   padding: 0 0 0 4px;
@@ -662,7 +671,7 @@ body.haldiram-theme-body {
 }
 
 .haldiram-readmore-link:hover {
-  color: var(--haldiram-red);
+  color: #8d191d;
 }
 
 /* Deliver to / Pincode Section */
@@ -673,8 +682,8 @@ body.haldiram-theme-body {
 .haldiram-delivery-label {
   display: block;
   font-size: 14px;
-  font-weight: 600;
-  color: #1f2937;
+  font-weight: 700;
+  color: #2b040b;
   margin-bottom: 8px;
 }
 
@@ -686,12 +695,12 @@ body.haldiram-theme-body {
 
 .haldiram-pincode-field {
   border: none;
-  border-bottom: 1px solid #1f2937;
+  border-bottom: 1.5px solid #2b040b;
   width: 140px;
   font-size: 14px;
   padding: 4px 0;
-  color: #1f2937;
-  font-weight: 500;
+  color: #2b040b;
+  font-weight: 600;
   background: transparent;
   outline: none;
   border-radius: 0;
@@ -699,15 +708,15 @@ body.haldiram-theme-body {
 }
 
 .haldiram-pincode-field:focus {
-  border-bottom-color: var(--haldiram-red);
+  border-bottom-color: #8d191d;
 }
 
 .haldiram-check-link {
   background: transparent;
   border: none;
-  color: #1f2937;
+  color: #2b040b;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
   cursor: pointer;
   padding: 0;
@@ -716,13 +725,13 @@ body.haldiram-theme-body {
 }
 
 .haldiram-check-link:hover {
-  color: var(--haldiram-red);
+  color: #8d191d;
 }
 
 .haldiram-delivery-status {
   font-size: 12px;
-  color: var(--haldiram-green);
-  font-weight: 500;
+  color: #1e7039;
+  font-weight: 600;
   margin-top: 6px;
 }
 
@@ -733,8 +742,8 @@ body.haldiram-theme-body {
 
 .haldiram-variant-label {
   font-size: 14px;
-  font-weight: 600;
-  color: #1f2937;
+  font-weight: 700;
+  color: #2b040b;
   margin-bottom: 10px;
 }
 
@@ -745,29 +754,30 @@ body.haldiram-theme-body {
 }
 
 .haldiram-variant-pill {
-  background-color: #ffffff;
-  border: 1px solid #ded8d2;
-  color: #78716c;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(196, 142, 76, 0.45);
+  color: #4a151f;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 6px 16px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-family: inherit;
   transition: all 0.15s ease;
 }
 
 .haldiram-variant-pill:hover {
-  border-color: var(--haldiram-red);
-  color: var(--haldiram-red);
+  border-color: #5C0612;
+  color: #5C0612;
+  background-color: #ffffff;
 }
 
 .haldiram-variant-pill.active {
-  background-color: var(--haldiram-cream-card);
-  border: 1.5px solid var(--haldiram-red);
-  color: var(--haldiram-red);
+  background-color: #5C0612;
+  border-color: #5C0612;
+  color: #fadb7f;
   font-weight: 700;
-  box-shadow: 0 1px 3px rgba(141, 25, 29, 0.12);
+  box-shadow: 0 2px 8px rgba(92, 6, 18, 0.25);
 }
 
 /* Stepper + CHECKOUT Button Row */
@@ -784,19 +794,20 @@ body.haldiram-theme-body {
   justify-content: space-between;
   width: 140px;
   height: 46px;
-  background-color: #f9f9fa;
-  border: 1px solid #d4d4d8;
+  background-color: #ffffff;
+  border: 1.5px solid rgba(196, 142, 76, 0.5);
   border-radius: 8px;
   padding: 0 14px;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(92, 6, 18, 0.05);
 }
 
 .haldiram-step-btn {
   background: transparent;
   border: none;
-  color: #52525b;
+  color: #2b040b;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   padding: 4px 8px;
   line-height: 1;
@@ -808,13 +819,13 @@ body.haldiram-theme-body {
 }
 
 .haldiram-step-btn:hover {
-  color: var(--haldiram-red);
+  color: #8d191d;
 }
 
 .haldiram-step-val {
   font-size: 15px;
-  font-weight: 600;
-  color: #1f2937;
+  font-weight: 700;
+  color: #2b040b;
   user-select: none;
 }
 
@@ -832,13 +843,14 @@ body.haldiram-theme-body {
   flex: 1;
   min-width: 160px;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(141, 25, 29, 0.2);
+  box-shadow: 0 4px 14px rgba(141, 25, 29, 0.28);
   font-family: inherit;
 }
 
 .haldiram-btn-checkout:hover {
   background-color: var(--haldiram-red-hover);
-  box-shadow: 0 4px 12px rgba(141, 25, 29, 0.28);
+  box-shadow: 0 6px 18px rgba(141, 25, 29, 0.35);
+  transform: translateY(-1px);
 }
 
 .haldiram-btn-checkout:active {
@@ -847,14 +859,14 @@ body.haldiram-theme-body {
 
 /* ── Description & Details Tabs ── */
 .haldiram-tabs-wrapper {
-  border-top: 1px solid #f0f0f0;
-  padding-top: 10px;
+  border-top: 1px solid rgba(196, 142, 76, 0.3);
+  padding-top: 12px;
 }
 
 .haldiram-tabs-header {
   display: flex;
   gap: 28px;
-  border-bottom: 1px solid var(--haldiram-border);
+  border-bottom: 1.5px solid rgba(196, 142, 76, 0.35);
   margin-bottom: 16px;
 }
 
@@ -863,8 +875,8 @@ body.haldiram-theme-body {
   border: none;
   padding: 10px 0;
   font-size: 13px;
-  font-weight: 600;
-  color: #71717a;
+  font-weight: 700;
+  color: #5c1622;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
@@ -874,22 +886,22 @@ body.haldiram-theme-body {
 }
 
 .haldiram-tab-nav:hover {
-  color: var(--haldiram-red);
+  color: #8d191d;
 }
 
 .haldiram-tab-nav.active {
-  color: var(--haldiram-red);
-  font-weight: 700;
+  color: #5C0612;
+  font-weight: 800;
 }
 
 .haldiram-tab-nav.active::after {
   content: '';
   position: absolute;
-  bottom: -1px;
+  bottom: -1.5px;
   left: 0;
   right: 0;
-  height: 2px;
-  background-color: var(--haldiram-red);
+  height: 2.5px;
+  background-color: #5C0612;
 }
 
 .haldiram-tab-content {
@@ -904,16 +916,17 @@ body.haldiram-theme-body {
 .desc-hook {
   font-size: 14px;
   line-height: 1.6;
-  color: #374151;
+  color: #2b040b;
   margin: 0 0 12px 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .desc-body {
   font-size: 13.5px;
   line-height: 1.65;
-  color: #6b7280;
+  color: #4a151f;
   margin: 0;
+  font-weight: 500;
 }
 
 /* Details list */

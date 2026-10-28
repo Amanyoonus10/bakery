@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateHeaderCartCount() {
   const badge = document.getElementById("headerCartCount");
   if (badge) {
-    const total = cart.getTotalCount();
+    const total = typeof cart.getItemCount === "function" ? cart.getItemCount() : 0;
     badge.textContent = total;
   }
 }
