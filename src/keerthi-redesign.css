@@ -2375,35 +2375,37 @@ body.keerthi-redesign-body {
 }
 
 /* ==========================================================================
-   4. AUTHENTIC SAVOURIES & SNACKS CATALOGUE (FRAMED SHOWCASE)
+   4. AUTHENTIC SAVOURIES & SNACKS CATALOGUE (FULL-BLEED BURGUNDY SHOWCASE)
    ========================================================================== */
 .products-section {
   position: relative;
-  padding: clamp(36px, 4.5vw, 60px) 0;
-  background: var(--kg-cream-bg, #fdfaf6);
-  border-top: 1px solid rgba(202, 165, 95, 0.22);
-  border-bottom: 1px solid rgba(202, 165, 95, 0.22);
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .catalogue-showcase-frame {
+  width: 100%;
   background-color: #2b040b;
   background: 
     radial-gradient(ellipse at 80% 20%, rgba(202, 165, 95, 0.16) 0%, transparent 48%),
     radial-gradient(circle at 20% 30%, rgba(166, 34, 39, 0.38) 0%, transparent 55%),
     radial-gradient(ellipse at 60% 40%, #4c0c16 0%, #36060f 40%, #240309 75%, #180206 100%);
-  border: 1.5px solid rgba(202, 165, 95, 0.45);
-  border-radius: 24px;
+  border-top: 1.5px solid rgba(202, 165, 95, 0.45);
+  border-bottom: 1.5px solid rgba(202, 165, 95, 0.45);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
   box-shadow: 
-    0 0 0 1px rgba(202, 165, 95, 0.22),
     0 20px 60px rgba(24, 2, 6, 0.4),
     0 4px 16px rgba(0, 0, 0, 0.25);
-  padding: clamp(32px, 3.8vw, 50px) clamp(18px, 2.8vw, 38px);
+  padding: clamp(48px, 5.5vw, 76px) 0 clamp(44px, 5vw, 68px) 0;
   position: relative;
   overflow: hidden;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Regal Gradient Hairline Top Border Accent (Warm Gold) */
+/* Regal Full-Width Gradient Hairline Top Border Accent (Warm Gold) */
 .catalogue-showcase-frame::before {
   content: "";
   position: absolute;
@@ -2606,13 +2608,14 @@ body.keerthi-redesign-body {
 
 @media (max-width: 768px) {
   .products-section {
-    padding: 20px 0;
+    padding: 0;
   }
   .catalogue-showcase-frame {
-    border-radius: 16px;
-    padding: 22px 12px 24px 12px;
-    border-width: 1px;
-    box-shadow: 0 4px 16px rgba(92, 6, 18, 0.04);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 32px 0 36px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
 }
 
