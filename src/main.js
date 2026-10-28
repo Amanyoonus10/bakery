@@ -35,6 +35,57 @@ document.addEventListener("DOMContentLoaded", () => {
   // 0. Initialize Scroll Video Hero Sequence & Zero-Lag Preloader
   initScrollVideoHero();
 
+  // 0.1 Brand Logo Language Switcher (English <-> Malayalam)
+  const langBtn = document.getElementById("langSwitchBtn");
+  const mainLogo = document.getElementById("mainStoreLogo");
+  const langLabel = document.getElementById("langSwitchLabel");
+  const preloaderLogo = document.querySelector(".preloader-logo-img");
+  let currentLang = "en";
+
+  try {
+    const saved = localStorage.getItem("keerthi_brand_lang");
+    if (saved === "ml") currentLang = "ml";
+  } catch (e) {}
+
+  function updateLogoState(lang) {
+    currentLang = lang;
+    const isEn = lang === "en";
+    const src = isEn ? "/images/keerthi_logo_clean_hq.png" : "/images/keerthi_logo_ml.png";
+    if (langLabel) {
+      langLabel.textContent = isEn ? "EN • മലയാളം" : "മലയാളം • EN";
+    }
+    const logos = [mainLogo, preloaderLogo].filter(Boolean);
+    logos.forEach((img) => {
+      img.src = src;
+    });
+    try {
+      localStorage.setItem("keerthi_brand_lang", lang);
+    } catch (e) {}
+  }
+
+  if (currentLang === "ml") {
+    updateLogoState("ml");
+  }
+
+  if (langBtn) {
+    langBtn.addEventListener("click", () => {
+      const next = currentLang === "en" ? "ml" : "en";
+      const logos = [mainLogo, preloaderLogo].filter(Boolean);
+      logos.forEach((img) => {
+        img.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+        img.style.opacity = "0";
+        img.style.transform = "scale(0.95)";
+      });
+      setTimeout(() => {
+        updateLogoState(next);
+        logos.forEach((img) => {
+          img.style.opacity = "1";
+          img.style.transform = "scale(1)";
+        });
+      }, 180);
+    });
+  }
+
   // 1. Initialize Cart Drawer and Checkout
   initCartDrawerUI(showToast);
   initCheckoutModal(showToast);

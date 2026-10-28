@@ -109,6 +109,11 @@
           <span>🇮🇳 INR (₹)</span>
           <i class="ri-arrow-down-s-line"></i>
         </div>
+        <!-- Language Switcher: English / Malayalam -->
+        <button type="button" class="top-bar-item lang-switch-btn" id="langSwitchBtn" style="background:rgba(202, 165, 95, 0.16);border:1px solid rgba(202, 165, 95, 0.45);color:#ffffff;cursor:pointer;padding:2px 10px;font:inherit;font-size:0.76rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease;" title="Switch Brand Logo: English / മലയാളം">
+          <i class="ri-global-line" style="color:var(--kg-tan, #caa55f);"></i>
+          <span id="langSwitchLabel">EN • മലയാളം</span>
+        </button>
         <a href="#footer" class="top-bar-item">Track Order</a>
         <span class="top-bar-divider">|</span>
         <button type="button" class="top-bar-item" onclick="window.replayScrollVideoHero &amp;&amp; window.replayScrollVideoHero()" style="background:none;border:none;color:inherit;cursor:pointer;padding:0;font:inherit;display:inline-flex;align-items:center;gap:4px;" title="Replay 4K Heritage Story"><i class="ri-play-circle-line"></i> Heritage Film</button>
@@ -124,9 +129,9 @@
   <header class="store-header" id="header">
     <div class="site-container store-header-inner">
       <!-- Brand Logo: Exact Keerthi Bakery Emblem -->
-      <a href="index.html" class="store-brand-link logo" title="Keerthi Bakery - Peekay Group">
+      <a href="index.html" class="store-brand-link logo" id="storeBrandLogoLink" title="Keerthi Bakery - Real Taste Real Quality">
         <div class="store-brand-badge">
-          <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery - Peekay Group" class="brand-badge-img logo-img">
+          <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery - Real Taste Real Quality" class="brand-badge-img logo-img" id="mainStoreLogo">
         </div>
       </a>
 
@@ -183,9 +188,9 @@
         <!-- Menu Toggle Hamburger Button (Apsara Bakes Animated SVG) -->
         <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Open menu">
           <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
-            <line class="bar bar-top" x1="3" y1="6" x2="17" y2="6" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
-            <line class="bar bar-mid" x1="3" y1="10" x2="17" y2="10" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
-            <line class="bar bar-bot" x1="3" y1="14" x2="17" y2="14" stroke="#0f3822" stroke-width="2" stroke-linecap="round"/>
+            <line class="bar bar-top" x1="3" y1="6" x2="17" y2="6" stroke="#8d191d" stroke-width="2" stroke-linecap="round"/>
+            <line class="bar bar-mid" x1="3" y1="10" x2="17" y2="10" stroke="#8d191d" stroke-width="2" stroke-linecap="round"/>
+            <line class="bar bar-bot" x1="3" y1="14" x2="17" y2="14" stroke="#8d191d" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
       </div>
@@ -223,7 +228,7 @@
       </div>
       <div class="nav-middle-card">
         <div class="nav-middle-badge">
-          <i class="ri-flashlight-fill" style="font-size: 1.25rem; color: #e2b87f;"></i>
+          <i class="ri-flashlight-fill" style="font-size: 1.25rem; color: #caa55f;"></i>
         </div>
         <div class="nav-middle-info">
           <div class="nav-middle-title">Keerthi Banana Chips</div>
@@ -233,7 +238,7 @@
       <div class="nav-middle-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
         <a href="#shop-all" class="whats-new-btn">Shop Banana Chips • ₹89</a>
         <div class="whats-new-dots" style="display: flex; gap: 5px; align-items: center;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #e2b87f; display: inline-block;"></span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #caa55f; display: inline-block;"></span>
           <span style="width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); display: inline-block;"></span>
         </div>
       </div>
@@ -242,7 +247,7 @@
     <!-- Bottom panel — Dark Warm Forest -->
     <div class="nav-bottom nav-border nav-panel" id="navBottom">
       <div class="nav-social-wrap" style="display: flex; flex-direction: column; gap: 6px; width: 100%;">
-        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #e2b87f; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: #caa55f; font-weight: 800; display: flex; align-items: center; gap: 6px;">
           <i class="ri-share-line"></i> Connect With Us
         </div>
         <ul class="nav-socials">
@@ -1512,8 +1517,9 @@
       <div class="footer-main-grid">
         <!-- Col 1: Brand Info & FSSAI -->
         <div>
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery" style="height: 52px; width: auto; object-fit: contain;">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap;">
+            <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery English Logo" style="height: 52px; width: auto; object-fit: contain;">
+            <img src="/images/keerthi_logo_ml.png" alt="കീർത്തി ബേക്കറി മലയാളം ലോഗോ" style="height: 52px; width: auto; object-fit: contain; opacity: 0.92;">
           </div>
           <p class="footer-col-text">
             Keerthi Bakery is part of the Pee Kay Group, Kadavathur. For three decades, we've served Kerala with fresh, authentic, and quality bakery products made with love.

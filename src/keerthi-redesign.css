@@ -1,21 +1,21 @@
 /* ==========================================================================
    KEERTHI BAKERY — COMPLETE STORE REDESIGN SPEC (2026)
    Theme Benchmarked to Uploaded Master Store Design Mockup
-   Deep Forest Green (#0f3822) & Warm Golden Tan (#e2b87f) Palette
+   Deep Forest Green (#8d191d) & Warm Golden Tan (#caa55f) Palette
    ========================================================================== */
 
 :root {
-  --kg-green: #0f3822;
-  --kg-green-dark: #092315;
-  --kg-green-light: #185233;
+  --kg-green: #8d191d;
+  --kg-green-dark: #620f12;
+  --kg-green-light: #a62227;
   --kg-green-subtle: #eaf3ed;
-  --kg-tan: #e2b87f;
-  --kg-tan-hover: #d5a462;
+  --kg-tan: #caa55f;
+  --kg-tan-hover: #ba944f;
   --kg-tan-subtle: #f9f3ea;
-  --kg-cream-bg: #fcf9f5;
-  --kg-cream-card: #f8f3eb;
+  --kg-cream-bg: #faf7f2;
+  --kg-cream-card: #f5efe6;
   --kg-surface: #ffffff;
-  --kg-border: #ede4d6;
+  --kg-border: #eae0d2;
   --kg-border-dark: #d8cbba;
   --kg-text-dark: #1b120c;
   --kg-text-body: #3d2d22;
@@ -130,7 +130,7 @@ body.keerthi-redesign-body {
 
 /* ── 1. Top Announcement Bar ── */
 .top-announcement-bar {
-  background-color: #0f3822;
+  background-color: #091b32;
   color: #ffffff;
   font-size: 0.78rem;
   font-weight: 500;
@@ -165,12 +165,12 @@ body.keerthi-redesign-body {
 }
 
 .top-bar-item i {
-  color: #e2b87f;
+  color: #caa55f;
   font-size: 0.95rem;
 }
 
 .top-bar-item:hover {
-  color: #e2b87f;
+  color: #caa55f;
 }
 
 .top-bar-divider {
@@ -205,8 +205,8 @@ body.keerthi-redesign-body {
   position: sticky;
   top: 0;
   z-index: 9990;
-  border-bottom: 1px solid rgba(226, 184, 127, 0.35);
-  box-shadow: 0 4px 20px rgba(15, 56, 34, 0.04);
+  border-bottom: 1px solid rgba(202, 165, 95, 0.35);
+  box-shadow: 0 4px 20px rgba(141, 25, 29, 0.04);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -271,8 +271,8 @@ body.keerthi-redesign-body {
   align-items: center;
   padding: 7px 16px;
   border-radius: 0px;
-  background: rgba(15, 56, 34, 0.05);
-  border: 1px solid rgba(15, 56, 34, 0.12);
+  background: rgba(141, 25, 29, 0.05);
+  border: 1px solid rgba(141, 25, 29, 0.12);
   color: #20150e;
   font-family: var(--font-sans);
   font-size: 0.84rem;
@@ -286,19 +286,19 @@ body.keerthi-redesign-body {
 }
 
 .attract-pill:hover {
-  background: #0f3822;
-  color: #e2b87f;
-  border-color: #0f3822;
+  background: #8d191d;
+  color: #caa55f;
+  border-color: #8d191d;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(15, 56, 34, 0.2);
+  box-shadow: 0 4px 14px rgba(141, 25, 29, 0.2);
 }
 
 .attract-pill.active {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
-  border-color: #0f3822;
+  border-color: #8d191d;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(15, 56, 34, 0.22);
+  box-shadow: 0 4px 12px rgba(141, 25, 29, 0.22);
 }
 
 /* Vertical divider line */
@@ -310,8 +310,8 @@ body.keerthi-redesign-body {
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(15, 56, 34, 0.2) 20%,
-    rgba(15, 56, 34, 0.2) 80%,
+    rgba(141, 25, 29, 0.2) 20%,
+    rgba(141, 25, 29, 0.2) 80%,
     transparent 100%
   );
   border-radius: 1px;
@@ -375,7 +375,7 @@ body.keerthi-redesign-body {
   max-width: 660px;
   background: #ffffff;
   border-radius: 20px;
-  border: 1.5px solid rgba(226, 184, 127, 0.4);
+  border: 1.5px solid rgba(202, 165, 95, 0.4);
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
   overflow: hidden;
   display: flex;
@@ -394,7 +394,7 @@ body.keerthi-redesign-body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 22px 14px;
-  border-bottom: 1px solid rgba(226, 184, 127, 0.25);
+  border-bottom: 1px solid rgba(202, 165, 95, 0.25);
   background: #fbf8f3;
 }
 
@@ -408,20 +408,20 @@ body.keerthi-redesign-body {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0f3822 0%, #175232 100%);
-  color: #e2b87f;
+  background: linear-gradient(135deg, #8d191d 0%, #620f12 100%);
+  color: #caa55f;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  box-shadow: 0 4px 12px rgba(15, 56, 34, 0.2);
+  box-shadow: 0 4px 12px rgba(141, 25, 29, 0.2);
 }
 
 .search-modal-title {
   font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   margin: 0;
   line-height: 1.2;
 }
@@ -436,7 +436,7 @@ body.keerthi-redesign-body {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: 1px solid rgba(15, 56, 34, 0.15);
+  border: 1px solid rgba(141, 25, 29, 0.15);
   background: #ffffff;
   color: #20150e;
   font-size: 1.25rem;
@@ -448,7 +448,7 @@ body.keerthi-redesign-body {
 }
 
 .search-modal-close:hover {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   transform: rotate(90deg);
 }
@@ -495,7 +495,7 @@ body.keerthi-redesign-body {
 }
 
 .search-modal-clear:hover {
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .search-modal-chips {
@@ -515,7 +515,7 @@ body.keerthi-redesign-body {
 
 .modal-chip {
   background: #ffffff;
-  border: 1px solid rgba(226, 184, 127, 0.4);
+  border: 1px solid rgba(202, 165, 95, 0.4);
   color: #3d2b20;
   padding: 6px 14px;
   border-radius: 999px;
@@ -527,15 +527,15 @@ body.keerthi-redesign-body {
 }
 
 .modal-chip:hover {
-  border-color: #0f3822;
-  color: #0f3822;
+  border-color: #8d191d;
+  color: #8d191d;
 }
 
 .modal-chip.active {
-  background: #0f3822;
-  border-color: #0f3822;
+  background: #8d191d;
+  border-color: #8d191d;
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(15, 56, 34, 0.2);
+  box-shadow: 0 4px 10px rgba(141, 25, 29, 0.2);
 }
 
 .search-modal-results {
@@ -574,8 +574,8 @@ body.keerthi-redesign-body {
 
 .modal-result-item:hover {
   background: #ffffff;
-  border-color: rgba(226, 184, 127, 0.5);
-  box-shadow: 0 4px 16px rgba(15, 56, 34, 0.08);
+  border-color: rgba(202, 165, 95, 0.5);
+  box-shadow: 0 4px 16px rgba(141, 25, 29, 0.08);
   transform: translateX(2px);
 }
 
@@ -587,7 +587,7 @@ body.keerthi-redesign-body {
   object-fit: contain;
   padding: 3px;
   flex-shrink: 0;
-  border: 1px solid rgba(226, 184, 127, 0.25);
+  border: 1px solid rgba(202, 165, 95, 0.25);
 }
 
 .modal-result-info {
@@ -624,7 +624,7 @@ body.keerthi-redesign-body {
 .modal-result-price {
   font-weight: 800;
   font-size: 0.88rem;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .modal-result-badge {
@@ -632,7 +632,7 @@ body.keerthi-redesign-body {
   font-weight: 800;
   padding: 2px 7px;
   border-radius: 4px;
-  background: rgba(226, 184, 127, 0.2);
+  background: rgba(202, 165, 95, 0.2);
   color: #8b4513;
   text-transform: uppercase;
 }
@@ -641,7 +641,7 @@ body.keerthi-redesign-body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   padding: 7px 14px;
   border-radius: 8px;
@@ -654,7 +654,7 @@ body.keerthi-redesign-body {
 }
 
 .modal-result-add-btn:hover {
-  background: #1b633d;
+  background: #091b32;
   transform: scale(1.03);
 }
 
@@ -701,7 +701,7 @@ body.keerthi-redesign-body {
   gap: 6px;
   background: none;
   border: none;
-  color: #0f3822;
+  color: #8d191d;
   font-size: 0.82rem;
   font-weight: 800;
   cursor: pointer;
@@ -763,7 +763,7 @@ body.keerthi-redesign-body {
 
 .header-action-item:hover {
   background-color: #f4eee5;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .header-action-item i {
@@ -773,7 +773,7 @@ body.keerthi-redesign-body {
 }
 
 .header-action-item:hover i {
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .action-icon-wrap {
@@ -810,9 +810,9 @@ body.keerthi-redesign-body {
 
 /* ── Menu Toggle Button (Apsara Bakes Style) ── */
 .menu-toggle {
-  background: rgba(15, 56, 34, 0.06);
-  border: 1.5px solid rgba(15, 56, 34, 0.15);
-  color: #0f3822;
+  background: rgba(141, 25, 29, 0.06);
+  border: 1.5px solid rgba(141, 25, 29, 0.15);
+  color: #8d191d;
   cursor: pointer;
   display: flex !important;
   align-items: center;
@@ -828,8 +828,8 @@ body.keerthi-redesign-body {
 }
 
 .menu-toggle:hover {
-  background: #0f3822;
-  border-color: #0f3822;
+  background: #8d191d;
+  border-color: #8d191d;
   transform: scale(1.05);
 }
 
@@ -844,14 +844,14 @@ body.keerthi-redesign-body {
 }
 
 .menu-toggle line {
-  stroke: #0f3822;
+  stroke: #8d191d;
   stroke-width: 2px;
   transition: stroke 0.25s ease;
 }
 
 .store-header.menu-open .menu-toggle {
-  background: #0f3822;
-  border-color: #0f3822;
+  background: #8d191d;
+  border-color: #8d191d;
 }
 
 .store-header.menu-open .menu-toggle line {
@@ -883,7 +883,7 @@ body.keerthi-redesign-body {
 }
 
 .nav-border {
-  border: 1.5px solid rgba(226, 184, 127, 0.35);
+  border: 1.5px solid rgba(202, 165, 95, 0.35);
   border-radius: 18px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
 }
@@ -925,7 +925,7 @@ body.keerthi-redesign-body {
 .nav-link {
   display: block;
   text-decoration: none;
-  color: #0f3822;
+  color: #8d191d;
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 3.2vw, 2.1rem);
   font-weight: 700;
@@ -942,15 +942,15 @@ body.keerthi-redesign-body {
 .nav-login {
   margin-top: auto;
   padding-top: 20px;
-  border-top: 1px solid rgba(15, 56, 34, 0.1);
+  border-top: 1px solid rgba(141, 25, 29, 0.1);
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
 .btn-panel-order {
-  background: #0f3822;
-  color: #e2b87f;
+  background: #8d191d;
+  color: #caa55f;
   font-weight: 700;
   font-size: 0.88rem;
   padding: 10px 22px;
@@ -959,17 +959,17 @@ body.keerthi-redesign-body {
   align-items: center;
   gap: 6px;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(15, 56, 34, 0.25);
+  box-shadow: 0 4px 14px rgba(141, 25, 29, 0.25);
 }
 
 .btn-panel-order:hover {
-  background: #175233;
+  background: #620f12;
   transform: translateY(-2px);
 }
 
 .btn-panel-ghost {
-  background: rgba(15, 56, 34, 0.06);
-  color: #0f3822;
+  background: rgba(141, 25, 29, 0.06);
+  color: #8d191d;
   font-weight: 700;
   font-size: 0.82rem;
   padding: 10px 18px;
@@ -981,12 +981,12 @@ body.keerthi-redesign-body {
 }
 
 .btn-panel-ghost:hover {
-  background: rgba(15, 56, 34, 0.12);
+  background: rgba(141, 25, 29, 0.12);
 }
 
 /* Panel 2: Brand Gradient Middle Card */
 .nav-middle {
-  background: linear-gradient(135deg, #0f3822 0%, #165333 50%, #0a2617 100%);
+  background: linear-gradient(135deg, #8d191d 0%, #a62227 50%, #620f12 100%);
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -1000,7 +1000,7 @@ body.keerthi-redesign-body {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #e2b87f;
+  color: #caa55f;
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -1042,7 +1042,7 @@ body.keerthi-redesign-body {
 .whats-new-btn {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #e2b87f;
+  color: #caa55f;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1082,7 +1082,7 @@ body.keerthi-redesign-body {
 }
 
 .nav-socials a:hover {
-  color: #e2b87f;
+  color: #caa55f;
 }
 
 /* Responsive Menubar Refinements */
@@ -1120,7 +1120,7 @@ body.keerthi-redesign-body {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-bottom: 1px solid rgba(226, 184, 127, 0.2);
+  border-bottom: 1px solid rgba(202, 165, 95, 0.2);
 }
 
 .mockup-hero-section::before {
@@ -1214,7 +1214,7 @@ body.keerthi-redesign-body {
   background: rgba(26, 17, 11, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(226, 184, 127, 0.35);
+  border: 1px solid rgba(202, 165, 95, 0.35);
   border-radius: var(--radius-pill);
   padding: 11px 26px;
   margin-top: 36px;
@@ -1252,7 +1252,7 @@ body.keerthi-redesign-body {
   height: 96px;
   border: 2px dashed var(--kg-tan);
   border-radius: 50%;
-  background: rgba(15, 56, 34, 0.75);
+  background: rgba(141, 25, 29, 0.75);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -1332,9 +1332,9 @@ body.keerthi-redesign-body {
   overflow: hidden;
   border-radius: 14px;
   background: #fbf8f3;
-  border: 1px solid rgba(226, 184, 127, 0.3);
+  border: 1px solid rgba(202, 165, 95, 0.3);
   padding: 6px;
-  box-shadow: 0 4px 12px rgba(15, 56, 34, 0.05);
+  box-shadow: 0 4px 12px rgba(141, 25, 29, 0.05);
 }
 
 .category-thumb-img {
@@ -1526,7 +1526,7 @@ body.keerthi-redesign-body {
 }
 
 .store-prod-card:hover .card-image-box {
-  border-color: #0f3822;
+  border-color: #8d191d;
   background-color: #fdfcf9;
 }
 
@@ -1684,8 +1684,8 @@ body.keerthi-redesign-body {
   align-items: center;
   color: #ffffff;
   min-height: 240px;
-  border: 1px solid rgba(226, 184, 127, 0.35);
-  box-shadow: 0 10px 30px rgba(10, 38, 23, 0.12);
+  border: 1px solid rgba(202, 165, 95, 0.35);
+  box-shadow: 0 10px 30px rgba(9, 27, 50, 0.12);
 }
 
 .our-story-card-box::before {
@@ -1836,7 +1836,7 @@ body.keerthi-redesign-body {
   flex-direction: column;
   justify-content: center;
   gap: 12px;
-  box-shadow: 0 10px 25px rgba(15, 56, 34, 0.25);
+  box-shadow: 0 10px 25px rgba(141, 25, 29, 0.25);
 }
 
 .newsletter-title {
@@ -1892,10 +1892,10 @@ body.keerthi-redesign-body {
 
 /* ── 7. Luxury Master Store Footer ── */
 .master-store-footer {
-  background-color: #0c2517;
+  background-color: #061222;
   color: #ffffff;
   padding: 60px 0 25px 0;
-  border-top: 1px solid rgba(226, 184, 127, 0.2);
+  border-top: 1px solid rgba(202, 165, 95, 0.2);
 }
 
 .footer-main-grid {
@@ -1961,8 +1961,8 @@ body.keerthi-redesign-body {
   background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(15, 56, 34, 0.06);
-  border-bottom: 1px solid rgba(15, 56, 34, 0.06);
+  border-top: 1px solid rgba(141, 25, 29, 0.06);
+  border-bottom: 1px solid rgba(141, 25, 29, 0.06);
 }
 
 /* ── Showcase Header Row with Right Corner Action ── */
@@ -1988,22 +1988,22 @@ body.keerthi-redesign-body {
   align-items: center;
   gap: 12px;
   background: #ffffff;
-  border: 1.5px solid rgba(15, 56, 34, 0.22);
+  border: 1.5px solid rgba(141, 25, 29, 0.22);
   border-radius: 0px;
   padding: 8px 18px 8px 14px;
-  color: #0f3822;
+  color: #8d191d;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(15, 56, 34, 0.08);
+  box-shadow: 0 4px 18px rgba(141, 25, 29, 0.08);
   transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
   text-decoration: none;
 }
 
 .btn-showcase-view-all:hover {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
-  border-color: #0f3822;
+  border-color: #8d191d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(15, 56, 34, 0.22);
+  box-shadow: 0 8px 24px rgba(141, 25, 29, 0.22);
 }
 
 .btn-showcase-view-all .view-all-text-wrap {
@@ -2027,15 +2027,15 @@ body.keerthi-redesign-body {
 }
 
 .btn-showcase-view-all:hover .view-all-sub {
-  color: #e2b87f;
+  color: #caa55f;
 }
 
 .btn-showcase-view-all .view-all-icon-circle {
   width: 36px;
   height: 36px;
   border-radius: 0px;
-  background: rgba(15, 56, 34, 0.08);
-  color: #0f3822;
+  background: rgba(141, 25, 29, 0.08);
+  color: #8d191d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2045,21 +2045,21 @@ body.keerthi-redesign-body {
 }
 
 .btn-showcase-view-all:hover .view-all-icon-circle {
-  background: #e2b87f;
-  color: #0f3822;
+  background: #caa55f;
+  color: #8d191d;
   transform: rotate(90deg);
 }
 
 .btn-showcase-view-all.active-grid {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
-  border-color: #0f3822;
-  box-shadow: 0 6px 20px rgba(15, 56, 34, 0.25);
+  border-color: #8d191d;
+  box-shadow: 0 6px 20px rgba(141, 25, 29, 0.25);
 }
 
 .btn-showcase-view-all.active-grid .view-all-icon-circle {
-  background: #e2b87f;
-  color: #0f3822;
+  background: #caa55f;
+  color: #8d191d;
 }
 
 @media (max-width: 900px) {
@@ -2083,7 +2083,7 @@ body.keerthi-redesign-body {
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--kg-green, #0f3822);
+  color: var(--kg-green, #8d191d);
   margin-bottom: 8px;
 }
 
@@ -2098,7 +2098,7 @@ body.keerthi-redesign-body {
 
 .coverflow-title em {
   font-style: italic;
-  color: var(--kg-green, #0f3822);
+  color: var(--kg-green, #8d191d);
 }
 
 .coverflow-subtitle {
@@ -2113,14 +2113,14 @@ body.keerthi-redesign-body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(15, 56, 34, 0.06);
-  border: 1px solid rgba(15, 56, 34, 0.15);
+  background: rgba(141, 25, 29, 0.06);
+  border: 1px solid rgba(141, 25, 29, 0.15);
   border-radius: 0px;
   padding: 6px 18px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--kg-green, #0f3822);
-  box-shadow: 0 2px 8px rgba(15, 56, 34, 0.04);
+  color: var(--kg-green, #8d191d);
+  box-shadow: 0 2px 8px rgba(141, 25, 29, 0.04);
 }
 
 .coverflow-hint-pill i {
@@ -2149,7 +2149,7 @@ body.keerthi-redesign-body {
   background: #ffffff;
   border: 1px solid #ebd9c4;
   border-radius: 50px;
-  box-shadow: 0 4px 16px rgba(15, 56, 34, 0.04);
+  box-shadow: 0 4px 16px rgba(141, 25, 29, 0.04);
 }
 
 .catalogue-categories {
@@ -2170,7 +2170,7 @@ body.keerthi-redesign-body {
   border-radius: 50px;
   border: 1px solid #ebd9c4;
   background: #fdfaf6;
-  color: #0f3822;
+  color: #8d191d;
   font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
@@ -2180,14 +2180,14 @@ body.keerthi-redesign-body {
 
 .category-chip:hover {
   background: #f0e6d8;
-  border-color: #0f3822;
+  border-color: #8d191d;
 }
 
 .category-chip.active {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
-  border-color: #0f3822;
-  box-shadow: 0 4px 12px rgba(15, 56, 34, 0.18);
+  border-color: #8d191d;
+  box-shadow: 0 4px 12px rgba(141, 25, 29, 0.18);
 }
 
 .catalogue-search-box {
@@ -2272,7 +2272,7 @@ body.keerthi-redesign-body {
 
 .haldiram-filter-btn:hover {
   background: #fdfaf6;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .haldiram-filter-btn i {
@@ -2303,7 +2303,7 @@ body.keerthi-redesign-body {
 }
 
 .haldiram-sort-custom:hover {
-  border-color: #0f3822;
+  border-color: #8d191d;
 }
 
 .haldiram-sort-custom .sort-text {
@@ -2386,8 +2386,8 @@ body.keerthi-redesign-body {
 
 .haldiram-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 56, 34, 0.08);
-  border-color: #0f3822;
+  box-shadow: 0 8px 18px rgba(141, 25, 29, 0.08);
+  border-color: #8d191d;
 }
 
 /* Compact Image Container */
@@ -2427,7 +2427,7 @@ body.keerthi-redesign-body {
   position: absolute;
   top: 6px;
   left: 6px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-size: 0.58rem;
   font-weight: 800;
@@ -2444,7 +2444,7 @@ body.keerthi-redesign-body {
 }
 
 .haldiram-badge.bestseller {
-  background: #0f3822;
+  background: #8d191d;
   color: #facc15;
 }
 
@@ -2493,7 +2493,7 @@ body.keerthi-redesign-body {
   font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.82rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin: 0;
@@ -2507,7 +2507,7 @@ body.keerthi-redesign-body {
 }
 
 .haldiram-card:hover .haldiram-title {
-  color: #165333;
+  color: #a62227;
 }
 
 /* Indian Vegetarian Symbol */
@@ -2555,16 +2555,16 @@ body.keerthi-redesign-body {
 }
 
 .haldiram-weight-pill:hover {
-  border-color: #0f3822;
-  color: #0f3822;
+  border-color: #8d191d;
+  color: #8d191d;
 }
 
 .haldiram-weight-pill.active {
-  border-color: #0f3822;
-  color: #0f3822;
+  border-color: #8d191d;
+  color: #8d191d;
   font-weight: 700;
-  background: #f8f3eb;
-  box-shadow: 0 1px 2px rgba(15, 56, 34, 0.1);
+  background: #f5efe6;
+  box-shadow: 0 1px 2px rgba(141, 25, 29, 0.1);
 }
 
 /* Compact Price Row */
@@ -2576,7 +2576,7 @@ body.keerthi-redesign-body {
   font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.98rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 /* Full Width Authentic Cream ADD + Button */
@@ -2592,8 +2592,8 @@ body.keerthi-redesign-body {
 .haldiram-add-btn {
   width: 100%;
   height: 33px;
-  background: #f8f3eb;
-  color: #0f3822;
+  background: #f5efe6;
+  color: #8d191d;
   border: 1.5px solid #ded6ca;
   border-radius: 6px;
   padding: 0 10px;
@@ -2613,15 +2613,15 @@ body.keerthi-redesign-body {
 }
 
 .haldiram-add-btn:hover {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
-  border-color: #0f3822;
-  box-shadow: 0 3px 8px rgba(15, 56, 34, 0.18);
+  border-color: #8d191d;
+  box-shadow: 0 3px 8px rgba(141, 25, 29, 0.18);
 }
 
 .haldiram-add-btn:active {
   transform: scale(0.98);
-  background: #092315;
+  background: #620f12;
 }
 
 .haldiram-add-btn .add-plus {
@@ -2640,15 +2640,15 @@ body.keerthi-redesign-body {
 .haldiram-card-stepper {
   width: 100%;
   height: 33px;
-  background: #f8f3eb;
-  color: #0f3822;
-  border: 1.5px solid #0f3822;
+  background: #f5efe6;
+  color: #8d191d;
+  border: 1.5px solid #8d191d;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2px 4px;
-  box-shadow: 0 1px 4px rgba(15, 56, 34, 0.12);
+  box-shadow: 0 1px 4px rgba(141, 25, 29, 0.12);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   user-select: none;
   box-sizing: border-box;
@@ -2658,7 +2658,7 @@ body.keerthi-redesign-body {
   width: 32px;
   height: 27px;
   background: transparent;
-  color: #0f3822;
+  color: #8d191d;
   border: none;
   border-radius: 4px;
   display: flex;
@@ -2673,7 +2673,7 @@ body.keerthi-redesign-body {
 }
 
 .haldiram-stepper-btn:hover {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
 }
 
@@ -2685,7 +2685,7 @@ body.keerthi-redesign-body {
   font-family: var(--font-h, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.92rem;
   font-weight: 800;
-  color: #0f3822;
+  color: #8d191d;
   flex: 1;
   text-align: center;
   user-select: none;
@@ -2744,7 +2744,7 @@ body.keerthi-redesign-body {
 .catalogue-price {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .catalogue-stock {
@@ -2768,7 +2768,7 @@ body.keerthi-redesign-body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-size: 0.86rem;
   font-weight: 700;
@@ -2780,7 +2780,7 @@ body.keerthi-redesign-body {
 }
 
 .btn-catalogue-add-cart:hover {
-  background: #165333;
+  background: #a62227;
   transform: translateY(-1px);
 }
 
@@ -2799,7 +2799,7 @@ body.keerthi-redesign-body {
 
 .catalogue-empty-state h4 {
   font-size: 1.2rem;
-  color: #0f3822;
+  color: #8d191d;
   margin: 0 0 6px 0;
 }
 
@@ -2818,7 +2818,7 @@ body.keerthi-redesign-body {
 }
 
 .heritage-badge-pill {
-  color: var(--kg-green, #0f3822);
+  color: var(--kg-green, #8d191d);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 2px;
@@ -2862,7 +2862,7 @@ body.keerthi-redesign-body {
 .stat-number {
   font-size: 1.8rem;
   font-weight: 900;
-  color: var(--kg-green, #0f3822);
+  color: var(--kg-green, #8d191d);
   line-height: 1.1;
 }
 
@@ -2876,7 +2876,7 @@ body.keerthi-redesign-body {
 .about-image-card {
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 36px rgba(15, 56, 34, 0.1);
+  box-shadow: 0 12px 36px rgba(141, 25, 29, 0.1);
   border: 2px solid var(--kg-border, #ebd9c4);
   height: 100%;
   min-height: 360px;
@@ -3117,9 +3117,9 @@ body.keerthi-redesign-body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(226, 184, 127, 0.18);
-    border: 1px solid rgba(226, 184, 127, 0.4);
-    color: #e2b87f;
+    background: rgba(202, 165, 95, 0.18);
+    border: 1px solid rgba(202, 165, 95, 0.4);
+    color: #caa55f;
     font-size: 0.68rem;
     font-weight: 800;
     letter-spacing: 1.4px;
@@ -3152,7 +3152,7 @@ body.keerthi-redesign-body {
     padding: 10px 20px;
     font-size: 0.88rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #e2b87f 0%, #c99352 100%);
+    background: linear-gradient(135deg, #caa55f 0%, #c99352 100%);
     color: #1a100a;
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(201, 147, 82, 0.35);
@@ -3171,7 +3171,7 @@ body.keerthi-redesign-body {
     background: rgba(20, 14, 10, 0.78);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(226, 184, 127, 0.28);
+    border: 1px solid rgba(202, 165, 95, 0.28);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
   }
@@ -3184,7 +3184,7 @@ body.keerthi-redesign-body {
     gap: 6px;
   }
   .capsule-badge-item i {
-    color: #e2b87f;
+    color: #caa55f;
     font-size: 0.98rem;
     flex-shrink: 0;
   }
@@ -3203,7 +3203,7 @@ body.keerthi-redesign-body {
     padding: 18px;
     gap: 16px;
     border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(15, 56, 34, 0.05);
+    box-shadow: 0 6px 20px rgba(141, 25, 29, 0.05);
   }
   .category-thumb-box {
     width: 95px;
@@ -3211,7 +3211,7 @@ body.keerthi-redesign-body {
     min-width: 95px;
     border-radius: 14px;
     background: #faf6f0;
-    border: 1px solid rgba(226, 184, 127, 0.3);
+    border: 1px solid rgba(202, 165, 95, 0.3);
   }
   .category-promo-title {
     font-size: 1.3rem;
@@ -3225,7 +3225,7 @@ body.keerthi-redesign-body {
     border-radius: 8px;
     padding: 9px 18px;
     font-size: 0.84rem;
-    background: linear-gradient(135deg, #e2b87f 0%, #d49f5b 100%);
+    background: linear-gradient(135deg, #caa55f 0%, #d49f5b 100%);
     color: #1a100a;
     font-weight: 700;
     box-shadow: 0 4px 12px rgba(212, 159, 91, 0.25);
@@ -3327,7 +3327,7 @@ body.keerthi-redesign-body {
   }
   .trust-item-box {
     padding: 8px 0;
-    border-bottom: 1px solid rgba(226, 184, 127, 0.2);
+    border-bottom: 1px solid rgba(202, 165, 95, 0.2);
   }
   .trust-item-box:last-child {
     border-bottom: none;
@@ -3469,7 +3469,7 @@ body.keerthi-redesign-body {
 .account-drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10, 38, 23, 0.65);
+  background: rgba(9, 27, 50, 0.65);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 9998;
@@ -3503,7 +3503,7 @@ body.keerthi-redesign-body {
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  box-shadow: -12px 0 45px rgba(10, 38, 23, 0.28);
+  box-shadow: -12px 0 45px rgba(9, 27, 50, 0.28);
   transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.38s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.38s ease;
@@ -3525,8 +3525,8 @@ body.keerthi-redesign-body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 22px;
-  background: #0f3822;
-  border-bottom: 2px solid rgba(226, 184, 127, 0.35);
+  background: #8d191d;
+  border-bottom: 2px solid rgba(202, 165, 95, 0.35);
   flex-shrink: 0;
   color: #ffffff;
 }
@@ -3544,7 +3544,7 @@ body.keerthi-redesign-body {
 .wishlist-drawer-header .drawer-subtitle,
 .account-drawer-header .drawer-subtitle {
   font-size: 0.78rem;
-  color: #e2b87f;
+  color: #caa55f;
   margin: 0;
 }
 
@@ -3563,12 +3563,12 @@ body.keerthi-redesign-body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(15, 56, 34, 0.08);
+  background: rgba(141, 25, 29, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  color: #0f3822;
+  color: #8d191d;
   font-size: 2.2rem;
 }
 
@@ -3576,7 +3576,7 @@ body.keerthi-redesign-body {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.35rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   margin: 0 0 8px 0;
 }
 
@@ -3592,7 +3592,7 @@ body.keerthi-redesign-body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-weight: 700;
   font-size: 0.95rem;
@@ -3604,9 +3604,9 @@ body.keerthi-redesign-body {
 }
 
 .btn-wishlist-explore:hover {
-  background: #165333;
+  background: #a62227;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 56, 34, 0.2);
+  box-shadow: 0 6px 18px rgba(141, 25, 29, 0.2);
 }
 
 /* ── Wishlist Items List & Card ── */
@@ -3632,7 +3632,7 @@ body.keerthi-redesign-body {
 
 .wishlist-item-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15, 56, 34, 0.08);
+  box-shadow: 0 6px 16px rgba(141, 25, 29, 0.08);
 }
 
 .wishlist-item-thumb {
@@ -3666,7 +3666,7 @@ body.keerthi-redesign-body {
 .wishlist-item-name {
   font-size: 0.92rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   margin: 0;
   line-height: 1.3;
 }
@@ -3695,7 +3695,7 @@ body.keerthi-redesign-body {
 .wishlist-item-price {
   font-size: 1rem;
   font-weight: 800;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .wishlist-stock-status {
@@ -3711,7 +3711,7 @@ body.keerthi-redesign-body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
@@ -3723,7 +3723,7 @@ body.keerthi-redesign-body {
 }
 
 .btn-wishlist-add-cart:hover {
-  background: #165333;
+  background: #a62227;
 }
 
 .wishlist-drawer-footer {
@@ -3741,7 +3741,7 @@ body.keerthi-redesign-body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
@@ -3753,7 +3753,7 @@ body.keerthi-redesign-body {
 }
 
 .btn-wishlist-move-all:hover {
-  background: #165333;
+  background: #a62227;
 }
 
 .btn-wishlist-clear {
@@ -3776,8 +3776,8 @@ body.keerthi-redesign-body {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #e2b87f;
-  color: #0f3822;
+  background: #caa55f;
+  color: #8d191d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3786,10 +3786,10 @@ body.keerthi-redesign-body {
 }
 
 .account-tier-banner {
-  background: linear-gradient(135deg, #0a2617 0%, #165333 100%);
+  background: linear-gradient(135deg, #620f12 0%, #a62227 100%);
   color: #ffffff;
   padding: 16px 20px;
-  border-bottom: 2px solid rgba(226, 184, 127, 0.4);
+  border-bottom: 2px solid rgba(202, 165, 95, 0.4);
 }
 
 .tier-badge-row {
@@ -3800,8 +3800,8 @@ body.keerthi-redesign-body {
 }
 
 .tier-pill-gold {
-  background: #e2b87f;
-  color: #0a2617;
+  background: #caa55f;
+  color: #620f12;
   font-size: 0.75rem;
   font-weight: 800;
   padding: 3px 10px;
@@ -3854,13 +3854,13 @@ body.keerthi-redesign-body {
 }
 
 .account-tab-btn:hover {
-  color: #0f3822;
-  background: rgba(15, 56, 34, 0.04);
+  color: #8d191d;
+  background: rgba(141, 25, 29, 0.04);
 }
 
 .account-tab-btn.active {
-  color: #0f3822;
-  border-bottom-color: #0f3822;
+  color: #8d191d;
+  border-bottom-color: #8d191d;
   background: #ffffff;
 }
 
@@ -3928,14 +3928,14 @@ body.keerthi-redesign-body {
 .order-number {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   margin: 4px 0 0 0;
 }
 
 .order-amount {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .order-items-preview {
@@ -3961,7 +3961,7 @@ body.keerthi-redesign-body {
 }
 
 .tracker-step.current {
-  color: #0f3822;
+  color: #8d191d;
   font-weight: 800;
 }
 
@@ -3970,7 +3970,7 @@ body.keerthi-redesign-body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
@@ -3983,7 +3983,7 @@ body.keerthi-redesign-body {
 
 .btn-account-track:hover,
 .btn-account-reorder:hover {
-  background: #165333;
+  background: #a62227;
 }
 
 /* Profile Form */
@@ -4002,7 +4002,7 @@ body.keerthi-redesign-body {
 .account-profile-form label {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .account-input {
@@ -4018,7 +4018,7 @@ body.keerthi-redesign-body {
 
 .account-input:focus {
   outline: none;
-  border-color: #0f3822;
+  border-color: #8d191d;
 }
 
 .input-verified-wrap {
@@ -4048,7 +4048,7 @@ body.keerthi-redesign-body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 700;
@@ -4061,7 +4061,7 @@ body.keerthi-redesign-body {
 }
 
 .btn-save-profile:hover {
-  background: #165333;
+  background: #a62227;
 }
 
 /* Addresses */
@@ -4074,7 +4074,7 @@ body.keerthi-redesign-body {
 }
 
 .address-card.default-address {
-  border-color: #0f3822;
+  border-color: #8d191d;
 }
 
 .address-header {
@@ -4087,15 +4087,15 @@ body.keerthi-redesign-body {
 .address-title {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
 .address-badge {
-  background: #e2b87f;
-  color: #0a2617;
+  background: #caa55f;
+  color: #620f12;
   font-size: 0.7rem;
   font-weight: 800;
   padding: 2px 8px;
@@ -4124,10 +4124,10 @@ body.keerthi-redesign-body {
   justify-content: center;
   gap: 6px;
   padding: 11px;
-  border: 1.5px dashed #0f3822;
+  border: 1.5px dashed #8d191d;
   border-radius: 0px;
   background: none;
-  color: #0f3822;
+  color: #8d191d;
   font-size: 0.86rem;
   font-weight: 700;
   cursor: pointer;
@@ -4135,7 +4135,7 @@ body.keerthi-redesign-body {
 }
 
 .btn-add-address:hover {
-  background: rgba(15, 56, 34, 0.05);
+  background: rgba(141, 25, 29, 0.05);
 }
 
 /* Account Footer */

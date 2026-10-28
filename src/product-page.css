@@ -4,17 +4,20 @@
    ========================================================================== */
 
 :root {
-  --haldiram-red: #0f3822;
-  --haldiram-red-hover: #165333;
-  --haldiram-cream-bg: #fcf9f5;
-  --haldiram-cream-card: #f8f3eb;
-  --haldiram-cream-subtle: #f9f3ea;
-  --haldiram-cream-border: #ede4d6;
-  --haldiram-topbar-bg: #f8f3eb;
-  --haldiram-topbar-text: #3d2d22;
-  --haldiram-dark: #1b120c;
-  --haldiram-muted: #6b5d52;
-  --haldiram-border: #ede4d6;
+  --haldiram-red: #8d191d;
+  --haldiram-red-hover: #a62227;
+  --haldiram-gold: #caa55f;
+  --haldiram-gold-hover: #ba944f;
+  --haldiram-navy: #091b32;
+  --haldiram-cream-bg: #faf7f2;
+  --haldiram-cream-card: #f5efe6;
+  --haldiram-cream-subtle: #faf4e8;
+  --haldiram-cream-border: #eae0d2;
+  --haldiram-topbar-bg: #091b32;
+  --haldiram-topbar-text: #ffffff;
+  --haldiram-dark: #0d1520;
+  --haldiram-muted: #6e645d;
+  --haldiram-border: #eae0d2;
   --haldiram-green: #16a34a;
 }
 
@@ -713,7 +716,7 @@ body.haldiram-theme-body {
   border: 1.5px solid var(--haldiram-red);
   color: var(--haldiram-red);
   font-weight: 700;
-  box-shadow: 0 1px 3px rgba(15, 56, 34, 0.12);
+  box-shadow: 0 1px 3px rgba(141, 25, 29, 0.12);
 }
 
 /* Stepper + CHECKOUT Button Row */
@@ -778,13 +781,13 @@ body.haldiram-theme-body {
   flex: 1;
   min-width: 160px;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(15, 56, 34, 0.2);
+  box-shadow: 0 2px 8px rgba(141, 25, 29, 0.2);
   font-family: inherit;
 }
 
 .haldiram-btn-checkout:hover {
   background-color: var(--haldiram-red-hover);
-  box-shadow: 0 4px 12px rgba(15, 56, 34, 0.28);
+  box-shadow: 0 4px 12px rgba(141, 25, 29, 0.28);
 }
 
 .haldiram-btn-checkout:active {
@@ -947,8 +950,8 @@ body.haldiram-theme-body {
 
 .haldiram-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 56, 34, 0.08);
-  border-color: #0f3822;
+  box-shadow: 0 8px 18px rgba(141, 25, 29, 0.08);
+  border-color: #8d191d;
 }
 
 .haldiram-card-img-wrap {
@@ -1011,7 +1014,7 @@ body.haldiram-theme-body {
   font-family: inherit;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin: 0 0 6px 0;
@@ -1025,7 +1028,7 @@ body.haldiram-theme-body {
 }
 
 .haldiram-card-title:hover {
-  color: #165333;
+  color: #a62227;
 }
 
 .haldiram-card-price-row {
@@ -1040,13 +1043,13 @@ body.haldiram-theme-body {
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #0f3822;
+  color: #8d191d;
 }
 
 .haldiram-card-add-btn {
-  background-color: var(--haldiram-cream-card, #f8f3eb);
+  background-color: var(--haldiram-cream-card, #f5efe6);
   border: 1px solid #ded8d2;
-  color: #0f3822;
+  color: #8d191d;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 4px 10px;
@@ -1058,10 +1061,10 @@ body.haldiram-theme-body {
 }
 
 .haldiram-card-add-btn:hover {
-  background-color: #0f3822;
-  border-color: #0f3822;
+  background-color: #8d191d;
+  border-color: #8d191d;
   color: #ffffff;
-  box-shadow: 0 2px 6px rgba(15, 56, 34, 0.18);
+  box-shadow: 0 2px 6px rgba(141, 25, 29, 0.18);
 }
 
 .haldiram-suggestion-action-wrap {
@@ -1070,20 +1073,20 @@ body.haldiram-theme-body {
 }
 
 .haldiram-suggestion-stepper {
-  background-color: var(--haldiram-cream-card, #f8f3eb);
-  border: 1px solid #0f3822;
+  background-color: var(--haldiram-cream-card, #f5efe6);
+  border: 1px solid #8d191d;
   border-radius: 5px;
   display: flex;
   align-items: center;
   gap: 2px;
   padding: 1px 3px;
-  box-shadow: 0 1px 3px rgba(15, 56, 34, 0.08);
+  box-shadow: 0 1px 3px rgba(141, 25, 29, 0.08);
 }
 
 .mini-step-btn {
   background: transparent;
   border: none;
-  color: #0f3822;
+  color: #8d191d;
   font-size: 0.95rem;
   font-weight: 800;
   width: 20px;
@@ -1097,14 +1100,14 @@ body.haldiram-theme-body {
 }
 
 .mini-step-btn:hover {
-  background: #0f3822;
+  background: #8d191d;
   color: #ffffff;
 }
 
 .mini-step-val {
   font-size: 0.78rem;
   font-weight: 800;
-  color: #0f3822;
+  color: #8d191d;
   min-width: 16px;
   text-align: center;
   user-select: none;
@@ -1115,9 +1118,10 @@ body.haldiram-theme-body {
    7. FOOTER
    ========================================================================== */
 .site-footer {
-  background-color: #1a1a1a;
+  background-color: #061222;
   color: #d1d5db;
   padding: 50px 0 24px 0;
+  border-top: 1px solid rgba(202, 165, 95, 0.2);
 }
 
 .footer-grid {
@@ -1140,13 +1144,14 @@ body.haldiram-theme-body {
 }
 
 .footer-logo {
-  height: 42px;
+  height: 48px;
   width: auto;
   margin-bottom: 16px;
-  background: #ffffff;
-  padding: 5px 12px;
-  border-radius: 8px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
   display: inline-block;
+  object-fit: contain;
 }
 
 .footer-tagline {
