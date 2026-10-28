@@ -1115,11 +1115,8 @@ body.keerthi-redesign-body {
   position: relative;
   width: 100%;
   min-height: 580px;
-  background: url('/images/hero_products_clean.jpg') right center / cover no-repeat;
-  background-image: image-set(
-    url('/images/hero_products_clean.webp') type('image/webp'),
-    url('/images/hero_products_clean.jpg') type('image/jpeg')
-  );
+  background-image: url('/images/hero_products_clean.webp');
+  background-image: image-set(url('/images/hero_products_clean.webp') type("image/webp"), url('/images/hero_products_clean.jpg') type("image/jpeg"));
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
