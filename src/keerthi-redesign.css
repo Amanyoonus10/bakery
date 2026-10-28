@@ -2532,19 +2532,76 @@ body.keerthi-redesign-body {
   border: 1px solid rgba(202, 165, 95, 0.35);
 }
 
-/* Product Cards on Deep Burgundy Frame */
+/* Product Cards on Deep Burgundy Frame - Royal Gold Card Boxes */
 .catalogue-showcase-frame .haldiram-card {
-  background: #ffffff;
-  border: 1.5px solid rgba(202, 165, 95, 0.35);
-  box-shadow: 0 8px 24px rgba(10, 2, 4, 0.25);
+  background-color: #f7eedb;
+  background: linear-gradient(155deg, #fffcf6 0%, #faecd0 30%, #efd7a3 70%, #e5c788 100%);
+  border: 1.5px solid #d4af37;
+  border-radius: 14px;
+  box-shadow: 
+    0 10px 28px rgba(0, 0, 0, 0.42),
+    0 0 16px rgba(202, 165, 95, 0.22);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .catalogue-showcase-frame .haldiram-card:hover {
   transform: translateY(-5px);
-  border-color: #caa55f;
+  border-color: #ffd700;
   box-shadow: 
-    0 16px 36px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(202, 165, 95, 0.25);
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 26px rgba(243, 206, 122, 0.42);
+}
+
+.catalogue-showcase-frame .haldiram-img-box {
+  background: linear-gradient(180deg, #ffffff 0%, #faf4e8 100%);
+  border: 1px solid rgba(202, 165, 95, 0.45);
+  box-shadow: inset 0 2px 6px rgba(184, 134, 11, 0.08);
+}
+
+.catalogue-showcase-frame .haldiram-title {
+  color: #2b040b;
+}
+
+.catalogue-showcase-frame .haldiram-card:hover .haldiram-title {
+  color: #8d191d;
+}
+
+.catalogue-showcase-frame .haldiram-weight-pill {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  color: #2b040b;
+}
+
+.catalogue-showcase-frame .haldiram-weight-pill:hover {
+  border-color: #8d191d;
+  color: #8d191d;
+  background: #ffffff;
+}
+
+.catalogue-showcase-frame .haldiram-weight-pill.active {
+  border-color: #2b040b;
+  background: #2b040b;
+  color: #f4d085;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(43, 4, 11, 0.25);
+}
+
+.catalogue-showcase-frame .haldiram-price {
+  color: #2b040b;
+}
+
+.catalogue-showcase-frame .haldiram-add-btn {
+  background: #2b040b;
+  color: #fbe8c5;
+  border: 1.5px solid #2b040b;
+  box-shadow: 0 3px 10px rgba(43, 4, 11, 0.3);
+}
+
+.catalogue-showcase-frame .haldiram-add-btn:hover {
+  background: #5c0612;
+  color: #ffffff;
+  border-color: #5c0612;
+  box-shadow: 0 6px 16px rgba(43, 4, 11, 0.45);
 }
 
 @media (max-width: 768px) {
