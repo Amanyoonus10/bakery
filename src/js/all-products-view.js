@@ -14,15 +14,17 @@ export function initAllProductsView(showToast) {
 
   if (!gridWrap || !gridContainer) return;
 
-  // Use all 55 products directly from products dataset
+  // Use products directly from products dataset with variants from PRICEWEB.xlsx
   const products = PRODUCTS.map((prod, index) => ({
     id: prod.id,
     name: prod.name,
     ingredients: prod.ingredients || "",
     eyebrow: prod.eyebrow || "AUTHENTIC KERALA BAKERY",
     tagline: prod.tagline || "",
-    price: prod.price || 89,
-    priceStr: `₹${prod.price || 89}`,
+    price: prod.price || 85,
+    priceStr: `₹${prod.price || 85}`,
+    unit: prod.unit || "200g Pouch",
+    variants: prod.variants || [{ label: prod.unit || "200g", weight: prod.unit || "200g", price: prod.price || 85 }],
     badge: prod.badge || "",
     badgeClass: prod.badgeClass || "",
     img: prod.imageWebp || prod.image || "/images/card_banana_chips_clean.jpg",
@@ -32,29 +34,17 @@ export function initAllProductsView(showToast) {
     nutrition: prod.nutrition || ""
   }));
 
-  // Haldiram's Package Weight Options per product
+  // Authentic Package Weight & Size Options per product from PRICEWEB.xlsx
   function getProductWeights(prod) {
-    if (prod.category === "biscuits") {
-      return [
-        { label: "250 gm", mult: 1 },
-        { label: "500 gm", mult: 1.9 },
-        { label: "1 kg", mult: 3.6 }
-      ];
-    } else if (prod.category === "sweets") {
-      return [
-        { label: "250 gm", mult: 1 },
-        { label: "500 gm", mult: 1.95 },
-        { label: "1 kg", mult: 3.8 }
-      ];
-    } else {
-      // Authentic Haldiram's Savories Options: 200 gm, 400 gm, 600 gm, 1 kg
-      return [
-        { label: "200 gm", mult: 1 },
-        { label: "400 gm", mult: 1.9 },
-        { label: "600 gm", mult: 2.8 },
-        { label: "1 kg", mult: 4.4 }
-      ];
+    if (prod.variants && prod.variants.length > 0) {
+      return prod.variants.map(v => ({
+        label: v.label || v.weight,
+        price: v.price
+      }));
     }
+    return [
+      { label: prod.unit || "200g", price: prod.price || 85 }
+    ];
   }
 
   // Helper to query quantity of a specific card's selected variant from cart
@@ -99,8 +89,9 @@ export function initAllProductsView(showToast) {
   function generateCardHtml(prod) {
     const isSaved = wishlist.hasItem(prod.id);
     const weights = getProductWeights(prod);
-    const defaultWeight = weights[0].label;
-    const basePrice = prod.price;
+    const defaultVariant = weights[0];
+    const defaultWeight = defaultVariant.label;
+    const basePrice = defaultVariant.price;
     const initialQty = getVariantCartQty(prod.id, defaultWeight);
 
     return `
@@ -120,19 +111,19 @@ export function initAllProductsView(showToast) {
             </span>
           </div>
 
-          <!-- Weight Selection Pills -->
+          <!-- Weight Selection Pills from PRICEWEB.xlsx -->
           <div class="haldiram-weights-row" aria-label="Select package size">
             ${weights.map((w, idx) => `
               <button type="button" 
                       class="haldiram-weight-pill ${idx === 0 ? 'active' : ''}" 
                       data-weight="${w.label}" 
-                      data-mult="${w.mult}">
+                      data-price="${w.price}">
                 ${w.label}
               </button>
             `).join('')}
           </div>
 
-          <!-- Price formatted in Indian retail slash-dash style: ₹60/- -->
+          <!-- Price formatted in Indian retail slash-dash style: ₹100/- -->
           <div class="haldiram-price-row">
             <span class="haldiram-price">₹${basePrice}/-</span>
           </div>
@@ -197,16 +188,15 @@ export function initAllProductsView(showToast) {
       const minusBtn = card.querySelector(".haldiram-stepper-minus");
       const plusBtn = card.querySelector(".haldiram-stepper-plus");
 
-      // 1. Weight Variant Switching
+      // 1. Weight Variant Switching (Exact MRP from PRICEWEB.xlsx)
       card.querySelectorAll(".haldiram-weight-pill").forEach(pill => {
         pill.onclick = (e) => {
           e.stopPropagation();
           card.querySelectorAll(".haldiram-weight-pill").forEach(p => p.classList.remove("active"));
           pill.classList.add("active");
 
-          const mult = parseFloat(pill.dataset.mult) || 1;
+          const newPrice = parseInt(pill.dataset.price) || basePrice;
           const weight = pill.dataset.weight;
-          const newPrice = Math.round(basePrice * mult);
 
           card.dataset.currentPrice = newPrice;
           card.dataset.selectedWeight = weight;
@@ -226,7 +216,7 @@ export function initAllProductsView(showToast) {
         addBtn.onclick = (e) => {
           e.stopPropagation();
           const currentPrice = parseInt(card.dataset.currentPrice) || basePrice;
-          const currentWeight = card.dataset.selectedWeight || "200 gm";
+          const currentWeight = card.dataset.selectedWeight || "200g";
           const weightSlug = currentWeight.toLowerCase().replace(/[^a-z0-9]+/g, "");
 
           cart.addItem({
@@ -265,7 +255,7 @@ export function initAllProductsView(showToast) {
         plusBtn.onclick = (e) => {
           e.stopPropagation();
           const currentPrice = parseInt(card.dataset.currentPrice) || basePrice;
-          const currentWeight = card.dataset.selectedWeight || "200 gm";
+          const currentWeight = card.dataset.selectedWeight || "200g";
           const weightSlug = currentWeight.toLowerCase().replace(/[^a-z0-9]+/g, "");
           const targetVariantId = `${id}-${weightSlug}`;
 
@@ -296,7 +286,7 @@ export function initAllProductsView(showToast) {
       if (minusBtn) {
         minusBtn.onclick = (e) => {
           e.stopPropagation();
-          const currentWeight = card.dataset.selectedWeight || "200 gm";
+          const currentWeight = card.dataset.selectedWeight || "200g";
           const weightSlug = currentWeight.toLowerCase().replace(/[^a-z0-9]+/g, "");
           const targetVariantId = `${id}-${weightSlug}`;
 

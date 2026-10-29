@@ -132,10 +132,15 @@ function renderProductDetails(product) {
   const titleEl = document.getElementById("pdpTitle");
   if (titleEl) titleEl.textContent = formattedTitle;
 
-  // Base Price & Calculation
-  const basePrice = product.price || 85;
+  // Base Price & Calculation from PRICEWEB.xlsx variants
+  const variants = (product.variants && product.variants.length > 0)
+    ? product.variants
+    : [{ label: product.unit || "200g", price: product.price || 85 }];
+
+  const defaultVariant = variants[0];
+  const basePrice = defaultVariant.price;
   let currentPrice = basePrice;
-  let selectedWeight = "200 gm";
+  let selectedWeight = defaultVariant.label || defaultVariant.weight || "200g";
   let quantity = 1;
 
   const livePriceEl = document.getElementById("pdpLivePrice");
@@ -183,34 +188,11 @@ function renderProductDetails(product) {
     };
   }
 
-  // Weight Variants
+  // Authentic Package Weight & Size Variants from PRICEWEB.xlsx
   const weightsContainer = document.getElementById("pdpWeightsGrid");
   if (weightsContainer) {
-    let weightOptions = [];
-    if (product.category === "chips" || product.category === "mixtures") {
-      weightOptions = [
-        { label: "200 gm", mult: 1 },
-        { label: "400 gm", mult: 1.9 },
-        { label: "600 gm", mult: 2.8 },
-        { label: "1 kg", mult: 4.4 }
-      ];
-    } else if (product.category === "biscuits" || product.category === "sweets") {
-      weightOptions = [
-        { label: "250 gm", mult: 1 },
-        { label: "500 gm", mult: 1.95 },
-        { label: "1 kg", mult: 3.75 }
-      ];
-    } else {
-      weightOptions = [
-        { label: product.unit || "200 gm", mult: 1 },
-        { label: "400 gm", mult: 1.9 }
-      ];
-    }
-
-    selectedWeight = weightOptions[0].label;
-
-    weightsContainer.innerHTML = weightOptions.map((w, idx) => `
-      <button type="button" class="haldiram-variant-pill ${idx === 0 ? 'active' : ''}" data-weight="${w.label}" data-mult="${w.mult}">
+    weightsContainer.innerHTML = variants.map((w, idx) => `
+      <button type="button" class="haldiram-variant-pill ${idx === 0 ? 'active' : ''}" data-weight="${w.label}" data-price="${w.price}">
         ${w.label}
       </button>
     `).join("");
@@ -220,8 +202,7 @@ function renderProductDetails(product) {
         weightsContainer.querySelectorAll(".haldiram-variant-pill").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         selectedWeight = btn.dataset.weight;
-        const mult = parseFloat(btn.dataset.mult) || 1;
-        currentPrice = Math.round(basePrice * mult);
+        currentPrice = parseInt(btn.dataset.price) || basePrice;
         if (livePriceEl) livePriceEl.textContent = `₹${currentPrice}/-`;
       };
     });
