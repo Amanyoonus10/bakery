@@ -1005,10 +1005,10 @@ body.haldiram-theme-body {
   }
 }
 
-/* Haldiram Style Generous Premium Product Card */
+/* Haldiram Style Clean Optimized Product Card */
 .haldiram-card {
   background: #ffffff;
-  border: 1.5px solid #ece4dc;
+  border: 1px solid #ebe5df;
   border-radius: 14px;
   overflow: hidden;
   display: flex;
@@ -1016,58 +1016,57 @@ body.haldiram-theme-body {
   justify-content: space-between;
   position: relative;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .haldiram-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 28px rgba(141, 25, 29, 0.12);
-  border-color: #8d191d;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(192, 57, 43, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border-color: #c0392b;
 }
 
 .haldiram-card-img-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 0.95;
-  min-height: 220px;
-  background: linear-gradient(180deg, #fdfbf9 0%, #f6f0ea 100%);
+  aspect-ratio: 1 / 1;
+  background: #fbf9f6;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 12px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .haldiram-card-img {
   width: 100%;
   height: 100%;
-  max-height: 195px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+  filter: none;
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .haldiram-card-img-wrap:hover .haldiram-card-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .haldiram-card-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: var(--haldiram-red);
+  top: 8px;
+  left: 8px;
+  background-color: #c0392b;
   color: #ffffff;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   z-index: 2;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .haldiram-card-badge.spicy {
@@ -1075,7 +1074,7 @@ body.haldiram-theme-body {
 }
 
 .haldiram-card-body {
-  padding: 14px 16px 16px 16px;
+  padding: 12px 14px 14px 14px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1083,9 +1082,9 @@ body.haldiram-theme-body {
 
 .haldiram-card-title {
   font-family: inherit;
-  font-size: 0.96rem;
-  font-weight: 700;
-  color: #8d191d;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1a1a1a;
   line-height: 1.35;
   letter-spacing: -0.01em;
   margin: 0 0 10px 0;
@@ -1099,7 +1098,7 @@ body.haldiram-theme-body {
 }
 
 .haldiram-card-title:hover {
-  color: #a62227;
+  color: #c0392b;
 }
 
 .haldiram-card-price-row {
@@ -1113,29 +1112,29 @@ body.haldiram-theme-body {
 .haldiram-card-price {
   font-family: inherit;
   font-size: 1.15rem;
-  font-weight: 800;
-  color: #8d191d;
+  font-weight: 700;
+  color: #1a1a1a;
 }
 
 .haldiram-card-add-btn {
-  background-color: var(--haldiram-cream-card, #f5efe6);
-  border: 1.5px solid #ded8d2;
-  color: #8d191d;
-  font-size: 0.8rem;
+  background-color: #c0392b;
+  border: none;
+  color: #ffffff;
+  font-size: 0.82rem;
   font-weight: 700;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(192, 57, 43, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .haldiram-card-add-btn:hover {
-  background-color: #8d191d;
-  border-color: #8d191d;
-  color: #ffffff;
-  box-shadow: 0 3px 8px rgba(141, 25, 29, 0.22);
+  background-color: #a9281b;
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.35);
 }
 
 .haldiram-suggestion-action-wrap {
