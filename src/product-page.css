@@ -1005,38 +1005,48 @@ body.haldiram-theme-body {
   }
 }
 
-/* Haldiram Style Clean Optimized Product Card */
+/* Haldiram Style Peach Gold Box with Deep Burgundy Accents */
 .haldiram-card {
-  background: #ffffff;
-  border: 1px solid #ebe5df;
+  background-color: #fae4cf;
+  background: 
+    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.85) 0%, transparent 48%),
+    radial-gradient(circle at 12% 88%, rgba(240, 180, 130, 0.35) 0%, transparent 52%),
+    linear-gradient(160deg, #fff4e8 0%, #fbe6d1 45%, #f5d4b3 85%, #edc399 100%);
+  border: 1.5px solid rgba(196, 142, 76, 0.55);
   border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  box-shadow: 
+    0 4px 16px rgba(95, 45, 15, 0.07),
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .haldiram-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(192, 57, 43, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-  border-color: #c0392b;
+  box-shadow: 
+    0 14px 30px rgba(114, 14, 29, 0.18),
+    0 4px 12px rgba(196, 142, 76, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-color: #720e1d;
 }
 
 .haldiram-card-img-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #fbf9f6;
+  background: #ffffff;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1.5px solid rgba(196, 142, 76, 0.35);
 }
 
 .haldiram-card-img {
@@ -1057,20 +1067,21 @@ body.haldiram-theme-body {
   position: absolute;
   top: 8px;
   left: 8px;
-  background-color: #c0392b;
+  background: linear-gradient(135deg, #780f1e 0%, #4e0711 100%);
   color: #ffffff;
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 3px 7px;
+  padding: 3px 8px;
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   z-index: 2;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 6px rgba(46, 5, 12, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .haldiram-card-badge.spicy {
-  background-color: #dc2626;
+  background: linear-gradient(135deg, #8a1122 0%, #540812 100%);
 }
 
 .haldiram-card-body {
@@ -1083,8 +1094,8 @@ body.haldiram-theme-body {
 .haldiram-card-title {
   font-family: inherit;
   font-size: 0.98rem;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-weight: 700;
+  color: #241209;
   line-height: 1.35;
   letter-spacing: -0.01em;
   margin: 0 0 10px 0;
@@ -1098,7 +1109,7 @@ body.haldiram-theme-body {
 }
 
 .haldiram-card-title:hover {
-  color: #c0392b;
+  color: #720e1d;
 }
 
 .haldiram-card-price-row {
@@ -1112,12 +1123,12 @@ body.haldiram-theme-body {
 .haldiram-card-price {
   font-family: inherit;
   font-size: 1.15rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-weight: 800;
+  color: #5c0612;
 }
 
 .haldiram-card-add-btn {
-  background-color: #c0392b;
+  background: linear-gradient(135deg, #780f1e 0%, #520712 100%);
   border: none;
   color: #ffffff;
   font-size: 0.82rem;
@@ -1127,14 +1138,14 @@ body.haldiram-theme-body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
-  box-shadow: 0 2px 6px rgba(192, 57, 43, 0.25);
+  box-shadow: 0 3px 10px rgba(82, 7, 18, 0.35);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .haldiram-card-add-btn:hover {
-  background-color: #a9281b;
-  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.35);
+  background: linear-gradient(135deg, #5c0612 0%, #3e040c 100%);
+  box-shadow: 0 5px 14px rgba(82, 7, 18, 0.45);
 }
 
 .haldiram-suggestion-action-wrap {
