@@ -2370,42 +2370,48 @@
   {
     "id": "keerthi-egg-biscuits",
     "slug": "keerthi_egg_biscuits",
-    "name": "KEERTHI EGG BISCUITS (MUTTA BISCUIT)",
-    "malayalamName": "കീർത്തി മുട്ട ബിസ്ക്കറ്റ്",
+    "name": "KEERTHI EGG BISCUIT",
+    "malayalamName": "കീർത്തി എഗ്ഗ് ബിസ്ക്കറ്റ്",
     "category": "biscuits",
     "badge": "Vintage Classic 🥚",
     "badgeClass": "bestseller",
     "price": 65,
-    "unit": "250g Pouch",
+    "unit": "200g Pack",
     "variants": [
       {
-        "label": "250g",
-        "weight": "250g",
+        "label": "200g",
+        "weight": "200g",
         "price": 65,
         "code": 1847,
-        "excel_name": "EGG BISCUITS 250G",
+        "excel_name": "EGG BISCUITS 200G",
         "default": true
       }
     ],
     "eyebrow": "NOSTALGIC BAKERY ITEM",
     "tagline": "Fresh Farm Eggs • Cardamom • Light Foam Crunch",
-    "ingredients": "Fresh Farm Eggs, Cardamom, Light Foam Crunch",
-    "description": "Airy vintage dome biscuits baked from whipped farm egg whites, sugar, and crushed green cardamom.",
+    "ingredients": "Fresh Farm Eggs, Wheat Flour, Sugar, Cardamom, Pure Ghee",
+    "description": "Airy vintage dome biscuits baked from whipped farm egg whites, sugar, and crushed green cardamom. Simple flavour, serious crunch.",
     "nutrition": "Energy: 480 kcal, Protein: 9.5g, Carbohydrates: 54g, Dietary Fiber: 5g, Fat: 24g (Per 100g)",
     "tags": [
       "biscuits",
+      "egg-biscuit",
       "egg-biscuits",
       "authentic",
       "malabar",
       "kerala-bakery"
     ],
-    "image": "/images/products/keerthi_square_tea_biscuits.webp",
-    "imageWebp": "/images/products/keerthi_square_tea_biscuits.webp",
-    "imageCutout": "/images/products_blum/keerthi_square_tea_biscuits_transparent.png",
-    "priceText": "₹65 / 250g Pouch",
+    "image": "/images/products/keerthi_egg_biscuits.webp",
+    "imageWebp": "/images/products/keerthi_egg_biscuits.webp",
+    "imageCutout": "/images/products_blum/keerthi_egg_biscuits_transparent.png",
+    "priceText": "₹65 / 200g Pack",
     "rating": 4.99,
     "reviewCount": 257,
-    "imagePng": "/images/products/keerthi_square_tea_biscuits.png"
+    "imagePng": "/images/products/keerthi_egg_biscuits.png",
+    "aliases": [
+      "keerthi-manda",
+      "keerthi_manda",
+      "manda"
+    ]
   },
   {
     "id": "keerthi-heart-biscuit",
@@ -2526,46 +2532,6 @@
     "rating": 4.84,
     "reviewCount": 386,
     "imagePng": "/images/products/keerthi_mini_sweet_rolls_jar.png"
-  },
-  {
-    "id": "keerthi-manda",
-    "slug": "keerthi_manda",
-    "name": "KEERTHI TRADITIONAL MANDA",
-    "malayalamName": "കീർത്തി മാണ്ട",
-    "category": "sweets",
-    "badge": "Wedding Specialty 👑",
-    "badgeClass": "bestseller",
-    "price": 250,
-    "unit": "1 kg Pack",
-    "variants": [
-      {
-        "label": "1 kg",
-        "weight": "1 kg",
-        "price": 250,
-        "code": 1016,
-        "excel_name": "MANDA",
-        "default": true
-      }
-    ],
-    "eyebrow": "MALABAR WEDDING SWEET",
-    "tagline": "Pure Ghee • Sugar • Cardamom • Traditional Recipe",
-    "ingredients": "Pure Ghee, Sugar, Cardamom, Traditional Recipe",
-    "description": "Festive Malabar confectionery prepared in large batches for royal weddings and celebrations.",
-    "nutrition": "Energy: 480 kcal, Protein: 9.5g, Carbohydrates: 54g, Dietary Fiber: 5g, Fat: 24g (Per 100g)",
-    "tags": [
-      "sweets",
-      "manda",
-      "authentic",
-      "malabar",
-      "kerala-bakery"
-    ],
-    "image": "/images/products/keerthi_coconut_macaroons.webp",
-    "imageWebp": "/images/products/keerthi_coconut_macaroons.webp",
-    "imageCutout": "/images/products_blum/keerthi_coconut_macaroons_transparent.png",
-    "priceText": "₹250 / 1 kg Pack",
-    "rating": 4.91,
-    "reviewCount": 429,
-    "imagePng": "/images/products/keerthi_coconut_macaroons.png"
   },
   {
     "id": "keerthi-sp-cup-cake",

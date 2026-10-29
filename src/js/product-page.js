@@ -49,10 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. Extract Product ID from URL
   const urlParams = new URLSearchParams(window.location.search);
-  let prodId = urlParams.get("id");
+  let prodId = urlParams.get("id") || urlParams.get("product");
 
-  // Keep original product: default to first authentic Keerthi product if no id
-  let product = PRODUCTS.find(p => p.id === prodId || p.slug === prodId);
+  // Robust product lookup supporting IDs, slugs, and aliases (e.g. keerthi-manda -> keerthi-egg-biscuits)
+  let product = PRODUCTS.find(
+    p => p.id === prodId || p.slug === prodId || (p.aliases && p.aliases.includes(prodId))
+  );
+  if (!product && prodId) {
+    const lower = prodId.toLowerCase();
+    product = PRODUCTS.find(
+      p => p.id.toLowerCase() === lower ||
+           p.slug.toLowerCase() === lower ||
+           (p.aliases && p.aliases.some(a => a.toLowerCase() === lower)) ||
+           p.name.toLowerCase().includes(lower)
+    );
+  }
   if (!product) {
     product = PRODUCTS[0];
   }
