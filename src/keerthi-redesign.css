@@ -1409,7 +1409,7 @@ body.keerthi-redesign-body {
 .hero-showcase-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   margin-bottom: 12px;
 }
@@ -4048,8 +4048,7 @@ body.keerthi-redesign-body {
     width: 100%;
   }
   .hero-showcase-header {
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 8px;
   }
   .circular-kerala-stamp {
