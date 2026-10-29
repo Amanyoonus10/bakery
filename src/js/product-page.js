@@ -110,7 +110,7 @@ function renderProductDetails(product) {
   // Image
   const mainImg = document.getElementById("pdpMainImg");
   if (mainImg) {
-    mainImg.src = product.imageWebp || product.image || "/images/card_banana_chips_clean.jpg";
+    mainImg.src = product.image || "/images/card_banana_chips_clean.jpg";
     mainImg.alt = formattedTitle;
     mainImg.onerror = function() {
       if (this.src.endsWith(".webp")) {
@@ -343,7 +343,7 @@ function renderSuggestions(currentProduct) {
         <div class="haldiram-card" data-id="${prod.id}" data-name="${formatted}" data-price="${prod.price}" data-img="${prod.image}">
           <div class="haldiram-card-img-wrap" onclick="window.location.href='product.html?id=${prod.id}'">
             ${prod.badge ? `<span class="haldiram-card-badge">${prod.badge}</span>` : ''}
-            <img src="${prod.imageWebp || prod.image}" alt="${formatted}" class="haldiram-card-img" loading="lazy" onerror="this.onerror=null; this.src='${(prod.image || '').replace('.webp', '.jpg')}';">
+            <img src="${prod.image}" alt="${formatted}" class="haldiram-card-img" loading="lazy" onerror="this.src='/images/card_banana_chips_clean.jpg'">
           </div>
           <div class="haldiram-card-body">
             <h3 class="haldiram-card-title" onclick="window.location.href='product.html?id=${prod.id}'">${formatted}</h3>
