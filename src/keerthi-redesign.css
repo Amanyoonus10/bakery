@@ -1202,16 +1202,25 @@ body.keerthi-redesign-body {
 /* Master Title with Gold Shimmer */
 .hero-master-title {
   font-family: var(--font-serif);
+  font-style: italic;
   font-size: clamp(2.4rem, 3.5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.08;
+  font-weight: 700;
+  line-height: 1.12;
   color: #ffffff;
   letter-spacing: -0.5px;
   margin: 0 0 14px 0;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
+.hero-title-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+}
+
 .hero-title-shimmer {
+  font-family: var(--font-serif);
   font-style: italic;
   font-weight: 700;
   background: linear-gradient(120deg, #fbe8c5 0%, #caa55f 30%, #fff2cc 50%, #caa55f 70%, #d8b467 100%);
@@ -1221,6 +1230,20 @@ body.keerthi-redesign-body {
   -webkit-text-fill-color: transparent;
   animation: text-gold-shimmer 6s linear infinite;
   display: inline-block;
+}
+
+.hero-title-since {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.45em;
+  font-weight: 600;
+  color: #fbe8c5;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  margin-left: 10px;
+  opacity: 0.95;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 @keyframes text-gold-shimmer {
