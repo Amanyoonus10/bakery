@@ -28,6 +28,7 @@ export function initAllProductsView(showToast) {
     badge: prod.badge || "",
     badgeClass: prod.badgeClass || "",
     img: prod.imageWebp || prod.image || "/images/card_banana_chips_clean.jpg",
+    fallbackImg: (prod.imageWebp || prod.image || "").replace('.webp', '.jpg'),
     category: prod.category || "mixtures",
     rating: prod.rating || (4.8 + ((index % 3) * 0.1)),
     description: prod.description || "",
@@ -101,7 +102,7 @@ export function initAllProductsView(showToast) {
           <button type="button" class="haldiram-wishlist-btn ${isSaved ? 'active' : ''}" aria-label="Add ${prod.name} to Wishlist">
             <i class="${isSaved ? 'ri-heart-fill' : 'ri-heart-line'}"></i>
           </button>
-          <img src="${prod.img}" alt="${prod.name}" class="haldiram-img" loading="lazy" onerror="if (this.src.endsWith('.webp')) { this.src = this.src.replace('.webp', '.png'); } else { this.src='/images/card_banana_chips_clean.jpg'; }">
+          <img src="${prod.img}" alt="${prod.name}" class="haldiram-img" loading="lazy" onerror="this.onerror=null; this.src='${prod.fallbackImg}';">
         </div>
         <div class="haldiram-content">
           <div class="haldiram-title-row">
