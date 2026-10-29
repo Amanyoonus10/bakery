@@ -1404,6 +1404,7 @@ body.keerthi-redesign-body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 14px;
   width: 100%;
   margin-bottom: 12px;
 }
@@ -1431,6 +1432,10 @@ body.keerthi-redesign-body {
   flex-shrink: 0;
 }
 
+.circular-kerala-stamp.stamp-secondary {
+  animation-delay: -2.5s;
+}
+
 @keyframes stamp-pulse {
   0%, 100% { transform: scale(1) rotate(0deg); }
   50% { transform: scale(1.05) rotate(4deg); }
@@ -1452,11 +1457,11 @@ body.keerthi-redesign-body {
 }
 
 .stamp-inner-ring span {
-  font-size: 0.54rem;
+  font-size: 0.49rem;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-top: 1px;
+  margin-top: 2px;
   line-height: 1.15;
 }
 
@@ -4043,6 +4048,7 @@ body.keerthi-redesign-body {
   }
   .hero-showcase-header {
     justify-content: flex-end;
+    gap: 8px;
     margin-bottom: 8px;
   }
   .circular-kerala-stamp {
@@ -4050,10 +4056,11 @@ body.keerthi-redesign-body {
     height: 62px;
   }
   .stamp-inner-ring i {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   .stamp-inner-ring span {
-    font-size: 0.44rem;
+    font-size: 0.39rem;
+    letter-spacing: 0.3px;
   }
   .hero-cursive-caption {
     font-size: 1.25rem;
