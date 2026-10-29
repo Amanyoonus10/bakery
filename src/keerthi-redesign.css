@@ -216,7 +216,7 @@ body.keerthi-redesign-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 80px;
   width: 100%;
   gap: 0;
 }
@@ -238,7 +238,7 @@ body.keerthi-redesign-body {
 }
 
 .brand-badge-img {
-  height: 46px;
+  height: 62px;
   width: auto;
   object-fit: contain;
   transition: transform 0.25s ease;
@@ -3890,7 +3890,8 @@ body.keerthi-redesign-body {
     row-gap: 6px;
   }
   .brand-badge-img {
-    height: 38px;
+    height: 48px;
+    width: auto;
   }
   .header-spacer {
     display: block;
@@ -3902,14 +3903,14 @@ body.keerthi-redesign-body {
     display: none !important;
   }
   .store-header {
-    height: 60px;
+    height: 68px;
     padding: 0;
   }
   .store-brand-badge {
-    height: 38px;
+    height: 48px;
   }
   .brand-badge-img {
-    height: 36px;
+    height: 48px;
     width: auto;
   }
   .store-header-actions {
