@@ -1212,13 +1212,7 @@ body.keerthi-redesign-body {
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
-.hero-title-line {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 700;
-  color: #ffffff;
-}
-
+.hero-title-line,
 .hero-title-shimmer {
   font-family: var(--font-serif);
   font-style: italic;
