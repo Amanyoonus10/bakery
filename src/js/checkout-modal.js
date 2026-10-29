@@ -171,10 +171,6 @@ export function initCheckoutModal(showToast) {
               <span>Delivery Fee</span>
               <span>${summary.deliveryFee === 0 ? '<strong style="color:#0f3822">FREE</strong>' : `₹${summary.deliveryFee}`}</span>
             </div>
-            <div class="bill-row">
-              <span>Aroma-Lock Freshness Packaging</span>
-              <span style="color:#0f3822; font-weight:700;">FREE</span>
-            </div>
             <div class="bill-row bill-grand-total">
               <span>Total Payable</span>
               <span class="grand-amount">₹${summary.grandTotal.toLocaleString('en-IN')}</span>

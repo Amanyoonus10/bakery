@@ -228,10 +228,6 @@ export function initCartDrawerUI(showToast) {
             <span>Delivery Fee</span>
             <span>${summary.deliveryFee === 0 ? '<span class="text-free">FREE</span>' : `₹${summary.deliveryFee}`}</span>
           </div>
-          <div class="breakdown-row">
-            <span>Aroma-Lock Freshness Packaging</span>
-            <span class="text-free">FREE</span>
-          </div>
           <div class="breakdown-row row-total">
             <span>Grand Total</span>
             <span class="total-amount">₹${summary.grandTotal.toLocaleString('en-IN')}</span>
@@ -246,7 +242,6 @@ export function initCartDrawerUI(showToast) {
         <div class="drawer-trust-icons">
           <span><i class="ri-shield-check-fill"></i> 256-Bit SSL</span>
           <span><i class="ri-flashlight-fill"></i> Same-Day Dispatch</span>
-          <span><i class="ri-leaf-fill"></i> 100% Pure Coconut Oil</span>
         </div>
       `;
 
