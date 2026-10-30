@@ -1199,6 +1199,28 @@ body.keerthi-redesign-body {
   text-transform: uppercase;
 }
 
+/* Master Brand Emblem Logo in Big Size */
+.hero-brand-logo-wrap {
+  display: block;
+  margin: 0 0 18px 0;
+  max-width: 100%;
+}
+
+.hero-brand-logo-img {
+  display: block;
+  width: 100%;
+  max-width: clamp(280px, 34vw, 420px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.hero-brand-logo-img:hover {
+  transform: translateY(-2px) scale(1.015);
+  filter: drop-shadow(0 14px 30px rgba(202, 165, 95, 0.3)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+}
+
 /* Master Title with Gold Shimmer */
 .hero-master-title {
   font-family: var(--font-serif);
@@ -4040,6 +4062,12 @@ body.keerthi-redesign-body {
   .prestige-highlight {
     font-size: 0.65rem;
     letter-spacing: 1px;
+  }
+  .hero-brand-logo-wrap {
+    margin-bottom: 12px;
+  }
+  .hero-brand-logo-img {
+    max-width: clamp(230px, 70vw, 300px);
   }
   .hero-master-title {
     font-size: clamp(1.85rem, 6.2vw, 2.3rem);

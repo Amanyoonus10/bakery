@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const langBtn = document.getElementById("langSwitchBtn");
   const mainLogo = document.getElementById("mainStoreLogo");
   const footerLogo = document.getElementById("footerStoreLogo");
+  const heroBrandLogo = document.getElementById("heroBrandLogo");
   const langLabel = document.getElementById("langSwitchLabel");
   let currentLang = "en";
 
@@ -57,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (footerLogo) {
       footerLogo.src = srcWebp;
     }
+    if (heroBrandLogo) {
+      heroBrandLogo.src = srcPng;
+    }
     try {
       localStorage.setItem("keerthi_brand_lang", lang);
     } catch (e) {}
@@ -69,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (langBtn) {
     langBtn.addEventListener("click", () => {
       const next = currentLang === "en" ? "ml" : "en";
-      const logos = [mainLogo, preloaderLogo].filter(Boolean);
+      const logos = [mainLogo, footerLogo, heroBrandLogo].filter(Boolean);
       logos.forEach((img) => {
         img.style.transition = "opacity 0.2s ease, transform 0.2s ease";
         img.style.opacity = "0";
