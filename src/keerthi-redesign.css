@@ -1110,21 +1110,168 @@ body.keerthi-redesign-body {
   }
 }
 
-/* ── 3. Royal 2-Column Panoramic Hero Section (Ultra-Impressive Luxury Edition) ── */
-.mockup-hero-section {
+/* ── 3. Full-Bleed Panoramic Hero Section (100vh Luxury Showpiece) ── */
+.mockup-hero-section,
+.mockup-hero-section.hero-fullbleed-panoramic {
   position: relative;
   width: 100%;
-  background-color: #2b040b;
-  background: 
-    radial-gradient(ellipse at 75% 45%, rgba(202, 165, 95, 0.15) 0%, transparent 48%),
-    radial-gradient(circle at 25% 25%, rgba(166, 34, 39, 0.42) 0%, transparent 55%),
-    radial-gradient(ellipse at 60% 40%, #4c0c16 0%, #36060f 40%, #240309 75%, #180206 100%);
-  border-bottom: 1px solid rgba(202, 165, 95, 0.32);
-  padding: 36px 0 40px 0;
+  min-height: calc(100vh - 106px);
+  min-height: calc(100dvh - 106px);
+  height: auto;
+  background-color: #1a0205;
+  border-bottom: 1.5px solid rgba(202, 165, 95, 0.4);
+  padding: 0;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+/* Panoramic Product Backdrop (Edge-to-Edge) */
+.hero-panoramic-stage.hero-product-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: #140204;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-panoramic-stage .hero-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-panoramic-stage .hero-slider-track.is-dragging {
+  cursor: grabbing;
+}
+
+.hero-panoramic-stage .hero-slide-item {
+  flex: 0 0 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panoramic-stage .hero-slide-item picture,
+.hero-panoramic-stage .hero-product-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 72% center;
+  filter: brightness(0.96) contrast(1.04);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-panoramic-stage .hero-slide-item:hover .hero-product-img {
+  transform: scale(1.02);
+}
+
+/* Luxury Vignette Overlay (Rich Deep Burgundy to Translucent) */
+.hero-panoramic-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, 
+      rgba(24, 2, 6, 0.96) 0%, 
+      rgba(32, 3, 9, 0.90) 28%, 
+      rgba(44, 4, 12, 0.72) 48%, 
+      rgba(35, 3, 9, 0.35) 72%, 
+      rgba(20, 2, 5, 0.55) 100%
+    ),
+    linear-gradient(180deg, 
+      rgba(18, 2, 5, 0.5) 0%, 
+      transparent 22%, 
+      transparent 76%, 
+      rgba(18, 2, 5, 0.82) 100%
+    );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Content Container over Panoramic Backdrop */
+.hero-fullbleed-content-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: calc(100vh - 106px);
+  min-height: calc(100dvh - 106px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(32px, 6vh, 70px);
+  padding-bottom: clamp(32px, 6vh, 70px);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.hero-fullbleed-content-container .hero-left-editorial {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: auto;
+}
+
+/* Floating Slide Indicator & Controls (Bottom Right) */
+.hero-panoramic-controls {
+  position: absolute;
+  bottom: clamp(20px, 3.5vh, 36px);
+  right: clamp(20px, 3vw, 44px);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(28, 3, 8, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(202, 165, 95, 0.45);
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+  z-index: 4;
+}
+
+.hero-ctrl-arrow {
+  background: none;
+  border: none;
+  color: var(--kg-tan, #caa55f);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.hero-ctrl-arrow:hover {
+  background: rgba(202, 165, 95, 0.22);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.hero-ctrl-label {
+  color: rgba(254, 245, 234, 0.92);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  user-select: none;
 }
 
 /* Ambient Golden Glow Halo behind Stage */
@@ -4039,9 +4186,38 @@ body.keerthi-redesign-body {
     padding: 10px 18px !important;
   }
 
-  /* Mockup Hero — Royal 2-Column Responsive Layout for Mobile (Elevated Edition) */
-  .mockup-hero-section {
-    padding: 22px 0 18px 0;
+  /* Mockup Hero — Full-Bleed Panoramic Responsive Layout for Mobile */
+  .mockup-hero-section,
+  .mockup-hero-section.hero-fullbleed-panoramic {
+    min-height: calc(100vh - 90px);
+    min-height: calc(100dvh - 90px);
+    padding: 0;
+  }
+  .hero-fullbleed-content-container {
+    min-height: calc(100vh - 90px);
+    min-height: calc(100dvh - 90px);
+    padding: 24px 16px 64px 16px;
+    justify-content: center;
+  }
+  .hero-panoramic-stage .hero-slide-item picture,
+  .hero-panoramic-stage .hero-product-img {
+    object-position: center center;
+  }
+  .hero-panoramic-overlay {
+    background: linear-gradient(180deg, 
+      rgba(22, 2, 6, 0.94) 0%, 
+      rgba(30, 3, 9, 0.86) 50%, 
+      rgba(22, 2, 6, 0.96) 100%
+    );
+  }
+  .hero-panoramic-controls {
+    bottom: 14px;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 5px 12px;
+  }
+  .hero-ctrl-label {
+    font-size: 0.68rem;
   }
   .hero-ambient-glow {
     display: none;

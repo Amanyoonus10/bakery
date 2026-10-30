@@ -826,6 +826,26 @@ function initHeroSlider() {
     }
   });
 
+  // Floating Previous/Next Arrow Controls
+  const prevBtn = document.getElementById("heroSliderPrevBtn");
+  const nextBtn = document.getElementById("heroSliderNextBtn");
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+    });
+  }
+
   // Start auto-advancing
   startAutoSlide();
 }
