@@ -1114,8 +1114,8 @@ body.keerthi-redesign-body {
 .mockup-hero-section {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 106px);
-  min-height: calc(100dvh - 106px);
+  min-height: calc(100vh - 81px);
+  min-height: calc(100dvh - 81px);
   background-color: #2b040b;
   background: 
     radial-gradient(ellipse at 75% 45%, rgba(202, 165, 95, 0.15) 0%, transparent 48%),
@@ -4045,8 +4045,8 @@ body.keerthi-redesign-body {
 
   /* Mockup Hero — 2-Column Responsive Layout for Mobile */
   .mockup-hero-section {
-    min-height: calc(100vh - 90px);
-    min-height: calc(100dvh - 90px);
+    min-height: calc(100vh - 68px);
+    min-height: calc(100dvh - 68px);
     padding: 24px 0 20px 0;
   }
   .hero-ambient-glow {
