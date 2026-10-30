@@ -1349,14 +1349,14 @@ body.keerthi-redesign-body {
 /* Master Brand Emblem Logo in Big Size */
 .hero-brand-logo-wrap {
   display: block;
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   max-width: 100%;
 }
 
 .hero-brand-logo-img {
   display: block;
   width: 100%;
-  max-width: clamp(280px, 34vw, 420px);
+  max-width: clamp(260px, 32vw, 390px);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
