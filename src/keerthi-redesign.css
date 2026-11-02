@@ -1212,18 +1212,18 @@ body.keerthi-redesign-body {
   text-transform: uppercase;
 }
 
-/* Master Brand Emblem Logo in Big Size (Fluid Dual-Constraint Scaling) */
+/* Master Brand Emblem Logo in Big Size */
 .hero-brand-logo-wrap {
   display: block;
-  margin: 0 0 clamp(6px, 1.3vh, 14px) 0;
+  margin: 0 0 clamp(8px, 1.6vh, 18px) 0;
   max-width: 100%;
 }
 
 .hero-brand-logo-img {
   display: block;
-  width: auto;
-  height: clamp(54px, min(9vw, 10.5vh), 115px);
-  max-width: min(clamp(220px, 28vw, 420px), 100%);
+  width: 100%;
+  max-width: clamp(280px, 32vw, 420px);
+  height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
@@ -4132,9 +4132,9 @@ body.keerthi-redesign-body {
     margin-bottom: 10px;
   }
   .hero-brand-logo-img {
-    height: clamp(52px, 12vw, 76px);
-    width: auto;
-    max-width: 280px;
+    width: 100%;
+    max-width: clamp(230px, 70vw, 310px);
+    height: auto;
   }
   .hero-master-title {
     font-size: clamp(1.85rem, 6.2vw, 2.3rem);
