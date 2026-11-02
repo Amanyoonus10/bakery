@@ -1234,12 +1234,12 @@ body.keerthi-redesign-body {
   filter: drop-shadow(0 14px 30px rgba(202, 165, 95, 0.3)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
 }
 
-/* Master Title with Gold Shimmer (Adaptive Fluid Typography) */
+/* Master Title with Gold Shimmer (Adaptive Fluid Typography - Clean Normal Sans Font) */
 .hero-master-title {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-sans);
+  font-style: normal;
   font-size: clamp(1.85rem, min(3vw, 4.6vh), 3.4rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   color: #ffffff;
   letter-spacing: -0.5px;
@@ -1249,9 +1249,9 @@ body.keerthi-redesign-body {
 
 .hero-title-line,
 .hero-title-shimmer {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 800;
   background: linear-gradient(120deg, #fbe8c5 0%, #caa55f 30%, #fff2cc 50%, #caa55f 70%, #d8b467 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -1259,15 +1259,17 @@ body.keerthi-redesign-body {
   -webkit-text-fill-color: transparent;
   animation: text-gold-shimmer 6s linear infinite;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .hero-title-since {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.45em;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.46em;
+  font-weight: 700;
   color: #fbe8c5;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   vertical-align: middle;
   margin-left: 10px;
   opacity: 0.95;
