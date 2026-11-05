@@ -57,11 +57,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 100,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 100,
         "shopify_variant_id": 50162114461955,
         "default": true
@@ -82,7 +82,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/11895165-C6AC-4F08-8B83-2ABA9D9DB7C8.png?v=1793903803",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/11895165-C6AC-4F08-8B83-2ABA9D9DB7C8.png?v=1793903803",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/11895165-C6AC-4F08-8B83-2ABA9D9DB7C8.png?v=1793903803",
-    "priceText": "\u20b9100 / Standard Pack",
+    "priceText": "\u20b9100 / 200g",
     "rating": 4.97,
     "reviewCount": 139
   },
@@ -97,11 +97,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pouch",
+    "unit": "100g",
     "variants": [
       {
-        "label": "200g Pouch",
-        "weight": "200g Pouch",
+        "label": "100g",
+        "weight": "100g",
         "price": 55,
         "shopify_variant_id": 50162121572611,
         "default": true
@@ -122,7 +122,7 @@ export const PRODUCTS = [
     "image": "/images/products/keerthi_potato_chips.webp",
     "imageWebp": "/images/products/keerthi_potato_chips.webp",
     "imageCutout": "/images/products/keerthi_potato_chips.png",
-    "priceText": "\u20b955 / 200g Pouch",
+    "priceText": "\u20b955 / 100g",
     "rating": 4.94,
     "reviewCount": 219
   },
@@ -137,11 +137,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 48,
-    "unit": "Standard Pack",
+    "unit": "150g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "150g",
+        "weight": "150g",
         "price": 48,
         "shopify_variant_id": 50162111873283,
         "default": true
@@ -162,7 +162,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/6D4CE638-9694-4155-82D6-54B0CDBB19BF.png?v=1793903638",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/6D4CE638-9694-4155-82D6-54B0CDBB19BF.png?v=1793903638",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/6D4CE638-9694-4155-82D6-54B0CDBB19BF.png?v=1793903638",
-    "priceText": "\u20b948 / Standard Pack",
+    "priceText": "\u20b948 / 150g",
     "rating": 4.93,
     "reviewCount": 219
   },
@@ -177,11 +177,11 @@ export const PRODUCTS = [
     "badge": "Special Choice \u2b50",
     "badgeClass": "bestseller",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50161544659203,
         "default": true
@@ -202,7 +202,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.85,
     "reviewCount": 219
   },
@@ -217,11 +217,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 85,
-    "unit": "200g Pouch",
+    "unit": "150g",
     "variants": [
       {
-        "label": "200g Pouch",
-        "weight": "200g Pouch",
+        "label": "150g",
+        "weight": "150g",
         "price": 85,
         "shopify_variant_id": 50089262285059,
         "default": true
@@ -242,7 +242,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AF58D35E-06EB-476F-ACB3-C5B87A418CFE.png?v=1793616581",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AF58D35E-06EB-476F-ACB3-C5B87A418CFE.png?v=1793616581",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AF58D35E-06EB-476F-ACB3-C5B87A418CFE.png?v=1793616581",
-    "priceText": "\u20b985 / 200g Pouch",
+    "priceText": "\u20b985 / 150g",
     "rating": 4.92,
     "reviewCount": 131
   },
@@ -257,11 +257,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 60,
-    "unit": "200g Pouch",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pouch",
-        "weight": "200g Pouch",
+        "label": "200g",
+        "weight": "200g",
         "price": 60,
         "shopify_variant_id": 50161776951555,
         "default": true
@@ -282,7 +282,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4656C934-5C17-4CD4-978A-D00C4EF11B57.png?v=1793900289",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4656C934-5C17-4CD4-978A-D00C4EF11B57.png?v=1793900289",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4656C934-5C17-4CD4-978A-D00C4EF11B57.png?v=1793900289",
-    "priceText": "\u20b960 / 200g Pouch",
+    "priceText": "\u20b960 / 200g",
     "rating": 4.82,
     "reviewCount": 267
   },
@@ -297,11 +297,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 45,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 45,
         "shopify_variant_id": 50161981063427,
         "default": true
@@ -322,7 +322,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7172887E-4707-43F4-81CC-FEF70293604A.png?v=1793902006",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7172887E-4707-43F4-81CC-FEF70293604A.png?v=1793902006",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7172887E-4707-43F4-81CC-FEF70293604A.png?v=1793902006",
-    "priceText": "\u20b945 / 200g Pack",
+    "priceText": "\u20b945 / 200g",
     "rating": 4.94,
     "reviewCount": 259
   },
@@ -337,11 +337,11 @@ export const PRODUCTS = [
     "badge": "Everyday Snack \u2728",
     "badgeClass": "daily",
     "price": 36,
-    "unit": "200g Pack",
+    "unit": "150g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "150g",
+        "weight": "150g",
         "price": 36,
         "shopify_variant_id": 50162012619011,
         "default": true
@@ -362,7 +362,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/24591DDF-00BF-46CB-BB87-46F1049D65FA.png?v=1793902420",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/24591DDF-00BF-46CB-BB87-46F1049D65FA.png?v=1793902420",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/24591DDF-00BF-46CB-BB87-46F1049D65FA.png?v=1793902420",
-    "priceText": "\u20b936 / 200g Pack",
+    "priceText": "\u20b936 / 150g",
     "rating": 4.97,
     "reviewCount": 235
   },
@@ -377,11 +377,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50161488560387,
         "default": true
@@ -402,7 +402,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/860571CE-3439-44A8-9B07-8C533732E1D0.png?v=1793899019",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/860571CE-3439-44A8-9B07-8C533732E1D0.png?v=1793899019",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/860571CE-3439-44A8-9B07-8C533732E1D0.png?v=1793899019",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.98,
     "reviewCount": 387
   },
@@ -417,11 +417,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 80,
-    "unit": "200g Pack",
+    "unit": "400g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "400g",
+        "weight": "400g",
         "price": 80,
         "shopify_variant_id": 50162104434947,
         "default": true
@@ -442,7 +442,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4AAE4EFC-2444-48EE-A309-AE3F34D17D4A.png?v=1793903469",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4AAE4EFC-2444-48EE-A309-AE3F34D17D4A.png?v=1793903469",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4AAE4EFC-2444-48EE-A309-AE3F34D17D4A.png?v=1793903469",
-    "priceText": "\u20b980 / 200g Pack",
+    "priceText": "\u20b980 / 400g",
     "rating": 4.84,
     "reviewCount": 363
   },
@@ -457,11 +457,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50162015666435,
         "default": true
@@ -482,7 +482,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/D9349280-6882-48FB-8474-8DF28232A0D7.png?v=1793902540",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/D9349280-6882-48FB-8474-8DF28232A0D7.png?v=1793902540",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/D9349280-6882-48FB-8474-8DF28232A0D7.png?v=1793902540",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.91,
     "reviewCount": 267
   },
@@ -497,11 +497,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 65,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 65,
         "shopify_variant_id": 50161874370819,
         "default": true
@@ -522,7 +522,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EA409CDA-497F-482F-9A26-975FDE2D326E.png?v=1793900906",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EA409CDA-497F-482F-9A26-975FDE2D326E.png?v=1793900906",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EA409CDA-497F-482F-9A26-975FDE2D326E.png?v=1793900906",
-    "priceText": "\u20b965 / Standard Pack",
+    "priceText": "\u20b965 / 250g",
     "rating": 4.82,
     "reviewCount": 123
   },
@@ -537,11 +537,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 48,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 48,
         "shopify_variant_id": 50162001740035,
         "default": true
@@ -562,7 +562,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7BBD6CAA-CB7A-490F-8422-539ECBA3FF46.png?v=1793902352",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7BBD6CAA-CB7A-490F-8422-539ECBA3FF46.png?v=1793902352",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7BBD6CAA-CB7A-490F-8422-539ECBA3FF46.png?v=1793902352",
-    "priceText": "\u20b948 / 200g Pack",
+    "priceText": "\u20b948 / 200g",
     "rating": 4.9,
     "reviewCount": 275
   },
@@ -577,11 +577,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 45,
-    "unit": "200g Pack",
+    "unit": "180g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "180g",
+        "weight": "180g",
         "price": 45,
         "shopify_variant_id": 50161989026051,
         "default": true
@@ -602,7 +602,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E78A418-053D-4D10-9173-A2302E03752F.png?v=1793902133",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E78A418-053D-4D10-9173-A2302E03752F.png?v=1793902133",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E78A418-053D-4D10-9173-A2302E03752F.png?v=1793902133",
-    "priceText": "\u20b945 / 200g Pack",
+    "priceText": "\u20b945 / 180g",
     "rating": 4.86,
     "reviewCount": 387
   },
@@ -617,11 +617,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50161655415043,
         "default": true
@@ -642,7 +642,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/26FF918B-CF5E-4361-874E-1BE3C5BC945E.png?v=1793899760",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/26FF918B-CF5E-4361-874E-1BE3C5BC945E.png?v=1793899760",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/26FF918B-CF5E-4361-874E-1BE3C5BC945E.png?v=1793899760",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.92,
     "reviewCount": 339
   },
@@ -657,11 +657,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 48,
-    "unit": "Standard Pack",
+    "unit": "150g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "150g",
+        "weight": "150g",
         "price": 48,
         "shopify_variant_id": 50161398612227,
         "default": true
@@ -682,7 +682,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/89270129-2D5B-43E5-9E7D-8FBE26EB935F.png?v=1793898536",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/89270129-2D5B-43E5-9E7D-8FBE26EB935F.png?v=1793898536",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/89270129-2D5B-43E5-9E7D-8FBE26EB935F.png?v=1793898536",
-    "priceText": "\u20b948 / Standard Pack",
+    "priceText": "\u20b948 / 150g",
     "rating": 4.96,
     "reviewCount": 227
   },
@@ -697,11 +697,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 65,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 65,
         "shopify_variant_id": 50161603772675,
         "default": true
@@ -722,7 +722,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/98FD1912-76A0-4BA7-82F5-890F5F208797.png?v=1793899552",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/98FD1912-76A0-4BA7-82F5-890F5F208797.png?v=1793899552",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/98FD1912-76A0-4BA7-82F5-890F5F208797.png?v=1793899552",
-    "priceText": "\u20b965 / 200g Pack",
+    "priceText": "\u20b965 / 200g",
     "rating": 4.96,
     "reviewCount": 235
   },
@@ -737,11 +737,11 @@ export const PRODUCTS = [
     "badge": "Everyday Snack \u2728",
     "badgeClass": "daily",
     "price": 40,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 40,
         "shopify_variant_id": 50162112626947,
         "default": true
@@ -762,7 +762,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/5725787A-62D5-4270-934D-D8D87E6387E6.png?v=1793903730",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/5725787A-62D5-4270-934D-D8D87E6387E6.png?v=1793903730",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/5725787A-62D5-4270-934D-D8D87E6387E6.png?v=1793903730",
-    "priceText": "\u20b940 / 200g Pack",
+    "priceText": "\u20b940 / 200g",
     "rating": 4.88,
     "reviewCount": 275
   },
@@ -777,11 +777,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50161864081667,
         "default": true
@@ -802,7 +802,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/53FBA51E-2C41-4E76-8D90-55F6940F7428.png?v=1793900789",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/53FBA51E-2C41-4E76-8D90-55F6940F7428.png?v=1793900789",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/53FBA51E-2C41-4E76-8D90-55F6940F7428.png?v=1793900789",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.93,
     "reviewCount": 323
   },
@@ -817,11 +817,11 @@ export const PRODUCTS = [
     "badge": "Ghee Rich \ud83e\uddc8",
     "badgeClass": "royal",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50161694048515,
         "default": true
@@ -842,7 +842,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E99810E-C663-4EB3-AFA0-170D1877E0A6.png?v=1793899865",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E99810E-C663-4EB3-AFA0-170D1877E0A6.png?v=1793899865",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E99810E-C663-4EB3-AFA0-170D1877E0A6.png?v=1793899865",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.86,
     "reviewCount": 315
   },
@@ -857,11 +857,11 @@ export const PRODUCTS = [
     "badge": "Ghee Rich \ud83e\uddc8",
     "badgeClass": "royal",
     "price": 70,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 70,
         "shopify_variant_id": 50161852776707,
         "default": true
@@ -882,7 +882,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/676D37DA-430F-44CD-87A6-FBF8A32E62E0.png?v=1793900601",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/676D37DA-430F-44CD-87A6-FBF8A32E62E0.png?v=1793900601",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/676D37DA-430F-44CD-87A6-FBF8A32E62E0.png?v=1793900601",
-    "priceText": "\u20b970 / 200g Pack",
+    "priceText": "\u20b970 / 200g",
     "rating": 4.85,
     "reviewCount": 219
   },
@@ -897,11 +897,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 50,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 50,
         "shopify_variant_id": 50161963892995,
         "default": true
@@ -922,7 +922,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AE7E54AD-D618-48C0-9410-3AB223A586B3.png?v=1793901847",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AE7E54AD-D618-48C0-9410-3AB223A586B3.png?v=1793901847",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AE7E54AD-D618-48C0-9410-3AB223A586B3.png?v=1793901847",
-    "priceText": "\u20b950 / Standard Pack",
+    "priceText": "\u20b950 / 200g",
     "rating": 4.97,
     "reviewCount": 203
   },
@@ -937,11 +937,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 62,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 62,
         "shopify_variant_id": 50162028773635,
         "default": true
@@ -962,7 +962,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B42B471D-78B3-4220-A1F6-EB440CB3A468.png?v=1793902884",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B42B471D-78B3-4220-A1F6-EB440CB3A468.png?v=1793902884",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B42B471D-78B3-4220-A1F6-EB440CB3A468.png?v=1793902884",
-    "priceText": "\u20b962 / Standard Pack",
+    "priceText": "\u20b962 / 250g",
     "rating": 4.82,
     "reviewCount": 387
   },
@@ -977,11 +977,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 50,
-    "unit": "200g Pouch",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pouch",
-        "weight": "200g Pouch",
+        "label": "200g",
+        "weight": "200g",
         "price": 50,
         "shopify_variant_id": 50161884823811,
         "default": true
@@ -1002,7 +1002,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B270454F-4D32-4722-AB33-95DC9C956EB2.png?v=1793900964",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B270454F-4D32-4722-AB33-95DC9C956EB2.png?v=1793900964",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B270454F-4D32-4722-AB33-95DC9C956EB2.png?v=1793900964",
-    "priceText": "\u20b950 / 200g Pouch",
+    "priceText": "\u20b950 / 200g",
     "rating": 4.82,
     "reviewCount": 387
   },
@@ -1017,11 +1017,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 125,
-    "unit": "Standard Pack",
+    "unit": "500g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "500g",
+        "weight": "500g",
         "price": 125,
         "shopify_variant_id": 50161856905475,
         "default": true
@@ -1042,7 +1042,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E20E2CE4-8AFD-45B8-A330-941241A06B70.png?v=1793900675",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E20E2CE4-8AFD-45B8-A330-941241A06B70.png?v=1793900675",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E20E2CE4-8AFD-45B8-A330-941241A06B70.png?v=1793900675",
-    "priceText": "\u20b9125 / Standard Pack",
+    "priceText": "\u20b9125 / 500g",
     "rating": 4.83,
     "reviewCount": 315
   },
@@ -1057,11 +1057,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 48,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 48,
         "shopify_variant_id": 50162020548867,
         "default": true
@@ -1082,7 +1082,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/60011C0A-08C7-4431-AA68-7FD967B80F3F.png?v=1793902631",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/60011C0A-08C7-4431-AA68-7FD967B80F3F.png?v=1793902631",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/60011C0A-08C7-4431-AA68-7FD967B80F3F.png?v=1793902631",
-    "priceText": "\u20b948 / 200g Pack",
+    "priceText": "\u20b948 / 200g",
     "rating": 4.88,
     "reviewCount": 355
   },
@@ -1097,11 +1097,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50161464443139,
         "default": true
@@ -1122,7 +1122,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/14B9AFFB-46AF-465F-BE23-F8AC16918882.png?v=1793898893",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/14B9AFFB-46AF-465F-BE23-F8AC16918882.png?v=1793898893",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/14B9AFFB-46AF-465F-BE23-F8AC16918882.png?v=1793898893",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.94,
     "reviewCount": 235
   },
@@ -1137,11 +1137,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 140,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 140,
         "shopify_variant_id": 50162068488451,
         "default": true
@@ -1162,7 +1162,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/0D949A97-A6D3-43AC-A4ED-DFFF06C95C7C.png?v=1793903272",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/0D949A97-A6D3-43AC-A4ED-DFFF06C95C7C.png?v=1793903272",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/0D949A97-A6D3-43AC-A4ED-DFFF06C95C7C.png?v=1793903272",
-    "priceText": "\u20b9140 / Standard Pack",
+    "priceText": "\u20b9140 / 250g",
     "rating": 4.92,
     "reviewCount": 379
   },
@@ -1177,11 +1177,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 100,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 100,
         "shopify_variant_id": 50161943773443,
         "default": true
@@ -1202,7 +1202,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4262D923-F7D3-462B-A380-2864D3E94CCC.png?v=1793901648",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4262D923-F7D3-462B-A380-2864D3E94CCC.png?v=1793901648",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4262D923-F7D3-462B-A380-2864D3E94CCC.png?v=1793901648",
-    "priceText": "\u20b9100 / Standard Pack",
+    "priceText": "\u20b9100 / 250g",
     "rating": 4.82,
     "reviewCount": 275
   },
@@ -1217,11 +1217,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50162023891203,
         "default": true
@@ -1242,7 +1242,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/84271A32-3958-4B26-A004-0BE72A75F8F2.png?v=1793902802",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/84271A32-3958-4B26-A004-0BE72A75F8F2.png?v=1793902802",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/84271A32-3958-4B26-A004-0BE72A75F8F2.png?v=1793902802",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.9,
     "reviewCount": 243
   },
@@ -1257,11 +1257,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50161932337411,
         "default": true
@@ -1282,7 +1282,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8CFE6CE7-3AC5-460F-9FEB-79617CFDA056.png?v=1793901446",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8CFE6CE7-3AC5-460F-9FEB-79617CFDA056.png?v=1793901446",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8CFE6CE7-3AC5-460F-9FEB-79617CFDA056.png?v=1793901446",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.88,
     "reviewCount": 123
   },
@@ -1297,11 +1297,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 35,
-    "unit": "Standard Pack",
+    "unit": "120g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "120g",
+        "weight": "120g",
         "price": 35,
         "shopify_variant_id": 50161738744067,
         "default": true
@@ -1322,7 +1322,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/C1F44254-1151-4AA1-A20E-CCBEA8951850.png?v=1793900053",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/C1F44254-1151-4AA1-A20E-CCBEA8951850.png?v=1793900053",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/C1F44254-1151-4AA1-A20E-CCBEA8951850.png?v=1793900053",
-    "priceText": "\u20b935 / Standard Pack",
+    "priceText": "\u20b935 / 120g",
     "rating": 4.95,
     "reviewCount": 395
   },
@@ -1337,11 +1337,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 48,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 48,
         "shopify_variant_id": 50089248588035,
         "default": true
@@ -1362,7 +1362,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4667F430-7655-49F7-848A-1BF75CD8B216.png?v=1793616140",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4667F430-7655-49F7-848A-1BF75CD8B216.png?v=1793616140",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4667F430-7655-49F7-848A-1BF75CD8B216.png?v=1793616140",
-    "priceText": "\u20b948 / Standard Pack",
+    "priceText": "\u20b948 / 200g",
     "rating": 4.92,
     "reviewCount": 147
   },
@@ -1377,11 +1377,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 48,
-    "unit": "Standard Pack",
+    "unit": "150g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "150g",
+        "weight": "150g",
         "price": 48,
         "shopify_variant_id": 50161891049731,
         "default": true
@@ -1402,7 +1402,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/CFFE1B4A-2508-4A21-9D04-83085F358EC3.png?v=1793901079",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/CFFE1B4A-2508-4A21-9D04-83085F358EC3.png?v=1793901079",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/CFFE1B4A-2508-4A21-9D04-83085F358EC3.png?v=1793901079",
-    "priceText": "\u20b948 / Standard Pack",
+    "priceText": "\u20b948 / 150g",
     "rating": 4.84,
     "reviewCount": 267
   },
@@ -1417,11 +1417,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50161937809667,
         "default": true
@@ -1442,7 +1442,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/742A9A4B-2217-4C4B-89BA-04F198584DAF.png?v=1793901541",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/742A9A4B-2217-4C4B-89BA-04F198584DAF.png?v=1793901541",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/742A9A4B-2217-4C4B-89BA-04F198584DAF.png?v=1793901541",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.9,
     "reviewCount": 283
   },
@@ -1457,11 +1457,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 60,
-    "unit": "200g Pack",
+    "unit": "300g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "300g",
+        "weight": "300g",
         "price": 60,
         "shopify_variant_id": 50161571594499,
         "default": true
@@ -1482,7 +1482,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/DC97F4AD-0EA8-4B5C-8FC1-A2B766D31441.png?v=1793899363",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/DC97F4AD-0EA8-4B5C-8FC1-A2B766D31441.png?v=1793899363",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/DC97F4AD-0EA8-4B5C-8FC1-A2B766D31441.png?v=1793899363",
-    "priceText": "\u20b960 / 200g Pack",
+    "priceText": "\u20b960 / 300g",
     "rating": 4.87,
     "reviewCount": 187
   },
@@ -1497,11 +1497,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50161993318659,
         "default": true
@@ -1522,7 +1522,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BE65CA58-A2B3-494C-AAC6-0BD5C7A85C33.png?v=1793902233",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BE65CA58-A2B3-494C-AAC6-0BD5C7A85C33.png?v=1793902233",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BE65CA58-A2B3-494C-AAC6-0BD5C7A85C33.png?v=1793902233",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.93,
     "reviewCount": 347
   },
@@ -1537,11 +1537,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 65,
-    "unit": "Standard Pack",
+    "unit": "260g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "260g",
+        "weight": "260g",
         "price": 65,
         "shopify_variant_id": 50161758306563,
         "default": true
@@ -1562,7 +1562,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/090F1942-7C26-4089-B46A-40B80394FDF9.png?v=1793900128",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/090F1942-7C26-4089-B46A-40B80394FDF9.png?v=1793900128",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/090F1942-7C26-4089-B46A-40B80394FDF9.png?v=1793900128",
-    "priceText": "\u20b965 / Standard Pack",
+    "priceText": "\u20b965 / 260g",
     "rating": 4.95,
     "reviewCount": 363
   },
@@ -1577,11 +1577,11 @@ export const PRODUCTS = [
     "badge": "Everyday Snack \u2728",
     "badgeClass": "daily",
     "price": 36,
-    "unit": "200g Pack",
+    "unit": "150g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "150g",
+        "weight": "150g",
         "price": 36,
         "shopify_variant_id": 50162021859587,
         "default": true
@@ -1602,7 +1602,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FD5B41CC-B61C-4C99-8B20-204C8B9E5234.png?v=1793902722",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FD5B41CC-B61C-4C99-8B20-204C8B9E5234.png?v=1793902722",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FD5B41CC-B61C-4C99-8B20-204C8B9E5234.png?v=1793902722",
-    "priceText": "\u20b936 / 200g Pack",
+    "priceText": "\u20b936 / 150g",
     "rating": 4.83,
     "reviewCount": 131
   },
@@ -1617,11 +1617,11 @@ export const PRODUCTS = [
     "badge": "Everyday Snack \u2728",
     "badgeClass": "daily",
     "price": 30,
-    "unit": "Standard Pack",
+    "unit": "80g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "80g",
+        "weight": "80g",
         "price": 30,
         "shopify_variant_id": 50161954390275,
         "default": true
@@ -1642,7 +1642,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B044BBD0-30D0-4992-B278-366579BAD567.png?v=1793901740",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B044BBD0-30D0-4992-B278-366579BAD567.png?v=1793901740",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B044BBD0-30D0-4992-B278-366579BAD567.png?v=1793901740",
-    "priceText": "\u20b930 / Standard Pack",
+    "priceText": "\u20b930 / 80g",
     "rating": 4.93,
     "reviewCount": 155
   },
@@ -1657,11 +1657,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50161519132931,
         "default": true
@@ -1682,7 +1682,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FE6AE357-D710-4673-AE9D-8F08FAC32F36.png?v=1793899117",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FE6AE357-D710-4673-AE9D-8F08FAC32F36.png?v=1793899117",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FE6AE357-D710-4673-AE9D-8F08FAC32F36.png?v=1793899117",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.85,
     "reviewCount": 123
   },
@@ -1697,11 +1697,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 250,
-    "unit": "500g Pack",
+    "unit": "1 kg",
     "variants": [
       {
-        "label": "500g Pack",
-        "weight": "500g Pack",
+        "label": "1 kg",
+        "weight": "1 kg",
         "price": 250,
         "shopify_variant_id": 50162115608835,
         "default": true
@@ -1722,7 +1722,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E115C3CA-D1EC-4D8A-8BCA-9338AA6E641D.png?v=1793903874",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E115C3CA-D1EC-4D8A-8BCA-9338AA6E641D.png?v=1793903874",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E115C3CA-D1EC-4D8A-8BCA-9338AA6E641D.png?v=1793903874",
-    "priceText": "\u20b9250 / 500g Pack",
+    "priceText": "\u20b9250 / 1 kg",
     "rating": 4.97,
     "reviewCount": 275
   },
@@ -1737,11 +1737,11 @@ export const PRODUCTS = [
     "badge": "Everyday Snack \u2728",
     "badgeClass": "daily",
     "price": 30,
-    "unit": "Standard Pack",
+    "unit": "80g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "80g",
+        "weight": "80g",
         "price": 30,
         "shopify_variant_id": 50161974935811,
         "default": true
@@ -1762,7 +1762,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/81B55F2A-F5E7-4548-8409-354335412504.png?v=1793901934",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/81B55F2A-F5E7-4548-8409-354335412504.png?v=1793901934",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/81B55F2A-F5E7-4548-8409-354335412504.png?v=1793901934",
-    "priceText": "\u20b930 / Standard Pack",
+    "priceText": "\u20b930 / 80g",
     "rating": 4.96,
     "reviewCount": 171
   },
@@ -1777,11 +1777,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 50,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 50,
         "shopify_variant_id": 50162111152387,
         "default": true
@@ -1802,7 +1802,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E61EE76F-7091-4B28-88CA-E9457CCF0868.png?v=1793903511",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E61EE76F-7091-4B28-88CA-E9457CCF0868.png?v=1793903511",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E61EE76F-7091-4B28-88CA-E9457CCF0868.png?v=1793903511",
-    "priceText": "\u20b950 / Standard Pack",
+    "priceText": "\u20b950 / 200g",
     "rating": 4.88,
     "reviewCount": 283
   },
@@ -1817,11 +1817,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 65,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 65,
         "shopify_variant_id": 50161922998531,
         "default": true
@@ -1842,7 +1842,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/2E6C0573-F7C6-4718-BEF5-EE412818CBCD.png?v=1793901348",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/2E6C0573-F7C6-4718-BEF5-EE412818CBCD.png?v=1793901348",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/2E6C0573-F7C6-4718-BEF5-EE412818CBCD.png?v=1793901348",
-    "priceText": "\u20b965 / Standard Pack",
+    "priceText": "\u20b965 / 250g",
     "rating": 4.87,
     "reviewCount": 267
   },
@@ -1857,11 +1857,11 @@ export const PRODUCTS = [
     "badge": "Special Choice \u2b50",
     "badgeClass": "bestseller",
     "price": 70,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 70,
         "shopify_variant_id": 50161812406531,
         "default": true
@@ -1882,7 +1882,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/3631AF7E-B70E-4B80-8C48-3A3B611501D0.png?v=1793900392",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/3631AF7E-B70E-4B80-8C48-3A3B611501D0.png?v=1793900392",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/3631AF7E-B70E-4B80-8C48-3A3B611501D0.png?v=1793900392",
-    "priceText": "\u20b970 / Standard Pack",
+    "priceText": "\u20b970 / 250g",
     "rating": 4.86,
     "reviewCount": 147
   },
@@ -1897,11 +1897,11 @@ export const PRODUCTS = [
     "badge": "Special Choice \u2b50",
     "badgeClass": "bestseller",
     "price": 75,
-    "unit": "Standard Pack",
+    "unit": "250g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "250g",
+        "weight": "250g",
         "price": 75,
         "shopify_variant_id": 50162119311619,
         "default": true
@@ -1922,7 +1922,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/73B1CC8B-DAE5-4587-91EE-5FE7C4525FC0.png?v=1793903924",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/73B1CC8B-DAE5-4587-91EE-5FE7C4525FC0.png?v=1793903924",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/73B1CC8B-DAE5-4587-91EE-5FE7C4525FC0.png?v=1793903924",
-    "priceText": "\u20b975 / Standard Pack",
+    "priceText": "\u20b975 / 250g",
     "rating": 4.88,
     "reviewCount": 123
   },
@@ -1937,11 +1937,11 @@ export const PRODUCTS = [
     "badge": "Special Choice \u2b50",
     "badgeClass": "bestseller",
     "price": 55,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 55,
         "shopify_variant_id": 50162047615235,
         "default": true
@@ -1962,7 +1962,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BEA45342-F053-41DF-8AC9-8A06DF18AE56.png?v=1793903004",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BEA45342-F053-41DF-8AC9-8A06DF18AE56.png?v=1793903004",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BEA45342-F053-41DF-8AC9-8A06DF18AE56.png?v=1793903004",
-    "priceText": "\u20b955 / 200g Pack",
+    "priceText": "\u20b955 / 200g",
     "rating": 4.98,
     "reviewCount": 219
   },
@@ -1977,11 +1977,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 70,
-    "unit": "200g Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pack",
-        "weight": "200g Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 70,
         "shopify_variant_id": 50161839735043,
         "default": true
@@ -2002,7 +2002,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/889D8E2F-0884-45B4-A8A8-DD9AF89F1E75.png?v=1793900523",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/889D8E2F-0884-45B4-A8A8-DD9AF89F1E75.png?v=1793900523",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/889D8E2F-0884-45B4-A8A8-DD9AF89F1E75.png?v=1793900523",
-    "priceText": "\u20b970 / 200g Pack",
+    "priceText": "\u20b970 / 200g",
     "rating": 4.84,
     "reviewCount": 363
   },
@@ -2017,11 +2017,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50162062917891,
         "default": true
@@ -2042,7 +2042,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/32D459CB-7ACC-4F77-9831-E1296F1B5CD7.png?v=1793903150",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/32D459CB-7ACC-4F77-9831-E1296F1B5CD7.png?v=1793903150",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/32D459CB-7ACC-4F77-9831-E1296F1B5CD7.png?v=1793903150",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.84,
     "reviewCount": 395
   },
@@ -2057,11 +2057,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 42,
-    "unit": "Standard Pack",
+    "unit": "150g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "150g",
+        "weight": "150g",
         "price": 42,
         "shopify_variant_id": 50161719705859,
         "default": true
@@ -2082,7 +2082,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8657E4AC-D2D9-4D3A-A42F-B4F76D8F1578.png?v=1793899962",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8657E4AC-D2D9-4D3A-A42F-B4F76D8F1578.png?v=1793899962",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8657E4AC-D2D9-4D3A-A42F-B4F76D8F1578.png?v=1793899962",
-    "priceText": "\u20b942 / Standard Pack",
+    "priceText": "\u20b942 / 150g",
     "rating": 4.82,
     "reviewCount": 347
   },
@@ -2097,11 +2097,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50161626185987,
         "default": true
@@ -2122,7 +2122,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1DF17B80-3D44-41C0-B112-375F4D702719.png?v=1793899658",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1DF17B80-3D44-41C0-B112-375F4D702719.png?v=1793899658",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1DF17B80-3D44-41C0-B112-375F4D702719.png?v=1793899658",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.93,
     "reviewCount": 131
   },
@@ -2137,11 +2137,11 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 52,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 52,
         "shopify_variant_id": 50161915724035,
         "default": true
@@ -2162,7 +2162,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1883C8F0-4CAF-481C-9434-E5B2BEBAD2B3.png?v=1793901246",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1883C8F0-4CAF-481C-9434-E5B2BEBAD2B3.png?v=1793901246",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1883C8F0-4CAF-481C-9434-E5B2BEBAD2B3.png?v=1793901246",
-    "priceText": "\u20b952 / Standard Pack",
+    "priceText": "\u20b952 / 200g",
     "rating": 4.89,
     "reviewCount": 315
   },
@@ -2224,11 +2224,11 @@ export const PRODUCTS = [
     "badge": "Spicy Kick \ud83c\udf36\ufe0f",
     "badgeClass": "spicy",
     "price": 100,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 100,
         "shopify_variant_id": 50161320395011,
         "default": true
@@ -2249,7 +2249,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/125B8749-BE37-458F-BB86-39400D1DBBCD.png?v=1793898284",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/125B8749-BE37-458F-BB86-39400D1DBBCD.png?v=1793898284",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/125B8749-BE37-458F-BB86-39400D1DBBCD.png?v=1793898284",
-    "priceText": "\u20b9100 / Standard Pack",
+    "priceText": "\u20b9100 / 200g",
     "rating": 4.96,
     "reviewCount": 355
   }

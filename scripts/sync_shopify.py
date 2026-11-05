@@ -34,19 +34,30 @@ def get_badge(title, price):
         return ('Everyday Snack ✨', 'daily')
     return ('Fresh Made 🌿', 'fresh')
 
-def get_weight_label(title):
+def get_clean_weight(variant, title):
     t = title.lower()
-    if 'jar' in t:
-        return '250g Jar'
-    elif 'manda' in t:
-        return '500g Pack'
-    elif 'chips' in t:
-        return '200g Pouch'
-    elif 'mixture' in t:
-        return '200g Pack'
-    elif 'rusk' in t or 'biscuit' in t:
-        return '200g Pack'
-    return 'Standard Pack'
+    if 'kozhiyada' in t:
+        return '250g'
+    w = variant.get('weight', 0)
+    u = (variant.get('weight_unit') or 'g').lower()
+    if w and w > 0:
+        if u in ('kg', 'kilogram', 'kilograms'):
+            if w < 1.0:
+                return f"{int(round(w * 1000))}g"
+            elif w == int(w):
+                return f"{int(w)} kg"
+            else:
+                return f"{w} kg"
+        else:
+            return f"{int(round(w))}g"
+    m = re.search(r'(\d+)\s*(g|gm|kg)\b', t)
+    if m:
+        num = m.group(1)
+        unit = m.group(2).lower()
+        if 'k' in unit:
+            return f"{num} kg"
+        return f"{num}g"
+    return '200g'
 
 CUSTOM_VARIANTS = {
     'keerthi-banana-chips': [
@@ -100,7 +111,7 @@ for p in sorted_products:
     img = p['images'][0]['src'] if p.get('images') else '/images/card_banana_chips_clean.jpg'
     category = get_category(title)
     badge, badgeClass = get_badge(title, price)
-    weight_label = get_weight_label(title)
+    weight_label = get_clean_weight(variant, title)
 
     if pid in CUSTOM_VARIANTS:
         prod_variants = CUSTOM_VARIANTS[pid]

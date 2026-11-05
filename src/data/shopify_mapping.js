@@ -31,9 +31,9 @@ export const shopifyMapping = {
     "shopify_price": 100,
     "handle": "upperi-sweet"
   },
-  "keerthi-upperi-sweet-standardpack": {
-    "site_name": "KEERTHI UPPERI SWEET (Standard Pack)",
-    "shopify_title": "Upperi Sweet (Standard Pack)",
+  "keerthi-upperi-sweet-200g": {
+    "site_name": "KEERTHI UPPERI SWEET (200g)",
+    "shopify_title": "Upperi Sweet (200g)",
     "shopify_product_id": 9784705515779,
     "shopify_variant_id": 50162114461955,
     "shopify_price": 100,
@@ -47,9 +47,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "potato-chips"
   },
-  "keerthi-potato-chips-200gpouch": {
-    "site_name": "KEERTHI POTATO CHIPS (200g Pouch)",
-    "shopify_title": "Potato Chips (200g Pouch)",
+  "keerthi-potato-chips-100g": {
+    "site_name": "KEERTHI POTATO CHIPS (100g)",
+    "shopify_title": "Potato Chips (100g)",
     "shopify_product_id": 9784706990339,
     "shopify_variant_id": 50162121572611,
     "shopify_price": 55,
@@ -63,9 +63,9 @@ export const shopifyMapping = {
     "shopify_price": 48,
     "handle": "butter-muruk"
   },
-  "keerthi-butter-muruk-standardpack": {
-    "site_name": "KEERTHI BUTTER MURUK (Standard Pack)",
-    "shopify_title": "Butter Muruk (Standard Pack)",
+  "keerthi-butter-muruk-150g": {
+    "site_name": "KEERTHI BUTTER MURUK (150g)",
+    "shopify_title": "Butter Muruk (150g)",
     "shopify_product_id": 9784704696579,
     "shopify_variant_id": 50162111873283,
     "shopify_price": 48,
@@ -79,9 +79,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "special-mixture"
   },
-  "keerthi-special-mixture-200gpack": {
-    "site_name": "KEERTHI SPECIAL MIXTURE (200g Pack)",
-    "shopify_title": "Special Mixture (200g Pack)",
+  "keerthi-special-mixture-200g": {
+    "site_name": "KEERTHI SPECIAL MIXTURE (200g)",
+    "shopify_title": "Special Mixture (200g)",
     "shopify_product_id": 9784569364739,
     "shopify_variant_id": 50161544659203,
     "shopify_price": 55,
@@ -95,9 +95,9 @@ export const shopifyMapping = {
     "shopify_price": 85,
     "handle": "jackfruit-chips"
   },
-  "keerthi-jackfruit-chips-200gpouch": {
-    "site_name": "KEERTHI JACKFRUIT CHIPS (200g Pouch)",
-    "shopify_title": "Jackfruit Chips (200g Pouch)",
+  "keerthi-jackfruit-chips-150g": {
+    "site_name": "KEERTHI JACKFRUIT CHIPS (150g)",
+    "shopify_title": "Jackfruit Chips (150g)",
     "shopify_product_id": 9771944149251,
     "shopify_variant_id": 50089262285059,
     "shopify_price": 85,
@@ -111,9 +111,9 @@ export const shopifyMapping = {
     "shopify_price": 60,
     "handle": "tapioca-chips"
   },
-  "keerthi-tapioca-chips-200gpouch": {
-    "site_name": "KEERTHI TAPIOCA CHIPS (200g Pouch)",
-    "shopify_title": "Tapioca Chips (200g Pouch)",
+  "keerthi-tapioca-chips-200g": {
+    "site_name": "KEERTHI TAPIOCA CHIPS (200g)",
+    "shopify_title": "Tapioca Chips (200g)",
     "shopify_product_id": 9784633786627,
     "shopify_variant_id": 50161776951555,
     "shopify_price": 60,
@@ -127,9 +127,9 @@ export const shopifyMapping = {
     "shopify_price": 45,
     "handle": "avil-mixture"
   },
-  "keerthi-avil-mixture-200gpack": {
-    "site_name": "KEERTHI AVIL MIXTURE (200g Pack)",
-    "shopify_title": "Avil Mixture (200g Pack)",
+  "keerthi-avil-mixture-200g": {
+    "site_name": "KEERTHI AVIL MIXTURE (200g)",
+    "shopify_title": "Avil Mixture (200g)",
     "shopify_product_id": 9784681922819,
     "shopify_variant_id": 50161981063427,
     "shopify_price": 45,
@@ -143,9 +143,9 @@ export const shopifyMapping = {
     "shopify_price": 36,
     "handle": "baby-rusk"
   },
-  "keerthi-baby-rusk-200gpack": {
-    "site_name": "KEERTHI BABY RUSK (200g Pack)",
-    "shopify_title": "Baby Rusk (200g Pack)",
+  "keerthi-baby-rusk-150g": {
+    "site_name": "KEERTHI BABY RUSK (150g)",
+    "shopify_title": "Baby Rusk (150g)",
     "shopify_product_id": 9784692146435,
     "shopify_variant_id": 50162012619011,
     "shopify_price": 36,
@@ -159,9 +159,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "ball-mixture"
   },
-  "keerthi-ball-mixture-200gpack": {
-    "site_name": "KEERTHI BALL MIXTURE (200g Pack)",
-    "shopify_title": "Ball Mixture (200g Pack)",
+  "keerthi-ball-mixture-200g": {
+    "site_name": "KEERTHI BALL MIXTURE (200g)",
+    "shopify_title": "Ball Mixture (200g)",
     "shopify_product_id": 9784556290307,
     "shopify_variant_id": 50161488560387,
     "shopify_price": 55,
@@ -175,9 +175,9 @@ export const shopifyMapping = {
     "shopify_price": 80,
     "handle": "barli-biscuit"
   },
-  "keerthi-barli-biscuit-200gpack": {
-    "site_name": "KEERTHI BARLI BISCUIT (200g Pack)",
-    "shopify_title": "Barli Biscuit (200g Pack)",
+  "keerthi-barli-biscuit-400g": {
+    "site_name": "KEERTHI BARLI BISCUIT (400g)",
+    "shopify_title": "Barli Biscuit (400g)",
     "shopify_product_id": 9784702992643,
     "shopify_variant_id": 50162104434947,
     "shopify_price": 80,
@@ -191,9 +191,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "burkey"
   },
-  "keerthi-burkey-standardpack": {
-    "site_name": "KEERTHI BURKEY (Standard Pack)",
-    "shopify_title": "Burkey (Standard Pack)",
+  "keerthi-burkey-200g": {
+    "site_name": "KEERTHI BURKEY (200g)",
+    "shopify_title": "Burkey (200g)",
     "shopify_product_id": 9784693424387,
     "shopify_variant_id": 50162015666435,
     "shopify_price": 52,
@@ -207,9 +207,9 @@ export const shopifyMapping = {
     "shopify_price": 65,
     "handle": "chukkappam"
   },
-  "keerthi-chukkappam-standardpack": {
-    "site_name": "KEERTHI CHUKKAPPAM (Standard Pack)",
-    "shopify_title": "Chukkappam (Standard Pack)",
+  "keerthi-chukkappam-250g": {
+    "site_name": "KEERTHI CHUKKAPPAM (250g)",
+    "shopify_title": "Chukkappam (250g)",
     "shopify_product_id": 9784653840643,
     "shopify_variant_id": 50161874370819,
     "shopify_price": 65,
@@ -223,9 +223,9 @@ export const shopifyMapping = {
     "shopify_price": 48,
     "handle": "classic-rusk"
   },
-  "keerthi-classic-rusk-200gpack": {
-    "site_name": "KEERTHI CLASSIC RUSK (200g Pack)",
-    "shopify_title": "Classic Rusk (200g Pack)",
+  "keerthi-classic-rusk-200g": {
+    "site_name": "KEERTHI CLASSIC RUSK (200g)",
+    "shopify_title": "Classic Rusk (200g)",
     "shopify_product_id": 9784690016515,
     "shopify_variant_id": 50162001740035,
     "shopify_price": 48,
@@ -239,9 +239,9 @@ export const shopifyMapping = {
     "shopify_price": 45,
     "handle": "corn-mixture"
   },
-  "keerthi-corn-mixture-200gpack": {
-    "site_name": "KEERTHI CORN MIXTURE (200g Pack)",
-    "shopify_title": "Corn Mixture (200g Pack)",
+  "keerthi-corn-mixture-180g": {
+    "site_name": "KEERTHI CORN MIXTURE (180g)",
+    "shopify_title": "Corn Mixture (180g)",
     "shopify_product_id": 9784684740867,
     "shopify_variant_id": 50161989026051,
     "shopify_price": 45,
@@ -255,9 +255,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "dal-mixture"
   },
-  "keerthi-dal-mixture-200gpack": {
-    "site_name": "KEERTHI DAL MIXTURE (200g Pack)",
-    "shopify_title": "Dal Mixture (200g Pack)",
+  "keerthi-dal-mixture-200g": {
+    "site_name": "KEERTHI DAL MIXTURE (200g)",
+    "shopify_title": "Dal Mixture (200g)",
     "shopify_product_id": 9784607703299,
     "shopify_variant_id": 50161655415043,
     "shopify_price": 55,
@@ -271,9 +271,9 @@ export const shopifyMapping = {
     "shopify_price": 48,
     "handle": "dal-muruk"
   },
-  "keerthi-dal-muruk-standardpack": {
-    "site_name": "KEERTHI DAL MURUK (Standard Pack)",
-    "shopify_title": "Dal Muruk (Standard Pack)",
+  "keerthi-dal-muruk-150g": {
+    "site_name": "KEERTHI DAL MURUK (150g)",
+    "shopify_title": "Dal Muruk (150g)",
     "shopify_product_id": 9784534991107,
     "shopify_variant_id": 50161398612227,
     "shopify_price": 48,
@@ -287,9 +287,9 @@ export const shopifyMapping = {
     "shopify_price": 65,
     "handle": "egg-biscuit"
   },
-  "keerthi-egg-biscuit-200gpack": {
-    "site_name": "KEERTHI EGG BISCUIT (200g Pack)",
-    "shopify_title": "Egg Biscuit (200g Pack)",
+  "keerthi-egg-biscuit-200g": {
+    "site_name": "KEERTHI EGG BISCUIT (200g)",
+    "shopify_title": "Egg Biscuit (200g)",
     "shopify_product_id": 9784592367875,
     "shopify_variant_id": 50161603772675,
     "shopify_price": 65,
@@ -303,9 +303,9 @@ export const shopifyMapping = {
     "shopify_price": 40,
     "handle": "fried-biscuit"
   },
-  "keerthi-fried-biscuit-200gpack": {
-    "site_name": "KEERTHI FRIED BISCUIT (200g Pack)",
-    "shopify_title": "Fried Biscuit (200g Pack)",
+  "keerthi-fried-biscuit-200g": {
+    "site_name": "KEERTHI FRIED BISCUIT (200g)",
+    "shopify_title": "Fried Biscuit (200g)",
     "shopify_product_id": 9784704925955,
     "shopify_variant_id": 50162112626947,
     "shopify_price": 40,
@@ -319,9 +319,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "garlic-mixture"
   },
-  "keerthi-garlic-mixture-200gpack": {
-    "site_name": "KEERTHI GARLIC MIXTURE (200g Pack)",
-    "shopify_title": "Garlic Mixture (200g Pack)",
+  "keerthi-garlic-mixture-200g": {
+    "site_name": "KEERTHI GARLIC MIXTURE (200g)",
+    "shopify_title": "Garlic Mixture (200g)",
     "shopify_product_id": 9784651219203,
     "shopify_variant_id": 50161864081667,
     "shopify_price": 55,
@@ -335,9 +335,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "ghee-burkey"
   },
-  "keerthi-ghee-burkey-standardpack": {
-    "site_name": "KEERTHI GHEE BURKEY (Standard Pack)",
-    "shopify_title": "Ghee Burkey (Standard Pack)",
+  "keerthi-ghee-burkey-200g": {
+    "site_name": "KEERTHI GHEE BURKEY (200g)",
+    "shopify_title": "Ghee Burkey (200g)",
     "shopify_product_id": 9784616780035,
     "shopify_variant_id": 50161694048515,
     "shopify_price": 52,
@@ -351,9 +351,9 @@ export const shopifyMapping = {
     "shopify_price": 70,
     "handle": "ghee-rusk"
   },
-  "keerthi-ghee-rusk-200gpack": {
-    "site_name": "KEERTHI GHEE RUSK (200g Pack)",
-    "shopify_title": "Ghee Rusk (200g Pack)",
+  "keerthi-ghee-rusk-200g": {
+    "site_name": "KEERTHI GHEE RUSK (200g)",
+    "shopify_title": "Ghee Rusk (200g)",
     "shopify_product_id": 9784647352579,
     "shopify_variant_id": 50161852776707,
     "shopify_price": 70,
@@ -367,9 +367,9 @@ export const shopifyMapping = {
     "shopify_price": 50,
     "handle": "idiyunni-roasted"
   },
-  "keerthi-idiyunni-roasted-standardpack": {
-    "site_name": "KEERTHI IDIYUNNI ROASTED (Standard Pack)",
-    "shopify_title": "Idiyunni Roasted (Standard Pack)",
+  "keerthi-idiyunni-roasted-200g": {
+    "site_name": "KEERTHI IDIYUNNI ROASTED (200g)",
+    "shopify_title": "Idiyunni Roasted (200g)",
     "shopify_product_id": 9784677105923,
     "shopify_variant_id": 50161963892995,
     "shopify_price": 50,
@@ -383,9 +383,9 @@ export const shopifyMapping = {
     "shopify_price": 62,
     "handle": "irani-kaja"
   },
-  "keerthi-irani-kaja-standardpack": {
-    "site_name": "KEERTHI IRANI KAJA (Standard Pack)",
-    "shopify_title": "Irani Kaja (Standard Pack)",
+  "keerthi-irani-kaja-250g": {
+    "site_name": "KEERTHI IRANI KAJA (250g)",
+    "shopify_title": "Irani Kaja (250g)",
     "shopify_product_id": 9784695062787,
     "shopify_variant_id": 50162028773635,
     "shopify_price": 62,
@@ -399,9 +399,9 @@ export const shopifyMapping = {
     "shopify_price": 50,
     "handle": "kadukka-chips"
   },
-  "keerthi-kadukka-chips-200gpouch": {
-    "site_name": "KEERTHI KADUKKA CHIPS (200g Pouch)",
-    "shopify_title": "Kadukka Chips (200g Pouch)",
+  "keerthi-kadukka-chips-200g": {
+    "site_name": "KEERTHI KADUKKA CHIPS (200g)",
+    "shopify_title": "Kadukka Chips (200g)",
     "shopify_product_id": 9784656068867,
     "shopify_variant_id": 50161884823811,
     "shopify_price": 50,
@@ -415,9 +415,9 @@ export const shopifyMapping = {
     "shopify_price": 125,
     "handle": "kaja"
   },
-  "keerthi-kaja-standardpack": {
-    "site_name": "KEERTHI KAJA (Standard Pack)",
-    "shopify_title": "Kaja (Standard Pack)",
+  "keerthi-kaja-500g": {
+    "site_name": "KEERTHI KAJA (500g)",
+    "shopify_title": "Kaja (500g)",
     "shopify_product_id": 9784648892675,
     "shopify_variant_id": 50161856905475,
     "shopify_price": 125,
@@ -431,9 +431,9 @@ export const shopifyMapping = {
     "shopify_price": 48,
     "handle": "kolli-biscuit"
   },
-  "keerthi-kolli-biscuit-200gpack": {
-    "site_name": "KEERTHI KOLLI BISCUIT (200g Pack)",
-    "shopify_title": "Kolli Biscuit (200g Pack)",
+  "keerthi-kolli-biscuit-200g": {
+    "site_name": "KEERTHI KOLLI BISCUIT (200g)",
+    "shopify_title": "Kolli Biscuit (200g)",
     "shopify_product_id": 9784693784835,
     "shopify_variant_id": 50162020548867,
     "shopify_price": 48,
@@ -447,9 +447,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "kolli-mixture"
   },
-  "keerthi-kolli-mixture-200gpack": {
-    "site_name": "KEERTHI KOLLI MIXTURE (200g Pack)",
-    "shopify_title": "Kolli Mixture (200g Pack)",
+  "keerthi-kolli-mixture-200g": {
+    "site_name": "KEERTHI KOLLI MIXTURE (200g)",
+    "shopify_title": "Kolli Mixture (200g)",
     "shopify_product_id": 9784548786435,
     "shopify_variant_id": 50161464443139,
     "shopify_price": 55,
@@ -463,9 +463,9 @@ export const shopifyMapping = {
     "shopify_price": 140,
     "handle": "kozhiyada"
   },
-  "keerthi-kozhiyada-standardpack": {
-    "site_name": "KEERTHI KOZHIYADA (Standard Pack)",
-    "shopify_title": "Kozhiyada (Standard Pack)",
+  "keerthi-kozhiyada-250g": {
+    "site_name": "KEERTHI KOZHIYADA (250g)",
+    "shopify_title": "Kozhiyada (250g)",
     "shopify_product_id": 9784699617539,
     "shopify_variant_id": 50162068488451,
     "shopify_price": 140,
@@ -479,9 +479,9 @@ export const shopifyMapping = {
     "shopify_price": 100,
     "handle": "kulfi-cookies"
   },
-  "keerthi-kulfi-cookies-standardpack": {
-    "site_name": "KEERTHI KULFI COOKIES (Standard Pack)",
-    "shopify_title": "Kulfi Cookies (Standard Pack)",
+  "keerthi-kulfi-cookies-250g": {
+    "site_name": "KEERTHI KULFI COOKIES (250g)",
+    "shopify_title": "Kulfi Cookies (250g)",
     "shopify_product_id": 9784671666435,
     "shopify_variant_id": 50161943773443,
     "shopify_price": 100,
@@ -495,9 +495,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "ladu-mixture"
   },
-  "keerthi-ladu-mixture-200gpack": {
-    "site_name": "KEERTHI LADU MIXTURE (200g Pack)",
-    "shopify_title": "Ladu Mixture (200g Pack)",
+  "keerthi-ladu-mixture-200g": {
+    "site_name": "KEERTHI LADU MIXTURE (200g)",
+    "shopify_title": "Ladu Mixture (200g)",
     "shopify_product_id": 9784694472963,
     "shopify_variant_id": 50162023891203,
     "shopify_price": 55,
@@ -511,9 +511,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "masala-ghoonthi"
   },
-  "keerthi-masala-ghoonthi-standardpack": {
-    "site_name": "KEERTHI MASALA GHOONTHI (Standard Pack)",
-    "shopify_title": "Masala Ghoonthi (Standard Pack)",
+  "keerthi-masala-ghoonthi-200g": {
+    "site_name": "KEERTHI MASALA GHOONTHI (200g)",
+    "shopify_title": "Masala Ghoonthi (200g)",
     "shopify_product_id": 9784667603203,
     "shopify_variant_id": 50161932337411,
     "shopify_price": 52,
@@ -527,9 +527,9 @@ export const shopifyMapping = {
     "shopify_price": 35,
     "handle": "masala-kadala"
   },
-  "keerthi-masala-kadala-standardpack": {
-    "site_name": "KEERTHI MASALA KADALA (Standard Pack)",
-    "shopify_title": "Masala Kadala (Standard Pack)",
+  "keerthi-masala-kadala-120g": {
+    "site_name": "KEERTHI MASALA KADALA (120g)",
+    "shopify_title": "Masala Kadala (120g)",
     "shopify_product_id": 9784626282755,
     "shopify_variant_id": 50161738744067,
     "shopify_price": 35,
@@ -543,9 +543,9 @@ export const shopifyMapping = {
     "shopify_price": 48,
     "handle": "masala-kajoor"
   },
-  "keerthi-masala-kajoor-standardpack": {
-    "site_name": "KEERTHI MASALA KAJOOR (Standard Pack)",
-    "shopify_title": "Masala Kajoor (Standard Pack)",
+  "keerthi-masala-kajoor-200g": {
+    "site_name": "KEERTHI MASALA KAJOOR (200g)",
+    "shopify_title": "Masala Kajoor (200g)",
     "shopify_product_id": 9771941921027,
     "shopify_variant_id": 50089248588035,
     "shopify_price": 48,
@@ -559,9 +559,9 @@ export const shopifyMapping = {
     "shopify_price": 48,
     "handle": "masala-muruk"
   },
-  "keerthi-masala-muruk-standardpack": {
-    "site_name": "KEERTHI MASALA MURUK (Standard Pack)",
-    "shopify_title": "Masala Muruk (Standard Pack)",
+  "keerthi-masala-muruk-150g": {
+    "site_name": "KEERTHI MASALA MURUK (150g)",
+    "shopify_title": "Masala Muruk (150g)",
     "shopify_product_id": 9784657871107,
     "shopify_variant_id": 50161891049731,
     "shopify_price": 48,
@@ -575,9 +575,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "masala-pottiyappam"
   },
-  "keerthi-masala-pottiyappam-standardpack": {
-    "site_name": "KEERTHI MASALA POTTIYAPPAM (Standard Pack)",
-    "shopify_title": "Masala Pottiyappam (Standard Pack)",
+  "keerthi-masala-pottiyappam-200g": {
+    "site_name": "KEERTHI MASALA POTTIYAPPAM (200g)",
+    "shopify_title": "Masala Pottiyappam (200g)",
     "shopify_product_id": 9784669405443,
     "shopify_variant_id": 50161937809667,
     "shopify_price": 52,
@@ -591,9 +591,9 @@ export const shopifyMapping = {
     "shopify_price": 60,
     "handle": "milk-biscuit"
   },
-  "keerthi-milk-biscuit-200gpack": {
-    "site_name": "KEERTHI MILK BISCUIT (200g Pack)",
-    "shopify_title": "Milk Biscuit (200g Pack)",
+  "keerthi-milk-biscuit-300g": {
+    "site_name": "KEERTHI MILK BISCUIT (300g)",
+    "shopify_title": "Milk Biscuit (300g)",
     "shopify_product_id": 9784578408707,
     "shopify_variant_id": 50161571594499,
     "shopify_price": 60,
@@ -607,9 +607,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "olavada"
   },
-  "keerthi-olavada-standardpack": {
-    "site_name": "KEERTHI OLAVADA (Standard Pack)",
-    "shopify_title": "Olavada (Standard Pack)",
+  "keerthi-olavada-200g": {
+    "site_name": "KEERTHI OLAVADA (200g)",
+    "shopify_title": "Olavada (200g)",
     "shopify_product_id": 9784686870787,
     "shopify_variant_id": 50161993318659,
     "shopify_price": 52,
@@ -623,9 +623,9 @@ export const shopifyMapping = {
     "shopify_price": 65,
     "handle": "osmania-cookies"
   },
-  "keerthi-osmania-cookies-standardpack": {
-    "site_name": "KEERTHI OSMANIA COOKIES (Standard Pack)",
-    "shopify_title": "Osmania Cookies (Standard Pack)",
+  "keerthi-osmania-cookies-260g": {
+    "site_name": "KEERTHI OSMANIA COOKIES (260g)",
+    "shopify_title": "Osmania Cookies (260g)",
     "shopify_product_id": 9784630739203,
     "shopify_variant_id": 50161758306563,
     "shopify_price": 65,
@@ -639,9 +639,9 @@ export const shopifyMapping = {
     "shopify_price": 36,
     "handle": "pala-biscuit"
   },
-  "keerthi-pala-biscuit-200gpack": {
-    "site_name": "KEERTHI PALA BISCUIT (200g Pack)",
-    "shopify_title": "Pala Biscuit (200g Pack)",
+  "keerthi-pala-biscuit-150g": {
+    "site_name": "KEERTHI PALA BISCUIT (150g)",
+    "shopify_title": "Pala Biscuit (150g)",
     "shopify_product_id": 9784694014211,
     "shopify_variant_id": 50162021859587,
     "shopify_price": 36,
@@ -655,9 +655,9 @@ export const shopifyMapping = {
     "shopify_price": 30,
     "handle": "pasta-flaims"
   },
-  "keerthi-pasta-flaims-standardpack": {
-    "site_name": "KEERTHI PASTA FLAIMS (Standard Pack)",
-    "shopify_title": "Pasta Flaims (Standard Pack)",
+  "keerthi-pasta-flaims-80g": {
+    "site_name": "KEERTHI PASTA FLAIMS (80g)",
+    "shopify_title": "Pasta Flaims (80g)",
     "shopify_product_id": 9784674615555,
     "shopify_variant_id": 50161954390275,
     "shopify_price": 30,
@@ -671,9 +671,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "payyoli-mixture"
   },
-  "keerthi-payyoli-mixture-200gpack": {
-    "site_name": "KEERTHI PAYYOLI MIXTURE (200g Pack)",
-    "shopify_title": "Payyoli Mixture (200g Pack)",
+  "keerthi-payyoli-mixture-200g": {
+    "site_name": "KEERTHI PAYYOLI MIXTURE (200g)",
+    "shopify_title": "Payyoli Mixture (200g)",
     "shopify_product_id": 9784563237123,
     "shopify_variant_id": 50161519132931,
     "shopify_price": 55,
@@ -687,9 +687,9 @@ export const shopifyMapping = {
     "shopify_price": 250,
     "handle": "rice-manda"
   },
-  "keerthi-rice-manda-500gpack": {
-    "site_name": "KEERTHI RICE MANDA (500g Pack)",
-    "shopify_title": "Rice Manda (500g Pack)",
+  "keerthi-rice-manda-1kg": {
+    "site_name": "KEERTHI RICE MANDA (1 kg)",
+    "shopify_title": "Rice Manda (1 kg)",
     "shopify_product_id": 9784706072835,
     "shopify_variant_id": 50162115608835,
     "shopify_price": 250,
@@ -703,9 +703,9 @@ export const shopifyMapping = {
     "shopify_price": 30,
     "handle": "ring-flaims"
   },
-  "keerthi-ring-flaims-standardpack": {
-    "site_name": "KEERTHI RING FLAIMS (Standard Pack)",
-    "shopify_title": "Ring Flaims (Standard Pack)",
+  "keerthi-ring-flaims-80g": {
+    "site_name": "KEERTHI RING FLAIMS (80g)",
+    "shopify_title": "Ring Flaims (80g)",
     "shopify_product_id": 9784679268611,
     "shopify_variant_id": 50161974935811,
     "shopify_price": 30,
@@ -719,9 +719,9 @@ export const shopifyMapping = {
     "shopify_price": 50,
     "handle": "ring-muruk"
   },
-  "keerthi-ring-muruk-standardpack": {
-    "site_name": "KEERTHI RING MURUK (Standard Pack)",
-    "shopify_title": "Ring Muruk (Standard Pack)",
+  "keerthi-ring-muruk-200g": {
+    "site_name": "KEERTHI RING MURUK (200g)",
+    "shopify_title": "Ring Muruk (200g)",
     "shopify_product_id": 9784703811843,
     "shopify_variant_id": 50162111152387,
     "shopify_price": 50,
@@ -735,9 +735,9 @@ export const shopifyMapping = {
     "shopify_price": 65,
     "handle": "salt-pottiyappam"
   },
-  "keerthi-salt-pottiyappam-standardpack": {
-    "site_name": "KEERTHI SALT POTTIYAPPAM (Standard Pack)",
-    "shopify_title": "Salt Pottiyappam (Standard Pack)",
+  "keerthi-salt-pottiyappam-250g": {
+    "site_name": "KEERTHI SALT POTTIYAPPAM (250g)",
+    "shopify_title": "Salt Pottiyappam (250g)",
     "shopify_product_id": 9784664752387,
     "shopify_variant_id": 50161922998531,
     "shopify_price": 65,
@@ -751,9 +751,9 @@ export const shopifyMapping = {
     "shopify_price": 70,
     "handle": "special-burkey"
   },
-  "keerthi-special-burkey-standardpack": {
-    "site_name": "KEERTHI SPECIAL BURKEY (Standard Pack)",
-    "shopify_title": "Special Burkey (Standard Pack)",
+  "keerthi-special-burkey-250g": {
+    "site_name": "KEERTHI SPECIAL BURKEY (250g)",
+    "shopify_title": "Special Burkey (250g)",
     "shopify_product_id": 9784640176387,
     "shopify_variant_id": 50161812406531,
     "shopify_price": 70,
@@ -767,9 +767,9 @@ export const shopifyMapping = {
     "shopify_price": 75,
     "handle": "special-cup-cake"
   },
-  "keerthi-special-cup-cake-standardpack": {
-    "site_name": "KEERTHI SPECIAL CUP CAKE (Standard Pack)",
-    "shopify_title": "Special Cup Cake (Standard Pack)",
+  "keerthi-special-cup-cake-250g": {
+    "site_name": "KEERTHI SPECIAL CUP CAKE (250g)",
+    "shopify_title": "Special Cup Cake (250g)",
     "shopify_product_id": 9784706597123,
     "shopify_variant_id": 50162119311619,
     "shopify_price": 75,
@@ -783,9 +783,9 @@ export const shopifyMapping = {
     "shopify_price": 55,
     "handle": "special-rusk"
   },
-  "keerthi-special-rusk-200gpack": {
-    "site_name": "KEERTHI SPECIAL RUSK (200g Pack)",
-    "shopify_title": "Special Rusk (200g Pack)",
+  "keerthi-special-rusk-200g": {
+    "site_name": "KEERTHI SPECIAL RUSK (200g)",
+    "shopify_title": "Special Rusk (200g)",
     "shopify_product_id": 9784696668419,
     "shopify_variant_id": 50162047615235,
     "shopify_price": 55,
@@ -799,9 +799,9 @@ export const shopifyMapping = {
     "shopify_price": 70,
     "handle": "spicy-rusk"
   },
-  "keerthi-spicy-rusk-200gpack": {
-    "site_name": "KEERTHI SPICY RUSK (200g Pack)",
-    "shopify_title": "Spicy Rusk (200g Pack)",
+  "keerthi-spicy-rusk-200g": {
+    "site_name": "KEERTHI SPICY RUSK (200g)",
+    "shopify_title": "Spicy Rusk (200g)",
     "shopify_product_id": 9784644501763,
     "shopify_variant_id": 50161839735043,
     "shopify_price": 70,
@@ -815,9 +815,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "sweet-ghoonthi"
   },
-  "keerthi-sweet-ghoonthi-standardpack": {
-    "site_name": "KEERTHI SWEET GHOONTHI (Standard Pack)",
-    "shopify_title": "Sweet Ghoonthi (Standard Pack)",
+  "keerthi-sweet-ghoonthi-200g": {
+    "site_name": "KEERTHI SWEET GHOONTHI (200g)",
+    "shopify_title": "Sweet Ghoonthi (200g)",
     "shopify_product_id": 9784698536195,
     "shopify_variant_id": 50162062917891,
     "shopify_price": 52,
@@ -831,9 +831,9 @@ export const shopifyMapping = {
     "shopify_price": 42,
     "handle": "sweet-kari"
   },
-  "keerthi-sweet-kari-standardpack": {
-    "site_name": "KEERTHI SWEET KARI (Standard Pack)",
-    "shopify_title": "Sweet Kari (Standard Pack)",
+  "keerthi-sweet-kari-150g": {
+    "site_name": "KEERTHI SWEET KARI (150g)",
+    "shopify_title": "Sweet Kari (150g)",
     "shopify_product_id": 9784622645507,
     "shopify_variant_id": 50161719705859,
     "shopify_price": 42,
@@ -847,9 +847,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "sweet-n-salt-pottiyappam"
   },
-  "keerthi-sweet-n-salt-pottiyappam-standardpack": {
-    "site_name": "KEERTHI SWEET N SALT POTTIYAPPAM (Standard Pack)",
-    "shopify_title": "Sweet n Salt Pottiyappam (Standard Pack)",
+  "keerthi-sweet-n-salt-pottiyappam-200g": {
+    "site_name": "KEERTHI SWEET N SALT POTTIYAPPAM (200g)",
+    "shopify_title": "Sweet n Salt Pottiyappam (200g)",
     "shopify_product_id": 9784599970051,
     "shopify_variant_id": 50161626185987,
     "shopify_price": 52,
@@ -863,9 +863,9 @@ export const shopifyMapping = {
     "shopify_price": 52,
     "handle": "sweet-pottiyappam"
   },
-  "keerthi-sweet-pottiyappam-standardpack": {
-    "site_name": "KEERTHI SWEET POTTIYAPPAM (Standard Pack)",
-    "shopify_title": "Sweet Pottiyappam (Standard Pack)",
+  "keerthi-sweet-pottiyappam-200g": {
+    "site_name": "KEERTHI SWEET POTTIYAPPAM (200g)",
+    "shopify_title": "Sweet Pottiyappam (200g)",
     "shopify_product_id": 9784662655235,
     "shopify_variant_id": 50161915724035,
     "shopify_price": 52,
@@ -903,9 +903,9 @@ export const shopifyMapping = {
     "shopify_price": 100,
     "handle": "upperi-masala"
   },
-  "keerthi-upperi-masala-standardpack": {
-    "site_name": "KEERTHI UPPERI MASALA (Standard Pack)",
-    "shopify_title": "Upperi Masala (Standard Pack)",
+  "keerthi-upperi-masala-200g": {
+    "site_name": "KEERTHI UPPERI MASALA (200g)",
+    "shopify_title": "Upperi Masala (200g)",
     "shopify_product_id": 9784517165315,
     "shopify_variant_id": 50161320395011,
     "shopify_price": 100,
