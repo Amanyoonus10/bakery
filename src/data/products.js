@@ -39,9 +39,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B4BDBCDA-E357-4F54-B05E-F3525DA939B2.png?v=1793678326",
-    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B4BDBCDA-E357-4F54-B05E-F3525DA939B2.png?v=1793678326",
-    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B4BDBCDA-E357-4F54-B05E-F3525DA939B2.png?v=1793678326",
+    "image": "/images/products/keerthi_kerala_banana_chips.webp",
+    "imageWebp": "/images/products/keerthi_kerala_banana_chips.webp",
+    "imageCutout": "/images/products_blum/keerthi_kerala_banana_chips_transparent.png",
     "priceText": "\u20b9100 / 200g",
     "rating": 4.82,
     "reviewCount": 203
@@ -119,9 +119,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EDC591C6-68C3-4354-9063-5630F0E2508C.png?v=1793904095",
-    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EDC591C6-68C3-4354-9063-5630F0E2508C.png?v=1793904095",
-    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EDC591C6-68C3-4354-9063-5630F0E2508C.png?v=1793904095",
+    "image": "/images/products/keerthi_potato_chips.webp",
+    "imageWebp": "/images/products/keerthi_potato_chips.webp",
+    "imageCutout": "/images/products/keerthi_potato_chips.png",
     "priceText": "\u20b955 / 200g Pouch",
     "rating": 4.94,
     "reviewCount": 219

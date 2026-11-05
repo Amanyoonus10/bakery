@@ -2711,7 +2711,7 @@ body.keerthi-redesign-body {
   background: #ffffff;
   border: 1.5px solid rgba(196, 142, 76, 0.35);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
-  padding: 0;
+  padding: 10px;
 }
 
 .catalogue-showcase-frame .haldiram-title {
@@ -3231,7 +3231,7 @@ body.keerthi-redesign-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 10px;
   cursor: pointer;
   margin-bottom: 12px;
   border: 1.5px solid rgba(196, 142, 76, 0.35);
@@ -3241,10 +3241,10 @@ body.keerthi-redesign-body {
 .haldiram-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
-  filter: none;
+  filter: drop-shadow(0 6px 14px rgba(45, 20, 10, 0.12));
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -3542,7 +3542,7 @@ body.keerthi-redesign-body {
   .haldiram-img-box {
     min-height: 140px;
     max-height: 165px;
-    padding: 8px 6px;
+    padding: 8px;
   }
   .haldiram-title {
     font-size: 0.84rem;

@@ -59,6 +59,19 @@ CUSTOM_VARIANTS = {
     ]
 }
 
+OPTIMIZED_IMAGES = {
+    'keerthi-banana-chips': {
+        'image': '/images/products/keerthi_kerala_banana_chips.webp',
+        'imageWebp': '/images/products/keerthi_kerala_banana_chips.webp',
+        'imageCutout': '/images/products_blum/keerthi_kerala_banana_chips_transparent.png'
+    },
+    'keerthi-potato-chips': {
+        'image': '/images/products/keerthi_potato_chips.webp',
+        'imageWebp': '/images/products/keerthi_potato_chips.webp',
+        'imageCutout': '/images/products/keerthi_potato_chips.png'
+    }
+}
+
 new_products = []
 new_mapping = {}
 
@@ -104,6 +117,11 @@ for p in sorted_products:
             }
         ]
     
+    opt_img = OPTIMIZED_IMAGES.get(pid, {})
+    img_main = opt_img.get('image', img)
+    img_webp = opt_img.get('imageWebp', img)
+    img_cutout = opt_img.get('imageCutout', img)
+
     prod_obj = {
         'id': pid,
         'shopify_id': p['id'],
@@ -123,9 +141,9 @@ for p in sorted_products:
         'description': f'Freshly handcrafted Keerthi {title} prepared with pure ingredients and traditional Malabar craftsmanship.',
         'nutrition': 'Energy: 480 kcal, Protein: 8.5g, Carbohydrates: 54g, Fat: 22g (Per 100g)',
         'tags': [category, handle, 'authentic', 'kerala-bakery', 'malabar'],
-        'image': img,
-        'imageWebp': img,
-        'imageCutout': img,
+        'image': img_main,
+        'imageWebp': img_webp,
+        'imageCutout': img_cutout,
         'priceText': f'₹{price} / {weight_label}',
         'rating': round(4.82 + ((p['id'] % 17) * 0.01), 2),
         'reviewCount': int(120 + (p['id'] % 280))
