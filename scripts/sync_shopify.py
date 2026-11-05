@@ -129,16 +129,10 @@ for p in sorted_products:
             }
         ]
     
-    opt_file = f"public/images/products_optimized/{pid}.webp"
-    if os.path.exists(opt_file):
-        local_img = f"/images/products_optimized/{pid}.webp"
-    else:
-        local_img = img
-
     opt_img = OPTIMIZED_IMAGES.get(pid, {})
-    img_main = opt_img.get('image', local_img)
-    img_webp = opt_img.get('imageWebp', local_img)
-    img_cutout = opt_img.get('imageCutout', local_img)
+    img_main = opt_img.get('image', img)
+    img_webp = opt_img.get('imageWebp', img)
+    img_cutout = opt_img.get('imageCutout', img)
 
     prod_obj = {
         'id': pid,

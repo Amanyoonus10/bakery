@@ -1038,7 +1038,7 @@ body.haldiram-theme-body {
 .haldiram-card-img-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   background: #ffffff;
   overflow: hidden;
   cursor: pointer;

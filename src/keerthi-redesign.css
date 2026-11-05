@@ -3223,7 +3223,7 @@ body.keerthi-redesign-body {
 /* Enhanced Image Container - Crisp Pure White on Peach Gold Frame */
 .haldiram-img-box {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   background: #ffffff;
   border-radius: 12px;
   position: relative;
@@ -3540,8 +3540,9 @@ body.keerthi-redesign-body {
     border-radius: 10px;
   }
   .haldiram-img-box {
-    min-height: 140px;
-    max-height: 165px;
+    aspect-ratio: 4 / 3;
+    min-height: auto;
+    max-height: none;
     padding: 0;
   }
   .haldiram-title {
