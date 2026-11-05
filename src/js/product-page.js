@@ -246,12 +246,14 @@ function renderProductDetails(product) {
   if (checkoutBtn) {
     checkoutBtn.onclick = () => {
       cart.addItem({
-        id: `${product.id}-${selectedWeight}`,
+        productId: product.id,
         name: `${formattedTitle} (${selectedWeight})`,
+        weight: selectedWeight,
         price: currentPrice,
         image: product.image,
-        category: product.category
-      }, quantity);
+        category: product.category,
+        quantity: quantity
+      });
 
       confetti({
         particleCount: 50,
@@ -259,7 +261,7 @@ function renderProductDetails(product) {
         origin: { y: 0.7 }
       });
 
-      showToast(`Added ${quantity}x ${formattedTitle} to Cart!`);
+      showToast(`Added ${quantity}x ${formattedTitle} (${selectedWeight}) to Cart!`);
 
       // Open Express Checkout Modal
       window.dispatchEvent(new CustomEvent("checkout:open"));

@@ -21,12 +21,12 @@ class CartManager {
       const data = localStorage.getItem(STORAGE_KEY);
       if (data) {
         const parsed = JSON.parse(data);
-        // Cleanse any legacy cake test items from previous sessions to keep snacks focus
-        this.items = (parsed.items || []).filter(item => 
-          !item.productId?.toLowerCase().includes("cake") && 
-          !item.productId?.toLowerCase().includes("truffle") && 
-          !item.name?.toLowerCase().includes("cake")
-        );
+        // Purge any legacy cake/truffle items from old mock versions
+        this.items = (parsed.items || []).filter(item => {
+          const name = (item.name || "").toLowerCase();
+          const pid = (item.productId || item.id || "").toLowerCase();
+          return !name.includes("cake") && !name.includes("truffle") && !pid.includes("cake") && !pid.includes("truffle") && Boolean(item.productId || item.id);
+        });
         this.appliedCoupon = parsed.appliedCoupon || null;
         this.specialInstruction = parsed.specialInstruction || "";
         this.deliverySlot = parsed.deliverySlot || this.deliverySlot;
@@ -56,56 +56,41 @@ class CartManager {
     window.dispatchEvent(new CustomEvent("cart:updated", { detail: this.getSummary() }));
   }
 
-  addItem({
-    productId,
-    weight = "1.0 KG",
-    shape = "Round",
-    isEggless = false,
-    messageOnCake = "",
-    customDetails = null,
-    quantity = 1,
-    unitPrice = null,
-    productName = null,
-    productImage = null
-  }) {
-    const product = PRODUCTS.find(p => p.id === productId);
-    const name = productName || (product ? product.name : "Custom Cake");
-    const image = productImage || (product ? product.image : "/images/hero_cake_banner.jpg");
+  addItem(item, fallbackQty = 1) {
+    if (!item) return false;
+    const rawProductId = item.productId || item.id || "";
+    const cleanProductId = rawProductId.replace(/-[0-9]+[a-zA-Z]+$/, "");
+    const product = PRODUCTS.find(p => p.id === cleanProductId || p.id === rawProductId);
 
-    // Calculate item unit price if not explicitly provided
-    let calculatedUnitPrice = unitPrice;
-    if (calculatedUnitPrice === null && product) {
-      const variant = product.variants.find(v => v.weight === weight) || product.variants[0];
-      calculatedUnitPrice = variant.price;
-      if (isEggless && product.egglessAvailable) {
-        calculatedUnitPrice += (product.egglessExtra || 50);
-      }
-      if (shape && product.shapes) {
-        const shapeObj = product.shapes.find(s => s.name === shape);
-        if (shapeObj) {
-          calculatedUnitPrice += shapeObj.priceExtra;
-        }
+    const weight = item.weight || item.selectedWeight || (product?.variants?.[0]?.weight) || "200g";
+    const name = item.productName || item.name || (product ? product.name : "Keerthi Fresh Snack");
+    const image = item.productImage || item.image || (product ? product.image : "/images/card_banana_chips_clean.jpg");
+    
+    let unitPrice = item.unitPrice !== undefined && item.unitPrice !== null ? item.unitPrice : item.price;
+    if (unitPrice === undefined || unitPrice === null) {
+      if (product) {
+        const variant = product.variants?.find(v => v.weight === weight || v.label === weight) || product.variants?.[0];
+        unitPrice = variant?.price || product.price || 100;
+      } else {
+        unitPrice = 100;
       }
     }
 
-    // Unique cart item key based on variant configuration
-    const itemKey = `${productId}_${weight}_${shape}_${isEggless ? "eggless" : "regular"}_${encodeURIComponent(messageOnCake || "")}`;
+    const quantity = parseInt(item.quantity, 10) || parseInt(fallbackQty, 10) || 1;
+    const itemKey = `${rawProductId || cleanProductId}_${weight}`;
 
-    const existingIndex = this.items.findIndex(item => item.itemKey === itemKey);
+    const existingIndex = this.items.findIndex(i => i.itemKey === itemKey);
     if (existingIndex > -1) {
       this.items[existingIndex].quantity += quantity;
+      this.items[existingIndex].unitPrice = unitPrice;
     } else {
       this.items.push({
         itemKey,
-        productId,
+        productId: rawProductId || cleanProductId,
         name,
         image,
         weight,
-        shape,
-        isEggless,
-        messageOnCake: messageOnCake ? messageOnCake.trim() : "",
-        customDetails,
-        unitPrice: calculatedUnitPrice || 650,
+        unitPrice,
         quantity: Math.max(1, quantity)
       });
     }
