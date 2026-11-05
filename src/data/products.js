@@ -10,14 +10,21 @@ export const PRODUCTS = [
     "badge": "Best Seller \ud83c\udf4c",
     "badgeClass": "bestseller",
     "price": 100,
-    "unit": "200g Pouch",
+    "unit": "200g",
     "variants": [
       {
-        "label": "200g Pouch",
-        "weight": "200g Pouch",
+        "label": "200g",
+        "weight": "200g",
         "price": 100,
         "shopify_variant_id": 50103692558595,
         "default": true
+      },
+      {
+        "label": "450g",
+        "weight": "450g",
+        "price": 225,
+        "shopify_variant_id": 50103692558595,
+        "default": false
       }
     ],
     "eyebrow": "AUTHENTIC MALABAR SPECIALTY",
@@ -35,7 +42,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B4BDBCDA-E357-4F54-B05E-F3525DA939B2.png?v=1793678326",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B4BDBCDA-E357-4F54-B05E-F3525DA939B2.png?v=1793678326",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B4BDBCDA-E357-4F54-B05E-F3525DA939B2.png?v=1793678326",
-    "priceText": "\u20b9100 / 200g Pouch",
+    "priceText": "\u20b9100 / 200g",
     "rating": 4.82,
     "reviewCount": 203
   },
@@ -2170,14 +2177,21 @@ export const PRODUCTS = [
     "badge": "Fresh Made \ud83c\udf3f",
     "badgeClass": "fresh",
     "price": 48,
-    "unit": "Standard Pack",
+    "unit": "200g",
     "variants": [
       {
-        "label": "Standard Pack",
-        "weight": "Standard Pack",
+        "label": "200g",
+        "weight": "200g",
         "price": 48,
         "shopify_variant_id": 50161903370499,
         "default": true
+      },
+      {
+        "label": "500g",
+        "weight": "500g",
+        "price": 160,
+        "shopify_variant_id": 50161903370499,
+        "default": false
       }
     ],
     "eyebrow": "AUTHENTIC MALABAR SPECIALTY",
@@ -2195,7 +2209,7 @@ export const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/20CB1431-67DB-4810-892A-1C878E73E96B.png?v=1793901174",
     "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/20CB1431-67DB-4810-892A-1C878E73E96B.png?v=1793901174",
     "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/20CB1431-67DB-4810-892A-1C878E73E96B.png?v=1793901174",
-    "priceText": "\u20b948 / Standard Pack",
+    "priceText": "\u20b948 / 200g",
     "rating": 4.95,
     "reviewCount": 291
   },

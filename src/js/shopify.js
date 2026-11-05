@@ -12,9 +12,15 @@ export const DEFAULT_VARIANT_ID = "50103692558595"; // Banana Chips (Signature S
  * Get the Shopify Variant ID for a given product ID or cart item
  */
 export function getShopifyVariantId(item) {
-  const productId = typeof item === "string" ? item : (item.productId || item.id);
-  if (shopifyMapping[productId] && shopifyMapping[productId].shopify_variant_id) {
-    return String(shopifyMapping[productId].shopify_variant_id);
+  if (item && item.shopifyVariantId) return String(item.shopifyVariantId);
+  const rawId = typeof item === "string" ? item : (item.productId || item.id || "");
+  if (shopifyMapping[rawId] && shopifyMapping[rawId].shopify_variant_id) {
+    return String(shopifyMapping[rawId].shopify_variant_id);
+  }
+  // Try stripping weight suffix, e.g. "keerthi-banana-chips-450g" -> "keerthi-banana-chips"
+  const baseId = rawId.replace(/-[0-9]+[a-zA-Z]+$/, "");
+  if (shopifyMapping[baseId] && shopifyMapping[baseId].shopify_variant_id) {
+    return String(shopifyMapping[baseId].shopify_variant_id);
   }
   return DEFAULT_VARIANT_ID;
 }

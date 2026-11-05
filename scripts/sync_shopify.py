@@ -48,6 +48,17 @@ def get_weight_label(title):
         return '200g Pack'
     return 'Standard Pack'
 
+CUSTOM_VARIANTS = {
+    'keerthi-banana-chips': [
+        {'label': '200g', 'weight': '200g', 'price': 100, 'shopify_variant_id': 50103692558595, 'default': True},
+        {'label': '450g', 'weight': '450g', 'price': 225, 'shopify_variant_id': 50103692558595, 'default': False}
+    ],
+    'keerthi-tomato-muruk': [
+        {'label': '200g', 'weight': '200g', 'price': 48, 'shopify_variant_id': 50161903370499, 'default': True},
+        {'label': '500g', 'weight': '500g', 'price': 160, 'shopify_variant_id': 50161903370499, 'default': False}
+    ]
+}
+
 new_products = []
 new_mapping = {}
 
@@ -77,6 +88,21 @@ for p in sorted_products:
     category = get_category(title)
     badge, badgeClass = get_badge(title, price)
     weight_label = get_weight_label(title)
+
+    if pid in CUSTOM_VARIANTS:
+        prod_variants = CUSTOM_VARIANTS[pid]
+        weight_label = prod_variants[0]['label']
+        price = prod_variants[0]['price']
+    else:
+        prod_variants = [
+            {
+                'label': weight_label,
+                'weight': weight_label,
+                'price': price,
+                'shopify_variant_id': vid,
+                'default': True
+            }
+        ]
     
     prod_obj = {
         'id': pid,
@@ -90,15 +116,7 @@ for p in sorted_products:
         'badgeClass': badgeClass,
         'price': price,
         'unit': weight_label,
-        'variants': [
-            {
-                'label': weight_label,
-                'weight': weight_label,
-                'price': price,
-                'shopify_variant_id': vid,
-                'default': True
-            }
-        ],
+        'variants': prod_variants,
         'eyebrow': 'AUTHENTIC MALABAR SPECIALTY',
         'tagline': f'Pure Quality Ingredients • 100% Authentic • {title}',
         'ingredients': 'Selected premium ingredients, cold-pressed oil, aromatic spices, and natural sea salt',
@@ -122,6 +140,17 @@ for p in sorted_products:
         'shopify_price': price,
         'handle': handle
     }
+
+    for v in prod_variants:
+        w_slug = re.sub(r'[^a-z0-9]+', '', v['label'].lower())
+        new_mapping[f'{pid}-{w_slug}'] = {
+            'site_name': f"{prod_obj['name']} ({v['label']})",
+            'shopify_title': f"{title} ({v['label']})",
+            'shopify_product_id': p['id'],
+            'shopify_variant_id': v.get('shopify_variant_id', vid),
+            'shopify_price': v['price'],
+            'handle': handle
+        }
 
 # Also ensure legacy IDs map to their new counterparts so existing links don't break
 legacy_aliases = {
@@ -180,3 +209,4 @@ with open('src/data/shopify_mapping.js', 'w') as f:
     f.write('export const shopifyMapping = ' + json.dumps(new_mapping, indent=2) + ';\nexport default shopifyMapping;\n')
 
 print(f'Sync complete! {len(new_products)} products saved to products.js and shopify_mapping.js.')
+
