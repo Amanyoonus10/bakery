@@ -3241,10 +3241,10 @@ body.keerthi-redesign-body {
 .haldiram-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(45, 20, 10, 0.08));
+  filter: none;
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
