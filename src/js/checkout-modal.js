@@ -1,4 +1,5 @@
 import { cart } from "./cart.js";
+import { redirectToShopifyCheckout } from "./shopify.js";
 import confetti from "canvas-confetti";
 
 export function initCheckoutModal(showToast) {
@@ -131,7 +132,7 @@ export function initCheckoutModal(showToast) {
 
             <button type="submit" id="place-order-btn" class="btn btn-primary btn-block btn-pay">
               <span class="btn-spinner" style="display:none;"></span>
-              <span class="btn-text">🔒 Place Order • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
+              <span class="btn-text">🔒 Pay via Shopify Checkout • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
             </button>
           </form>
         </div>
@@ -203,42 +204,33 @@ export function initCheckoutModal(showToast) {
     form.onsubmit = (e) => {
       e.preventDefault();
       const placeBtn = modalContent.querySelector("#place-order-btn");
-      const btnText = placeBtn.querySelector(".btn-text");
-      const btnSpinner = placeBtn.querySelector(".btn-spinner");
+      const btnText = placeBtn?.querySelector(".btn-text");
+      const btnSpinner = placeBtn?.querySelector(".btn-spinner");
 
-      // Animate payment processing
-      placeBtn.disabled = true;
-      btnSpinner.style.display = "inline-block";
-      btnText.textContent = "Connecting to Secure Gateway...";
+      if (placeBtn) placeBtn.disabled = true;
+      if (btnSpinner) btnSpinner.style.display = "inline-block";
+      if (btnText) btnText.textContent = "Connecting to Shopify Checkout...";
+
+      const customerName = form.querySelector("#cust-name")?.value || "";
+      const phone = form.querySelector("#cust-phone")?.value || "";
+      const email = form.querySelector("#cust-email")?.value || "";
+      const address = form.querySelector("#cust-address")?.value || "";
+      const city = form.querySelector("#cust-city")?.value || "";
+      const pincode = form.querySelector("#cust-pincode")?.value || "";
+      const summary = cart.getSummary();
 
       setTimeout(() => {
-        btnText.textContent = "Confirming Fresh Snack Order...";
-      }, 900);
-
-      setTimeout(() => {
-        // Trigger celebratory confetti
-        try {
-          confetti({
-            particleCount: 150,
-            spread: 90,
-            origin: { y: 0.55 },
-            colors: ['#0f3822', '#e2b87f', '#10b981', '#165333']
-          });
-        } catch (err) {}
-
-        const orderId = `KB-${Math.floor(100000 + Math.random() * 900000)}`;
-        const customerName = form.querySelector("#cust-name").value || "Valued Customer";
-        const phone = form.querySelector("#cust-phone").value || "98471 23456";
-        const city = form.querySelector("#cust-city").value;
-        const total = cart.getGrandTotal();
-        const items = [...cart.items];
-
-        // Clear cart
-        cart.clear();
-
-        // Render success screen
-        renderOrderSuccess(orderId, customerName, phone, city, total, items);
-      }, 1800);
+        closeCheckout();
+        redirectToShopifyCheckout(summary.items, {
+          name: customerName,
+          phone,
+          email,
+          address,
+          city,
+          pincode,
+          discountCode: summary.appliedCoupon?.code || ""
+        });
+      }, 500);
     };
   }
 

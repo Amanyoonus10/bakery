@@ -1,4 +1,5 @@
 import { cart } from "./cart.js";
+import { redirectToShopifyCheckout } from "./shopify.js";
 
 export function initCartDrawerUI(showToast) {
   const drawer = document.getElementById("cart-drawer");
@@ -235,13 +236,19 @@ export function initCartDrawerUI(showToast) {
         </div>
 
         <button type="button" id="drawer-checkout-btn" class="btn-checkout">
-          <span class="checkout-btn-text">Proceed to Secure Checkout</span>
+          <span class="checkout-btn-text">Proceed to Shopify Checkout</span>
           <span class="checkout-price">₹${summary.grandTotal.toLocaleString('en-IN')} ➔</span>
         </button>
 
+        <div class="drawer-prefill-link-wrap" style="text-align: center; margin: 8px 0 4px 0;">
+          <button type="button" id="drawer-express-modal-btn" style="background: none; border: none; font-size: 12px; color: #8c7355; text-decoration: underline; cursor: pointer; padding: 4px; font-weight: 600;">
+            Pre-fill Delivery Address First ➔
+          </button>
+        </div>
+
         <div class="drawer-trust-icons">
-          <span><i class="ri-shield-check-fill"></i> 256-Bit SSL</span>
-          <span><i class="ri-flashlight-fill"></i> Same-Day Dispatch</span>
+          <span><i class="ri-shield-check-fill"></i> Official Shopify Gateway</span>
+          <span><i class="ri-flashlight-fill"></i> UPI &amp; Cards</span>
         </div>
       `;
 
@@ -324,10 +331,26 @@ export function initCartDrawerUI(showToast) {
       };
     }
 
-    // Checkout button
+    // Checkout button - Direct to Shopify
     const checkoutBtn = drawerFooter.querySelector("#drawer-checkout-btn");
     if (checkoutBtn) {
       checkoutBtn.onclick = () => {
+        const summary = cart.getSummary();
+        if (summary.items.length === 0) {
+          showToast("Your cart is empty! Add snacks first.");
+          return;
+        }
+        closeDrawer();
+        redirectToShopifyCheckout(summary.items, {
+          discountCode: summary.appliedCoupon?.code || ""
+        });
+      };
+    }
+
+    // Optional pre-fill address modal
+    const expressModalBtn = drawerFooter.querySelector("#drawer-express-modal-btn");
+    if (expressModalBtn) {
+      expressModalBtn.onclick = () => {
         closeDrawer();
         window.dispatchEvent(new CustomEvent("checkout:open"));
       };
