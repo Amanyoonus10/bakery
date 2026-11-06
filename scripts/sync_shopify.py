@@ -81,6 +81,11 @@ OPTIMIZED_IMAGES = {
         'image': '/images/products/keerthi_potato_chips.webp',
         'imageWebp': '/images/products/keerthi_potato_chips.webp',
         'imageCutout': '/images/products/keerthi_potato_chips.png'
+    },
+    'keerthi-special-mixture': {
+        'image': '/images/products/keerthi_special_mixture.webp',
+        'imageWebp': '/images/products/keerthi_special_mixture.webp',
+        'imageCutout': '/images/products/keerthi_special_mixture.webp'
     }
 }
 

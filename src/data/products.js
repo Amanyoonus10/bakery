@@ -199,9 +199,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
-    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
-    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
+    "image": "/images/products/keerthi_special_mixture.webp",
+    "imageWebp": "/images/products/keerthi_special_mixture.webp",
+    "imageCutout": "/images/products/keerthi_special_mixture.webp",
     "priceText": "\u20b955 / 200g",
     "rating": 4.85,
     "reviewCount": 219
