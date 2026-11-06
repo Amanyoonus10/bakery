@@ -666,11 +666,12 @@ body.haldiram-theme-body {
   object-position: center;
   display: block;
   filter: none;
+  transform: scale(1.08);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .haldiram-hero-image:hover {
-  transform: scale(1.03);
+  transform: scale(1.14);
 }
 
 /* ── Right Column: Info & Buy Box ── */
@@ -1152,11 +1153,12 @@ body.haldiram-theme-body {
   object-position: center;
   display: block;
   filter: none;
+  transform: scale(1.12);
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .haldiram-card-img-wrap:hover .haldiram-card-img {
-  transform: scale(1.05);
+  transform: scale(1.18);
 }
 
 .haldiram-card-badge {
