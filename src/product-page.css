@@ -662,7 +662,7 @@ body.haldiram-theme-body {
 .haldiram-hero-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
   filter: none;
@@ -1148,7 +1148,7 @@ body.haldiram-theme-body {
 .haldiram-card-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
   filter: none;

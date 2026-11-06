@@ -39,9 +39,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-banana-chips.webp",
-    "imageWebp": "/images/products_standardized/keerthi-banana-chips.webp",
-    "imageCutout": "/images/products_standardized/keerthi-banana-chips.webp",
+    "image": "/images/products/keerthi_kerala_banana_chips.webp",
+    "imageWebp": "/images/products/keerthi_kerala_banana_chips.webp",
+    "imageCutout": "/images/products_blum/keerthi_kerala_banana_chips_transparent.png",
     "priceText": "\u20b9100 / 200g",
     "rating": 4.82,
     "reviewCount": 203
@@ -79,9 +79,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-upperi-sweet.webp",
-    "imageWebp": "/images/products_standardized/keerthi-upperi-sweet.webp",
-    "imageCutout": "/images/products_standardized/keerthi-upperi-sweet.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/11895165-C6AC-4F08-8B83-2ABA9D9DB7C8.png?v=1793903803",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/11895165-C6AC-4F08-8B83-2ABA9D9DB7C8.png?v=1793903803",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/11895165-C6AC-4F08-8B83-2ABA9D9DB7C8.png?v=1793903803",
     "priceText": "\u20b9100 / 200g",
     "rating": 4.97,
     "reviewCount": 139
@@ -119,9 +119,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-potato-chips.webp",
-    "imageWebp": "/images/products_standardized/keerthi-potato-chips.webp",
-    "imageCutout": "/images/products_standardized/keerthi-potato-chips.webp",
+    "image": "/images/products/keerthi_potato_chips.webp",
+    "imageWebp": "/images/products/keerthi_potato_chips.webp",
+    "imageCutout": "/images/products/keerthi_potato_chips.png",
     "priceText": "\u20b955 / 100g",
     "rating": 4.94,
     "reviewCount": 219
@@ -159,9 +159,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-butter-muruk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-butter-muruk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-butter-muruk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/6D4CE638-9694-4155-82D6-54B0CDBB19BF.png?v=1793903638",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/6D4CE638-9694-4155-82D6-54B0CDBB19BF.png?v=1793903638",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/6D4CE638-9694-4155-82D6-54B0CDBB19BF.png?v=1793903638",
     "priceText": "\u20b948 / 150g",
     "rating": 4.93,
     "reviewCount": 219
@@ -199,9 +199,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-special-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-special-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-special-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4372AE88-8206-415B-BD7B-CF958CF25E7A.png?v=1793899215",
     "priceText": "\u20b955 / 200g",
     "rating": 4.85,
     "reviewCount": 219
@@ -239,9 +239,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-jackfruit-chips.webp",
-    "imageWebp": "/images/products_standardized/keerthi-jackfruit-chips.webp",
-    "imageCutout": "/images/products_standardized/keerthi-jackfruit-chips.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AF58D35E-06EB-476F-ACB3-C5B87A418CFE.png?v=1793616581",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AF58D35E-06EB-476F-ACB3-C5B87A418CFE.png?v=1793616581",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AF58D35E-06EB-476F-ACB3-C5B87A418CFE.png?v=1793616581",
     "priceText": "\u20b985 / 150g",
     "rating": 4.92,
     "reviewCount": 131
@@ -279,9 +279,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-tapioca-chips.webp",
-    "imageWebp": "/images/products_standardized/keerthi-tapioca-chips.webp",
-    "imageCutout": "/images/products_standardized/keerthi-tapioca-chips.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4656C934-5C17-4CD4-978A-D00C4EF11B57.png?v=1793900289",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4656C934-5C17-4CD4-978A-D00C4EF11B57.png?v=1793900289",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4656C934-5C17-4CD4-978A-D00C4EF11B57.png?v=1793900289",
     "priceText": "\u20b960 / 200g",
     "rating": 4.82,
     "reviewCount": 267
@@ -319,9 +319,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-avil-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-avil-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-avil-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7172887E-4707-43F4-81CC-FEF70293604A.png?v=1793902006",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7172887E-4707-43F4-81CC-FEF70293604A.png?v=1793902006",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7172887E-4707-43F4-81CC-FEF70293604A.png?v=1793902006",
     "priceText": "\u20b945 / 200g",
     "rating": 4.94,
     "reviewCount": 259
@@ -359,9 +359,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-baby-rusk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-baby-rusk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-baby-rusk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/24591DDF-00BF-46CB-BB87-46F1049D65FA.png?v=1793902420",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/24591DDF-00BF-46CB-BB87-46F1049D65FA.png?v=1793902420",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/24591DDF-00BF-46CB-BB87-46F1049D65FA.png?v=1793902420",
     "priceText": "\u20b936 / 150g",
     "rating": 4.97,
     "reviewCount": 235
@@ -399,9 +399,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-ball-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-ball-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-ball-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/860571CE-3439-44A8-9B07-8C533732E1D0.png?v=1793899019",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/860571CE-3439-44A8-9B07-8C533732E1D0.png?v=1793899019",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/860571CE-3439-44A8-9B07-8C533732E1D0.png?v=1793899019",
     "priceText": "\u20b955 / 200g",
     "rating": 4.98,
     "reviewCount": 387
@@ -439,9 +439,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-barli-biscuit.webp",
-    "imageWebp": "/images/products_standardized/keerthi-barli-biscuit.webp",
-    "imageCutout": "/images/products_standardized/keerthi-barli-biscuit.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4AAE4EFC-2444-48EE-A309-AE3F34D17D4A.png?v=1793903469",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4AAE4EFC-2444-48EE-A309-AE3F34D17D4A.png?v=1793903469",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4AAE4EFC-2444-48EE-A309-AE3F34D17D4A.png?v=1793903469",
     "priceText": "\u20b980 / 400g",
     "rating": 4.84,
     "reviewCount": 363
@@ -479,9 +479,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-burkey.webp",
-    "imageWebp": "/images/products_standardized/keerthi-burkey.webp",
-    "imageCutout": "/images/products_standardized/keerthi-burkey.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/D9349280-6882-48FB-8474-8DF28232A0D7.png?v=1793902540",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/D9349280-6882-48FB-8474-8DF28232A0D7.png?v=1793902540",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/D9349280-6882-48FB-8474-8DF28232A0D7.png?v=1793902540",
     "priceText": "\u20b952 / 200g",
     "rating": 4.91,
     "reviewCount": 267
@@ -519,9 +519,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-chukkappam.webp",
-    "imageWebp": "/images/products_standardized/keerthi-chukkappam.webp",
-    "imageCutout": "/images/products_standardized/keerthi-chukkappam.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EA409CDA-497F-482F-9A26-975FDE2D326E.png?v=1793900906",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EA409CDA-497F-482F-9A26-975FDE2D326E.png?v=1793900906",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/EA409CDA-497F-482F-9A26-975FDE2D326E.png?v=1793900906",
     "priceText": "\u20b965 / 250g",
     "rating": 4.82,
     "reviewCount": 123
@@ -559,9 +559,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-classic-rusk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-classic-rusk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-classic-rusk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7BBD6CAA-CB7A-490F-8422-539ECBA3FF46.png?v=1793902352",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7BBD6CAA-CB7A-490F-8422-539ECBA3FF46.png?v=1793902352",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/7BBD6CAA-CB7A-490F-8422-539ECBA3FF46.png?v=1793902352",
     "priceText": "\u20b948 / 200g",
     "rating": 4.9,
     "reviewCount": 275
@@ -599,9 +599,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-corn-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-corn-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-corn-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E78A418-053D-4D10-9173-A2302E03752F.png?v=1793902133",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E78A418-053D-4D10-9173-A2302E03752F.png?v=1793902133",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E78A418-053D-4D10-9173-A2302E03752F.png?v=1793902133",
     "priceText": "\u20b945 / 180g",
     "rating": 4.86,
     "reviewCount": 387
@@ -639,9 +639,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-dal-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-dal-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-dal-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/26FF918B-CF5E-4361-874E-1BE3C5BC945E.png?v=1793899760",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/26FF918B-CF5E-4361-874E-1BE3C5BC945E.png?v=1793899760",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/26FF918B-CF5E-4361-874E-1BE3C5BC945E.png?v=1793899760",
     "priceText": "\u20b955 / 200g",
     "rating": 4.92,
     "reviewCount": 339
@@ -679,9 +679,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-dal-muruk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-dal-muruk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-dal-muruk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/89270129-2D5B-43E5-9E7D-8FBE26EB935F.png?v=1793898536",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/89270129-2D5B-43E5-9E7D-8FBE26EB935F.png?v=1793898536",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/89270129-2D5B-43E5-9E7D-8FBE26EB935F.png?v=1793898536",
     "priceText": "\u20b948 / 150g",
     "rating": 4.96,
     "reviewCount": 227
@@ -719,9 +719,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-egg-biscuit.webp",
-    "imageWebp": "/images/products_standardized/keerthi-egg-biscuit.webp",
-    "imageCutout": "/images/products_standardized/keerthi-egg-biscuit.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/98FD1912-76A0-4BA7-82F5-890F5F208797.png?v=1793899552",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/98FD1912-76A0-4BA7-82F5-890F5F208797.png?v=1793899552",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/98FD1912-76A0-4BA7-82F5-890F5F208797.png?v=1793899552",
     "priceText": "\u20b965 / 200g",
     "rating": 4.96,
     "reviewCount": 235
@@ -759,9 +759,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-fried-biscuit.webp",
-    "imageWebp": "/images/products_standardized/keerthi-fried-biscuit.webp",
-    "imageCutout": "/images/products_standardized/keerthi-fried-biscuit.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/5725787A-62D5-4270-934D-D8D87E6387E6.png?v=1793903730",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/5725787A-62D5-4270-934D-D8D87E6387E6.png?v=1793903730",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/5725787A-62D5-4270-934D-D8D87E6387E6.png?v=1793903730",
     "priceText": "\u20b940 / 200g",
     "rating": 4.88,
     "reviewCount": 275
@@ -799,9 +799,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-garlic-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-garlic-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-garlic-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/53FBA51E-2C41-4E76-8D90-55F6940F7428.png?v=1793900789",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/53FBA51E-2C41-4E76-8D90-55F6940F7428.png?v=1793900789",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/53FBA51E-2C41-4E76-8D90-55F6940F7428.png?v=1793900789",
     "priceText": "\u20b955 / 200g",
     "rating": 4.93,
     "reviewCount": 323
@@ -839,9 +839,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-ghee-burkey.webp",
-    "imageWebp": "/images/products_standardized/keerthi-ghee-burkey.webp",
-    "imageCutout": "/images/products_standardized/keerthi-ghee-burkey.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E99810E-C663-4EB3-AFA0-170D1877E0A6.png?v=1793899865",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E99810E-C663-4EB3-AFA0-170D1877E0A6.png?v=1793899865",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/9E99810E-C663-4EB3-AFA0-170D1877E0A6.png?v=1793899865",
     "priceText": "\u20b952 / 200g",
     "rating": 4.86,
     "reviewCount": 315
@@ -879,9 +879,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-ghee-rusk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-ghee-rusk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-ghee-rusk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/676D37DA-430F-44CD-87A6-FBF8A32E62E0.png?v=1793900601",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/676D37DA-430F-44CD-87A6-FBF8A32E62E0.png?v=1793900601",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/676D37DA-430F-44CD-87A6-FBF8A32E62E0.png?v=1793900601",
     "priceText": "\u20b970 / 200g",
     "rating": 4.85,
     "reviewCount": 219
@@ -919,9 +919,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-idiyunni-roasted.webp",
-    "imageWebp": "/images/products_standardized/keerthi-idiyunni-roasted.webp",
-    "imageCutout": "/images/products_standardized/keerthi-idiyunni-roasted.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AE7E54AD-D618-48C0-9410-3AB223A586B3.png?v=1793901847",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AE7E54AD-D618-48C0-9410-3AB223A586B3.png?v=1793901847",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/AE7E54AD-D618-48C0-9410-3AB223A586B3.png?v=1793901847",
     "priceText": "\u20b950 / 200g",
     "rating": 4.97,
     "reviewCount": 203
@@ -959,9 +959,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-irani-kaja.webp",
-    "imageWebp": "/images/products_standardized/keerthi-irani-kaja.webp",
-    "imageCutout": "/images/products_standardized/keerthi-irani-kaja.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B42B471D-78B3-4220-A1F6-EB440CB3A468.png?v=1793902884",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B42B471D-78B3-4220-A1F6-EB440CB3A468.png?v=1793902884",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B42B471D-78B3-4220-A1F6-EB440CB3A468.png?v=1793902884",
     "priceText": "\u20b962 / 250g",
     "rating": 4.82,
     "reviewCount": 387
@@ -999,9 +999,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-kadukka-chips.webp",
-    "imageWebp": "/images/products_standardized/keerthi-kadukka-chips.webp",
-    "imageCutout": "/images/products_standardized/keerthi-kadukka-chips.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B270454F-4D32-4722-AB33-95DC9C956EB2.png?v=1793900964",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B270454F-4D32-4722-AB33-95DC9C956EB2.png?v=1793900964",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B270454F-4D32-4722-AB33-95DC9C956EB2.png?v=1793900964",
     "priceText": "\u20b950 / 200g",
     "rating": 4.82,
     "reviewCount": 387
@@ -1039,9 +1039,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-kaja.webp",
-    "imageWebp": "/images/products_standardized/keerthi-kaja.webp",
-    "imageCutout": "/images/products_standardized/keerthi-kaja.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E20E2CE4-8AFD-45B8-A330-941241A06B70.png?v=1793900675",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E20E2CE4-8AFD-45B8-A330-941241A06B70.png?v=1793900675",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E20E2CE4-8AFD-45B8-A330-941241A06B70.png?v=1793900675",
     "priceText": "\u20b9125 / 500g",
     "rating": 4.83,
     "reviewCount": 315
@@ -1079,9 +1079,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-kolli-biscuit.webp",
-    "imageWebp": "/images/products_standardized/keerthi-kolli-biscuit.webp",
-    "imageCutout": "/images/products_standardized/keerthi-kolli-biscuit.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/60011C0A-08C7-4431-AA68-7FD967B80F3F.png?v=1793902631",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/60011C0A-08C7-4431-AA68-7FD967B80F3F.png?v=1793902631",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/60011C0A-08C7-4431-AA68-7FD967B80F3F.png?v=1793902631",
     "priceText": "\u20b948 / 200g",
     "rating": 4.88,
     "reviewCount": 355
@@ -1119,9 +1119,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-kolli-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-kolli-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-kolli-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/14B9AFFB-46AF-465F-BE23-F8AC16918882.png?v=1793898893",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/14B9AFFB-46AF-465F-BE23-F8AC16918882.png?v=1793898893",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/14B9AFFB-46AF-465F-BE23-F8AC16918882.png?v=1793898893",
     "priceText": "\u20b955 / 200g",
     "rating": 4.94,
     "reviewCount": 235
@@ -1159,9 +1159,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-kozhiyada.webp",
-    "imageWebp": "/images/products_standardized/keerthi-kozhiyada.webp",
-    "imageCutout": "/images/products_standardized/keerthi-kozhiyada.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/0D949A97-A6D3-43AC-A4ED-DFFF06C95C7C.png?v=1793903272",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/0D949A97-A6D3-43AC-A4ED-DFFF06C95C7C.png?v=1793903272",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/0D949A97-A6D3-43AC-A4ED-DFFF06C95C7C.png?v=1793903272",
     "priceText": "\u20b9140 / 250g",
     "rating": 4.92,
     "reviewCount": 379
@@ -1199,9 +1199,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-kulfi-cookies.webp",
-    "imageWebp": "/images/products_standardized/keerthi-kulfi-cookies.webp",
-    "imageCutout": "/images/products_standardized/keerthi-kulfi-cookies.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4262D923-F7D3-462B-A380-2864D3E94CCC.png?v=1793901648",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4262D923-F7D3-462B-A380-2864D3E94CCC.png?v=1793901648",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4262D923-F7D3-462B-A380-2864D3E94CCC.png?v=1793901648",
     "priceText": "\u20b9100 / 250g",
     "rating": 4.82,
     "reviewCount": 275
@@ -1239,9 +1239,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-ladu-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-ladu-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-ladu-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/84271A32-3958-4B26-A004-0BE72A75F8F2.png?v=1793902802",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/84271A32-3958-4B26-A004-0BE72A75F8F2.png?v=1793902802",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/84271A32-3958-4B26-A004-0BE72A75F8F2.png?v=1793902802",
     "priceText": "\u20b955 / 200g",
     "rating": 4.9,
     "reviewCount": 243
@@ -1279,9 +1279,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-masala-ghoonthi.webp",
-    "imageWebp": "/images/products_standardized/keerthi-masala-ghoonthi.webp",
-    "imageCutout": "/images/products_standardized/keerthi-masala-ghoonthi.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8CFE6CE7-3AC5-460F-9FEB-79617CFDA056.png?v=1793901446",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8CFE6CE7-3AC5-460F-9FEB-79617CFDA056.png?v=1793901446",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8CFE6CE7-3AC5-460F-9FEB-79617CFDA056.png?v=1793901446",
     "priceText": "\u20b952 / 200g",
     "rating": 4.88,
     "reviewCount": 123
@@ -1319,9 +1319,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-masala-kadala.webp",
-    "imageWebp": "/images/products_standardized/keerthi-masala-kadala.webp",
-    "imageCutout": "/images/products_standardized/keerthi-masala-kadala.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/C1F44254-1151-4AA1-A20E-CCBEA8951850.png?v=1793900053",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/C1F44254-1151-4AA1-A20E-CCBEA8951850.png?v=1793900053",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/C1F44254-1151-4AA1-A20E-CCBEA8951850.png?v=1793900053",
     "priceText": "\u20b935 / 120g",
     "rating": 4.95,
     "reviewCount": 395
@@ -1359,9 +1359,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-masala-kajoor.webp",
-    "imageWebp": "/images/products_standardized/keerthi-masala-kajoor.webp",
-    "imageCutout": "/images/products_standardized/keerthi-masala-kajoor.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4667F430-7655-49F7-848A-1BF75CD8B216.png?v=1793616140",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4667F430-7655-49F7-848A-1BF75CD8B216.png?v=1793616140",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/4667F430-7655-49F7-848A-1BF75CD8B216.png?v=1793616140",
     "priceText": "\u20b948 / 200g",
     "rating": 4.92,
     "reviewCount": 147
@@ -1399,9 +1399,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-masala-muruk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-masala-muruk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-masala-muruk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/CFFE1B4A-2508-4A21-9D04-83085F358EC3.png?v=1793901079",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/CFFE1B4A-2508-4A21-9D04-83085F358EC3.png?v=1793901079",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/CFFE1B4A-2508-4A21-9D04-83085F358EC3.png?v=1793901079",
     "priceText": "\u20b948 / 150g",
     "rating": 4.84,
     "reviewCount": 267
@@ -1439,9 +1439,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-masala-pottiyappam.webp",
-    "imageWebp": "/images/products_standardized/keerthi-masala-pottiyappam.webp",
-    "imageCutout": "/images/products_standardized/keerthi-masala-pottiyappam.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/742A9A4B-2217-4C4B-89BA-04F198584DAF.png?v=1793901541",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/742A9A4B-2217-4C4B-89BA-04F198584DAF.png?v=1793901541",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/742A9A4B-2217-4C4B-89BA-04F198584DAF.png?v=1793901541",
     "priceText": "\u20b952 / 200g",
     "rating": 4.9,
     "reviewCount": 283
@@ -1479,9 +1479,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-milk-biscuit.webp",
-    "imageWebp": "/images/products_standardized/keerthi-milk-biscuit.webp",
-    "imageCutout": "/images/products_standardized/keerthi-milk-biscuit.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/DC97F4AD-0EA8-4B5C-8FC1-A2B766D31441.png?v=1793899363",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/DC97F4AD-0EA8-4B5C-8FC1-A2B766D31441.png?v=1793899363",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/DC97F4AD-0EA8-4B5C-8FC1-A2B766D31441.png?v=1793899363",
     "priceText": "\u20b960 / 300g",
     "rating": 4.87,
     "reviewCount": 187
@@ -1519,9 +1519,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-olavada.webp",
-    "imageWebp": "/images/products_standardized/keerthi-olavada.webp",
-    "imageCutout": "/images/products_standardized/keerthi-olavada.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BE65CA58-A2B3-494C-AAC6-0BD5C7A85C33.png?v=1793902233",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BE65CA58-A2B3-494C-AAC6-0BD5C7A85C33.png?v=1793902233",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BE65CA58-A2B3-494C-AAC6-0BD5C7A85C33.png?v=1793902233",
     "priceText": "\u20b952 / 200g",
     "rating": 4.93,
     "reviewCount": 347
@@ -1559,9 +1559,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-osmania-cookies.webp",
-    "imageWebp": "/images/products_standardized/keerthi-osmania-cookies.webp",
-    "imageCutout": "/images/products_standardized/keerthi-osmania-cookies.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/090F1942-7C26-4089-B46A-40B80394FDF9.png?v=1793900128",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/090F1942-7C26-4089-B46A-40B80394FDF9.png?v=1793900128",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/090F1942-7C26-4089-B46A-40B80394FDF9.png?v=1793900128",
     "priceText": "\u20b965 / 260g",
     "rating": 4.95,
     "reviewCount": 363
@@ -1599,9 +1599,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-pala-biscuit.webp",
-    "imageWebp": "/images/products_standardized/keerthi-pala-biscuit.webp",
-    "imageCutout": "/images/products_standardized/keerthi-pala-biscuit.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FD5B41CC-B61C-4C99-8B20-204C8B9E5234.png?v=1793902722",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FD5B41CC-B61C-4C99-8B20-204C8B9E5234.png?v=1793902722",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FD5B41CC-B61C-4C99-8B20-204C8B9E5234.png?v=1793902722",
     "priceText": "\u20b936 / 150g",
     "rating": 4.83,
     "reviewCount": 131
@@ -1639,9 +1639,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-pasta-flaims.webp",
-    "imageWebp": "/images/products_standardized/keerthi-pasta-flaims.webp",
-    "imageCutout": "/images/products_standardized/keerthi-pasta-flaims.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B044BBD0-30D0-4992-B278-366579BAD567.png?v=1793901740",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B044BBD0-30D0-4992-B278-366579BAD567.png?v=1793901740",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/B044BBD0-30D0-4992-B278-366579BAD567.png?v=1793901740",
     "priceText": "\u20b930 / 80g",
     "rating": 4.93,
     "reviewCount": 155
@@ -1679,9 +1679,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-payyoli-mixture.webp",
-    "imageWebp": "/images/products_standardized/keerthi-payyoli-mixture.webp",
-    "imageCutout": "/images/products_standardized/keerthi-payyoli-mixture.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FE6AE357-D710-4673-AE9D-8F08FAC32F36.png?v=1793899117",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FE6AE357-D710-4673-AE9D-8F08FAC32F36.png?v=1793899117",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/FE6AE357-D710-4673-AE9D-8F08FAC32F36.png?v=1793899117",
     "priceText": "\u20b955 / 200g",
     "rating": 4.85,
     "reviewCount": 123
@@ -1719,9 +1719,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-rice-manda.webp",
-    "imageWebp": "/images/products_standardized/keerthi-rice-manda.webp",
-    "imageCutout": "/images/products_standardized/keerthi-rice-manda.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E115C3CA-D1EC-4D8A-8BCA-9338AA6E641D.png?v=1793903874",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E115C3CA-D1EC-4D8A-8BCA-9338AA6E641D.png?v=1793903874",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E115C3CA-D1EC-4D8A-8BCA-9338AA6E641D.png?v=1793903874",
     "priceText": "\u20b9250 / 1 kg",
     "rating": 4.97,
     "reviewCount": 275
@@ -1759,9 +1759,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-ring-flaims.webp",
-    "imageWebp": "/images/products_standardized/keerthi-ring-flaims.webp",
-    "imageCutout": "/images/products_standardized/keerthi-ring-flaims.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/81B55F2A-F5E7-4548-8409-354335412504.png?v=1793901934",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/81B55F2A-F5E7-4548-8409-354335412504.png?v=1793901934",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/81B55F2A-F5E7-4548-8409-354335412504.png?v=1793901934",
     "priceText": "\u20b930 / 80g",
     "rating": 4.96,
     "reviewCount": 171
@@ -1799,9 +1799,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-ring-muruk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-ring-muruk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-ring-muruk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E61EE76F-7091-4B28-88CA-E9457CCF0868.png?v=1793903511",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E61EE76F-7091-4B28-88CA-E9457CCF0868.png?v=1793903511",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/E61EE76F-7091-4B28-88CA-E9457CCF0868.png?v=1793903511",
     "priceText": "\u20b950 / 200g",
     "rating": 4.88,
     "reviewCount": 283
@@ -1839,9 +1839,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-salt-pottiyappam.webp",
-    "imageWebp": "/images/products_standardized/keerthi-salt-pottiyappam.webp",
-    "imageCutout": "/images/products_standardized/keerthi-salt-pottiyappam.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/2E6C0573-F7C6-4718-BEF5-EE412818CBCD.png?v=1793901348",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/2E6C0573-F7C6-4718-BEF5-EE412818CBCD.png?v=1793901348",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/2E6C0573-F7C6-4718-BEF5-EE412818CBCD.png?v=1793901348",
     "priceText": "\u20b965 / 250g",
     "rating": 4.87,
     "reviewCount": 267
@@ -1879,9 +1879,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-special-burkey.webp",
-    "imageWebp": "/images/products_standardized/keerthi-special-burkey.webp",
-    "imageCutout": "/images/products_standardized/keerthi-special-burkey.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/3631AF7E-B70E-4B80-8C48-3A3B611501D0.png?v=1793900392",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/3631AF7E-B70E-4B80-8C48-3A3B611501D0.png?v=1793900392",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/3631AF7E-B70E-4B80-8C48-3A3B611501D0.png?v=1793900392",
     "priceText": "\u20b970 / 250g",
     "rating": 4.86,
     "reviewCount": 147
@@ -1919,9 +1919,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-special-cup-cake.webp",
-    "imageWebp": "/images/products_standardized/keerthi-special-cup-cake.webp",
-    "imageCutout": "/images/products_standardized/keerthi-special-cup-cake.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/73B1CC8B-DAE5-4587-91EE-5FE7C4525FC0.png?v=1793903924",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/73B1CC8B-DAE5-4587-91EE-5FE7C4525FC0.png?v=1793903924",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/73B1CC8B-DAE5-4587-91EE-5FE7C4525FC0.png?v=1793903924",
     "priceText": "\u20b975 / 250g",
     "rating": 4.88,
     "reviewCount": 123
@@ -1959,9 +1959,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-special-rusk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-special-rusk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-special-rusk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BEA45342-F053-41DF-8AC9-8A06DF18AE56.png?v=1793903004",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BEA45342-F053-41DF-8AC9-8A06DF18AE56.png?v=1793903004",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/BEA45342-F053-41DF-8AC9-8A06DF18AE56.png?v=1793903004",
     "priceText": "\u20b955 / 200g",
     "rating": 4.98,
     "reviewCount": 219
@@ -1999,9 +1999,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-spicy-rusk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-spicy-rusk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-spicy-rusk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/889D8E2F-0884-45B4-A8A8-DD9AF89F1E75.png?v=1793900523",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/889D8E2F-0884-45B4-A8A8-DD9AF89F1E75.png?v=1793900523",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/889D8E2F-0884-45B4-A8A8-DD9AF89F1E75.png?v=1793900523",
     "priceText": "\u20b970 / 200g",
     "rating": 4.84,
     "reviewCount": 363
@@ -2039,9 +2039,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-sweet-ghoonthi.webp",
-    "imageWebp": "/images/products_standardized/keerthi-sweet-ghoonthi.webp",
-    "imageCutout": "/images/products_standardized/keerthi-sweet-ghoonthi.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/32D459CB-7ACC-4F77-9831-E1296F1B5CD7.png?v=1793903150",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/32D459CB-7ACC-4F77-9831-E1296F1B5CD7.png?v=1793903150",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/32D459CB-7ACC-4F77-9831-E1296F1B5CD7.png?v=1793903150",
     "priceText": "\u20b952 / 200g",
     "rating": 4.84,
     "reviewCount": 395
@@ -2079,9 +2079,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-sweet-kari.webp",
-    "imageWebp": "/images/products_standardized/keerthi-sweet-kari.webp",
-    "imageCutout": "/images/products_standardized/keerthi-sweet-kari.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8657E4AC-D2D9-4D3A-A42F-B4F76D8F1578.png?v=1793899962",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8657E4AC-D2D9-4D3A-A42F-B4F76D8F1578.png?v=1793899962",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/8657E4AC-D2D9-4D3A-A42F-B4F76D8F1578.png?v=1793899962",
     "priceText": "\u20b942 / 150g",
     "rating": 4.82,
     "reviewCount": 347
@@ -2119,9 +2119,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-sweet-n-salt-pottiyappam.webp",
-    "imageWebp": "/images/products_standardized/keerthi-sweet-n-salt-pottiyappam.webp",
-    "imageCutout": "/images/products_standardized/keerthi-sweet-n-salt-pottiyappam.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1DF17B80-3D44-41C0-B112-375F4D702719.png?v=1793899658",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1DF17B80-3D44-41C0-B112-375F4D702719.png?v=1793899658",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1DF17B80-3D44-41C0-B112-375F4D702719.png?v=1793899658",
     "priceText": "\u20b952 / 200g",
     "rating": 4.93,
     "reviewCount": 131
@@ -2159,9 +2159,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-sweet-pottiyappam.webp",
-    "imageWebp": "/images/products_standardized/keerthi-sweet-pottiyappam.webp",
-    "imageCutout": "/images/products_standardized/keerthi-sweet-pottiyappam.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1883C8F0-4CAF-481C-9434-E5B2BEBAD2B3.png?v=1793901246",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1883C8F0-4CAF-481C-9434-E5B2BEBAD2B3.png?v=1793901246",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/1883C8F0-4CAF-481C-9434-E5B2BEBAD2B3.png?v=1793901246",
     "priceText": "\u20b952 / 200g",
     "rating": 4.89,
     "reviewCount": 315
@@ -2206,9 +2206,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-tomato-muruk.webp",
-    "imageWebp": "/images/products_standardized/keerthi-tomato-muruk.webp",
-    "imageCutout": "/images/products_standardized/keerthi-tomato-muruk.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/20CB1431-67DB-4810-892A-1C878E73E96B.png?v=1793901174",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/20CB1431-67DB-4810-892A-1C878E73E96B.png?v=1793901174",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/20CB1431-67DB-4810-892A-1C878E73E96B.png?v=1793901174",
     "priceText": "\u20b948 / 200g",
     "rating": 4.95,
     "reviewCount": 291
@@ -2246,9 +2246,9 @@ export const PRODUCTS = [
       "kerala-bakery",
       "malabar"
     ],
-    "image": "/images/products_standardized/keerthi-upperi-masala.webp",
-    "imageWebp": "/images/products_standardized/keerthi-upperi-masala.webp",
-    "imageCutout": "/images/products_standardized/keerthi-upperi-masala.webp",
+    "image": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/125B8749-BE37-458F-BB86-39400D1DBBCD.png?v=1793898284",
+    "imageWebp": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/125B8749-BE37-458F-BB86-39400D1DBBCD.png?v=1793898284",
+    "imageCutout": "https://cdn.shopify.com/s/files/1/0850/9666/1251/files/125B8749-BE37-458F-BB86-39400D1DBBCD.png?v=1793898284",
     "priceText": "\u20b9100 / 200g",
     "rating": 4.96,
     "reviewCount": 355
