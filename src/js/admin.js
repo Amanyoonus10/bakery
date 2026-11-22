@@ -260,7 +260,7 @@ function renderOrders() {
             </div>
           </div>
 
-          <!-- Column 2: Items in Order -->
+          <!-- Column 2: Items in Order & Bill Details -->
           <div class="order-items-col">
             <h4>Items (${order.items?.length || 0})</h4>
             <div class="order-items-list">
@@ -271,7 +271,25 @@ function renderOrders() {
                 </div>
               `).join('')}
             </div>
-            <div class="order-grand-total">Total Payable: ₹${(Number(order.total) || 0).toLocaleString('en-IN')}</div>
+
+            <!-- Bill Details Section -->
+            <div class="order-bill-details" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px 12px; margin-top:12px;">
+              <div style="font-size:0.75rem; font-weight:800; color:#475569; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; display:flex; align-items:center; gap:5px;">
+                <span>📋</span> Bill Details
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#64748b; margin-bottom:4px;">
+                <span>Item Subtotal</span>
+                <span>₹${(Number(order.subtotal) || Number(order.total) || 0).toLocaleString('en-IN')}</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#64748b; margin-bottom:4px;">
+                <span>Delivery Fee</span>
+                <span style="color:#166534; font-weight:700;">${order.deliveryFee ? `₹${order.deliveryFee}` : 'FREE'}</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:0.92rem; font-weight:900; color:#8d191d; border-top:1px dashed #cbd5e1; padding-top:6px; margin-top:4px;">
+                <span>Total ${isCod ? 'Payable (COD)' : 'Paid'}</span>
+                <span>₹${(Number(order.total) || 0).toLocaleString('en-IN')}</span>
+              </div>
+            </div>
           </div>
 
           <!-- Column 3: Change Status -->

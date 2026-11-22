@@ -144,6 +144,35 @@ export function initCheckoutModal(showToast) {
               </div>
             </div>
 
+            <!-- 4. Bill Details Section -->
+            <div class="checkout-section checkout-bill-details-section">
+              <h3 class="section-title"><span class="step-num">4</span> Bill Details</h3>
+              <div class="checkout-form-bill-card" style="background: #fbf8f2; border: 1px solid rgba(141, 25, 29, 0.15); border-radius: 12px; padding: 14px 16px;">
+                <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#4a3b30; margin-bottom:6px;">
+                  <span>Items Subtotal (${summary.count} item${summary.count === 1 ? '' : 's'})</span>
+                  <span style="font-weight:700;">₹${summary.subtotal.toLocaleString('en-IN')}</span>
+                </div>
+                ${summary.discount > 0 ? `
+                  <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#16a34a; font-weight:700; margin-bottom:6px;">
+                    <span>Discount (${summary.appliedCoupon?.code})</span>
+                    <span>-₹${summary.discount.toLocaleString('en-IN')}</span>
+                  </div>
+                ` : ''}
+                <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#4a3b30; margin-bottom:6px;">
+                  <span>Delivery Fee (Express)</span>
+                  <span style="color:#166534; font-weight:700;">${summary.deliveryFee === 0 ? 'FREE' : `₹${summary.deliveryFee}`}</span>
+                </div>
+                <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#4a3b30; margin-bottom:6px;">
+                  <span>Aroma-Lock Fresh Pouch Packaging</span>
+                  <span style="color:#166534; font-weight:700;">FREE</span>
+                </div>
+                <div class="bill-row" style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:900; color:#8d191d; border-top:1px solid rgba(141, 25, 29, 0.2); padding-top:10px; margin-top:8px;">
+                  <span>Total Payable</span>
+                  <span>₹${summary.grandTotal.toLocaleString('en-IN')}</span>
+                </div>
+              </div>
+            </div>
+
             <button type="submit" id="place-order-btn" class="btn-pay-submit" style="display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; background:#8d191d !important; background:linear-gradient(135deg, #8d191d 0%, #631013 100%) !important; color:#ffffff !important; border:1px solid rgba(255,255,255,0.25) !important; padding:15px 22px !important; border-radius:10px !important; font-size:1rem !important; font-weight:800 !important; cursor:pointer !important; margin-top:14px !important; box-shadow:0 8px 22px rgba(141,25,29,0.45) !important;">
               <span class="btn-spinner" style="display:none;"></span>
               <span class="btn-text" style="color:#ffffff !important; font-weight:800 !important; display:inline-block !important;">📦 Confirm Cash on Delivery Order • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
@@ -172,6 +201,9 @@ export function initCheckoutModal(showToast) {
           </div>
 
           <div class="checkout-bill-card">
+            <h5 style="font-size:0.92rem; font-weight:800; color:#2c1810; margin:0 0 10px 0; display:flex; align-items:center; gap:6px;">
+              <span>📋</span> Bill Details
+            </h5>
             <div class="bill-row">
               <span>Subtotal</span>
               <span>₹${summary.subtotal.toLocaleString('en-IN')}</span>
@@ -185,6 +217,10 @@ export function initCheckoutModal(showToast) {
             <div class="bill-row">
               <span>Delivery Fee</span>
               <span>${summary.deliveryFee === 0 ? '<strong style="color:#0f3822">FREE</strong>' : `₹${summary.deliveryFee}`}</span>
+            </div>
+            <div class="bill-row">
+              <span>Packaging & Aroma Pouch</span>
+              <span style="color:#166534; font-weight:700;">FREE</span>
             </div>
             <div class="bill-row bill-grand-total">
               <span>Total Payable</span>
@@ -419,6 +455,29 @@ export function initCheckoutModal(showToast) {
           <ul>
             ${items.map(i => `<li>${i.name} (${i.weight || 'Std'}) x ${i.quantity}</li>`).join('')}
           </ul>
+        </div>
+
+        <!-- Bill Details Summary -->
+        <div class="success-bill-box" style="background: #ffffff; border: 1px dashed rgba(141, 25, 29, 0.25); border-radius: 12px; padding: 14px 18px; margin: 14px 0; text-align: left;">
+          <h4 style="font-size: 0.88rem; font-weight: 800; color: #8d191d; margin: 0 0 10px 0; display:flex; align-items:center; gap:6px;">
+            <span>📋</span> Bill Details
+          </h4>
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
+            <span>Items Subtotal (${items.length} snack${items.length === 1 ? '' : 's'})</span>
+            <span style="font-weight:600;">₹${(total - (paymentInfo.deliveryFee || 0)).toLocaleString('en-IN')}</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
+            <span>Delivery Fee</span>
+            <span style="color:#166534; font-weight:700;">FREE</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
+            <span>Aroma-Lock Fresh Pouch Packaging</span>
+            <span style="color:#166534; font-weight:700;">FREE</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:1rem; font-weight:900; color:#8d191d; padding-top:8px; border-top:1px solid rgba(141, 25, 29, 0.15); margin-top:4px;">
+            <span>Total ${isCod ? 'Payable (COD)' : 'Paid'}</span>
+            <span>₹${total.toLocaleString('en-IN')}</span>
+          </div>
         </div>
 
         <div class="success-actions">

@@ -213,8 +213,11 @@ export function initCartDrawerUI(showToast) {
           `}
         </div>
 
-        <!-- Price Breakdown -->
+        <!-- Bill Details Breakdown -->
         <div class="price-breakdown">
+          <div style="font-size: 0.85rem; font-weight: 800; color: #2c1810; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+            <span>📋</span> Bill Details
+          </div>
           <div class="breakdown-row">
             <span>Items Subtotal</span>
             <span>₹${summary.subtotal.toLocaleString('en-IN')}</span>
@@ -229,8 +232,12 @@ export function initCartDrawerUI(showToast) {
             <span>Delivery Fee</span>
             <span>${summary.deliveryFee === 0 ? '<span class="text-free">FREE</span>' : `₹${summary.deliveryFee}`}</span>
           </div>
+          <div class="breakdown-row">
+            <span>Packaging & Aroma Pouch</span>
+            <span class="text-free">FREE</span>
+          </div>
           <div class="breakdown-row row-total">
-            <span>Grand Total</span>
+            <span>To Pay</span>
             <span class="total-amount">₹${summary.grandTotal.toLocaleString('en-IN')}</span>
           </div>
         </div>
@@ -240,10 +247,8 @@ export function initCartDrawerUI(showToast) {
           <span class="checkout-price">₹${summary.grandTotal.toLocaleString('en-IN')} ➔</span>
         </button>
 
-        <div class="drawer-trust-icons" style="margin-top: 10px;">
+        <div class="drawer-trust-icons" style="margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.78rem; color: #64748b;">
           <span><i class="ri-shield-check-fill"></i> UPI • Cards • Netbanking • COD</span>
-        </div>
-          <span><i class="ri-flashlight-fill"></i> UPI &amp; Cards</span>
         </div>
       `;
 
