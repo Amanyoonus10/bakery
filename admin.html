@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keerthi Bakery — Owner Admin Portal</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- PIN Lock Screen Overlay -->
+  <div class="pin-lock-overlay" id="pinLockOverlay">
+    <div class="pin-lock-card">
+      <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery" class="pin-brand-logo" onerror="this.src='/images/card_banana_chips_clean.jpg'">
+      <h2>Owner Portal</h2>
+      <p class="pin-subtitle">Enter your 4-digit security PIN to access live orders & stock management.</p>
+
+      <div class="pin-input-wrap">
+        <input type="password" id="pinInput" class="pin-input" maxlength="8" placeholder="••••" autocomplete="off" autofocus>
+      </div>
+
+      <button type="button" class="pin-btn-unlock" id="btnUnlockPin">
+        <span>Unlock Dashboard</span>
+        <span>🔓</span>
+      </button>
+
+      <div class="pin-error-msg" id="pinErrorMsg"></div>
+      <div class="pin-hint">Default Admin PIN: <code>1993</code> (customizable in Settings)</div>
+    </div>
+  </div>
+
+  <!-- Admin Navigation Bar -->
+  <nav class="admin-navbar">
+    <div class="admin-nav-container">
+      <div class="admin-brand">
+        <img src="/images/keerthi_logo_clean_hq.png" alt="Keerthi Bakery" class="admin-logo" onerror="this.src='/images/card_banana_chips_clean.jpg'">
+        <div class="admin-title-wrap">
+          <span class="admin-title">Keerthi Bakery Owner Hub</span>
+          <span class="admin-tagline">Kadavathur Facility • Real-time Operations</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="admin-nav-tabs">
+        <button type="button" class="admin-tab-btn active" data-tab="orders">
+          <i class="ri-inbox-archive-line"></i>
+          <span>Live Orders</span>
+          <span class="badge-count" id="ordersTabBadge">0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="inventory">
+          <i class="ri-store-2-line"></i>
+          <span>Stock & Inventory</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="settings">
+          <i class="ri-settings-4-line"></i>
+          <span>Settings</span>
+        </button>
+      </div>
+
+      <!-- Status & Logout -->
+      <div class="admin-nav-actions">
+        <span class="cloud-live-pill">
+          <span class="live-dot"></span>
+          <span>Cloud Active</span>
+        </span>
+        <button type="button" class="btn-admin-logout" id="btnAdminLogout" title="Lock Dashboard">
+          <i class="ri-lock-2-line"></i>
+          <span>Lock</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="admin-main">
+
+    <!-- ── TAB 1: LIVE ORDERS ── -->
+    <section class="admin-tab-pane active" id="tab-orders">
+      <!-- Order Metrics Row -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-icon-wrap maroon"><i class="ri-shopping-bag-3-line"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Total Orders</div>
+            <div class="metric-val" id="metricTotalOrders">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap orange"><i class="ri-time-line"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Packing / Pending</div>
+            <div class="metric-val" id="metricPendingOrders">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap blue"><i class="ri-truck-line"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Dispatched</div>
+            <div class="metric-val" id="metricDispatchedOrders">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap green"><i class="ri-checkbox-circle-line"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Delivered</div>
+            <div class="metric-val" id="metricDeliveredOrders">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap green"><i class="ri-money-rupee-circle-line"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-val" id="metricTotalRevenue">₹0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Filters -->
+      <div class="control-bar">
+        <div class="search-box-wrap">
+          <i class="ri-search-line search-icon"></i>
+          <input type="text" id="orderSearchInput" class="admin-search-input" placeholder="Search by customer name, phone, or order ID...">
+        </div>
+
+        <div class="filter-pills-row">
+          <button type="button" class="filter-pill order-filter-pill active" data-filter="all">All Orders</button>
+          <button type="button" class="filter-pill order-filter-pill" data-filter="pending">Pending Packing</button>
+          <button type="button" class="filter-pill order-filter-pill" data-filter="dispatched">Dispatched</button>
+          <button type="button" class="filter-pill order-filter-pill" data-filter="delivered">Delivered</button>
+          <button type="button" class="filter-pill order-filter-pill" data-filter="cod">💵 COD</button>
+          <button type="button" class="filter-pill order-filter-pill" data-filter="online">⚡ Online Paid</button>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-admin-action" id="btnRefreshOrders" title="Refresh from cloud">
+            <i class="ri-refresh-line"></i>
+            <span>Refresh</span>
+          </button>
+          <button type="button" class="btn-admin-action" id="btnExportOrdersCsv" title="Export as CSV spreadsheet">
+            <i class="ri-download-2-line"></i>
+            <span>Export CSV</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Orders Board Cards Grid -->
+      <div class="orders-grid" id="ordersGrid">
+        <div style="padding: 40px; text-align: center; color: #94a3b8;">
+          <i class="ri-loader-4-line ri-spin" style="font-size: 2rem;"></i>
+          <div style="margin-top: 8px;">Loading orders from cloud...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TAB 2: STOCK & INVENTORY ── -->
+    <section class="admin-tab-pane" id="tab-inventory">
+      <!-- Inventory Metrics Row -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-icon-wrap maroon"><i class="ri-stack-line"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Total Snacks</div>
+            <div class="metric-val" id="metricTotalProducts">56</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap green"><i class="ri-checkbox-circle-fill"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">In Stock (Available)</div>
+            <div class="metric-val" id="metricInStockProducts">56</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap maroon"><i class="ri-close-circle-fill"></i></div>
+          <div class="metric-content">
+            <div class="metric-label">Sold Out (Out of Stock)</div>
+            <div class="metric-val" id="metricSoldOutProducts">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Category Filters -->
+      <div class="control-bar">
+        <div class="search-box-wrap">
+          <i class="ri-search-line search-icon"></i>
+          <input type="text" id="invSearchInput" class="admin-search-input" placeholder="Search snacks by name, category, or ingredients...">
+        </div>
+
+        <div class="filter-pills-row">
+          <button type="button" class="filter-pill inv-filter-pill active" data-category="all">All (56)</button>
+          <button type="button" class="filter-pill inv-filter-pill" data-category="chips">Chips</button>
+          <button type="button" class="filter-pill inv-filter-pill" data-category="mixtures">Mixtures</button>
+          <button type="button" class="filter-pill inv-filter-pill" data-category="biscuits">Biscuits</button>
+          <button type="button" class="filter-pill inv-filter-pill" data-category="murukku">Murukku</button>
+          <button type="button" class="filter-pill inv-filter-pill" data-category="sweets">Sweets</button>
+          <button type="button" class="filter-pill inv-filter-pill" data-category="cakes">Cakes</button>
+        </div>
+      </div>
+
+      <!-- Inventory Grid -->
+      <div class="inventory-grid" id="inventoryGrid">
+        <div style="padding: 40px; text-align: center; color: #94a3b8;">
+          <i class="ri-loader-4-line ri-spin" style="font-size: 2rem;"></i>
+          <div style="margin-top: 8px;">Loading stock status...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TAB 3: SETTINGS ── -->
+    <section class="admin-tab-pane" id="tab-settings">
+      <div class="settings-container">
+        <!-- Change PIN Card -->
+        <div class="settings-card">
+          <h3><i class="ri-lock-password-line"></i> Change Admin Security PIN</h3>
+          <p class="settings-desc">Update the 4-digit PIN used to access this owner dashboard.</p>
+
+          <form id="changePinForm">
+            <div class="form-field">
+              <label for="currAdminPin">Current Admin PIN</label>
+              <input type="password" id="currAdminPin" class="form-input" placeholder="Current PIN (e.g. 1993)" required maxlength="8">
+            </div>
+
+            <div class="form-field">
+              <label for="newAdminPin">New Admin PIN</label>
+              <input type="password" id="newAdminPin" class="form-input" placeholder="Enter new 4-digit PIN" required minlength="4" maxlength="8">
+            </div>
+
+            <div class="form-field">
+              <label for="confirmAdminPin">Confirm New PIN</label>
+              <input type="password" id="confirmAdminPin" class="form-input" placeholder="Re-enter new PIN" required minlength="4" maxlength="8">
+            </div>
+
+            <button type="submit" class="btn-admin-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+              <i class="ri-save-line"></i>
+              <span>Save New PIN</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Payment Gateway & Cloud Sync Status -->
+        <div class="settings-card">
+          <h3><i class="ri-shield-check-line"></i> Cloud & Gateway Health</h3>
+          <p class="settings-desc">Live status of zero-cost serverless infrastructure.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <div>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Razorpay Test Key</strong>
+                <div style="font-size: 0.72rem; color: #64748b;">rzp_test_U3A1Gr1x7zBzm8</div>
+              </div>
+              <span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px;">Active</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <div>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Live Orders Gist</strong>
+                <div style="font-size: 0.72rem; color: #64748b;">e0a1a55dcdf1a3bd706761171dcbe192</div>
+              </div>
+              <span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px;">Connected</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <div>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Stock Inventory Gist</strong>
+                <div style="font-size: 0.72rem; color: #64748b;">a80bfeb0befd9c013d535d6462e90d47</div>
+              </div>
+              <span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px;">Connected</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <div>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Hosting Provider</strong>
+                <div style="font-size: 0.72rem; color: #64748b;">Vercel Edge Global Network</div>
+              </div>
+              <span style="background: #e0f2fe; color: #0284c7; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px;">100% Free</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="settings-card">
+          <h3><i class="ri-external-link-line"></i> Quick Shortcuts</h3>
+          <p class="settings-desc">Jump straight to customer-facing pages and actions.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+            <a href="/" target="_blank" class="btn-admin-action" style="text-decoration: none; justify-content: space-between;">
+              <span>🌐 Open Customer Storefront</span>
+              <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a href="/#snacks" target="_blank" class="btn-admin-action" style="text-decoration: none; justify-content: space-between;">
+              <span>🍿 Open Snacks Catalogue</span>
+              <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a href="https://wa.me/919447123450" target="_blank" class="btn-admin-action" style="text-decoration: none; justify-content: space-between;">
+              <span>💬 Keerthi Helpdesk WhatsApp (+91 94471 23450)</span>
+              <i class="ri-whatsapp-line" style="color: #25d366;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Toast Notifications -->
+  <div class="admin-toast-wrap" id="admin-toasts"></div>
+
+  <!-- Admin Script -->
+  <script type="module" src="/src/js/admin.js"></script>
+</body>
+</html>

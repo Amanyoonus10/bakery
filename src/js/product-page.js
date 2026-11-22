@@ -1,6 +1,7 @@
 import { PRODUCTS } from "../data/products.js";
 import { cart } from "./cart.js";
 import { wishlist } from "./wishlist-store.js";
+import { isSoldOut } from "./inventory.js";
 import { initCartDrawerUI } from "./cart-drawer-ui.js";
 import { initCheckoutModal } from "./checkout-modal.js";
 import { initWishlistUI } from "./wishlist-ui.js";
@@ -243,30 +244,44 @@ function renderProductDetails(product) {
 
   // CHECKOUT CTA Button
   const checkoutBtn = document.getElementById("pdpCheckoutBtn");
+  const soldOut = isSoldOut(product.id) || isSoldOut(product.slug);
+
   if (checkoutBtn) {
-    checkoutBtn.onclick = () => {
-      cart.addItem({
-        productId: product.id,
-        name: `${formattedTitle} (${selectedWeight})`,
-        weight: selectedWeight,
-        price: currentPrice,
-        image: product.image,
-        category: product.category,
-        quantity: quantity
-      });
+    if (soldOut) {
+      checkoutBtn.disabled = true;
+      checkoutBtn.textContent = "CURRENTLY SOLD OUT";
+      checkoutBtn.style.background = "#fef2f2";
+      checkoutBtn.style.color = "#dc2626";
+      checkoutBtn.style.border = "1.5px solid #fecaca";
+      checkoutBtn.style.cursor = "not-allowed";
+      checkoutBtn.style.opacity = "0.9";
+    } else {
+      checkoutBtn.disabled = false;
+      checkoutBtn.textContent = "CHECKOUT";
+      checkoutBtn.onclick = () => {
+        cart.addItem({
+          productId: product.id,
+          name: `${formattedTitle} (${selectedWeight})`,
+          weight: selectedWeight,
+          price: currentPrice,
+          image: product.image,
+          category: product.category,
+          quantity: quantity
+        });
 
-      confetti({
-        particleCount: 50,
-        spread: 60,
-        origin: { y: 0.7 }
-      });
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.7 }
+        });
 
-      showToast(`Added ${quantity}x ${formattedTitle} (${selectedWeight}) to Cart!`);
+        showToast(`Added ${quantity}x ${formattedTitle} (${selectedWeight}) to Cart!`);
 
-      // Open Express Checkout Modal
-      window.dispatchEvent(new CustomEvent("checkout:open"));
-      updateHeaderCartCount();
-    };
+        // Open Express Checkout Modal
+        window.dispatchEvent(new CustomEvent("checkout:open"));
+        updateHeaderCartCount();
+      };
+    }
   }
 
   // Tabs: DESCRIPTION & DETAILS

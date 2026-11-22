@@ -1,6 +1,7 @@
 import { cart } from "./cart.js";
 import { wishlist } from "./wishlist-store.js";
 import { PRODUCTS } from "../data/products.js";
+import { isSoldOut, fetchLiveInventory } from "./inventory.js";
 import confetti from "canvas-confetti";
 
 export function initAllProductsView(showToast) {
@@ -93,15 +94,16 @@ export function initAllProductsView(showToast) {
     const defaultWeight = defaultVariant.label;
     const basePrice = defaultVariant.price;
     const initialQty = getVariantCartQty(prod.id, defaultWeight);
+    const soldOut = isSoldOut(prod.id) || isSoldOut(prod.slug);
 
     return `
-      <div class="haldiram-card" data-id="${prod.id}" data-name="${prod.name}" data-base-price="${basePrice}" data-current-price="${basePrice}" data-selected-weight="${defaultWeight}" data-img="${prod.img}" data-category="${prod.category}">
+      <div class="haldiram-card ${soldOut ? 'is-sold-out' : ''}" data-id="${prod.id}" data-name="${prod.name}" data-base-price="${basePrice}" data-current-price="${basePrice}" data-selected-weight="${defaultWeight}" data-img="${prod.img}" data-category="${prod.category}" data-sold-out="${soldOut ? 'true' : 'false'}">
         <div class="haldiram-img-box" role="button" tabindex="0" title="Click to view ${prod.name}">
-          ${prod.badge ? `<span class="haldiram-badge ${prod.badgeClass || ''}">${prod.badge}</span>` : ''}
+          ${soldOut ? `<span class="haldiram-badge badge-sold-out" style="background: #dc2626 !important; color: #ffffff !important; font-weight: 800 !important; font-size: 0.72rem !important; padding: 4px 8px !important; letter-spacing: 0.5px !important; box-shadow: 0 4px 12px rgba(220,38,38,0.4) !important;">SOLD OUT</span>` : (prod.badge ? `<span class="haldiram-badge ${prod.badgeClass || ''}">${prod.badge}</span>` : '')}
           <button type="button" class="haldiram-wishlist-btn ${isSaved ? 'active' : ''}" aria-label="Add ${prod.name} to Wishlist">
             <i class="${isSaved ? 'ri-heart-fill' : 'ri-heart-line'}"></i>
           </button>
-          <img src="${prod.img}" alt="${prod.name}" class="haldiram-img" loading="lazy" onerror="if (this.src.endsWith('.webp')) { this.src = this.src.replace('.webp', '.png'); } else { this.src='/images/card_banana_chips_clean.jpg'; }">
+          <img src="${prod.img}" alt="${prod.name}" class="haldiram-img" loading="lazy" style="${soldOut ? 'filter: grayscale(60%) opacity(0.85);' : ''}" onerror="if (this.src.endsWith('.webp')) { this.src = this.src.replace('.webp', '.png'); } else { this.src='/images/card_banana_chips_clean.jpg'; }">
         </div>
         <div class="haldiram-content">
           <div class="haldiram-title-row">
@@ -128,17 +130,23 @@ export function initAllProductsView(showToast) {
             <span class="haldiram-price">₹${basePrice}/-</span>
           </div>
 
-          <!-- Card Action Container: switches between ADD + and - [count] + -->
+          <!-- Card Action Container: switches between ADD + and - [count] + or SOLD OUT -->
           <div class="haldiram-action-wrap">
-            <button type="button" class="haldiram-add-btn" aria-label="Add ${prod.name} to cart" style="${initialQty > 0 ? 'display: none;' : 'display: flex;'}">
-              <span>ADD</span>
-              <span class="add-plus">+</span>
-            </button>
-            <div class="haldiram-card-stepper" aria-label="Quantity for ${prod.name}" style="${initialQty > 0 ? 'display: flex;' : 'display: none;'}">
-              <button type="button" class="haldiram-stepper-btn haldiram-stepper-minus" aria-label="Decrease quantity">−</button>
-              <span class="haldiram-stepper-val">${initialQty || 1}</span>
-              <button type="button" class="haldiram-stepper-btn haldiram-stepper-plus" aria-label="Increase quantity">+</button>
-            </div>
+            ${soldOut ? `
+              <button type="button" class="haldiram-soldout-btn" disabled style="background: #fdf2f2 !important; color: #dc2626 !important; border: 1.5px solid #fecaca !important; cursor: not-allowed !important; width: 100% !important; border-radius: 6px !important; padding: 7px 10px !important; font-weight: 800 !important; font-size: 0.78rem !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 4px !important;">
+                <span>🔴 SOLD OUT</span>
+              </button>
+            ` : `
+              <button type="button" class="haldiram-add-btn" aria-label="Add ${prod.name} to cart" style="${initialQty > 0 ? 'display: none;' : 'display: flex;'}">
+                <span>ADD</span>
+                <span class="add-plus">+</span>
+              </button>
+              <div class="haldiram-card-stepper" aria-label="Quantity for ${prod.name}" style="${initialQty > 0 ? 'display: flex;' : 'display: none;'}">
+                <button type="button" class="haldiram-stepper-btn haldiram-stepper-minus" aria-label="Decrease quantity">−</button>
+                <span class="haldiram-stepper-val">${initialQty || 1}</span>
+                <button type="button" class="haldiram-stepper-btn haldiram-stepper-plus" aria-label="Increase quantity">+</button>
+              </div>
+            `}
           </div>
         </div>
       </div>
@@ -487,8 +495,13 @@ export function initAllProductsView(showToast) {
     });
   }
 
-  // Initial Grid Render: 55 snacks displayed immediately
+  // Initial Grid Render: 56 snacks displayed immediately
   renderGrid();
+
+  // Listen for Live Inventory / Stock Updates from Cloud
+  window.addEventListener("inventory:updated", () => {
+    applyFilterAndSort();
+  });
 
   // Scroll to products on Shop All actions
   const scrollToProducts = () => {

@@ -144,9 +144,9 @@ export function initCheckoutModal(showToast) {
               </div>
             </div>
 
-            <button type="submit" id="place-order-btn" class="btn-pay-submit">
+            <button type="submit" id="place-order-btn" class="btn-pay-submit" style="display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; background:#8d191d !important; background:linear-gradient(135deg, #8d191d 0%, #631013 100%) !important; color:#ffffff !important; border:1px solid rgba(255,255,255,0.25) !important; padding:15px 22px !important; border-radius:10px !important; font-size:1rem !important; font-weight:800 !important; cursor:pointer !important; margin-top:14px !important; box-shadow:0 8px 22px rgba(141,25,29,0.45) !important;">
               <span class="btn-spinner" style="display:none;"></span>
-              <span class="btn-text">⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
+              <span class="btn-text" style="color:#ffffff !important; font-weight:800 !important; display:inline-block !important;">⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
             </button>
           </form>
         </div>
@@ -348,6 +348,28 @@ export function initCheckoutModal(showToast) {
 
   function renderOrderSuccess(orderId, customerName, phone, city, total, items, paymentInfo = {}) {
     const isCod = paymentInfo.method && paymentInfo.method.includes("COD");
+
+    // Persist new order into live Admin Dashboard via serverless API
+    try {
+      fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: orderId,
+          customerName,
+          phone,
+          email: paymentInfo.email || "",
+          address: paymentInfo.address || "",
+          city,
+          pincode: paymentInfo.pincode || "",
+          items,
+          total,
+          paymentMethod: paymentInfo.method || (isCod ? "Cash on Delivery (COD)" : "Razorpay Online"),
+          paymentId: paymentInfo.paymentId || null
+        })
+      }).catch(e => console.warn("Orders API sync warning:", e));
+    } catch (e) {}
+
     modalContent.innerHTML = `
       <div class="order-success-card">
         <div class="success-icon-wrap">
@@ -401,10 +423,10 @@ export function initCheckoutModal(showToast) {
 
         <div class="success-actions">
           <a href="https://wa.me/919447123450?text=${encodeURIComponent(`Hello Keerthi Bakery,\n\nI just placed order *${orderId}* on www.keerthibakery.com!\n\n*Name:* ${customerName}\n*Phone:* ${phone}\n*Address:* ${paymentInfo.address ? paymentInfo.address + ', ' : ''}${city} - ${paymentInfo.pincode || ''}\n*Payment:* ${paymentInfo.method || 'Order'}${paymentInfo.paymentId ? ` (${paymentInfo.paymentId})` : ''}\n*Total:* ₹${total}\n\n*Items:*\n` + items.map(i => `• ${i.name} (${i.weight || 'Std'}) x ${i.quantity}`).join('\n'))}" 
-             target="_blank" class="btn-whatsapp-order">
-            <span style="font-size: 1.1rem; line-height: 1;">💬</span> <span>Track Order on WhatsApp</span>
+             target="_blank" class="btn-whatsapp-order" style="background:#25d366 !important; color:#ffffff !important; padding:12px 22px !important; border-radius:10px !important; font-weight:800 !important; font-size:0.92rem !important; text-decoration:none !important; display:inline-flex !important; align-items:center !important; justify-content:center !important; gap:8px !important; box-shadow:0 6px 18px rgba(37,211,102,0.4) !important; border:none !important;">
+            <span style="font-size: 1.1rem; line-height: 1;">💬</span> <span style="color:#ffffff !important; font-weight:800 !important;">Track Order on WhatsApp</span>
           </a>
-          <button type="button" class="btn-order-done" id="success-done-btn">
+          <button type="button" class="btn-order-done" id="success-done-btn" style="background:#ffffff !important; border:1.5px solid #8d191d !important; color:#8d191d !important; padding:12px 22px !important; border-radius:10px !important; font-weight:800 !important; font-size:0.92rem !important; cursor:pointer !important; display:inline-flex !important; align-items:center !important; justify-content:center !important;">
             Continue Shopping
           </button>
         </div>
