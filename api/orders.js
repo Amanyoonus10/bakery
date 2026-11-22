@@ -64,7 +64,7 @@ export default async function handler(req, res) {
   async function saveOrdersToGist(orders) {
     const content = JSON.stringify({
       updatedAt: new Date().toISOString(),
-      orders: orders.slice(0, 500) // Keep the most recent 500 orders
+      orders: orders.slice(0, 5000) // Store up to 5,000 recent orders (~2.5 MB)
     }, null, 2);
 
     const patchRes = await fetch(`https://api.github.com/gists/${ORDERS_GIST_ID}`, {
