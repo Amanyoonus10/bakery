@@ -236,18 +236,13 @@ export function initCartDrawerUI(showToast) {
         </div>
 
         <button type="button" id="drawer-checkout-btn" class="btn-checkout">
-          <span class="checkout-btn-text">Proceed to Shopify Checkout</span>
+          <span class="checkout-btn-text">Proceed to Checkout</span>
           <span class="checkout-price">₹${summary.grandTotal.toLocaleString('en-IN')} ➔</span>
         </button>
 
-        <div class="drawer-prefill-link-wrap" style="text-align: center; margin: 8px 0 4px 0;">
-          <button type="button" id="drawer-express-modal-btn" style="background: none; border: none; font-size: 12px; color: #8c7355; text-decoration: underline; cursor: pointer; padding: 4px; font-weight: 600;">
-            Pre-fill Delivery Address First ➔
-          </button>
+        <div class="drawer-trust-icons" style="margin-top: 10px;">
+          <span><i class="ri-shield-check-fill"></i> UPI • Cards • Netbanking • COD</span>
         </div>
-
-        <div class="drawer-trust-icons">
-          <span><i class="ri-shield-check-fill"></i> Official Shopify Gateway</span>
           <span><i class="ri-flashlight-fill"></i> UPI &amp; Cards</span>
         </div>
       `;
@@ -331,7 +326,7 @@ export function initCartDrawerUI(showToast) {
       };
     }
 
-    // Checkout button - Direct to Shopify
+    // Checkout button - Opens Express Checkout Modal
     const checkoutBtn = drawerFooter.querySelector("#drawer-checkout-btn");
     if (checkoutBtn) {
       checkoutBtn.onclick = () => {
@@ -340,17 +335,6 @@ export function initCartDrawerUI(showToast) {
           showToast("Your cart is empty! Add snacks first.");
           return;
         }
-        closeDrawer();
-        redirectToShopifyCheckout(summary.items, {
-          discountCode: summary.appliedCoupon?.code || ""
-        });
-      };
-    }
-
-    // Optional pre-fill address modal
-    const expressModalBtn = drawerFooter.querySelector("#drawer-express-modal-btn");
-    if (expressModalBtn) {
-      expressModalBtn.onclick = () => {
         closeDrawer();
         window.dispatchEvent(new CustomEvent("checkout:open"));
       };

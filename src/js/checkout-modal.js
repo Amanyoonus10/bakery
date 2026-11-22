@@ -2,6 +2,22 @@ import { cart } from "./cart.js";
 import { redirectToShopifyCheckout } from "./shopify.js";
 import confetti from "canvas-confetti";
 
+export const RAZORPAY_KEY_ID = "rzp_test_U3A1Gr1x7zBzm8";
+
+function loadRazorpayScript() {
+  return new Promise((resolve) => {
+    if (window.Razorpay) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.head.appendChild(script);
+  });
+}
+
 export function initCheckoutModal(showToast) {
   const modal = document.getElementById("checkout-modal");
   if (!modal) return;
@@ -132,8 +148,14 @@ export function initCheckoutModal(showToast) {
 
             <button type="submit" id="place-order-btn" class="btn btn-primary btn-block btn-pay">
               <span class="btn-spinner" style="display:none;"></span>
-              <span class="btn-text">🔒 Pay via Shopify Checkout • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
+              <span class="btn-text">⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
             </button>
+
+            <div style="text-align: center; margin-top: 10px;">
+              <button type="button" id="shopify-redirect-link" style="background: none; border: none; color: #785c3b; font-size: 12px; cursor: pointer; text-decoration: underline; font-weight: 500;">
+                Or checkout via official Shopify Checkout ➔
+              </button>
+            </div>
           </form>
         </div>
 
@@ -190,36 +212,51 @@ export function initCheckoutModal(showToast) {
   }
 
   function bindCheckoutEvents() {
+    const form = modalContent.querySelector("#checkout-form");
+    if (!form) return;
+
+    const placeBtn = modalContent.querySelector("#place-order-btn");
+    const btnText = placeBtn?.querySelector(".btn-text");
+    const btnSpinner = placeBtn?.querySelector(".btn-spinner");
+    const summary = cart.getSummary();
+
+    function updatePayButtonText() {
+      const selectedRadio = form.querySelector("input[name='payment_method']:checked");
+      const method = selectedRadio ? selectedRadio.value : "upi";
+      if (!btnText) return;
+      if (method === "upi") {
+        btnText.textContent = `⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}`;
+      } else if (method === "card") {
+        btnText.textContent = `💳 Pay via Razorpay (Cards / Netbanking) • ₹${summary.grandTotal.toLocaleString('en-IN')}`;
+      } else if (method === "cod") {
+        btnText.textContent = `📦 Confirm Cash on Delivery Order • ₹${summary.grandTotal.toLocaleString('en-IN')}`;
+      }
+    }
+
     // Payment method radio selection styling
     modalContent.querySelectorAll(".payment-option").forEach(opt => {
       opt.addEventListener("click", () => {
         modalContent.querySelectorAll(".payment-option").forEach(o => o.classList.remove("selected"));
         opt.classList.add("selected");
+        const radio = opt.querySelector("input[type='radio']");
+        if (radio) {
+          radio.checked = true;
+          updatePayButtonText();
+        }
       });
     });
 
-    const form = modalContent.querySelector("#checkout-form");
-    if (!form) return;
+    // Optional direct link to Shopify Checkout
+    const shopifyLink = modalContent.querySelector("#shopify-redirect-link");
+    if (shopifyLink) {
+      shopifyLink.onclick = () => {
+        const customerName = form.querySelector("#cust-name")?.value || "";
+        const phone = form.querySelector("#cust-phone")?.value || "";
+        const email = form.querySelector("#cust-email")?.value || "";
+        const address = form.querySelector("#cust-address")?.value || "";
+        const city = form.querySelector("#cust-city")?.value || "";
+        const pincode = form.querySelector("#cust-pincode")?.value || "";
 
-    form.onsubmit = (e) => {
-      e.preventDefault();
-      const placeBtn = modalContent.querySelector("#place-order-btn");
-      const btnText = placeBtn?.querySelector(".btn-text");
-      const btnSpinner = placeBtn?.querySelector(".btn-spinner");
-
-      if (placeBtn) placeBtn.disabled = true;
-      if (btnSpinner) btnSpinner.style.display = "inline-block";
-      if (btnText) btnText.textContent = "Connecting to Shopify Checkout...";
-
-      const customerName = form.querySelector("#cust-name")?.value || "";
-      const phone = form.querySelector("#cust-phone")?.value || "";
-      const email = form.querySelector("#cust-email")?.value || "";
-      const address = form.querySelector("#cust-address")?.value || "";
-      const city = form.querySelector("#cust-city")?.value || "";
-      const pincode = form.querySelector("#cust-pincode")?.value || "";
-      const summary = cart.getSummary();
-
-      setTimeout(() => {
         closeCheckout();
         redirectToShopifyCheckout(summary.items, {
           name: customerName,
@@ -230,11 +267,124 @@ export function initCheckoutModal(showToast) {
           pincode,
           discountCode: summary.appliedCoupon?.code || ""
         });
-      }, 500);
+      };
+    }
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+
+      const customerName = form.querySelector("#cust-name")?.value.trim() || "Valued Customer";
+      const phone = form.querySelector("#cust-phone")?.value.trim() || "";
+      const email = form.querySelector("#cust-email")?.value.trim() || "";
+      const address = form.querySelector("#cust-address")?.value.trim() || "";
+      const city = form.querySelector("#cust-city")?.value || "Calicut";
+      const pincode = form.querySelector("#cust-pincode")?.value.trim() || "673001";
+      const selectedRadio = form.querySelector("input[name='payment_method']:checked");
+      const paymentMethod = selectedRadio ? selectedRadio.value : "upi";
+
+      if (placeBtn) placeBtn.disabled = true;
+      if (btnSpinner) btnSpinner.style.display = "inline-block";
+
+      // Case 1: Cash on Delivery (COD)
+      if (paymentMethod === "cod") {
+        if (btnText) btnText.textContent = "Placing Cash on Delivery Order...";
+        setTimeout(() => {
+          const orderId = "KB-COD-" + Math.floor(100000 + Math.random() * 900000);
+          const orderItems = [...summary.items];
+          const grandTotal = summary.grandTotal;
+          cart.clear();
+          try {
+            confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+          } catch (err) {}
+          renderOrderSuccess(orderId, customerName, phone, city, grandTotal, orderItems, {
+            method: "Cash on Delivery (COD)",
+            paymentId: null
+          });
+        }, 700);
+        return;
+      }
+
+      // Case 2: Online Payment via Razorpay (UPI, GPay, PhonePe, Cards)
+      if (btnText) btnText.textContent = "Opening Razorpay Secure Checkout...";
+      const scriptLoaded = await loadRazorpayScript();
+
+      if (!scriptLoaded || typeof window.Razorpay === "undefined") {
+        // Fallback to Shopify Checkout if Razorpay fails to load
+        closeCheckout();
+        redirectToShopifyCheckout(summary.items, {
+          name: customerName,
+          phone,
+          email,
+          address,
+          city,
+          pincode,
+          discountCode: summary.appliedCoupon?.code || ""
+        });
+        return;
+      }
+
+      const rzpOptions = {
+        key: RAZORPAY_KEY_ID,
+        amount: Math.round(summary.grandTotal * 100), // amount in paise
+        currency: "INR",
+        name: "Keerthi Bakery",
+        description: `Order of ${summary.count} fresh Malabar snack${summary.count === 1 ? '' : 's'}`,
+        image: "/images/keerthi_logo_clean_hq.png",
+        prefill: {
+          name: customerName,
+          email: email,
+          contact: phone
+        },
+        notes: {
+          shipping_address: `${address}, ${city} - ${pincode}`,
+          delivery_slot: summary.deliverySlot?.time || "Express Delivery"
+        },
+        theme: {
+          color: "#6B1D28"
+        },
+        handler: function (response) {
+          const orderId = "KB-" + Math.floor(100000 + Math.random() * 900000);
+          const orderItems = [...summary.items];
+          const grandTotal = summary.grandTotal;
+          cart.clear();
+          try {
+            confetti({ particleCount: 140, spread: 90, origin: { y: 0.6 } });
+          } catch (err) {}
+          renderOrderSuccess(orderId, customerName, phone, city, grandTotal, orderItems, {
+            method: "Razorpay (Online Payment)",
+            paymentId: response.razorpay_payment_id
+          });
+        },
+        modal: {
+          ondismiss: function () {
+            if (placeBtn) placeBtn.disabled = false;
+            if (btnSpinner) btnSpinner.style.display = "none";
+            updatePayButtonText();
+          }
+        }
+      };
+
+      try {
+        const rzp = new window.Razorpay(rzpOptions);
+        rzp.open();
+      } catch (err) {
+        console.error("Razorpay error", err);
+        closeCheckout();
+        redirectToShopifyCheckout(summary.items, {
+          name: customerName,
+          phone,
+          email,
+          address,
+          city,
+          pincode,
+          discountCode: summary.appliedCoupon?.code || ""
+        });
+      }
     };
   }
 
-  function renderOrderSuccess(orderId, customerName, phone, city, total, items) {
+  function renderOrderSuccess(orderId, customerName, phone, city, total, items, paymentInfo = {}) {
+    const isCod = paymentInfo.method && paymentInfo.method.includes("COD");
     modalContent.innerHTML = `
       <div class="order-success-card">
         <div class="success-icon-wrap">
@@ -244,9 +394,20 @@ export function initCheckoutModal(showToast) {
         <h2>Thank You, ${customerName}!</h2>
         <p class="success-subtitle">Your fresh snacks order has been placed successfully and assigned for immediate packing at our Kadavathur facility for delivery to <strong>${city}</strong>.</p>
 
-        <div class="order-id-pill">
-          <span>Order Reference:</span>
-          <strong>${orderId}</strong>
+        <div class="order-id-pill" style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
+          <div>
+            <span>Order Reference:</span>
+            <strong>${orderId}</strong>
+          </div>
+          ${paymentInfo.paymentId ? `
+            <div style="font-size: 11px; color: #166534; font-weight: 600;">
+              ✓ Razorpay Payment ID: <code>${paymentInfo.paymentId}</code>
+            </div>
+          ` : isCod ? `
+            <div style="font-size: 11px; color: #b45309; font-weight: 600;">
+              💵 Cash on Delivery: Pay ₹${total.toLocaleString('en-IN')} upon delivery
+            </div>
+          ` : ''}
         </div>
 
         <div class="order-timeline">
@@ -276,7 +437,7 @@ export function initCheckoutModal(showToast) {
         </div>
 
         <div class="success-actions">
-          <a href="https://wa.me/919447123450?text=Hi%20Keerthi%20Bakery,%20I%20just%20placed%20order%20${orderId}%20for%20₹${total}!" 
+          <a href="https://wa.me/919447123450?text=Hi%20Keerthi%20Bakery,%20I%20just%20placed%20order%20${orderId}%20(${paymentInfo.method || 'Order'})%20for%20₹${total}!" 
              target="_blank" class="btn btn-whatsapp">
             💬 Track Order on WhatsApp
           </a>
