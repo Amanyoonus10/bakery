@@ -103,15 +103,13 @@ export function initCheckoutModal(showToast) {
                   <input type="text" id="cust-pincode" required class="input-field" value="${summary.deliveryPincode}" maxlength="6">
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group half">
-                  <label>Delivery Speed</label>
-                  <input type="text" readonly class="input-field readonly" value="${summary.deliverySlot.time || 'Kerala Express (24-48 Hours)'}">
-                </div>
-                <div class="form-group half">
-                  <label>Packaging</label>
-                  <input type="text" readonly class="input-field readonly" value="Aroma-Lock Fresh Pouch (FREE)">
-                </div>
+              <div class="checkout-perks-strip" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;">
+                <span style="background: #fbf8f2; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; color: #6b1d28; border: 1px solid rgba(141, 25, 29, 0.15);">
+                  🚚 ${summary.deliverySlot.time || 'Kerala Express (24-48 Hours)'}
+                </span>
+                <span style="background: #fbf8f2; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; color: #166534; border: 1px solid rgba(22, 101, 52, 0.2);">
+                  🥥 Aroma-Lock Fresh Pouch (FREE)
+                </span>
               </div>
             </div>
 
@@ -146,7 +144,7 @@ export function initCheckoutModal(showToast) {
               </div>
             </div>
 
-            <button type="submit" id="place-order-btn" class="btn btn-primary btn-block btn-pay">
+            <button type="submit" id="place-order-btn" class="btn-pay-submit">
               <span class="btn-spinner" style="display:none;"></span>
               <span class="btn-text">⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
             </button>
