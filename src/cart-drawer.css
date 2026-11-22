@@ -1345,38 +1345,56 @@ body.modal-open {
   margin-bottom: 20px;
 }
 
-.btn-whatsapp {
-  background: #25d366;
-  color: #ffffff;
-  padding: 12px 22px;
-  border-radius: 0px;
-  font-weight: 800;
-  font-size: 0.9rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+.btn-whatsapp,
+.btn-whatsapp-order,
+a.btn-whatsapp-order {
+  background: #25d366 !important;
+  color: #ffffff !important;
+  padding: 12px 22px !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4) !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
 }
 
-.btn-whatsapp:hover {
-  background: #1ebe57;
+.btn-whatsapp:hover,
+.btn-whatsapp-order:hover,
+a.btn-whatsapp-order:hover {
+  background: #1da851 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.5) !important;
 }
 
-.btn-outline {
-  background: transparent;
-  border: 1.5px solid #8d191d;
-  color: #8d191d;
-  padding: 12px 22px;
-  border-radius: 0px;
-  font-weight: 800;
-  font-size: 0.9rem;
-  cursor: pointer;
+.btn-outline,
+.btn-order-done,
+button.btn-order-done {
+  background: #ffffff !important;
+  border: 1.5px solid #8d191d !important;
+  color: #8d191d !important;
+  padding: 12px 22px !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
 }
 
-.btn-outline:hover {
-  background: #8d191d;
-  color: #fff;
+.btn-outline:hover,
+.btn-order-done:hover,
+button.btn-order-done:hover {
+  background: #8d191d !important;
+  color: #ffffff !important;
 }
 
 .success-contact-note {

@@ -401,10 +401,10 @@ export function initCheckoutModal(showToast) {
 
         <div class="success-actions">
           <a href="https://wa.me/919447123450?text=${encodeURIComponent(`Hello Keerthi Bakery,\n\nI just placed order *${orderId}* on www.keerthibakery.com!\n\n*Name:* ${customerName}\n*Phone:* ${phone}\n*Address:* ${paymentInfo.address ? paymentInfo.address + ', ' : ''}${city} - ${paymentInfo.pincode || ''}\n*Payment:* ${paymentInfo.method || 'Order'}${paymentInfo.paymentId ? ` (${paymentInfo.paymentId})` : ''}\n*Total:* ₹${total}\n\n*Items:*\n` + items.map(i => `• ${i.name} (${i.weight || 'Std'}) x ${i.quantity}`).join('\n'))}" 
-             target="_blank" class="btn btn-whatsapp">
-            💬 Track Order on WhatsApp
+             target="_blank" class="btn-whatsapp-order">
+            <span style="font-size: 1.1rem; line-height: 1;">💬</span> <span>Track Order on WhatsApp</span>
           </a>
-          <button type="button" class="btn btn-outline" id="success-done-btn">
+          <button type="button" class="btn-order-done" id="success-done-btn">
             Continue Shopping
           </button>
         </div>
