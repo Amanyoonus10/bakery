@@ -150,12 +150,6 @@ export function initCheckoutModal(showToast) {
               <span class="btn-spinner" style="display:none;"></span>
               <span class="btn-text">⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
             </button>
-
-            <div style="text-align: center; margin-top: 10px;">
-              <button type="button" id="shopify-redirect-link" style="background: none; border: none; color: #785c3b; font-size: 12px; cursor: pointer; text-decoration: underline; font-weight: 500;">
-                Or checkout via official Shopify Checkout ➔
-              </button>
-            </div>
           </form>
         </div>
 
@@ -246,30 +240,6 @@ export function initCheckoutModal(showToast) {
       });
     });
 
-    // Optional direct link to Shopify Checkout
-    const shopifyLink = modalContent.querySelector("#shopify-redirect-link");
-    if (shopifyLink) {
-      shopifyLink.onclick = () => {
-        const customerName = form.querySelector("#cust-name")?.value || "";
-        const phone = form.querySelector("#cust-phone")?.value || "";
-        const email = form.querySelector("#cust-email")?.value || "";
-        const address = form.querySelector("#cust-address")?.value || "";
-        const city = form.querySelector("#cust-city")?.value || "";
-        const pincode = form.querySelector("#cust-pincode")?.value || "";
-
-        closeCheckout();
-        redirectToShopifyCheckout(summary.items, {
-          name: customerName,
-          phone,
-          email,
-          address,
-          city,
-          pincode,
-          discountCode: summary.appliedCoupon?.code || ""
-        });
-      };
-    }
-
     form.onsubmit = async (e) => {
       e.preventDefault();
 
@@ -298,7 +268,9 @@ export function initCheckoutModal(showToast) {
           } catch (err) {}
           renderOrderSuccess(orderId, customerName, phone, city, grandTotal, orderItems, {
             method: "Cash on Delivery (COD)",
-            paymentId: null
+            paymentId: null,
+            address,
+            pincode
           });
         }, 700);
         return;
@@ -309,17 +281,12 @@ export function initCheckoutModal(showToast) {
       const scriptLoaded = await loadRazorpayScript();
 
       if (!scriptLoaded || typeof window.Razorpay === "undefined") {
-        // Fallback to Shopify Checkout if Razorpay fails to load
-        closeCheckout();
-        redirectToShopifyCheckout(summary.items, {
-          name: customerName,
-          phone,
-          email,
-          address,
-          city,
-          pincode,
-          discountCode: summary.appliedCoupon?.code || ""
-        });
+        if (placeBtn) placeBtn.disabled = false;
+        if (btnSpinner) btnSpinner.style.display = "none";
+        updatePayButtonText();
+        if (typeof showToast === "function") {
+          showToast("Payment gateway could not load. Please choose Cash on Delivery (COD) or check your connection.");
+        }
         return;
       }
 
@@ -352,7 +319,9 @@ export function initCheckoutModal(showToast) {
           } catch (err) {}
           renderOrderSuccess(orderId, customerName, phone, city, grandTotal, orderItems, {
             method: "Razorpay (Online Payment)",
-            paymentId: response.razorpay_payment_id
+            paymentId: response.razorpay_payment_id,
+            address,
+            pincode
           });
         },
         modal: {
@@ -369,16 +338,12 @@ export function initCheckoutModal(showToast) {
         rzp.open();
       } catch (err) {
         console.error("Razorpay error", err);
-        closeCheckout();
-        redirectToShopifyCheckout(summary.items, {
-          name: customerName,
-          phone,
-          email,
-          address,
-          city,
-          pincode,
-          discountCode: summary.appliedCoupon?.code || ""
-        });
+        if (placeBtn) placeBtn.disabled = false;
+        if (btnSpinner) btnSpinner.style.display = "none";
+        updatePayButtonText();
+        if (typeof showToast === "function") {
+          showToast("Unable to initiate online payment. Please select Cash on Delivery (COD).");
+        }
       }
     };
   }
@@ -437,7 +402,7 @@ export function initCheckoutModal(showToast) {
         </div>
 
         <div class="success-actions">
-          <a href="https://wa.me/919447123450?text=Hi%20Keerthi%20Bakery,%20I%20just%20placed%20order%20${orderId}%20(${paymentInfo.method || 'Order'})%20for%20₹${total}!" 
+          <a href="https://wa.me/919447123450?text=${encodeURIComponent(`Hello Keerthi Bakery,\n\nI just placed order *${orderId}* on www.keerthibakery.com!\n\n*Name:* ${customerName}\n*Phone:* ${phone}\n*Address:* ${paymentInfo.address ? paymentInfo.address + ', ' : ''}${city} - ${paymentInfo.pincode || ''}\n*Payment:* ${paymentInfo.method || 'Order'}${paymentInfo.paymentId ? ` (${paymentInfo.paymentId})` : ''}\n*Total:* ₹${total}\n\n*Items:*\n` + items.map(i => `• ${i.name} (${i.weight || 'Std'}) x ${i.quantity}`).join('\n'))}" 
              target="_blank" class="btn btn-whatsapp">
             💬 Track Order on WhatsApp
           </a>
