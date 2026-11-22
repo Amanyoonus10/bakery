@@ -221,7 +221,7 @@ function renderOrders() {
 
     const cleanPhone = String(order.phone || "").replace(/\D/g, "");
     const waText = encodeURIComponent(
-      `Hello ${order.customerName},\nThis is Keerthi Bakery regarding your order *${order.id}*.\nStatus: ${order.status}\nTotal: ₹${order.total}\nWe are preparing your fresh snacks!`
+      `Hello ${order.customerName},\nThis is Keerthi Bakery regarding your order *${order.id}*.\nStatus: ${order.status}${order.status === "Dispatched" ? " (Sent via India Post Speed Post)" : ""}\nTotal: ₹${order.total}\nFresh snacks from our Kadavathur facility are on their way!`
     );
 
     return `
@@ -298,7 +298,7 @@ function renderOrders() {
             <select class="status-update-select" data-order-id="${order.id}">
               <option value="Received" ${order.status === "Received" ? "selected" : ""}>🟡 Received</option>
               <option value="Packing" ${order.status === "Packing" ? "selected" : ""}>🟠 Aroma-Packing</option>
-              <option value="Dispatched" ${order.status === "Dispatched" ? "selected" : ""}>🚚 Dispatched</option>
+              <option value="Dispatched" ${order.status === "Dispatched" ? "selected" : ""}>📮 Dispatched (Speed Post)</option>
               <option value="Delivered" ${order.status === "Delivered" ? "selected" : ""}>✅ Delivered</option>
               <option value="Cancelled" ${order.status === "Cancelled" ? "selected" : ""}>❌ Cancelled</option>
             </select>

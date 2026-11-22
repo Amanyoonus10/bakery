@@ -9,7 +9,7 @@ class CartManager {
     this.specialInstruction = "";
     this.deliverySlot = {
       date: new Date().toISOString().split("T")[0],
-      time: "2-Hour Express (Now)"
+      time: "India Post Speed Post (24-48 Hours)"
     };
     this.deliveryPincode = "673001";
     this.deliveryCity = "Calicut (Kozhikode)";

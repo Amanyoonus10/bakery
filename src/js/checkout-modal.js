@@ -105,7 +105,7 @@ export function initCheckoutModal(showToast) {
               </div>
               <div class="checkout-perks-strip" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;">
                 <span style="background: #fbf8f2; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; color: #6b1d28; border: 1px solid rgba(141, 25, 29, 0.15);">
-                  🚚 ${summary.deliverySlot.time || 'Kerala Express (24-48 Hours)'}
+                  📮 ${summary.deliverySlot.time || 'India Post Speed Post (24-48 Hours)'}
                 </span>
                 <span style="background: #fbf8f2; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; color: #166534; border: 1px solid rgba(22, 101, 52, 0.2);">
                   🥥 Aroma-Lock Fresh Pouch (FREE)
@@ -159,7 +159,7 @@ export function initCheckoutModal(showToast) {
                   </div>
                 ` : ''}
                 <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#4a3b30; margin-bottom:6px;">
-                  <span>Delivery Fee (Express)</span>
+                  <span>Delivery Fee (India Post Speed Post)</span>
                   <span style="color:#166534; font-weight:700;">${summary.deliveryFee === 0 ? 'FREE' : `₹${summary.deliveryFee}`}</span>
                 </div>
                 <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#4a3b30; margin-bottom:6px;">
@@ -413,7 +413,7 @@ export function initCheckoutModal(showToast) {
         </div>
         <div class="success-tag">Order Confirmed • Keerthi Bakery Kadavathur</div>
         <h2>Thank You, ${customerName}!</h2>
-        <p class="success-subtitle">Your fresh snacks order has been placed successfully and assigned for immediate packing at our Kadavathur facility for delivery to <strong>${city}</strong>.</p>
+        <p class="success-subtitle">Your fresh snacks order has been placed successfully and assigned for immediate packing at our Kadavathur facility for dispatch via <strong>India Post Speed Post</strong> to <strong>${city}</strong>.</p>
 
         <div class="order-id-pill" style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
           <div>
@@ -441,8 +441,8 @@ export function initCheckoutModal(showToast) {
             <span class="timeline-text">Aroma-Seal Packing</span>
           </div>
           <div class="timeline-step">
-            <span class="timeline-dot">🚚</span>
-            <span class="timeline-text">Express Dispatch</span>
+            <span class="timeline-dot">📮</span>
+            <span class="timeline-text">Speed Post Dispatch</span>
           </div>
           <div class="timeline-step">
             <span class="timeline-dot">🎉</span>
@@ -467,7 +467,7 @@ export function initCheckoutModal(showToast) {
             <span style="font-weight:600;">₹${(total - (paymentInfo.deliveryFee || 0)).toLocaleString('en-IN')}</span>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
-            <span>Delivery Fee</span>
+            <span>Delivery (India Post Speed Post)</span>
             <span style="color:#166534; font-weight:700;">FREE</span>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
@@ -481,7 +481,7 @@ export function initCheckoutModal(showToast) {
         </div>
 
         <div class="success-actions">
-          <a href="https://wa.me/919447123450?text=${encodeURIComponent(`Hello Keerthi Bakery,\n\nI just placed order *${orderId}* on www.keerthibakery.com!\n\n*Name:* ${customerName}\n*Phone:* ${phone}\n*Address:* ${paymentInfo.address ? paymentInfo.address + ', ' : ''}${city} - ${paymentInfo.pincode || ''}\n*Payment:* ${paymentInfo.method || 'Order'}${paymentInfo.paymentId ? ` (${paymentInfo.paymentId})` : ''}\n*Total:* ₹${total}\n\n*Items:*\n` + items.map(i => `• ${i.name} (${i.weight || 'Std'}) x ${i.quantity}`).join('\n'))}" 
+          <a href="https://wa.me/919447123450?text=${encodeURIComponent(`Hello Keerthi Bakery,\n\nI just placed order *${orderId}* on www.keerthibakery.com!\n\n*Name:* ${customerName}\n*Phone:* ${phone}\n*Address:* ${paymentInfo.address ? paymentInfo.address + ', ' : ''}${city} - ${paymentInfo.pincode || ''}\n*Payment:* ${paymentInfo.method || 'Order'}${paymentInfo.paymentId ? ` (${paymentInfo.paymentId})` : ''}\n*Dispatch:* India Post Speed Post\n*Total:* ₹${total}\n\n*Items:*\n` + items.map(i => `• ${i.name} (${i.weight || 'Std'}) x ${i.quantity}`).join('\n'))}" 
              target="_blank" class="btn-whatsapp-order" style="background:#25d366 !important; color:#ffffff !important; padding:12px 22px !important; border-radius:10px !important; font-weight:800 !important; font-size:0.92rem !important; text-decoration:none !important; display:inline-flex !important; align-items:center !important; justify-content:center !important; gap:8px !important; box-shadow:0 6px 18px rgba(37,211,102,0.4) !important; border:none !important;">
             <span style="font-size: 1.1rem; line-height: 1;">💬</span> <span style="color:#ffffff !important; font-weight:800 !important;">Track Order on WhatsApp</span>
           </a>

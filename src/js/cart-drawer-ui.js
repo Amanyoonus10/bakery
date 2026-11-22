@@ -169,8 +169,8 @@ export function initCartDrawerUI(showToast) {
           <div class="slot-title">📦 Delivery &amp; Packaging Preference</div>
           <div class="slot-inputs-row">
             <select id="drawer-slot-time" class="drawer-select">
-              <option value="Kerala Express (24-48 Hours)">⚡ Kerala Express (24-48 Hours)</option>
-              <option value="Standard Pan-India (3-5 Days)">📦 Standard Pan-India (3-5 Days)</option>
+              <option value="India Post Speed Post (24-48 Hours)">📮 India Post Speed Post (24-48 Hours)</option>
+              <option value="India Post Speed Post Pan-India (2-4 Days)">📮 India Post Speed Post Pan-India (2-4 Days)</option>
               <option value="Kadavathur Store Pickup">🏪 Kadavathur Head Office Pickup</option>
             </select>
             <div class="drawer-packaging-badge">
