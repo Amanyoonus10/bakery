@@ -65,16 +65,16 @@ export function initCheckoutModal(showToast) {
               <div class="form-row">
                 <div class="form-group half">
                   <label>Full Name *</label>
-                  <input type="text" id="cust-name" required class="input-field" placeholder="e.g. Rahul Nambiar" value="Aman Yoonus">
+                  <input type="text" id="cust-name" required class="input-field" placeholder="e.g. Rahul Nambiar" value="">
                 </div>
                 <div class="form-group half">
                   <label>Mobile Number (For WhatsApp Updates) *</label>
-                  <input type="tel" id="cust-phone" required class="input-field" placeholder="e.g. 98470 12345" value="98471 23456">
+                  <input type="tel" id="cust-phone" required class="input-field" placeholder="e.g. 98470 12345" value="">
                 </div>
               </div>
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" id="cust-email" class="input-field" placeholder="name@example.com" value="aman@example.com">
+                <input type="email" id="cust-email" class="input-field" placeholder="name@example.com" value="">
               </div>
             </div>
 
@@ -83,7 +83,7 @@ export function initCheckoutModal(showToast) {
               <h3 class="section-title"><span class="step-num">2</span> Delivery Address</h3>
               <div class="form-group">
                 <label>Delivery Address / House / Flat / Street *</label>
-                <textarea id="cust-address" required class="input-field textarea" rows="2" placeholder="House/Flat name, Street, Landmark...">Pinnacle Enclave, Mavoor Road, Near Star Hospital</textarea>
+                <textarea id="cust-address" required class="input-field textarea" rows="2" placeholder="House/Flat name, Street, Landmark..."></textarea>
               </div>
               <div class="form-row">
                 <div class="form-group half">
