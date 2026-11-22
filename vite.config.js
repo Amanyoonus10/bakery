@@ -9,6 +9,7 @@ export default defineConfig({
         cakes: resolve(import.meta.dirname, 'cakes.html'),
         product: resolve(import.meta.dirname, 'product.html'),
         admin: resolve(import.meta.dirname, 'admin.html'),
+        legal: resolve(import.meta.dirname, 'legal.html'),
       },
     },
   },
