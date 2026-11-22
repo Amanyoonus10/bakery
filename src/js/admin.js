@@ -99,7 +99,7 @@ async function verifyAndLogin(enteredPin, isManual = true) {
       showToast("Welcome back, Keerthi Admin!");
       startAdminSession();
     } else {
-      if (errorMsg) errorMsg.textContent = "Incorrect PIN. Default is 1993.";
+      if (errorMsg) errorMsg.textContent = "Incorrect PIN. Please try again.";
       if (overlay) overlay.style.display = "flex";
       sessionStorage.removeItem("keerthi_admin_pin");
       adminPin = "";
