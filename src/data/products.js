@@ -1887,46 +1887,6 @@ export const PRODUCTS = [
     "reviewCount": 147
   },
   {
-    "id": "keerthi-special-cup-cake",
-    "shopify_id": 9784706597123,
-    "shopify_variant_id": 50162119311619,
-    "slug": "special_cup_cake",
-    "name": "KEERTHI SPECIAL CUP CAKE",
-    "title": "Special Cup Cake",
-    "category": "cakes",
-    "badge": "Special Choice ⭐",
-    "badgeClass": "bestseller",
-    "price": 75,
-    "unit": "250g",
-    "variants": [
-      {
-        "label": "250g",
-        "weight": "250g",
-        "price": 75,
-        "shopify_variant_id": 50162119311619,
-        "default": true
-      }
-    ],
-    "eyebrow": "AUTHENTIC MALABAR SPECIALTY",
-    "tagline": "Pure Quality Ingredients • 100% Authentic • Special Cup Cake",
-    "ingredients": "Selected premium ingredients, cold-pressed oil, aromatic spices, and natural sea salt",
-    "description": "Freshly handcrafted Keerthi Special Cup Cake prepared with pure ingredients and traditional Malabar craftsmanship.",
-    "nutrition": "Energy: 480 kcal, Protein: 8.5g, Carbohydrates: 54g, Fat: 22g (Per 100g)",
-    "tags": [
-      "cakes",
-      "special-cup-cake",
-      "authentic",
-      "kerala-bakery",
-      "malabar"
-    ],
-    "image": "/images/products/special-cup-cake.webp",
-    "imageWebp": "/images/products/special-cup-cake.webp",
-    "imageCutout": "/images/products/special-cup-cake.png",
-    "priceText": "₹75 / 250g",
-    "rating": 4.88,
-    "reviewCount": 123
-  },
-  {
     "id": "keerthi-special-rusk",
     "shopify_id": 9784696668419,
     "shopify_variant_id": 50162047615235,
