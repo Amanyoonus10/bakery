@@ -118,12 +118,20 @@ export function initCheckoutModal(showToast) {
               <h3 class="section-title"><span class="step-num">3</span> Select Payment Method</h3>
               <div class="payment-options-grid">
                 <label class="payment-option selected">
-                  <input type="radio" name="payment_method" value="upi" checked>
+                  <input type="radio" name="payment_method" value="cod" checked>
+                  <div class="payment-meta">
+                    <div class="payment-name">💵 Cash on Delivery (COD)</div>
+                    <div class="payment-desc">Pay upon receiving fresh snacks at your doorstep</div>
+                  </div>
+                  <span class="pay-tag" style="background:#e8f5ed; color:#166534; font-weight:800;">Recommended</span>
+                </label>
+
+                <label class="payment-option">
+                  <input type="radio" name="payment_method" value="upi">
                   <div class="payment-meta">
                     <div class="payment-name">⚡ Instant UPI / QR / Google Pay / PhonePe</div>
                     <div class="payment-desc">Zero transaction fee • Instant confirmation</div>
                   </div>
-                  <span class="pay-tag">Fastest</span>
                 </label>
 
                 <label class="payment-option">
@@ -133,20 +141,12 @@ export function initCheckoutModal(showToast) {
                     <div class="payment-desc">Visa, Mastercard, RuPay, Netbanking</div>
                   </div>
                 </label>
-
-                <label class="payment-option">
-                  <input type="radio" name="payment_method" value="cod">
-                  <div class="payment-meta">
-                    <div class="payment-name">💵 Cash on Delivery (COD)</div>
-                    <div class="payment-desc">Pay upon receiving fresh snacks at your doorstep</div>
-                  </div>
-                </label>
               </div>
             </div>
 
             <button type="submit" id="place-order-btn" class="btn-pay-submit" style="display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; background:#8d191d !important; background:linear-gradient(135deg, #8d191d 0%, #631013 100%) !important; color:#ffffff !important; border:1px solid rgba(255,255,255,0.25) !important; padding:15px 22px !important; border-radius:10px !important; font-size:1rem !important; font-weight:800 !important; cursor:pointer !important; margin-top:14px !important; box-shadow:0 8px 22px rgba(141,25,29,0.45) !important;">
               <span class="btn-spinner" style="display:none;"></span>
-              <span class="btn-text" style="color:#ffffff !important; font-weight:800 !important; display:inline-block !important;">⚡ Pay via Razorpay (UPI / GPay / PhonePe) • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
+              <span class="btn-text" style="color:#ffffff !important; font-weight:800 !important; display:inline-block !important;">📦 Confirm Cash on Delivery Order • ₹${summary.grandTotal.toLocaleString('en-IN')}</span>
             </button>
           </form>
         </div>
