@@ -220,8 +220,11 @@ function renderOrders() {
     }) : "Recent";
 
     const cleanPhone = String(order.phone || "").replace(/\D/g, "");
+    const trackingMsg = order.trackingId 
+      ? `\n📮 *Speed Post Tracking ID:* ${order.trackingId}\n🔍 *Track Consignment:* https://www.indiapost.gov.in/_layouts/15/dpt.cept.tracking/trackconsignment.aspx` 
+      : "";
     const waText = encodeURIComponent(
-      `Hello ${order.customerName},\nThis is Keerthi Bakery regarding your order *${order.id}*.\nStatus: ${order.status}${order.status === "Dispatched" ? " (Sent via India Post Speed Post)" : ""}\nTotal: ₹${order.total}\nFresh snacks from our Kadavathur facility are on their way!`
+      `Hello ${order.customerName},\nThis is Keerthi Bakery regarding your order *${order.id}*.\nStatus: ${order.status}${order.status === "Dispatched" ? " (Dispatched via India Post Speed Post)" : ""}${trackingMsg}\nTotal: ₹${order.total} (${isCod ? 'Payable upon delivery' : 'Paid'})\nFresh snacks from our Kadavathur facility will reach you soon!`
     );
 
     return `
@@ -257,6 +260,7 @@ function renderOrders() {
               <strong>Address:</strong> ${order.address ? order.address + ', ' : ''}${order.city}${order.pincode ? ' - ' + order.pincode : ''}
               ${order.email ? `<br><strong>Email:</strong> ${order.email}` : ''}
               ${order.paymentId ? `<br><strong>Txn ID:</strong> <code style="font-size:11px;">${order.paymentId}</code>` : ''}
+              ${order.trackingId ? `<br><strong>Speed Post ID:</strong> <code style="font-size:11px; font-weight:800; color:#0f172a; background:#e0f2fe; padding:2px 6px; border-radius:4px; border:1px solid #bae6fd;">${order.trackingId}</code>` : ''}
             </div>
           </div>
 
@@ -305,6 +309,31 @@ function renderOrders() {
             <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 8px;">
               Changing status notifies customer on WhatsApp and syncs to cloud.
             </div>
+
+            <!-- Speed Post Tracking Input Box -->
+            <div class="tracking-input-box" style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #e2e8f0;">
+              <label style="display: flex; align-items: center; justify-content: space-between; font-size: 0.74rem; font-weight: 700; color: #475569; margin-bottom: 6px;">
+                <span>📮 Speed Post Consignment ID</span>
+                ${order.trackingId ? '<span style="color:#16a34a; font-weight:800; font-size:0.7rem;">✓ Linked</span>' : ''}
+              </label>
+              <div style="display: flex; gap: 6px;">
+                <input type="text" class="tracking-id-input" data-order-id="${order.id}" 
+                       placeholder="e.g. EK123456789IN" value="${order.trackingId || ''}" 
+                       style="flex: 1; min-width: 0; padding: 7px 10px; font-size: 0.8rem; font-family: monospace; font-weight: 700; border: 1.5px solid ${order.trackingId ? '#86efac' : '#cbd5e1'}; border-radius: 6px; background: ${order.trackingId ? '#f0fdf4' : '#fff'}; text-transform: uppercase;">
+                <button type="button" class="btn-save-tracking" data-order-id="${order.id}" 
+                        style="background: #8d191d; color: #fff; border: none; padding: 7px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; white-space: nowrap;">
+                  Save
+                </button>
+              </div>
+              ${order.trackingId ? `
+                <div style="margin-top: 6px;">
+                  <a href="https://www.indiapost.gov.in/_layouts/15/dpt.cept.tracking/trackconsignment.aspx" target="_blank" 
+                     style="font-size: 0.72rem; color: #0284c7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                    🔍 Track on India Post Portal ↗
+                  </a>
+                </div>
+              ` : ''}
+            </div>
           </div>
         </div>
       </div>
@@ -317,6 +346,28 @@ function renderOrders() {
       const targetOrderId = sel.dataset.orderId;
       const newStatus = sel.value;
       await updateOrderStatus(targetOrderId, newStatus);
+    };
+  });
+
+  // Bind Speed Post Tracking Save Buttons
+  container.querySelectorAll(".btn-save-tracking").forEach(btn => {
+    btn.onclick = async () => {
+      const targetOrderId = btn.dataset.orderId;
+      const input = container.querySelector(`.tracking-id-input[data-order-id="${targetOrderId}"]`);
+      if (input) {
+        await updateOrderTracking(targetOrderId, input.value.trim());
+      }
+    };
+  });
+
+  // Bind Enter key on tracking input
+  container.querySelectorAll(".tracking-id-input").forEach(input => {
+    input.onkeydown = async (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const targetOrderId = input.dataset.orderId;
+        await updateOrderTracking(targetOrderId, input.value.trim());
+      }
     };
   });
 }
@@ -347,6 +398,37 @@ async function updateOrderStatus(orderId, status) {
   } catch (err) {
     console.error("Status update error:", err);
     showToast("Network error updating status", "error");
+  }
+}
+
+async function updateOrderTracking(orderId, trackingId) {
+  if (!adminPin) {
+    showToast("Please enter PIN first", "error");
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/orders", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        pin: adminPin,
+        orderId,
+        trackingId: trackingId || ""
+      })
+    });
+
+    if (res.ok) {
+      showToast(`Speed Post ID for ${orderId} saved! 📮`);
+      const target = orders.find(o => o.id === orderId);
+      if (target) target.trackingId = trackingId || "";
+      renderOrders();
+    } else {
+      showToast("Failed to save Speed Post tracking ID", "error");
+    }
+  } catch (err) {
+    console.error("Tracking update error:", err);
+    showToast("Network error saving tracking ID", "error");
   }
 }
 
@@ -480,7 +562,7 @@ function exportOrdersCsv() {
     return;
   }
 
-  const headers = ["Order ID", "Date", "Customer Name", "Phone", "Email", "Address", "City", "Pincode", "Total Amount", "Payment Method", "Payment ID", "Status", "Items"];
+  const headers = ["Order ID", "Date", "Customer Name", "Phone", "Email", "Address", "City", "Pincode", "Total Amount", "Payment Method", "Payment ID", "Status", "Speed Post Tracking ID", "Items"];
   const rows = orders.map(o => [
     o.id,
     o.createdAt ? new Date(o.createdAt).toLocaleString("en-IN") : "",
@@ -494,6 +576,7 @@ function exportOrdersCsv() {
     `"${o.paymentMethod || ""}"`,
     `"${o.paymentId || ""}"`,
     o.status || "Received",
+    `"${o.trackingId || ""}"`,
     `"${(o.items || []).map(i => `${i.name} x${i.quantity}`).join("; ").replace(/"/g, '""')}"`
   ]);
 

@@ -163,19 +163,19 @@ export default async function handler(req, res) {
     }
   }
 
-  // PATCH: Update order status (Admin only)
+  // PATCH: Update order status or tracking ID (Admin only)
   if (req.method === "PATCH") {
     try {
       const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
-      const { pin, orderId, status, notes } = body;
+      const { pin, orderId, status, notes, trackingId } = body;
       const validPin = await getAdminPin();
 
       if (!pin || String(pin).trim() !== validPin) {
         return res.status(401).json({ error: "Unauthorized: Invalid PIN" });
       }
 
-      if (!orderId || !status) {
-        return res.status(400).json({ error: "orderId and status are required" });
+      if (!orderId) {
+        return res.status(400).json({ error: "orderId is required" });
       }
 
       const existingOrders = await fetchOrdersFromGist();
@@ -185,7 +185,12 @@ export default async function handler(req, res) {
         return res.status(404).json({ error: "Order not found" });
       }
 
-      existingOrders[targetIndex].status = status;
+      if (status !== undefined) {
+        existingOrders[targetIndex].status = status;
+      }
+      if (trackingId !== undefined) {
+        existingOrders[targetIndex].trackingId = String(trackingId).trim();
+      }
       if (notes !== undefined) {
         existingOrders[targetIndex].notes = notes;
       }
