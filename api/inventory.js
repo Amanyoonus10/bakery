@@ -15,9 +15,11 @@ export default async function handler(req, res) {
   async function getInventoryData() {
     const response = await fetch(`https://api.github.com/gists/${INVENTORY_GIST_ID}`, {
       headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
         Accept: "application/vnd.github+json",
         "User-Agent": "Keerthi-Bakery-App"
-      }
+      },
+      cache: "no-store"
     });
     if (!response.ok) {
       return { soldOut: [], priceOverrides: {}, adminPin: DEFAULT_ADMIN_PIN };
