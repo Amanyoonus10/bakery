@@ -170,7 +170,6 @@ export function initCartDrawerUI(showToast) {
           <div class="slot-inputs-row">
             <select id="drawer-slot-time" class="drawer-select">
               <option value="India Post Speed Post (24-48 Hours)">📮 India Post Speed Post (24-48 Hours)</option>
-              <option value="India Post Speed Post Pan-India (2-4 Days)">📮 India Post Speed Post Pan-India (2-4 Days)</option>
               <option value="Kadavathur Store Pickup">🏪 Kadavathur Head Office Pickup</option>
             </select>
             <div class="drawer-packaging-badge">
@@ -193,26 +192,6 @@ export function initCartDrawerUI(showToast) {
     // Render Drawer Footer Breakdown
     if (drawerFooter) {
       drawerFooter.innerHTML = `
-        <!-- Coupon Section -->
-        <div class="drawer-coupon-box">
-          ${summary.appliedCoupon ? `
-            <div class="applied-coupon-pill">
-              <span class="coupon-tag">🏷️ ${summary.appliedCoupon.code}</span>
-              <span class="coupon-desc">${summary.appliedCoupon.label}</span>
-              <button type="button" id="remove-coupon-btn" class="coupon-remove" title="Remove coupon">✕</button>
-            </div>
-          ` : `
-            <div class="coupon-input-wrap">
-              <input type="text" id="coupon-code-input" class="coupon-input" placeholder="Promo code (e.g. PEEKAY100)" style="text-transform:uppercase;">
-              <button type="button" id="apply-coupon-btn" class="btn-apply-coupon">Apply</button>
-            </div>
-            <div class="quick-coupon-pills">
-              <button type="button" class="quick-pill" data-code="PEEKAY100">🏷️ PEEKAY100 (₹100 Off)</button>
-              <button type="button" class="quick-pill" data-code="KEERTHI10">🏷️ KEERTHI10 (10% Off)</button>
-            </div>
-          `}
-        </div>
-
         <!-- Bill Details Breakdown -->
         <div class="price-breakdown">
           <div style="font-size: 0.85rem; font-weight: 800; color: #2c1810; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
@@ -231,10 +210,6 @@ export function initCartDrawerUI(showToast) {
           <div class="breakdown-row">
             <span>Delivery Fee</span>
             <span>${summary.deliveryFee === 0 ? '<span class="text-free">FREE</span>' : `₹${summary.deliveryFee}`}</span>
-          </div>
-          <div class="breakdown-row">
-            <span>Packaging & Aroma Pouch</span>
-            <span class="text-free">FREE</span>
           </div>
           <div class="breakdown-row row-total">
             <span>To Pay</span>

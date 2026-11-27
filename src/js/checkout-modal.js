@@ -162,10 +162,6 @@ export function initCheckoutModal(showToast) {
                   <span>Delivery Fee (India Post Speed Post)</span>
                   <span style="color:#166534; font-weight:700;">${summary.deliveryFee === 0 ? 'FREE' : `₹${summary.deliveryFee}`}</span>
                 </div>
-                <div class="bill-row" style="display:flex; justify-content:space-between; font-size:0.88rem; color:#4a3b30; margin-bottom:6px;">
-                  <span>Aroma-Lock Fresh Pouch Packaging</span>
-                  <span style="color:#166534; font-weight:700;">FREE</span>
-                </div>
                 <div class="bill-row" style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:900; color:#8d191d; border-top:1px solid rgba(141, 25, 29, 0.2); padding-top:10px; margin-top:8px;">
                   <span>Total Payable</span>
                   <span>₹${summary.grandTotal.toLocaleString('en-IN')}</span>
@@ -217,10 +213,6 @@ export function initCheckoutModal(showToast) {
             <div class="bill-row">
               <span>Delivery Fee</span>
               <span>${summary.deliveryFee === 0 ? '<strong style="color:#0f3822">FREE</strong>' : `₹${summary.deliveryFee}`}</span>
-            </div>
-            <div class="bill-row">
-              <span>Packaging & Aroma Pouch</span>
-              <span style="color:#166534; font-weight:700;">FREE</span>
             </div>
             <div class="bill-row bill-grand-total">
               <span>Total Payable</span>
@@ -468,10 +460,6 @@ export function initCheckoutModal(showToast) {
           </div>
           <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
             <span>Delivery (India Post Speed Post)</span>
-            <span style="color:#166534; font-weight:700;">FREE</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#475569; margin-bottom:6px;">
-            <span>Aroma-Lock Fresh Pouch Packaging</span>
             <span style="color:#166534; font-weight:700;">FREE</span>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:1rem; font-weight:900; color:#8d191d; padding-top:8px; border-top:1px solid rgba(141, 25, 29, 0.15); margin-top:4px;">
